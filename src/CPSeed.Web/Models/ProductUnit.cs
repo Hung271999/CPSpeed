@@ -29,13 +29,13 @@ namespace CPSeed.Models
         public DateTime CreateDate { get; set; }
 
         [Required]
-        [StringLength(50)]
+        [StringLength(256)]
         public string CreateUser { get; set; }
 
         public DateTime UpdateDate { get; set; }
 
         [Required]
-        [StringLength(50)]
+        [StringLength(256)]
         public string UpdateUser { get; set; }
     }
 }
