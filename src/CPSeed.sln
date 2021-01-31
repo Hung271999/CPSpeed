@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29418.71
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CPSeed.Util", "CPSeed.Util\CPSeed.Util.csproj", "{CFF424C6-0427-4A1D-A3D5-BFBCBFAECBBB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CPSeed.Web", "CPSeed.Web\CPSeed.Web.csproj", "{9C224B03-14A3-4C22-B1D3-C1C28452DD78}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{CFF424C6-0427-4A1D-A3D5-BFBCBFAECBBB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CFF424C6-0427-4A1D-A3D5-BFBCBFAECBBB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CFF424C6-0427-4A1D-A3D5-BFBCBFAECBBB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CFF424C6-0427-4A1D-A3D5-BFBCBFAECBBB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9C224B03-14A3-4C22-B1D3-C1C28452DD78}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9C224B03-14A3-4C22-B1D3-C1C28452DD78}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9C224B03-14A3-4C22-B1D3-C1C28452DD78}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9C224B03-14A3-4C22-B1D3-C1C28452DD78}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {082F4F9B-CDC2-4771-823A-03E965DAC064}
+	EndGlobalSection
+EndGlobal
