@@ -1,3 +1,4 @@
+using CPSeed.Models.ID;
 using System;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Data.Entity;
@@ -24,6 +25,8 @@ namespace CPSeed.Models
         public virtual DbSet<Provider> Providers { get; set; }
         public virtual DbSet<Store> Stores { get; set; }
         public virtual DbSet<Unit> Units { get; set; }
+        public virtual DbSet<CategoryPost> CategoryPosts { get; set; }
+        public virtual DbSet<Post> Posts { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
