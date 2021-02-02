@@ -11,8 +11,8 @@ namespace CPSeed.Controllers
     {
         public ActionResult Index()
         {
-            //viet thư  muon lay TITLE_INFO 
-          string abc =  Common.GetResouceString("MSG_ERROR_INPUT");
+           
+         string abc =  Common.GetResouceString("MSG_ERROR_INPUT");
 
 
             return View();
@@ -31,5 +31,6 @@ namespace CPSeed.Controllers
 
             return View();
         }
+        
     }
 }

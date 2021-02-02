@@ -191,6 +191,7 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\CategoryPost.cs" />
     <Compile Include="Models\CPSeedContext.cs" />
     <Compile Include="Models\Customer.cs" />
     <Compile Include="Models\ID\AccountViewModels.cs" />
@@ -200,6 +201,7 @@
     <Compile Include="Models\Inventory.cs" />
     <Compile Include="Models\InventoryHistory.cs" />
     <Compile Include="Models\Invoice.cs" />
+    <Compile Include="Models\Post.cs" />
     <Compile Include="Models\Product.cs" />
     <Compile Include="Models\ProductType.cs" />
     <Compile Include="Models\ProductUnit.cs" />
