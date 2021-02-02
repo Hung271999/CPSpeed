@@ -159,6 +159,7 @@
      text-decoration: none;
      transition: opacity 0.2s ease-out;
      font-size: 28px;
+     padding-top: 10px;
 }
 /*------------------------------------------------------------------ HEADER -------------------------------------------------------------------*/
  .main-top{
@@ -590,7 +591,7 @@
          border-top: solid 1px #222;
     }
 }
- .arrow::before{
+/* .arrow::before{
      font-family: 'FontAwesome';
      content: "\f0d7";
      margin-left: 5px;
@@ -601,7 +602,7 @@
      position: absolute;
      right: 10px;
      top: 10px;
-}
+}*/
  .dropdown-toggle::after{
      display: none;
 }
@@ -813,7 +814,7 @@
      padding: 70px 0px;
 }
  .shop-cat-box{
-     margin-bottom: 30px;
+     margin-bottom: 100px;
      position: relative;
      padding: 3px;
      overflow: hidden;
@@ -821,6 +822,7 @@
 	 box-shadow: 9px 9px 30px 0px rgba(0, 0, 0, 0.3);
 	-webkit-transition: all 0.3s ease;
 	transition: all 0.3s ease-in-out 0s;
+    height: 500px;
 }
  .shop-cat-box img{
      margin: -10px 0 0 -10px;
@@ -835,24 +837,35 @@
      -webkit-backface-visibility: hidden;
      backface-visibility: hidden;
 }
- .shop-cat-box:hover img{
-     opacity: 0.6;
-     -webkit-transform: translate3d(0,0,0);
-     transform: translate3d(0,0,0);
+.shop-cat-box:hover {
+    /*opacity: 0.6;*/
+    /* -webkit-transform: translate3d(0,0,0);
+    transform: translate3d(0,0,0);*/
+    -webkit-transition: opacity 0.35s, -webkit-transform 0.35s;
+    transition: opacity 0.35s, transform 0.35s;
+    -webkit-transform: translate3d(-10px,-10px,0);
+    transform: translate3d(-10px,-10px,0);
+    -webkit-backface-visibility: hidden;
 }
  .shop-cat-box a{
      position: absolute;
      z-index: 2;
      bottom: 0px;
-     left: 0px;
+     left: 0px; 
      right: 0;
      margin: 0 auto;
      text-align: center;
      border: none;
      color: #ffffff;
      font-size: 18px;
-     font-weight: 700;
-     padding: 12px 0px;
+     font-weight: 500;
+     padding: 0px 0px;
+}
+
+.shop-cat-box p{
+    display: block;
+    padding: 15px;
+    font-size: 20px;
 }
 
 .box-add-products{
@@ -878,8 +891,14 @@
 }
 
 /*------------------------------------------------------------------ Products -------------------------------------------------------------------*/
- .title-all{
-     margin-bottom: 30px;
+.product-list {
+    display: flex;
+    flex-direction: row;
+    position: relative;
+}
+
+.title-all {
+    margin-bottom: 30px;
 }
  .title-all h1{
      font-size: 32px;
@@ -890,8 +909,8 @@
      color: #999999;
      font-size: 16px;
 }
- .products-box{
-     padding: 70px 0px;
+.products-box {
+    padding: 70px 0px;
 }
  .special-menu{
      margin-bottom: 40px;
@@ -2559,6 +2578,7 @@
  .share-bar a {
 }
  .featured-products-box{
+        
 }
  .featured-products-box .owl-nav{
      position: absolute;

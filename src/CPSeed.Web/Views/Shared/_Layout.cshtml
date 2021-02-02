@@ -18,12 +18,13 @@
     <!-- Site Icons -->
     <link rel="shortcut icon" href="~/images/favicon.ico" type="image/x-icon">
     <link rel="apple-touch-icon" href="~/images/apple-touch-icon.png">
-
+    <link href="~/css/main.css" rel="stylesheet" />
+    <link href="~/css/slick.css" rel="stylesheet" />
     <!-- Bootstrap CSS -->
     @Styles.Render("~/Contents/css")
     <!--[if lt IE 9]>
-      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
 
 </head>
@@ -359,6 +360,18 @@
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")
     @RenderSection("scripts", required: false)
+    <script src="~/js/slick.min.js"></script>
+    <script type="text/javascript">
+        $(function () {
+            $('.slider').slick({
+                infinite: true,
+                slidesToShow: 4,
+                slidesToScroll: 4,
+                prevArrow: '<span class="prev_arrow"><i class="fas fa-angle-left"></i></span>',
+                nextArrow: '<span class="next_arrow"><i class="fas fa-angle-right"></i></span>',
+            });
+        });
+    </script>
 </body>
 
 </html>
