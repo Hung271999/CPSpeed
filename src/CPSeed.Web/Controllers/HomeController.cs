@@ -1,4 +1,5 @@
-﻿using CPSeed.Util;
+﻿using CPSeed.Models;
+using CPSeed.Util;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,6 +10,7 @@ namespace CPSeed.Controllers
 {
     public class HomeController : Controller
     {
+        CPSeedContext data = new CPSeedContext();
         public ActionResult Index()
         {
            
@@ -31,6 +33,11 @@ namespace CPSeed.Controllers
 
             return View();
         }
-        
+        public ActionResult Vision_mission()
+        {
+            var a = data.CategoryPosts.Where(n => n.CategoryPostID == 1);
+            return PartialView(a.Single());
+        }
+
     }
 }

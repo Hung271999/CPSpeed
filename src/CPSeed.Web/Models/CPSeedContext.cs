@@ -1,4 +1,3 @@
-using CPSeed.Models.ID;
 using System;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Data.Entity;

@@ -1,11 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Web;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using System.Linq;
+using System.Web;
 
-namespace CPSeed.Models.ID
+namespace CPSeed.Models
 {
     [Table("Posts")]
     public class Post
@@ -14,7 +14,7 @@ namespace CPSeed.Models.ID
 
         [StringLength(100)]
         public string Title { get; set; }
-        [Column(TypeName = "tinyint")]
+        [StringLength(200)]
         public string Summary { get; set; }
 
         [Column(TypeName = "text")]
