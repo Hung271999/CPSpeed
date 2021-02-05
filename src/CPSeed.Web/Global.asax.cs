@@ -18,8 +18,6 @@ namespace CPSeed
             // Code that runs on application startup
             logger = CPSeed.Util.Common.InitLog4Net();
             logger.Debug("InitLog4Net completed");
-
-
             AreaRegistration.RegisterAllAreas();
             GlobalConfiguration.Configure(WebApiConfig.Register);
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);

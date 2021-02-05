@@ -10,15 +10,12 @@ namespace CPSeed.Models
     [Table("CategoryPost")]
     public class CategoryPost
     {
-      
-        public class Post
-        {
+     
             public int CategoryPostID { get; set; }
 
             [StringLength(100)]
             public string Title { get; set; }
 
-            [Column(TypeName = "tinyint")]
             public bool? Status { get; set; }
 
             public bool? IsDeleted { get; set; }
@@ -34,6 +31,5 @@ namespace CPSeed.Models
             [Required]
             [StringLength(256)]
             public string UpdateUser { get; set; }
-        }
     }
 }
