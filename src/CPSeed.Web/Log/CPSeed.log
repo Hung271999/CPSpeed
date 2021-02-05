@@ -97,3 +97,7 @@
 >>>>>>> a7c803b4074d56f1eb3144126adb0b51a40cb79a
 2021-02-02 20:19:24,845 [CPSeed.Util.Common] [1] DEBUG CPSeed.Util.Common - Init log4net completed
 2021-02-02 20:19:24,856 [CPSeed.Util.Common] [1] DEBUG CPSeed.Util.Common - InitLog4Net completed
+2021-02-02 20:35:50,722 [CPSeed.Util.Common] [1] DEBUG CPSeed.Util.Common - Init log4net completed
+2021-02-02 20:35:50,732 [CPSeed.Util.Common] [1] DEBUG CPSeed.Util.Common - InitLog4Net completed
+2021-02-02 20:41:52,908 [CPSeed.Util.Common] [1] DEBUG CPSeed.Util.Common - Init log4net completed
+2021-02-02 20:41:52,915 [CPSeed.Util.Common] [1] DEBUG CPSeed.Util.Common - InitLog4Net completed
