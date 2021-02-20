@@ -14,13 +14,16 @@ namespace CPSeed.Models
 
         [StringLength(100)]
         public string Title { get; set; }
-        [StringLength(200)]
+        [MaxLength]
         public string Summary { get; set; }
 
-        [Column(TypeName = "text")]
-        public string content { get; set; }
+        [MaxLength]
+        public string contents { get; set; }
 
-        public int CategotyPostID { get; set; }
+        [StringLength(50)]
+        public string image { get; set; }
+
+        public int CategoryPostID { get; set; }
 
 
         public bool? Status { get; set; }
@@ -28,7 +31,7 @@ namespace CPSeed.Models
 
         public DateTime CreateDate { get; set; }
 
-        public DateTime PublicDate { get; set; }
+        public DateTime ?PublicDate { get; set; }
 
         [Required]
         [StringLength(256)]

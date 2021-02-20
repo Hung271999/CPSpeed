@@ -35,9 +35,18 @@ namespace CPSeed.Controllers
         }
         public ActionResult Vision_mission()
         {
-            var a = data.CategoryPosts.Where(n => n.CategoryPostID == 1);
-            return PartialView(a.Single());
+            CategoryPost CategoryPosts = data.CategoryPosts.Where(n => n.CategoryPostID == 1).SingleOrDefault();
+            ViewBag.Message = CategoryPosts;
+            var vs = data.Posts.Where(n => n.CategoryPostID == 1).ToList();
+            return PartialView(vs);
         }
+        public ActionResult ProductType()
+        {
+
+            var productType = data.ProductTypes.ToList();
+            return PartialView(productType);
+        }
+
 
     }
 }
