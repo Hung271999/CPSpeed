@@ -22,6 +22,8 @@ namespace CPSeed.Models
         [Required]
         [StringLength(256)]
         public string CreateUser { get; set; }
+        [StringLength(50)]
+        public string image { get; set; }
 
         public DateTime UpdateDate { get; set; }
 
