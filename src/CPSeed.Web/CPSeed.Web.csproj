@@ -192,6 +192,7 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\CategoryPost.cs" />
+    <Compile Include="Models\Contact .cs" />
     <Compile Include="Models\CPSeedContext.cs" />
     <Compile Include="Models\Customer.cs" />
     <Compile Include="Models\ID\AccountViewModels.cs" />
@@ -207,6 +208,7 @@
     <Compile Include="Models\ProductUnit.cs" />
     <Compile Include="Models\Promotion.cs" />
     <Compile Include="Models\Provider.cs" />
+    <Compile Include="Models\Slide.cs" />
     <Compile Include="Models\Store.cs" />
     <Compile Include="Models\Unit.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -383,6 +385,9 @@
     <Content Include="webfonts\fa-solid-900.woff2" />
     <Content Include="Views\Home\Vision_mission.cshtml" />
     <Content Include="Views\Home\ProductType.cshtml" />
+    <Content Include="Views\Home\News.cshtml" />
+    <Content Include="Views\Home\Contacts.cshtml" />
+    <Content Include="Views\Home\Slide.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

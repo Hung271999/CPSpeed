@@ -1,0 +1,24 @@
+﻿@model IEnumerable<CPSeed.Models.Slide>
+
+<div id="slides-shop" class="cover-slides">
+    <ul class="slides-container">
+        @foreach (var item in Model)
+        {
+             <li class="text-center">
+            <img src="~/images/@item.image" alt="">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <h1 class="m-b-20"><strong>@item.contents</strong></h1   
+                    </div>
+                </div>
+            </div>
+            </li>
+        }
+
+    </ul>
+    <div class="slides-navigation">
+        <a href="#" class="next"><i class="fa fa-angle-right" aria-hidden="true"></i></a>
+        <a href="#" class="prev"><i class="fa fa-angle-left" aria-hidden="true"></i></a>
+    </div>
+</div>

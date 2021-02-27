@@ -1,0 +1,31 @@
+﻿@model IEnumerable<CPSeed.Models.Post>
+
+
+<!-- Start News  -->
+<div class="box-add-products">
+    <div class="categories-shop">
+        <div class="container">
+            <div class="row ">
+                <div class="col-lg-12">
+                    <div class="title-all text-center">
+                        <h1>TIN TỨC</h1>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                @foreach (var item in Model)
+                {
+                    <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+                        <div class="shop-cat-box">
+
+                            <img class="img-fluid" src="~/images/@item.image" alt="" />
+                            <a class="btn hvr-hover" href="#"> Xem thêm</a>
+                            <p> @item.Summary </p>
+                        </div>
+                    </div>
+                }
+            </div>
+        </div>
+    </div>
+</div>
+<!-- End News  -->

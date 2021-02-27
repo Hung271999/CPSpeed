@@ -774,8 +774,7 @@
  .cover-slides .container > .row {
      height: 100%;
 }
- .overlay-background {
-     background: #333;
+ .overlay-background{
      position: absolute;
      height: 100%;
      width: 100%;

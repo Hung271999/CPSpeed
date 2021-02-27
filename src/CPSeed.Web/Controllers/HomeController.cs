@@ -46,7 +46,21 @@ namespace CPSeed.Controllers
             var productType = data.ProductTypes.ToList();
             return PartialView(productType);
         }
-
+        public ActionResult News()
+        {
+            var News = data.Posts.OrderByDescending(n => n.CreateDate).Where(n=>n.Status==true).ToList();
+            return PartialView(News);
+        }
+        public ActionResult Contacts()
+        {
+            var Contact = data.Contacts.Where(n => n.Status == true).ToList();
+            return PartialView(Contact);
+        }
+        public ActionResult Slide()
+        {
+            var Slide = data.Slides.Where(n => n.Status == true).ToList();
+            return PartialView(Slide);
+        }
 
     }
 }
