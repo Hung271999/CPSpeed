@@ -9,8 +9,7 @@ namespace CPSeed.Models
     [Table("ProductType")]
     public partial class ProductType
     {
-        [StringLength(20)]
-        public string ProductTypeID { get; set; }
+        public int ProductTypeID { get; set; }
 
         [StringLength(250)]
         public string ProductTypeName { get; set; }

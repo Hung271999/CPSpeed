@@ -340,3 +340,7 @@ D:\CPSpeed\src\CPSeed.Web\obj\Debug\CPSeed.Web.csproj.CoreCompileInputs.cache
 D:\CPSpeed\src\CPSeed.Web\obj\Debug\CPSeed.Web.csproj.CopyComplete
 D:\CPSpeed\src\CPSeed.Web\obj\Debug\CPSeed.dll
 D:\CPSpeed\src\CPSeed.Web\obj\Debug\CPSeed.pdb
+D:\CPSpeed\src\CPSeed.Web\bin\PagedList.dll
+D:\CPSpeed\src\CPSeed.Web\bin\PagedList.Mvc.dll
+D:\CPSpeed\src\CPSeed.Web\bin\PagedList.xml
+D:\CPSpeed\src\CPSeed.Web\bin\PagedList.Mvc.xml

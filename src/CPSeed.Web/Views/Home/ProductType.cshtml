@@ -9,6 +9,17 @@
                 </div>
             </div>
         </div>
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="special-menu text-center">
+                    <div class="button-group filter-button-group">
+                        <button class="" data-filter="*">All</button>
+                        <button data-filter=".top-featured" class="">Top featured</button>
+                        <button data-filter=".best-seller" class="active">Best seller</button>
+                    </div>
+                </div>
+            </div>
+        </div>
         <div class="slider product-list">
             @foreach (var item in Model)
             {
@@ -16,7 +27,6 @@
                     <div class="products-single fix">
                         <div class="box-img-hover">
                             <img src="~/images/@item.image" class="img-fluid" alt="Image">
-                          
                         </div>
                         <div class="why-text">
                             <h4>@item.ProductTypeName</h4>
@@ -24,7 +34,7 @@
                     </div>
                 </div>
             }
-         
+
         </div>
     </div>
 </div>
