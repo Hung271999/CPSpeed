@@ -23,8 +23,7 @@ namespace CPSeed.Models
         [StringLength(50)]
         public string image { get; set; }
 
-        public int CategoryPostID { get; set; }
-
+        public int CategoryID { get; set; }
 
         public bool? Status { get; set; }
         public bool? IsDeleted { get; set; }

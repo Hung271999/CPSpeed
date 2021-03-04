@@ -24,8 +24,14 @@ namespace CPSeed.Models
         public virtual DbSet<Provider> Providers { get; set; }
         public virtual DbSet<Store> Stores { get; set; }
         public virtual DbSet<Unit> Units { get; set; }
-        public virtual DbSet<CategoryPost> CategoryPosts { get; set; }
+        public virtual DbSet<Category> Categories { get; set; }
         public virtual DbSet<Post> Posts { get; set; }
+        public virtual DbSet<Contact> Contacts { get; set; }
+        public virtual DbSet<Slide> Slides { get; set; }
+        public virtual DbSet<News> News { get; set; }
+        public virtual DbSet<NewDetail> NewDetails { get; set; }
+
+        public virtual DbSet<Images> Images { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {

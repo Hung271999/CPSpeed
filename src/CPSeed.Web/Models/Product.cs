@@ -1,4 +1,4 @@
-namespace CPSeed.Models
+ namespace CPSeed.Models
 {
     using System;
     using System.Collections.Generic;
@@ -20,9 +20,7 @@ namespace CPSeed.Models
 
         [StringLength(50)]
         public string UnitName { get; set; }
-
-        [StringLength(50)]
-        public string ProductType { get; set; }
+        public int ProductTypeID { get; set; }
 
         [StringLength(20)]
         public string ProviderID { get; set; }
@@ -55,6 +53,11 @@ namespace CPSeed.Models
         public string CreateUser { get; set; }
 
         public DateTime UpdateDate { get; set; }
+        [MaxLength]
+        public string description { get; set; }
+
+        [StringLength(50)]
+        public string image { get; set; }
 
         [Required]
         [StringLength(256)]

@@ -7,11 +7,11 @@ using System.Web;
 
 namespace CPSeed.Models
 {
-    [Table("CategoryPost")]
-    public class CategoryPost
+    [Table("Category")]
+    public class Category
     {
      
-            public int CategoryPostID { get; set; }
+            public int CategoryID { get; set; }
 
             [StringLength(100)]
             public string Title { get; set; }

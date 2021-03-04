@@ -49,6 +49,12 @@
       <HintPath>..\..\..\lib\log4net.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="PagedList, Version=1.17.0.0, Culture=neutral, PublicKeyToken=abbb863e9397c5e1, processorArchitecture=MSIL">
+      <HintPath>..\packages\PagedList.1.17.0.0\lib\net40\PagedList.dll</HintPath>
+    </Reference>
+    <Reference Include="PagedList.Mvc, Version=4.5.0.0, Culture=neutral, PublicKeyToken=abbb863e9397c5e1, processorArchitecture=MSIL">
+      <HintPath>..\packages\PagedList.Mvc.4.5.0.0\lib\net40\PagedList.Mvc.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
@@ -188,25 +194,32 @@
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\NewsController.cs" />
+    <Compile Include="Controllers\ProductController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Models\CategoryPost.cs" />
+    <Compile Include="Models\Category.cs" />
+    <Compile Include="Models\Contact .cs" />
     <Compile Include="Models\CPSeedContext.cs" />
     <Compile Include="Models\Customer.cs" />
     <Compile Include="Models\ID\AccountViewModels.cs" />
     <Compile Include="Models\ID\IdentityModels.cs" />
     <Compile Include="Models\ID\ManageViewModels.cs" />
     <Compile Include="Models\Employee.cs" />
+    <Compile Include="Models\Images.cs" />
     <Compile Include="Models\Inventory.cs" />
     <Compile Include="Models\InventoryHistory.cs" />
     <Compile Include="Models\Invoice.cs" />
+    <Compile Include="Models\NewDetail.cs" />
+    <Compile Include="Models\News.cs" />
     <Compile Include="Models\Post.cs" />
     <Compile Include="Models\Product.cs" />
     <Compile Include="Models\ProductType.cs" />
     <Compile Include="Models\ProductUnit.cs" />
     <Compile Include="Models\Promotion.cs" />
     <Compile Include="Models\Provider.cs" />
+    <Compile Include="Models\Slide.cs" />
     <Compile Include="Models\Store.cs" />
     <Compile Include="Models\Unit.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -217,6 +230,7 @@
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\PagedList.css" />
     <Content Include="css\all.css" />
     <Content Include="css\animate.css" />
     <Content Include="css\baguetteBox.min.css" />
@@ -246,6 +260,7 @@
     <Content Include="images\banner-01.jpg" />
     <Content Include="images\banner-02.jpg" />
     <Content Include="images\banner-03.jpg" />
+    <Content Include="images\bg-section.png" />
     <Content Include="images\big-img-01.jpg" />
     <Content Include="images\big-img-02.jpg" />
     <Content Include="images\big-img-03.jpg" />
@@ -279,6 +294,10 @@
     <Content Include="images\img-pro-02.jpg" />
     <Content Include="images\img-pro-03.jpg" />
     <Content Include="images\img-pro-04.jpg" />
+    <Content Include="images\Product\img-pro-01.jpg" />
+    <Content Include="images\Product\img-pro-02.jpg" />
+    <Content Include="images\Product\img-pro-03.jpg" />
+    <Content Include="images\Product\img-pro-04.jpg" />
     <Content Include="images\ins-bg.jpg" />
     <Content Include="images\instagram-img-01.jpg" />
     <Content Include="images\instagram-img-02.jpg" />
@@ -297,6 +316,8 @@
     <Content Include="images\payment-icon\5.png" />
     <Content Include="images\payment-icon\6.png" />
     <Content Include="images\payment-icon\7.png" />
+    <Content Include="images\Post\1-home-linh-vuc-kd-637198923330584194.jpg" />
+    <Content Include="images\Post\2-home-cong-nghe-637198921068236084.jpg" />
     <Content Include="images\SLICE_SMALL_BANNER_4.jpg" />
     <Content Include="images\SLICE_SMALL_BANNER_6.jpg" />
     <Content Include="images\smp-img-01.jpg" />
@@ -383,6 +404,20 @@
     <Content Include="webfonts\fa-solid-900.woff2" />
     <Content Include="Views\Home\Vision_mission.cshtml" />
     <Content Include="Views\Home\ProductType.cshtml" />
+    <Content Include="Views\Home\News.cshtml" />
+    <Content Include="Views\Home\Contacts.cshtml" />
+    <Content Include="Views\Home\Slide.cshtml" />
+    <Content Include="Views\Home\Technology.cshtml" />
+    <Content Include="Views\Home\ProductTypeMenu.cshtml" />
+    <Content Include="Views\Product\Index.cshtml" />
+    <Content Include="Views\Product\productType.cshtml" />
+    <Content Include="Views\Product\productTypeDetail.cshtml" />
+    <Content Include="Views\Product\productDetail.cshtml" />
+    <Content Include="Views\Home\New.cshtml" />
+    <Content Include="Views\News\Index.cshtml" />
+    <Content Include="Views\News\events.cshtml" />
+    <Content Include="Views\News\News.cshtml" />
+    <Content Include="Views\News\Imagegallery.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
