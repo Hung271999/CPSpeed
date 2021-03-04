@@ -53,7 +53,7 @@
         public string CreateUser { get; set; }
 
         public DateTime UpdateDate { get; set; }
-        [MaxLength]
+        [Column(TypeName = "ntext")]
         public string description { get; set; }
 
         [StringLength(50)]

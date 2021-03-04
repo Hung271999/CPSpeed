@@ -39,6 +39,5 @@ namespace CPSeed.Controllers
             ViewBag.images = image;
             return View(product.Single());
         }
-
     }
 }

@@ -12,12 +12,12 @@ namespace CPSeed.Models
     {
         public int PostID { get; set; }
 
-        [StringLength(100)]
+        [Column(TypeName = "ntext")]
         public string Title { get; set; }
-        [MaxLength]
+        [Column(TypeName = "ntext")]
         public string Summary { get; set; }
 
-        [MaxLength]
+        [Column(TypeName = "ntext")]
         public string contents { get; set; }
 
         [StringLength(50)]
@@ -41,5 +41,6 @@ namespace CPSeed.Models
         [Required]
         [StringLength(256)]
         public string UpdateUser { get; set; }
+        public int Priority { get; set; }
     }
 }

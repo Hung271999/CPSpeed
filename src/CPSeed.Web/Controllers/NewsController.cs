@@ -4,6 +4,8 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using CPSeed.Models;
+using PagedList;
+using PagedList.Mvc;
 
 namespace CPSeed.Controllers
 {
@@ -15,19 +17,14 @@ namespace CPSeed.Controllers
         {
             return View();
         }
-
-        public ActionResult Newss(int? id)
-        {
-            var news = data.NewDetails.Where(n => n.NewsID == id).Take(4);
-            return View(news);
-        }
         public ActionResult events()
         {
             var events = data.NewDetails.Where(n => n.NewsID==2).Take(3).OrderBy(n=>n.CreateDate);
             return PartialView(events);
         }
-        public ActionResult News()
+        public ActionResult News(int ? status)
         {
+            ViewBag.Status = status;
             var News = data.NewDetails.Where(n => n.NewsID == 1).Take(3).OrderBy(n => n.CreateDate);
             return PartialView(News);
         }
@@ -36,11 +33,26 @@ namespace CPSeed.Controllers
             var Imagegallery = data.NewDetails.Where(n => n.NewsID == 3).Take(10).OrderBy(n => n.CreateDate);
             return PartialView(Imagegallery);
         }
-        public ActionResult Communicationcategory()
+        public ActionResult Communicationcategory(int? id)
         {
-            var Communicationcategory = data.News.ToList();
-            return PartialView(Communicationcategory);
+            var News = data.News.ToList();
+            ViewBag.Status = id;
+            return PartialView(News);
         }
-
+        public ActionResult NewsDetail(int? id)
+        {
+            News a = data.News.Where(n => n.NewsID == id).Single();
+            ViewBag.Title = a.Title;
+            ViewBag.id = id;
+            var news = data.NewDetails.Where(n => n.NewsID == id).ToList();
+            return View(news);
+        }
+        public ActionResult AllNews(int ? id, int ?page)
+        {
+            int pagesize = 6;
+            int pageNum = (page ?? 1);
+            var AllNews = data.NewDetails.Where(n=>n.NewsID==id).ToList();
+            return PartialView(AllNews.OrderBy(n=>n.CreateDate).ToPagedList(pageNum, pagesize));
+        }
     }
 }

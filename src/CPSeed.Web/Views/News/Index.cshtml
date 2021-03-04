@@ -1,5 +1,4 @@
-﻿
-@{
+﻿@{
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
@@ -26,7 +25,7 @@
                         <div class="tab-content">
                             <div role="tabpanel" class="tab-pane fade show active" id="grid-view">
                                 <div class="row">
-                                    @Html.Action("News", "News")
+                                    @Html.Action("News", "News",new { status=1 })
                                     @Html.Action("events", "News")
                                 </div>
                             </div>
@@ -45,9 +44,9 @@
                     </div>
                     <div class="filter-sidebar-left">
                         <div class="title-left">
-                            <h3>Danh sục sản phẩm</h3>
+                            <h3> Truyền thông</h3>
                         </div>
-                        @Html.Action("ProductType", "Product")
+                        @Html.Action("Communicationcategory", "News")
                     </div>
                 </div>
             </div>

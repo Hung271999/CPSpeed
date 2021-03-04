@@ -12,7 +12,7 @@ namespace CPSeed.Models
     {
         public int NewsID { get; set; }
 
-        [StringLength(100)]
+        [Column(TypeName = "ntext")]
         public string Title { get; set; }
 
         public bool? Status { get; set; }
@@ -30,6 +30,5 @@ namespace CPSeed.Models
         [Required]
         [StringLength(256)]
         public string UpdateUser { get; set; }
-
     }
 }

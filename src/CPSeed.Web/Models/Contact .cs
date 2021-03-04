@@ -11,11 +11,11 @@ namespace CPSeed.Models
     public class Contact
     {
         public int ContactID { get; set; }
-        [StringLength(100)]
+        [Column(TypeName = "ntext")]
         public string Title { get; set; }
-        [MaxLength]
+        [Column(TypeName = "ntext")]
         public string contents { get; set; }
-       [StringLength(30)]
+        [StringLength(30)]
         public string icons { get; set; }
         [StringLength(250)]
         public string url { get; set; }

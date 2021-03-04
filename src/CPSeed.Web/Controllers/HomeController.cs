@@ -35,9 +35,9 @@ namespace CPSeed.Controllers
 
             return View();
         }
-        public ActionResult Vision_mission()
+        public ActionResult Vision_mission(int ? id)
         {
-            Category CategoryPosts = data.Categories.Where(n => n.CategoryID == 1).Where(n => n.Status == true).SingleOrDefault();
+            Category CategoryPosts = data.Categories.Where(n => n.CategoryID == id).Where(n => n.Status == true).SingleOrDefault();
             ViewBag.Message = CategoryPosts;
             var vs = data.Posts.Where(n => n.CategoryID == 1).ToList();
             return PartialView(vs);
@@ -50,7 +50,7 @@ namespace CPSeed.Controllers
         }
         public ActionResult News()
         {
-            var News = data.NewDetails.OrderByDescending(n => n.CreateDate).Where(n=>n.Status==true).ToList();
+            var News = data.NewDetails.OrderByDescending(n => n.CreateDate).Where(n=>n.Status==true).Where(n=>n.Priority==1).ToList();
             return PartialView(News);
         }
         public ActionResult Contacts()
@@ -80,6 +80,11 @@ namespace CPSeed.Controllers
         {
             var New = data.News.OrderByDescending(n => n.CreateDate).Where(n => n.Status == true).ToList();
             return PartialView(New);
+        }
+        public ActionResult Pots(int ?id)
+        {
+            var Pots = data.Posts.OrderByDescending(n => n.CreateDate).Where(n => n.Status == true).Where(n=>n.CategoryID==id).ToList();
+            return PartialView(Pots);
         }
 
     }

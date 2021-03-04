@@ -1,11 +1,11 @@
 ﻿@model IEnumerable<CPSeed.Models.News>
 
 <li class="dropdown">
-    <a href="@Url.Action("Index","Product")" class="nav-link dropdown-toggle arrow" data-toggle="dropdown">Truyền thông</a>
+    <a href="@Url.Action("Index","News")" class="nav-link dropdown-toggle arrow" data-toggle="dropdown">Truyền thông</a>
     <ul class="dropdown-menu">
         @foreach (var item in Model)
         {
-            <li><a href="@Url.Action("productTypeDetail","Product", new {})">@item.Title</a></li>
+            <li><a href="@Url.Action("NewsDetail","News", new {id=item.NewsID})">@item.Title</a></li>
         }
     </ul>
 </li>

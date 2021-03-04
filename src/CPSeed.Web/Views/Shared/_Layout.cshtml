@@ -41,7 +41,7 @@
                     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-menu" aria-controls="navbars-rs-food" aria-expanded="false" aria-label="Toggle navigation">
                         <i class="fa fa-bars"></i>
                     </button>
-                    <a class="navbar-brand" href="index.html"><img src="~/images/12.png" class="logo" alt="" style="height:60px"></a>
+                    
                 </div>
                 <!-- End Header Navigation -->
                 <!-- Collect the nav links, forms, and other content for toggling -->
@@ -50,7 +50,9 @@
                         <li class="nav-item active"><a class="nav-link" href="~/">Home</a></li>
                         @Html.Action("ProductTypeMenu", "Home")
                         @Html.Action("New", "Home")
+                        @Html.Action("Pots", "Home", new { id = 3 })
                         @Html.Partial("_LoginPartial")
+                        <li class="nav-item active"><aclass="nav-link" href="~/">Liên h<a></li>
                     </ul>
                 </div>
                 <!-- /.navbar-collapse -->

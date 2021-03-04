@@ -1,8 +1,10 @@
-﻿@model IEnumerable<CPSeed.Models.NewDetail>
+﻿@model PagedList.IPagedList<CPSeed.Models.NewDetail>
+@using PagedList.Mvc;
+@using PagedList;
 <div class="container">
     <div class="row my-4">
         <div class="col-12">
-            <h2 class="noo-sh-title">Tin Tức</h2>
+            <h2 class="noo-sh-title">Danh sách tin</h2>
         </div>
         @foreach (var item in Model)
         {
@@ -26,9 +28,14 @@
             </div>
         }
     </div>
-            @if (ViewBag.Status == 1)
-            {
-                <a href="">Xem thêm</a>
-            }
-    <hr />
+    Trang @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber)/@Model.PageCount
+    <div style="text-align:center">
+        @Html.PagedListPager(Model, page => Url.Action("NewsDetail", new { page = page }))
+    </div>
+    <style>
+        .MenuTrang li {
+            display: inline;
+        }
+    </style>
+</div>
 </div>
