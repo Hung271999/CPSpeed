@@ -261,6 +261,7 @@
     <Content Include="images\banner-01.jpg" />
     <Content Include="images\banner-02.jpg" />
     <Content Include="images\banner-03.jpg" />
+    <Content Include="images\bg-section.png" />
     <Content Include="images\big-img-01.jpg" />
     <Content Include="images\big-img-02.jpg" />
     <Content Include="images\big-img-03.jpg" />

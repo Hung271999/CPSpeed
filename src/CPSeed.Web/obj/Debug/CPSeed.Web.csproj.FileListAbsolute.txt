@@ -344,3 +344,7 @@ D:\CPSpeed\src\CPSeed.Web\bin\PagedList.dll
 D:\CPSpeed\src\CPSeed.Web\bin\PagedList.Mvc.dll
 D:\CPSpeed\src\CPSeed.Web\bin\PagedList.xml
 D:\CPSpeed\src\CPSeed.Web\bin\PagedList.Mvc.xml
+D:\WebChallenge\CPSpeed\src\CPSeed.Web\bin\PagedList.dll
+D:\WebChallenge\CPSpeed\src\CPSeed.Web\bin\PagedList.Mvc.dll
+D:\WebChallenge\CPSpeed\src\CPSeed.Web\bin\PagedList.xml
+D:\WebChallenge\CPSpeed\src\CPSeed.Web\bin\PagedList.Mvc.xml

@@ -1,11 +1,11 @@
 ﻿@model IEnumerable<CPSeed.Models.Slide>
 
-<div id="slides-shop" class="cover-slides">
+<div id="slides-shop" class="cover-slides" style="height:675px;">
     <ul class="slides-container">
         @foreach (var item in Model)
         {
              <li class="text-center">
-            <img src="~/images/@item.image" alt="">
+            <img src="~/images/@item.image" alt="" class="img-slide">
             <div class="container">
                 <div class="row">
                     <div class="col-md-12">

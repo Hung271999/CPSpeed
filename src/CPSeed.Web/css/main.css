@@ -1,6 +1,6 @@
 ﻿.prev_arrow {
     position: absolute;
-    bottom: 47%;
+    bottom: 55%;
     left: -70px;
     color: #fff;
     width: 50px;
@@ -15,7 +15,7 @@
 
 .next_arrow {
     position: absolute;
-    bottom: 47%;
+    bottom: 55%;
     right: -70px;
     color: #fff;
     width: 50px;
@@ -26,4 +26,13 @@
     line-height: 50px;
     display: inline-block;
     cursor: pointer;
+}
+
+.vision-container{
+   /* background-image: url('/images/bg-section.png');*/
+    /*margin-top: -5px;*/
+}
+
+.img-slide{
+    top: 0px!important;
 }
