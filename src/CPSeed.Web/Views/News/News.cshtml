@@ -25,10 +25,11 @@
                 </div>
             </div>
         }
+        @if (ViewBag.Status == 1)
+        {
+              <a href="@Url.Action("NewsDetail","News", new {id=1})" style="margin-left:400px">Xem thêm</a>
+
+        }
     </div>
-            @if (ViewBag.Status == 1)
-            {
-                <a href="">Xem thêm</a>
-            }
     <hr />
 </div>

@@ -1,40 +1,106 @@
 ﻿@model IEnumerable<CPSeed.Models.ProductType>
-
+@using CPSeed.Models;
+@{
+    CPSeedContext data = new CPSeedContext();
+    var product = data.ProductTypes.OrderBy(n => n.CreateDate).Take(4).ToList();
+}
 <div class="row products-box">
     <div class="container">
         <div class="row">
+            <!-- Tiêu đề -->
             <div class="col-lg-12">
                 <div class="title-all text-center">
-                    <h1>SẢN PHẨM KINH DOANH</h1>
+                    <h1 style="font-size:40px">SẢN PHẨM KINH DOANH</h1>
                 </div>
             </div>
+            <!-- Tiêu đề -->
         </div>
+        <!-- All, Top featured, Best selle -->
         <div class="row">
             <div class="col-lg-12">
                 <div class="special-menu text-center">
                     <div class="button-group filter-button-group">
-                        <button class="" data-filter="*">All</button>
-                        <button data-filter=".top-featured" class="">Top featured</button>
-                        <button data-filter=".best-seller" class="active">Best seller</button>
+                        <button class="w3-bar-item w3-button tablink w3-red" onclick="openCity(event,'London')">All</button>
+                        <button class="w3-bar-item w3-button tablink" onclick="openCity(event,'Paris')">Top featured</button>
+                        <button class="w3-bar-item w3-button tablink" onclick="openCity(event,'Tokyo')">Best seller</button>
                     </div>
                 </div>
             </div>
         </div>
-        <div class="slider product-list">
-            @foreach (var item in Model)
-            {
-                <div class="col-lg-3 col-md-6 special-grid best-seller">
-                    <div class="products-single fix">
-                        <div class="box-img-hover">
-                            <img src="~/images/@item.image" class="img-fluid" alt="Image">
-                        </div>
-                        <div class="why-text">
-                            <h4>@item.ProductTypeName</h4>
+        <!-- All, Top featured, Best selle -->
+        <!-- All -->
+        <div id="London" class="w3-container w3-border city">
+            <div class="slider product-list">
+                @foreach (var item in Model)
+                {
+                    <div class="col-lg-3 col-md-6 special-grid best-seller">
+                        <div class="products-single fix">
+                            <div class="box-img-hover">
+                                <img src="~/images/@item.image" class="img-fluid" alt="Image" hre>
+                            </div>
+                            <div class="why-text">
+                                <h4><a href="@Url.Action("productTypeDetail", "ProDuct", new { id = item.ProductTypeID})">@item.ProductTypeName</a></h4>
+                            </div>
                         </div>
                     </div>
-                </div>
-            }
-
+                }
+            </div>
         </div>
+        <!-- All -->
+        <!-- Top featured -->
+        <div id="Paris" class="w3-container w3-border city" style="display:none">
+            <div class="row">
+                @foreach (var item in product)
+                {
+                    <div class="col-lg-3 col-md-6 special-grid best-seller">
+                        <div class="products-single fix">
+                            <div class="box-img-hover">
+                                <img src="~/images/@item.image" class="img-fluid" alt="Image" hre>
+                            </div>
+                            <div class="why-text">
+                                <h4><a href="@Url.Action("productTypeDetail", "ProDuct", new { id = item.ProductTypeID})">@item.ProductTypeName</a></h4>
+                            </div>
+                        </div>
+                    </div>
+                }
+            </div>
+        </div>
+        <!-- Top featured -->
+        <!-- Best seller -->
+        <div id="Tokyo" class="w3-container w3-border city" style="display:none">
+            <div class="row">
+                @foreach (var item in product)
+                {
+                    <div class="col-lg-3 col-md-6 special-grid best-seller">
+                        <div class="products-single fix">
+                            <div class="box-img-hover">
+                                <img src="~/images/@item.image" class="img-fluid" alt="Image" hre>
+                            </div>
+                            <div class="why-text">
+                                <h4><a href="@Url.Action("productTypeDetail", "ProDuct", new { id = item.ProductTypeID})">@item.ProductTypeName</a></h4>
+                            </div>
+                        </div>
+                    </div>
+                }
+            </div>
+        </div>
+        <!-- Best seller -->
     </div>
 </div>
+<!-- Srcips -->
+<script>
+    function openCity(evt, cityName) {
+        var i, x, tablinks;
+        x = document.getElementsByClassName("city");
+        for (i = 0; i < x.length; i++) {
+            x[i].style.display = "none";
+        }
+        tablinks = document.getElementsByClassName("tablink");
+        for (i = 0; i < x.length; i++) {
+            tablinks[i].className = tablinks[i].className.replace(" w3-red", "");
+        }
+        document.getElementById(cityName).style.display = "block";
+        evt.currentTarget.className += " w3-red";
+    }
+</script>
+<!-- Srcips -->

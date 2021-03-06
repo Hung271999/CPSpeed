@@ -1,0 +1,54 @@
+﻿@model PagedList.IPagedList<CPSeed.Models.Product>
+@using PagedList.Mvc;
+<style>
+    .MenuTrang li {
+        display: inline;
+    }
+</style>
+<div role="tabpanel" class="tab-pane fade" id="list-view">
+    <div class="list-view-box">
+        <div class="row">
+            @foreach (var item in Model)
+            {
+                <div class="col-sm-6 col-md-6 col-lg-4 col-xl-4">
+                    <div class="products-single fix">
+                        <div class="box-img-hover">
+                            <div class="type-lb">
+                                <p class="new">New</p>
+                            </div>
+                            <img src="~/images/Product/@item.image" class="img-fluid" alt="Image">
+                            <div class="mask-icon">
+                                <ul>
+                                    <li><a href="#" data-toggle="tooltip" data-placement="right" title="View"><i class="fas fa-eye"></i></a></li>
+                                    <li><a href="#" data-toggle="tooltip" data-placement="right" title="Compare"><i class="fas fa-sync-alt"></i></a></li>
+                                    <li><a href="#" data-toggle="tooltip" data-placement="right" title="Add to Wishlist"><i class="far fa-heart"></i></a></li>
+                                </ul>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-md-6 col-lg-8 col-xl-8">
+                    <div class="why-text full-width">
+                        <h4>@item.ProductName</h4>
+                        @if (item.SellPrice == null || item.SellPrice == 0)
+                        {
+                            <h5> @item.BuyPriceCurrent</h5>
+                        }
+                        else
+                        {
+                            <h5> <del>@item.BuyPriceCurrent VNĐ</del> @item.SellPrice</h5>
+                        }
+                        <p> @item.description</p>
+                        <a class="btn hvr-hover" href="#">Add to Cart</a>
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+    <div class="MenuTrang">
+        @Html.PagedListPager(Model, page => Url.Action("Products2", new { page }), PagedListRenderOptions.EnableUnobtrusiveAjaxReplacing(new AjaxOptions() { HttpMethod = "Get", UpdateTargetId = "product" }))
+    </div>
+</div>
+
+

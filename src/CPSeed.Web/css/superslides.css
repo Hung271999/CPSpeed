@@ -64,3 +64,13 @@
 .slides-pagination a.current {
   background: #222;
 }
+.instagram-box {
+    padding: 70px 0px;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -ms-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    width: 100%;
+    background-color: #f8f9fa;
+}

@@ -12,13 +12,23 @@ namespace CPSeed.Controllers
     {
         // GET: Product
         CPSeedContext data = new CPSeedContext();
-        public ActionResult Index(int ? page)
+        public ActionResult Index()
+        {    
+            return View();
+        }
+        public PartialViewResult GetPaging(int ? page)
         {
             int pagesize = 6;
             int pageNum = (page ?? 1);
-            var productType = data.ProductTypes.ToList();
             var product = data.Products.ToList();
-            return View(product.ToPagedList(pageNum, pagesize));
+            return PartialView("Product",product.ToPagedList(pageNum,pagesize));
+        }
+        public PartialViewResult Products2(int? page)
+        {
+            int pagesize = 6;
+            int pageNum = (page ?? 1);
+            var product = data.Products.ToList();
+            return PartialView(product.ToPagedList(pageNum, pagesize));
         }
         public ActionResult productType( int ?id)
         {

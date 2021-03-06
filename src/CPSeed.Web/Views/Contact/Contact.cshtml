@@ -1,0 +1,15 @@
+﻿@model IEnumerable<CPSeed.Models.Contact>
+
+<div class="col-lg-4 col-sm-12">
+    <div class="contact-info-left">
+        <h2>Thông tin liên hệ</h2>
+        <ul>
+            @foreach (var item in Model)
+            {
+                <li>
+                    <p><i class="@item.icons"></i>@item.Title <br>@item.contents<br> </p>
+                </li>
+            }
+        </ul>
+    </div>
+</div>

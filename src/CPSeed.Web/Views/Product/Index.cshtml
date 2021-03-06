@@ -1,10 +1,33 @@
-﻿@model PagedList.IPagedList<CPSeed.Models.Product>
-@using PagedList.Mvc;
+﻿@using PagedList.Mvc;
 @using CPSeed.Models;
 @{
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
+<style>
+    .pagination {
+        display: inline-block;
+    }
+
+        .pagination a {
+            color: black;
+            float: left;
+            padding: 8px 16px;
+            text-decoration: none;
+            transition: background-color .3s;
+            border: 1px solid #ddd;
+        }
+
+            .pagination a.active {
+                background-color: #4CAF50;
+                color: white;
+                border: 1px solid #4CAF50;
+            }
+
+            .pagination a:hover:not(.active) {
+                background-color: #ddd;
+            }
+</style>
 <!-- Start All Title Box -->
 <div class="all-title-box">
     <div class="container">
@@ -54,92 +77,15 @@
                             </ul>
                         </div>
                     </div>
-                    <div class="product-categorie-box">
+                    <div class="product-categorie-box" id="product">
                         <div class="tab-content">
-                            <div role="tabpanel" class="tab-pane fade show active" id="grid-view">
-                                <div class="row">
-                                    @foreach (var item in Model)
-                                    {
-                                        <div class="col-sm-6 col-md-6 col-lg-4 col-xl-4">
-                                            <div class="products-single fix">
-                                                <div class="box-img-hover">
-                                                    <div class="type-lb">
-                                                        <p class="sale">Sale</p>
-                                                    </div>
-                                                    <img src="~/images/Product/@item.image" class="img-fluid" alt="Image">
-                                                    <div class="mask-icon">
-                                                        <ul>
-                                                            <li><a href="#" data-toggle="tooltip" data-placement="right" title="View"><i class="fas fa-eye"></i></a></li>
-                                                            <li><a href="#" data-toggle="tooltip" data-placement="right" title="Compare"><i class="fas fa-sync-alt"></i></a></li>
-                                                            <li><a href="#" data-toggle="tooltip" data-placement="right" title="Add to Wishlist"><i class="far fa-heart"></i></a></li>
-                                                        </ul>
-                                                        <a class="cart" href="#">Add to Cart</a>
-                                                    </div>
-                                                </div>
-                                                <div class="why-text">
-                                                    <h4>@item.ProductName</h4>
-                                                    <h5> @item.BuyPriceCurrent</h5>
-
-                                                </div>
-                                            </div>
-                                        </div>
-                                    }
-                                </div>
-                                
-                                Trang @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber)/@Model.PageCount
-                            <div style="text-align:center">
-                                @Html.PagedListPager(Model, page => Url.Action("Index", new { page = page }))
-                            </div>
-                                <style>
-                                    .MenuTrang li {
-                                        display: inline;
-                                    }
-                                </style>
-                            </div>
-                            <div role="tabpanel" class="tab-pane fade" id="list-view">
-                                <div class="list-view-box">
-                                    <div class="row">
-                                        @foreach (var item in Model)
-                                        {
-                                            <div class="col-sm-6 col-md-6 col-lg-4 col-xl-4">
-                                                <div class="products-single fix">
-                                                    <div class="box-img-hover">
-                                                        <div class="type-lb">
-                                                            <p class="new">New</p>
-                                                        </div>
-                                                        <img src="~/images/Product/@item.image" class="img-fluid" alt="Image">
-                                                        <div class="mask-icon">
-                                                            <ul>
-                                                                <li><a href="#" data-toggle="tooltip" data-placement="right" title="View"><i class="fas fa-eye"></i></a></li>
-                                                                <li><a href="#" data-toggle="tooltip" data-placement="right" title="Compare"><i class="fas fa-sync-alt"></i></a></li>
-                                                                <li><a href="#" data-toggle="tooltip" data-placement="right" title="Add to Wishlist"><i class="far fa-heart"></i></a></li>
-                                                            </ul>
-
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="col-sm-6 col-md-6 col-lg-8 col-xl-8">
-                                                <div class="why-text full-width">
-                                                    <h4>@item.ProductName</h4>
-                                                    @if (item.SellPrice == null || item.SellPrice == 0)
-                                                    {
-                                                        <h5> @item.BuyPriceCurrent</h5>
-                                                    }
-                                                    else
-                                                    {
-                                                        <h5> <del>@item.BuyPriceCurrent VNĐ</del> @item.SellPrice</h5>
-                                                    }                                               
-                                                    <p> @item.description</p>
-                                                    <a class="btn hvr-hover" href="#">Add to Cart</a>
-                                                </div>
-                                            </div>
-                                        }
-                                    </div>
-                                </div>
-                            </div>
+                            @{Html.RenderAction("GetPaging", "Product", new { page = 1 }); }
+                           
+                                @{Html.RenderAction("Products2", "Product", new { page = 1 }); }
+                           
                         </div>
                     </div>
+                   
                 </div>
             </div>
             <div class="col-xl-3 col-lg-3 col-sm-12 col-xs-12 sidebar-shop-left">
@@ -162,4 +108,5 @@
         </div>
     </div>
 </div>
+
 <!-- End Shop Page -->
