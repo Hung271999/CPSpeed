@@ -18,10 +18,10 @@ namespace CPSeed.Models.Cart
         {
             get { return (double)(quantity * sSellPrice); }
         }
-        public Cart(String ProductID)
+        public Cart(string id)
         {
-            iProductID = ProductID;
-            Product product = data.Products.Single(n => n.ProductID == iProductID);
+            iProductID = id;
+            Product product = data.Products.Single(n => n.ProductID == id);
             sProductName = product.ProductName;
             simage = product.image;
             sSellPrice = double.Parse(product.SellPrice.ToString());

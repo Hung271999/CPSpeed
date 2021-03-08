@@ -9,19 +9,7 @@
     var products = data.Products.Where(n => n.ProductTypeID == Model.ProductTypeID).ToList();
     var list = data.Products.Where(n => n.ProductID != Model.ProductID).Take(6).OrderBy(n => n.CreateDate).ToList();
 }
-<div class="all-title-box">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-12">
-                <h2>Shop</h2>
-                <ul class="breadcrumb">
-                    <li class="breadcrumb-item"><a href="#">Home</a></li>
-                    <li class="breadcrumb-item active">Shop</li>
-                </ul>
-            </div>
-        </div>
-    </div>
-</div>
+@Html.Action("Banner", "Home", new { image = "2.jpg", title = "Sản Phẩm" })
 <div class="shop-detail-box-main">
     <div class="container">
         <div class="row">
@@ -43,17 +31,24 @@
                         <i class="fa fa-angle-right" aria-hidden="true"></i>
                         <span class="sr-only">Next</span>
                     </a>
-                    <ol class="carousel-indicators">
-                        <li data-target="#carousel-example-1" data-slide-to="0" class="active">
-                            <img class="d-block w-100 img-fluid" src="~/images/@Model.image" alt="">
-                        </li>
-                        @foreach (var item1 in ViewBag.images)
-                        {
-                            <li data-target="#carousel-example-1" data-slide-to="" class="">
-                                <img class="d-block w-100 img-fluid" src="~/images/@item1.url" alt="">
+                    @if (ViewBag.count > 0)
+                    {
+                        <ol class="carousel-indicators">
+                            <li data-target="#carousel-example-1" data-slide-to="0" class="active">
+                                <img class="d-block w-100 img-fluid" src="~/images/@Model.image" alt="">
                             </li>
-                        }
-                    </ol>
+                            @{
+                                int i = 1;
+                                foreach (var item1 in ViewBag.images)
+                                {
+                                    <li data-target="#carousel-example-1" data-slide-to="@i" class="">
+                                        <img class="d-block w-100 img-fluid" src="~/images/@item1.url" alt="">
+                                    </li>
+                                    i++;
+                                }
+                            }
+                        </ol>
+                    }
                 </div>
             </div>
             <div class="col-xl-7 col-lg-7 col-md-6">

@@ -95,6 +95,13 @@ namespace CPSeed.Controllers
             var Pots = data.Posts.OrderByDescending(n => n.CreateDate).Where(n => n.Status == true).Where(n=>n.CategoryID==id).ToList();
             return PartialView(Pots);
         }
+        public ActionResult Banner(string image,string title)
+        {
+            ViewBag.title = title;
+            ViewBag.image = image;
+            return PartialView();
+        }
+
 
     }
 }

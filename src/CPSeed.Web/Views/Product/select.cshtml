@@ -1,0 +1,75 @@
+﻿@model PagedList.IPagedList<CPSeed.Models.Product>
+@using PagedList.Mvc;
+@using CPSeed.Models;
+<style>
+    .pagination {
+        display: inline-block;
+    }
+
+        .pagination a {
+            color: black;
+            float: left;
+            padding: 8px 16px;
+            text-decoration: none;
+            transition: background-color .3s;
+            border: 1px solid #ddd;
+        }
+
+            .pagination a.active {
+                background-color: #4CAF50;
+                color: white;
+                border: 1px solid #4CAF50;
+            }
+
+            .pagination a:hover:not(.active) {
+                background-color: #ddd;
+            }
+
+    .MenuTrang li {
+        display: inline;
+    }
+</style>
+<div role="tabpanel" class="tab-pane fade show active" id="grid-view">
+    <div class="row">
+        @foreach (var item in Model)
+        {
+            <div class="col-sm-6 col-md-6 col-lg-4 col-xl-4">
+                <div class="products-single fix">
+                    <div class="box-img-hover">
+                        <div class="type-lb">
+                            @{
+                                DateTime a = Convert.ToDateTime(item.CreateDate);
+                                DateTime b = Convert.ToDateTime(DateTime.Now);
+                                TimeSpan Time = b - a;
+                                int TongSoNgay = Time.Days;
+                            }
+                            @if (TongSoNgay < 20)
+                            {
+                                <p class="new">New</p>
+                            }
+
+                        </div>
+                        <img src="~/images/Product/@item.image" class="img-fluid" alt="Image">
+                        <div class="mask-icon">
+                            <ul>
+                                <li><a href="@Url.Action("productDetail", "ProDuct", new { id = item.ProductID})" data-toggle="tooltip" data-placement="right" title="View"><i class="fas fa-eye"></i></a></li>
+                                <li><a href="#" data-toggle="tooltip" data-placement="right" title="Add to Wishlist"><i class="far fa-heart"></i></a></li>
+                            </ul>
+                            <a class="cart" href="#">Add to Cart</a>
+                        </div>
+                    </div>
+                    <div class="why-text">
+                        <h4>@item.ProductName</h4>
+                        <h5>@item.SellPrice</h5>
+
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+    <div class="MenuTrang" style="text-align:center">
+        @Html.PagedListPager(Model, page => Url.Action("select", new { value = ViewBag.value, page}), PagedListRenderOptions.EnableUnobtrusiveAjaxReplacing(new AjaxOptions() { HttpMethod = "Get", UpdateTargetId = "grid-view" }));
+    </div>
+
+</div>
+

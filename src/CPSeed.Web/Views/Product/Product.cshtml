@@ -5,7 +5,6 @@
         display: inline;
     }
 </style>
-
 <div role="tabpanel" class="tab-pane fade show active" id="grid-view">
     <div class="row">
         @foreach (var item in Model)
@@ -13,22 +12,17 @@
             <div class="col-sm-6 col-md-6 col-lg-4 col-xl-4">
                 <div class="products-single fix">
                     <div class="box-img-hover">
-                        <div class="type-lb">
-                            <p class="sale">Sale</p>
-                        </div>
                         <img src="~/images/Product/@item.image" class="img-fluid" alt="Image">
                         <div class="mask-icon">
                             <ul>
-                                <li><a href="#" data-toggle="tooltip" data-placement="right" title="View"><i class="fas fa-eye"></i></a></li>
-                                <li><a href="#" data-toggle="tooltip" data-placement="right" title="Compare"><i class="fas fa-sync-alt"></i></a></li>
-                                <li><a href="#" data-toggle="tooltip" data-placement="right" title="Add to Wishlist"><i class="far fa-heart"></i></a></li>
+                                <li><a href="@Url.Action("productDetail", "ProDuct", new { id = item.ProductID})"data-toggle="tooltip" data-placement="right" title="Xem ngay"><i class="fas fa-eye"></i></a></li>                           
                             </ul>
-                            <a class="cart" href="#">Add to Cart</a>
+                            <a class="cart" href="#">Thêm vào giỏ hàng</a>
                         </div>
                     </div>
                     <div class="why-text">
                         <h4>@item.ProductName</h4>
-                        <h5> @item.BuyPriceCurrent</h5>
+                        <h5> @item.SellPrice VNĐ</h5>
 
                     </div>
                 </div>

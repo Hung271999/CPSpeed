@@ -3,19 +3,7 @@
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
-<div class="all-title-box">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-12">
-                <h2>Shop</h2>
-                <ul class="breadcrumb">
-                    <li class="breadcrumb-item"><a href="#">Home</a></li>
-                    <li class="breadcrumb-item active">Shop</li>
-                </ul>
-            </div>
-        </div>
-    </div>
-</div>
+@Html.Action("Banner", "Home", new { image = "4.jpg", title = "Tuyển dụng" })
 <div class="about-box-main">
     <div class="container">
         <div class="row my-4">
@@ -50,13 +38,9 @@
                             <div class="toolbar-sorter-right">
                                 <span>Sort by </span>
                                 <select id="basic" class="selectpicker show-tick form-control" data-placeholder="$ USD">
-                                    <option data-display="Select">Nothing</option>
-                                    <option value="hr">Giáo ca → Gía thấp</option>
-                                    <option value="3">Giá thấp → Giá cao</option>
-                                    <option value="4">Bán chạy nhất</option>
                                 </select>
                             </div>
-                            <p> Đã tìm thấy @ViewBag.Count sản phẩm</p>
+                            <p> Số lượng: tin</p>
                         </div>
                     </div>
                     <div class="product-categorie-box">
