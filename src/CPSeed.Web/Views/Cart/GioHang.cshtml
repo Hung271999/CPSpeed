@@ -36,11 +36,11 @@
                                         </a>
                                     </td>
                                     <td class="price-pr">
-                                        <p>@item.sSellPrice</p>
+                                        <p class="price-@item.iProductID">@item.sSellPrice</p>
                                     </td>
-                                    <td class="quantity-box"><input type="number" size="4" value="@item.quantity" min="0" step="1" class="c-input-text qty text"></td>
+                                    <td class="quantity-box"><input type="number" size="4" value="@item.quantity" min="0" step="1" class="c-input-text qty text quantity-@item.iProductID   " itemid="@item.iProductID" oninput="UpdateQuantity(this)"></td>
                                     <td class="total-pr">
-                                        <p>@item.total</p>
+                                        <p class="total-@item.iProductID">@item.total</p>
                                     </td>
                                     <td class="remove-pr">
                                         <a href="#">

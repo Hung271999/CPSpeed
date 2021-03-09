@@ -92,7 +92,13 @@
     <div id="multiple">
         @RenderBody()
     </div>
+    <!-- cart noti -->
+    <div class="cart-noti font-weight-bold  d-none">
+        <i class="fas fa-check-circle text-info"></i>
+        <span>Đã thêm vào giỏ hàng.</span>
+    </div>
     <!-- Start Footer  -->
+
     <div class="footer-main">
         <div class="container">
             <!-- Footer thông tin liên lạc  -->
@@ -180,6 +186,87 @@
                 },
                 error: function () {
                     alert('Có lỗi xảy ra.')
+                }
+            });
+        }
+    </script>
+    <script type="text/javascript">
+        function AddToCart(item) {
+
+            $('.cart').click(function (event) {
+                event.preventDefault();
+            });
+
+            var id = $(item).attr('itemid');
+            var obj = {
+                id: id
+            };
+
+            console.log(obj);
+
+            $.ajax({
+                url: "/Cart/AddToCart",
+                method: "POST",
+                data: obj,
+                success: function (data) {
+                    //$('#cart-counter').text(data);
+                    $('.cart-noti').removeClass('d-none');
+                    $('.cart-noti').fadeIn();
+                    setTimeout(function () {
+                        $('.cart-noti').fadeOut();
+                    }, 900);
+                    console.log(data);
+                },
+                error: function () {
+                    alert('There are some problems to add item.');
+                }
+            });
+        }
+
+        function AddToCartInProductDetails(item) {
+            //var id = $(item).attr('itemid');
+            //var count = $('.quantity').val();
+            var obj = {
+                id: $(item).attr('itemid'),
+                count: $('.quantity').val().trim()
+            };
+            $.ajax({
+                url: "/Cart/AddToCartInDetails",
+                method: "POST",
+                data: obj,
+                success: function (data) {
+                    //$('#cart-counter').text(data);
+                    $('.cart-noti').removeClass('d-none');
+                    $('.cart-noti').fadeIn();
+                    setTimeout(function () {
+                        $('.cart-noti').fadeOut();
+                    }, 900);
+                },
+                error: function () {
+                    alert('There are some problems to add item.');
+                }
+            });
+        }
+
+        function UpdateQuantity(item) {
+            var id = $(item).attr('itemid');
+            var count = $(".quantity-" + id).val();
+            var obj = {
+                id: id,
+                count: count
+            }
+            $.ajax({
+                url: '/Cart/UpdateQuantity',
+                method: 'POST',
+                data: obj,
+                success: function (data) {
+                    let quantity = $(".quantity-" + id).val();
+                    let price = $(".price-" + id).text();
+                    let total = quantity * price;
+                    $('.total-' + id).text(total.toString());
+                },
+                error: function () {
+                    alert('there is some problem.')
                 }
             });
         }

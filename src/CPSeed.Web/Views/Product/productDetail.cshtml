@@ -64,7 +64,7 @@
                         <li>
                             <div class="form-group quantity-box">
                                 <label class="control-label">Số lượng</label>
-                                <input class="form-control" value="0" min="0" max="20" type="number">
+                                <input class="cart form-control quantity" value="1" min="1" max="200" type="number">
                             </div>
                         </li>
                     </ul>
@@ -72,7 +72,7 @@
                     <div class="price-box-bar">
                         <div class="cart-and-bay-btn">
                             <a class="btn hvr-hover" data-fancybox-close="" href="#">Mua ngay</a>
-                            <a class="btn hvr-hover" data-fancybox-close="" href="@Url.Action("ThemGiohang","Cart", new {ProductID=Model.ProductID, strURL=Request.Url.ToString()})">Thêm vào giỏ hàng</a>
+                            <a style="color:white!important;" class="btn hvr-hover" data-fancybox-close=""  itemid="@Model.ProductID" onclick="AddToCartInProductDetails(this)">Thêm vào giỏ hàng</a>
                         </div>
                     </div>
                 </div>
