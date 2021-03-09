@@ -63,7 +63,7 @@
                     <ul>
                         <li>
                             <div class="form-group quantity-box">
-                                <label class="control-label">Quantity</label>
+                                <label class="control-label">Số lượng</label>
                                 <input class="form-control" value="0" min="0" max="20" type="number">
                             </div>
                         </li>
@@ -71,8 +71,8 @@
 
                     <div class="price-box-bar">
                         <div class="cart-and-bay-btn">
-                            <a class="btn hvr-hover" data-fancybox-close="" href="#">Buy New</a>
-                            <a class="btn hvr-hover" data-fancybox-close="" href="@Url.Action("ThemGiohang","Cart", new {ProductID=Model.ProductID, strURL=Request.Url.ToString()})">Add to cart</a>
+                            <a class="btn hvr-hover" data-fancybox-close="" href="#">Mua ngay</a>
+                            <a class="btn hvr-hover" data-fancybox-close="" href="@Url.Action("ThemGiohang","Cart", new {ProductID=Model.ProductID, strURL=Request.Url.ToString()})">Thêm vào giỏ hàng</a>
                         </div>
                     </div>
                 </div>
@@ -102,8 +102,9 @@
 
         <div class="row my-5">
             <div class="col-lg-12">
-                <div class="title-all text-center">
-                    <h1>Sản phẩm cùng loại</h1>
+                <div class="title-all text-left">
+                    <h1>SẢN PHẨM CÙNG LOẠI</h1>
+                    <hr />
                 </div>
                 <div class="featured-products-box owl-carousel owl-theme owl-loaded owl-drag">
                     <div class="owl-stage-outer">

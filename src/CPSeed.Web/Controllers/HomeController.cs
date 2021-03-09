@@ -101,7 +101,25 @@ namespace CPSeed.Controllers
             ViewBag.image = image;
             return PartialView();
         }
-
+        public ActionResult product(int ? status)
+        {
+            if (status == null)
+            {
+                var productType = data.ProductTypes.ToList();
+                return PartialView(productType);
+            }
+            else if (status == 1)
+            {
+                ViewBag.status = 1;
+                var product = data.Products.OrderBy(n => n.CreateDate).ToList();
+                return PartialView(product);
+            }
+            else
+            {
+                return PartialView();
+            }
+            return PartialView();
+        }
 
     }
 }
