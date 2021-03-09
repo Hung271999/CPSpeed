@@ -141,5 +141,74 @@ namespace CPSeed.Controllers
             return View(lstGiohang);
         }
 
+        [HttpPost]
+        public JsonResult AddToCart(string id)
+        {
+            List<Cart> lstGiohang = Laygiohang();
+            Cart sanpham = lstGiohang.Find(n => n.iProductID == id);
+            if (sanpham == null)
+            {
+                sanpham = new Cart(id);
+                lstGiohang.Add(sanpham);
+            }
+            else
+            {
+                sanpham.quantity++;
+            }
+
+            var counter = lstGiohang.Sum(x => x.quantity);
+
+            return Json(counter, JsonRequestBehavior.AllowGet);
+        }
+
+        [HttpPost]
+        public JsonResult AddToCartInDetails(string id, int count)
+        {
+
+            List<Cart> lstGiohang = Laygiohang();
+            Cart cartItem = lstGiohang.Find(x => x.iProductID == id);
+
+            if (cartItem == null)
+            {
+                cartItem = new Cart(id);
+                cartItem.quantity = count;
+                lstGiohang.Add(cartItem);
+            }
+            else
+            {
+                cartItem.quantity += count;
+            }
+
+            var counter = lstGiohang.Sum(x => x.quantity);
+
+            return Json(counter, JsonRequestBehavior.AllowGet);
+        }
+
+        public ActionResult RemoveFromCart(string id, string strURL)
+        {
+            List<Cart> lstGiohang = Laygiohang();
+            Cart item = lstGiohang.SingleOrDefault(x => x.iProductID == id);
+            if (item != null)
+            {
+                lstGiohang.RemoveAll(x => x.iProductID == id);
+            }
+
+            return Redirect(strURL);
+        }
+
+        [HttpPost]
+        public JsonResult UpdateQuantity(string id, int count)
+        {
+            List<Cart> lstGiohang = Laygiohang();
+            Cart cartItem = lstGiohang.Find(x => x.iProductID == id);
+
+            cartItem.quantity = count;
+
+            var counter = cartItem.quantity;
+            //var total = String.Format("{0:0,0}", TotalMoney());
+
+            return Json(new { count = counter }, JsonRequestBehavior.AllowGet);
+        }
+
     }
 }
