@@ -101,25 +101,31 @@ namespace CPSeed.Controllers
             ViewBag.image = image;
             return PartialView();
         }
-        public ActionResult product(int ? status)
-        {
-            if (status == null)
-            {
-                var productType = data.ProductTypes.ToList();
-                return PartialView(productType);
+        public ActionResult Seach(string key)
+        {       
+            if (!String.IsNullOrEmpty(key))
+            { 
+                var product = data.Products.Where(n => n.ProductName.Contains(key)).ToList();
+                if (product.Count()==0)
+                {
+                    ViewBag.Status = 1;
+                    var news = data.NewDetails.Where(n => n.Title.Contains(key)).ToList();
+                    if(news.Count()==0)
+                    {
+                        ViewBag.Status = 2;
+                        return PartialView();
+                    }
+                    else
+                    return PartialView(news);
+                }
+                else
+                {
+                    return PartialView(product);
+                }
             }
-            else if (status == 1)
-            {
-                ViewBag.status = 1;
-                var product = data.Products.OrderBy(n => n.CreateDate).ToList();
-                return PartialView(product);
-            }
-            else
-            {
-                return PartialView();
-            }
-            return PartialView();
-        }
 
+            return View();
+        }
+       
     }
 }

@@ -43,7 +43,7 @@ namespace CPSeed
                       "~/Content/bootstrap.css",
                       "~/Content/site.css"));
             bundles.Add(new StyleBundle("~/Contents/css").Include(
-                      "~/css/bootstrap.min.css",
+                      "~/css/bootstrap.min.css",                  
                       "~/css/style.css",
                        "~/css/responsive.css",
                        "~/css/custom.css"));

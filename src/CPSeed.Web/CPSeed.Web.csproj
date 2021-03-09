@@ -246,6 +246,7 @@
     <Content Include="css\code_animate.css" />
     <Content Include="css\custom.css" />
     <Content Include="css\jquery-ui.css" />
+    <Content Include="css\login.css" />
     <Content Include="css\main.css" />
     <Content Include="css\owl.carousel.min.css" />
     <Content Include="css\responsive.css" />
@@ -457,6 +458,8 @@
     <Content Include="Views\Product\select.cshtml" />
     <Content Include="Views\Home\featured.cshtml" />
     <Content Include="Views\Home\Banner.cshtml" />
+    <Content Include="Views\Seach\Index.cshtml" />
+    <Content Include="Views\Home\Seach.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -26,11 +26,11 @@
     <!--js  -->
     <link href="~/Scripts/jquery.validate.unobtrusive.min.js" rel="stylesheet" />
     <script src="https://cdn.tiny.cloud/1/x863nqkjuo6tfzhecu7j78hea7txwu6n7ky3durf03u5rmc4/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>
-    
+    <link href='http://fonts.googleapis.com/css?family=Oxygen:400,300,700|Open+Sans:400,300,600,700' rel='stylesheet' type='text/css'>
     <!-- Bootstrap CSS -->
     @Styles.Render("~/Contents/css")
     @Scripts.Render("~/bundles/modernizr")
- 
+
 </head>
 
 <body>
@@ -44,7 +44,7 @@
                     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-menu" aria-controls="navbars-rs-food" aria-expanded="false" aria-label="Toggle navigation">
                         <i class="fa fa-bars"></i>
                     </button>
-                    <a class="navbar-brand" href="./"><img src="~/images/logo.png" class="logo" alt="" style="width:400px; margin-left:-200px"></a>
+                    <a class="navbar-brand" href="@Url.Action("Index","Home")"><img src="~/images/logo.png" class="logo" alt="" style="width:400px; margin-left:-200px"></a>
                 </div>
                 <!-- Logo -->
                 <!-- Thanh điều hướng -->
@@ -62,7 +62,7 @@
                 <!-- Giỏ hàng -->
                 <div class="attr-nav">
                     <ul>
-                        <li class="search"><a href="#"><i class="fa fa-search"></i></a></li>
+                        <li class="search"><a href=""><i class="fa fa-search"></i></a></li>
                         <li class="side-menu">
                             <a href="@Url.Action("GioHang","Cart")">
                                 <i class="fa fa-shopping-bag"></i>
@@ -83,13 +83,15 @@
         <div class="container">
             <div class="input-group">
                 <span class="input-group-addon"><i class="fa fa-search"></i></span>
-                <input type="text" class="form-control" placeholder="Search">
+                <input type="text" class="form-control" placeholder="Search" id="myInput" onchange="getInputValue()">
                 <span class="input-group-addon close-search"><i class="fa fa-times"></i></span>
             </div>
         </div>
     </div>
     <!-- Tìm kiếm -->
-    @RenderBody()
+    <div id="multiple">
+        @RenderBody()
+    </div>
     <!-- Start Footer  -->
     <div class="footer-main">
         <div class="container">
@@ -137,7 +139,6 @@
     </div>
     <!-- Footer copy right  -->
     <!-- End Footer  -->
-
     <!-- Scrips  -->
     <a href="#" id="back-to-top" title="Back to top" style="display: none;">&uarr;</a>
     @Scripts.Render("~/bundles/bootstrap")
@@ -164,6 +165,24 @@
             tinycomments_mode: 'embedded',
             tinycomments_author: 'Author name',
         });
+
+        function getInputValue() {
+            // Selecting the input element and get its value
+            var inputVal = document.getElementById("myInput").value;
+            var booksDiv = $("#multiple")
+            $.ajax({
+                url: '/Home/Seach',
+                type: 'GET',
+                data: { "key": inputVal },
+                dataType: 'html',
+                success: function (data) {
+                    booksDiv.html(data);
+                },
+                error: function () {
+                    alert('Có lỗi xảy ra.')
+                }
+            });
+        }
     </script>
     <!-- Scrips  -->
 </body>
