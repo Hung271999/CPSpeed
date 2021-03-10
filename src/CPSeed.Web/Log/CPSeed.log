@@ -1669,3 +1669,16 @@
 2021-03-09 17:56:47,312 [CPSeed.Util.Common] [1] DEBUG CPSeed.Util.Common - InitLog4Net completed
 2021-03-09 18:19:02,996 [CPSeed.Util.Common] [1] DEBUG CPSeed.Util.Common - Init log4net completed
 2021-03-09 18:19:03,000 [CPSeed.Util.Common] [1] DEBUG CPSeed.Util.Common - InitLog4Net completed
+2021-03-09 22:50:41,184 [CPSeed.Util.Common] [1] DEBUG CPSeed.Util.Common - Init log4net completed
+2021-03-09 22:50:41,191 [CPSeed.Util.Common] [1] DEBUG CPSeed.Util.Common - InitLog4Net completed
+2021-03-09 22:53:27,973 [CPSeed.Util.Common] [1] DEBUG CPSeed.Util.Common - Init log4net completed
+2021-03-09 22:53:27,982 [CPSeed.Util.Common] [1] DEBUG CPSeed.Util.Common - InitLog4Net completed
+2021-03-09 22:56:40,250 [CPSeed.Controllers.AccountController] [7] DEBUG CPSeed.Controllers.AccountController - Begin Register...
+2021-03-09 23:14:15,040 [CPSeed.Util.Common] [1] DEBUG CPSeed.Util.Common - Init log4net completed
+2021-03-09 23:14:15,047 [CPSeed.Util.Common] [1] DEBUG CPSeed.Util.Common - InitLog4Net completed
+2021-03-09 23:23:43,880 [CPSeed.Util.Common] [45] DEBUG CPSeed.Util.Common - Init log4net completed
+2021-03-09 23:23:43,882 [CPSeed.Util.Common] [45] DEBUG CPSeed.Util.Common - InitLog4Net completed
+2021-03-09 23:29:18,857 [CPSeed.Util.Common] [18] DEBUG CPSeed.Util.Common - Init log4net completed
+2021-03-09 23:29:18,859 [CPSeed.Util.Common] [18] DEBUG CPSeed.Util.Common - InitLog4Net completed
+2021-03-10 17:35:43,133 [CPSeed.Util.Common] [1] DEBUG CPSeed.Util.Common - Init log4net completed
+2021-03-10 17:35:43,153 [CPSeed.Util.Common] [1] DEBUG CPSeed.Util.Common - InitLog4Net completed
