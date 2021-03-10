@@ -460,6 +460,7 @@
     <Content Include="Views\Home\Banner.cshtml" />
     <Content Include="Views\Seach\Index.cshtml" />
     <Content Include="Views\Home\Seach.cshtml" />
+    <Content Include="Views\Cart\TotalMoney.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

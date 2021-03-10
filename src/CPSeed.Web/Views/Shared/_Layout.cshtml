@@ -202,8 +202,6 @@
                 id: id
             };
 
-            console.log(obj);
-
             $.ajax({
                 url: "/Cart/AddToCart",
                 method: "POST",
@@ -215,7 +213,6 @@
                     setTimeout(function () {
                         $('.cart-noti').fadeOut();
                     }, 900);
-                    console.log(data);
                 },
                 error: function () {
                     alert('There are some problems to add item.');
@@ -264,9 +261,24 @@
                     let price = $(".price-" + id).text();
                     let total = quantity * price;
                     $('.total-' + id).text(total.toString());
+                    $('.grand-total').text(data.totalMoney.toString());
                 },
                 error: function () {
                     alert('there is some problem.')
+                }
+            });
+        }
+
+        function totalMoney() {
+            $.ajax({
+                url: '/Cart/TotalMoney',
+                method: 'POST',
+                data: null,
+                success: function (data) {
+                    console.log(data)
+                },
+                error: function () {
+                    alert('there are some problems.')
                 }
             });
         }

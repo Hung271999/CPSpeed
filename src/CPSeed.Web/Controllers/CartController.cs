@@ -76,6 +76,19 @@ namespace CPSeed.Controllers
             }
             return iTongTien;
         }
+
+        public ActionResult TotalMoney()
+        {
+            List<Cart> lstGiohang = Session["Cart"] as List<Cart>;
+            if (lstGiohang != null)
+            {
+                ViewBag.Total = TongTien();
+                return PartialView();
+            }
+            ViewBag.Total = 0;
+            return PartialView(); ;
+        }
+
         public ActionResult GiohangPartial()
         {
             if (TongSoLuong() == 0)
@@ -205,9 +218,11 @@ namespace CPSeed.Controllers
             cartItem.quantity = count;
 
             var counter = cartItem.quantity;
+            var total = TongTien();
             //var total = String.Format("{0:0,0}", TotalMoney());
 
-            return Json(new { count = counter }, JsonRequestBehavior.AllowGet);
+
+            return Json(new { count = counter, totalMoney = total }, JsonRequestBehavior.AllowGet);
         }
 
     }
