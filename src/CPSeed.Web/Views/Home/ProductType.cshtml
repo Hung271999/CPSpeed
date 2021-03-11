@@ -2,7 +2,7 @@
 @using CPSeed.Models;
 @{
     CPSeedContext data = new CPSeedContext();
-    var product = data.ProductTypes.OrderBy(n => n.CreateDate).Take(4).ToList();
+    var product = data.ProductTypes.OrderBy(n => n.CreateDate).Take(3).ToList();
 }
 <div class="row products-box">
     <div class="container">
@@ -36,7 +36,7 @@
                     <div class="col-lg-3 col-md-6 special-grid best-seller">
                         <div class="products-single fix">
                             <div class="box-img-hover">
-                                <img src="~/images/@item.image" class="img-fluid" alt="Image" hre>
+                                <img src="~/images/producttype/@item.image" class="img-fluid" alt="Image" hre>
                             </div>
                             <div class="why-text">
                                 <h4><a href="@Url.Action("productTypeDetail", "ProDuct", new { id = item.ProductTypeID})">@item.ProductTypeName</a></h4>
@@ -52,16 +52,16 @@
             <div class="row">
                 @foreach (var item in product)
                 {
-                    <div class="col-lg-3 col-md-6 special-grid best-seller">
-                        <div class="products-single fix">
-                            <div class="box-img-hover">
-                                <img src="~/images/@item.image" class="img-fluid" alt="Image" hre>
-                            </div>
-                            <div class="why-text">
-                                <h4><a href="@Url.Action("productTypeDetail", "ProDuct", new { id = item.ProductTypeID})">@item.ProductTypeName</a></h4>
-                            </div>
+                <div class="col-lg-3 col-md-6 special-grid best-seller">
+                    <div class="products-single fix">
+                        <div class="box-img-hover">
+                            <img src="~/images/producttype/@item.image" class="img-fluid" alt="Image" hre>
+                        </div>
+                        <div class="why-text">
+                            <h4><a href="@Url.Action("productTypeDetail", "ProDuct", new { id = item.ProductTypeID})">@item.ProductTypeName</a></h4>
                         </div>
                     </div>
+                </div>
                 }
             </div>
         </div>
@@ -71,16 +71,16 @@
             <div class="row">
                 @foreach (var item in product)
                 {
-                    <div class="col-lg-3 col-md-6 special-grid best-seller">
-                        <div class="products-single fix">
-                            <div class="box-img-hover">
-                                <img src="~/images/@item.image" class="img-fluid" alt="Image" hre>
-                            </div>
-                            <div class="why-text">
-                                <h4><a href="@Url.Action("productTypeDetail", "ProDuct", new { id = item.ProductTypeID})">@item.ProductTypeName</a></h4>
-                            </div>
+                <div class="col-lg-3 col-md-6 special-grid best-seller">
+                    <div class="products-single fix">
+                        <div class="box-img-hover">
+                            <img src="~/images/producttype/@item.image" class="img-fluid" alt="Image" hre>
+                        </div>
+                        <div class="why-text">
+                            <h4><a href="@Url.Action("productTypeDetail", "ProDuct", new { id = item.ProductTypeID})">@item.ProductTypeName</a></h4>
                         </div>
                     </div>
+                </div>
                 }
             </div>
         </div>
