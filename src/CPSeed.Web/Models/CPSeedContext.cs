@@ -33,6 +33,10 @@ namespace CPSeed.Models
 
         public virtual DbSet<Images> Images { get; set; }
         public virtual DbSet<Contactus> Contactus { get; set; }
+        public virtual DbSet<Order> Orders { get; set; }
+
+        public virtual DbSet<OrderDetail> OrderDetails { get; set; }
+
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {

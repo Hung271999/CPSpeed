@@ -55,7 +55,7 @@
                         @Html.Action("New", "Home")
                         @Html.Action("Pots", "Home", new { id = 3 })
                         @Html.Partial("_LoginPartial")
-                        <li class="nav-item"><a class="nav-link" href="@Url.Action("GioHang","Cart")">Liên hệ</a></li>
+                        <li class="nav-item"><a class="nav-link" href="@Url.Action("Index","Contact")">Liên hệ</a></li>
                     </ul>
                 </div>
                 <!-- Thanh điều hướng -->
@@ -63,12 +63,10 @@
                 <div class="attr-nav">
                     <ul>
                         <li class="search"><a href=""><i class="fa fa-search"></i></a></li>
-                        <li class="side-menu">
-                            <a href="@Url.Action("GioHang","Cart")">
-                                <i class="fa fa-shopping-bag"></i>
-                                <span class="badge">3</span>
-                                <p>My Cart</p>
-                            </a>
+                        <li class=" ">
+                            <a href="@Url.Action("GioHang","Cart")"><i class="fa fa-shopping-bag"></i>           
+                                                                    <b> Giỏ Hàng</b>
+      </a>
                         </li>
                     </ul>
                 </div>

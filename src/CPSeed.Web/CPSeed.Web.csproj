@@ -218,6 +218,8 @@
     <Compile Include="Models\Invoice.cs" />
     <Compile Include="Models\NewDetail.cs" />
     <Compile Include="Models\News.cs" />
+    <Compile Include="Models\Order.cs" />
+    <Compile Include="Models\OrderDetail.cs" />
     <Compile Include="Models\Post.cs" />
     <Compile Include="Models\Product.cs" />
     <Compile Include="Models\ProductType.cs" />
@@ -461,6 +463,7 @@
     <Content Include="Views\Seach\Index.cshtml" />
     <Content Include="Views\Home\Seach.cshtml" />
     <Content Include="Views\Cart\TotalMoney.cshtml" />
+    <Content Include="Views\Cart\DatHang.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using Microsoft.AspNet.Identity;
 
 namespace CPSeed.Controllers
 {
@@ -88,70 +89,66 @@ namespace CPSeed.Controllers
             ViewBag.Total = 0;
             return PartialView(); ;
         }
-
-        public ActionResult GiohangPartial()
-        {
-            if (TongSoLuong() == 0)
-            {
-                return PartialView();
-            }
-            ViewBag.Tongsoluong = TongSoLuong();
-            ViewBag.Tongtien = TongTien();
-            return PartialView();
-        }
-        public ActionResult CapnhatGiohang(String ProductID, FormCollection f)
-        {
-            List<Cart> lstGiohang = Laygiohang();
-            Cart sanpham = lstGiohang.SingleOrDefault(n => n.iProductID == ProductID);
-            if (sanpham != null)
-            {
-                sanpham.quantity = int.Parse(f["txtSoluong"].ToString());
-            }
-            return RedirectToAction("Giohang");
-        }
-        public ActionResult XoaGiohang(String ProductID)
-        {
-            //Lay gio hang tu Session
-            List<Cart> lstGiohang = Laygiohang();
-            //Kiem tra sach da co trong Session["Giohang"]
-            Cart sanpham = lstGiohang.SingleOrDefault(n => n.iProductID == ProductID);
-            //Neu ton tai thi cho sua Soluong
-            if (sanpham != null)
-            {
-                lstGiohang.RemoveAll(n => n.iProductID == ProductID);
-                return RedirectToAction("GioHang");
-
-            }
-            if (lstGiohang.Count == 0)
-            {
-                return RedirectToAction("Index", "ShoeStore");
-            }
-            return RedirectToAction("GioHang");
-        }
-        public ActionResult XoaTatcaGiohang()
-        {
-            //Lay gio hang tu Session
-            List<Cart> lstGiohang = Laygiohang();
-            lstGiohang.Clear();
-            return RedirectToAction("Index", "ShoeStore");
-        }
         [HttpGet]
         public ActionResult DatHang()
+        {   
+            if(Request.IsAuthenticated)
+            {
+                if (Session["Cart"] == null)
+                {
+                    return RedirectToAction("index", "Home");
+                }
+                else
+                {
+                    List<Cart> lstGiohang = Laygiohang();
+                    ViewBag.Tongsoluong = TongSoLuong();
+                    ViewBag.Tongtien = TongTien();
+                    return View(lstGiohang);
+                }
+            } 
+            else
+            {
+                return RedirectToAction("Login", "Account");
+            }
+            return PartialView();
+        }
+
+        [HttpPost]
+        public ActionResult DatHang(FormCollection Form, Order order)
         {
-            if (Session["Taikhoan"] == null || Session["Taikhoan"].ToString() == "")
-            {
-                return RedirectToAction("Dangnhap", "Nguoidung");
-            }
-            if (Session["Giohang"] == null)
-            {
-                return RedirectToAction("Index", "ShoeStore");
-            }
-
+            var firstName = Form["firstName"];
+            var lastName = Form["lastName"];
+            var email = Form["email"].ToString();
+            var phone = Form["Phone"].ToString();
+            var address = Form["address"];
             List<Cart> lstGiohang = Laygiohang();
-            ViewBag.Tongsoluong = TongSoLuong();
-            ViewBag.Tongtien = TongTien();
-
-            return View(lstGiohang);
+            order.Priority = TongSoLuong();
+            order.Status = false;
+            order.Paid = false;
+            order.CreateUser = firstName + lastName;
+            order.UpdateUser = firstName + lastName;
+            order.CreateDate = DateTime.Now;
+            order.ReceivedDate = DateTime.Now;
+            order.UpdateDate = DateTime.Now;
+            order.Total = (float)TongTien();
+            order.Email = email;
+            order.Phone = phone;
+            order.Address = address;
+            data.Orders.Add(order);
+            data.SaveChanges();
+            foreach (var item in lstGiohang)
+            {
+                OrderDetail orderDetail = new OrderDetail();
+                orderDetail.OrderID = order.OrderID;
+                orderDetail.ProductID = item.iProductID;
+                orderDetail.Quantity = item.quantity;
+                orderDetail.SellPrice = (decimal)item.sSellPrice;
+                data.OrderDetails.Add(orderDetail);
+                data.SaveChanges();
+            }
+            return Content("<script language='javascript' type='text/javascript'>alert('Đặt hàng thành công ');window.location.href = '../';</script>");
+            Session["Cart"] = null;
+            return RedirectToAction("index", "Home");
         }
 
         [HttpPost]
