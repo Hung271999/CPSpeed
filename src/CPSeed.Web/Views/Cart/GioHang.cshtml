@@ -4,6 +4,7 @@
     ViewBag.Title = "GioHang";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
+@Html.Action("Banner", "Home", new { image = "2.jpg", title = "Giỏ hàng" })
 <!-- Start Cart  -->
 <div class="cart-box-main">
     <div class="container">
@@ -43,7 +44,7 @@
                                         <p class="total-@item.iProductID">@item.total</p>
                                     </td>
                                     <td class="remove-pr">
-                                        <a href="#">
+                                        <a href="@Url.Action("RemoveFromCart","Cart", new {id=item.iProductID, strURL=Request.Url.ToString()})">
                                             <i class="fas fa-times"></i>
                                         </a>
                                     </td>
@@ -91,19 +92,17 @@
                         <h4>Ship</h4>
                         <div class="ml-auto font-weight-bold"> 0 </div>
                     </div>
+                    <hr class="my-1">
                     @*<div class="d-flex">
-                        <h4>Shipping Cost</h4>
-                        <div class="ml-auto font-weight-bold"> Free </div>
-                    </div>*@
+                            <h4>Shipping Cost</h4>
+                            <div class="ml-auto font-weight-bold"> Free </div>
+                        </div>*@
                     <hr>
-                    <div class="d-flex gr-total">
-                        <h5>Tổng tiền</h5>
-                        <div class="ml-auto h5"> @ViewBag.Tongtien đ </div>
-                    </div>
+                    @Html.Action("TotalMoney", "Cart")
                     <hr>
                 </div>
             </div>
-            <div class="col-12 d-flex shopping-box"><a href="checkout.html" class="ml-auto btn hvr-hover">Checkout</a> </div>
+            <div class="col-12 d-flex shopping-box"><a href="@Url.Action("DatHang","Cart")" class="ml-auto btn hvr-hover">Checkout</a> </div>
         </div>
 
     </div>

@@ -44,7 +44,7 @@
                     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-menu" aria-controls="navbars-rs-food" aria-expanded="false" aria-label="Toggle navigation">
                         <i class="fa fa-bars"></i>
                     </button>
-                    <a class="navbar-brand" href="@Url.Action("Index","Home")"><img src="~/images/logo.png" class="logo" alt="" style="width:400px; margin-left:-200px"></a>
+                    <a class="navbar-brand" href="@Url.Action("Index","Home")"><img src="~/images/logo.png" class="logo" alt="" style="width:300px; margin-left:-100px"></a>
                 </div>
                 <!-- Logo -->
                 <!-- Thanh điều hướng -->
@@ -55,7 +55,7 @@
                         @Html.Action("New", "Home")
                         @Html.Action("Pots", "Home", new { id = 3 })
                         @Html.Partial("_LoginPartial")
-                        <li class="nav-item"><a class="nav-link" href="@Url.Action("GioHang","Cart")">Liên hệ</a></li>
+                        <li class="nav-item"><a class="nav-link" href="@Url.Action("Index","Contact")">Liên hệ</a></li>
                     </ul>
                 </div>
                 <!-- Thanh điều hướng -->
@@ -63,12 +63,10 @@
                 <div class="attr-nav">
                     <ul>
                         <li class="search"><a href=""><i class="fa fa-search"></i></a></li>
-                        <li class="side-menu">
-                            <a href="@Url.Action("GioHang","Cart")">
-                                <i class="fa fa-shopping-bag"></i>
-                                <span class="badge">3</span>
-                                <p>My Cart</p>
-                            </a>
+                        <li class=" ">
+                            <a href="@Url.Action("GioHang","Cart")"><i class="fa fa-shopping-bag"></i>           
+                                                                    <b> Giỏ Hàng</b>
+      </a>
                         </li>
                     </ul>
                 </div>
@@ -94,7 +92,7 @@
     </div>
     <!-- cart noti -->
     <div class="cart-noti font-weight-bold  d-none">
-        <i class="fas fa-check-circle text-info"></i>
+        <i class="fas fa-check-circle text-success"></i>
         <span>Đã thêm vào giỏ hàng.</span>
     </div>
     <!-- Start Footer  -->
@@ -202,8 +200,6 @@
                 id: id
             };
 
-            console.log(obj);
-
             $.ajax({
                 url: "/Cart/AddToCart",
                 method: "POST",
@@ -215,7 +211,6 @@
                     setTimeout(function () {
                         $('.cart-noti').fadeOut();
                     }, 900);
-                    console.log(data);
                 },
                 error: function () {
                     alert('There are some problems to add item.');
@@ -264,9 +259,24 @@
                     let price = $(".price-" + id).text();
                     let total = quantity * price;
                     $('.total-' + id).text(total.toString());
+                    $('.grand-total').text(data.totalMoney.toString());
                 },
                 error: function () {
                     alert('there is some problem.')
+                }
+            });
+        }
+
+        function totalMoney() {
+            $.ajax({
+                url: '/Cart/TotalMoney',
+                method: 'POST',
+                data: null,
+                success: function (data) {
+                    console.log(data)
+                },
+                error: function () {
+                    alert('there are some problems.')
                 }
             });
         }
