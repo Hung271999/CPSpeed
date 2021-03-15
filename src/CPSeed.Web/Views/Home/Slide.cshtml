@@ -1,21 +1,21 @@
 ﻿@model IEnumerable<CPSeed.Models.Slide>
 
-<div id="slides-shop" class="cover-slides" style="height:675px;">
+<div id="slides-shop" class="cover-slides">
     <ul class="slides-container">
         @foreach (var item in Model)
         {
              <li class="text-center">
-            <img src="~/images/@item.image" alt="" class="img-slide">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-12">
-                        <h1 class="m-b-20"><strong>@item.contents</strong></h1>
+                <img src="~/images/banner/@item.image" alt="">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <h1 class="m-b-20"><strong>@item.contents</strong></h1>
+                        </div>
                     </div>
                 </div>
-            </div>
             </li>
         }
-
+            
     </ul>
     <div class="slides-navigation">
         <a href="#" class="next"><i class="fa fa-angle-right" aria-hidden="true"></i></a>

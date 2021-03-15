@@ -101,27 +101,37 @@ namespace CPSeed.Controllers
             ViewBag.image = image;
             return PartialView();
         }
-        public ActionResult Seach(string key)
-        {       
-            if (!String.IsNullOrEmpty(key))
-            { 
-                var product = data.Products.Where(n => n.ProductName.Contains(key)).ToList();
-                if (product.Count()==0)
+        public ActionResult Seach(int ? page,string key, int status=0)
+        {
+            int pagesize = 10;
+            int pageNum = (page ?? 1);
+            if (status==0)
+            {
+                if (!String.IsNullOrEmpty(key))
                 {
-                    ViewBag.Status = 1;
-                    var news = data.NewDetails.Where(n => n.Title.Contains(key)).ToList();
-                    if(news.Count()==0)
+                    var product = data.Products.Take(10).Where(n => n.ProductName.Contains(key)).ToList();
+                    if (product.Count() == 0)
                     {
-                        ViewBag.Status = 2;
-                        return PartialView();
+                        ViewBag.Status = 1;
+                        var news = data.NewDetails.Where(n => n.Title.Contains(key)).Take(10).ToList();
+                        if (news.Count() == 0)
+                        {
+                            ViewBag.Status = 2;
+                            return PartialView();
+                        }
+                        else
+                            return PartialView(news);
                     }
                     else
-                    return PartialView(news);
+                    {
+                        return PartialView(product.ToPagedList(pageNum, pagesize));
+                    }
                 }
-                else
-                {
-                    return PartialView(product);
-                }
+            }
+            else
+            {
+                var product = data.Products.Where(n => n.ProductName.Contains(key)).ToList();
+                return PartialView(product);
             }
 
             return View();

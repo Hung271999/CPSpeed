@@ -9,7 +9,7 @@
     var products = data.Products.Where(n => n.ProductTypeID == Model.ProductTypeID).ToList();
     var list = data.Products.Where(n => n.ProductID != Model.ProductID).Take(6).OrderBy(n => n.CreateDate).ToList();
 }
-@Html.Action("Banner", "Home", new { image = "2.jpg", title = "Sản Phẩm" })
+@Html.Action("Banner", "Home", new { image = "1.jpg", title = "Sản Phẩm" })
 <div class="shop-detail-box-main">
     <div class="container">
         <div class="row">
@@ -53,12 +53,11 @@
             </div>
             <div class="col-xl-7 col-lg-7 col-md-6">
                 <div class="single-product-details">
-                    <h2>@Model.ProductName</h2>
-                    <h5> <del></del> @Model.SellPrice</h5>
-                    <p class="available-stock"><span> More than 20 available / <a href="#">8 sold </a></span></p><p>
-                    </p><h4>Description:</h4>
+                    <h2 class="noo-sh-title" style="color: #361800;">@Model.ProductName</h2>
+                    <h5 style="color:#5c8416"> Giá: @Model.SellPrice</h5>
+                    <h4>Mô tả:</h4>
                     <p>
-                        @Model.description
+                        @Model.description 
                     </p>
                     <ul>
                         <li>
@@ -71,39 +70,20 @@
 
                     <div class="price-box-bar">
                         <div class="cart-and-bay-btn">
-                            <a class="btn hvr-hover" data-fancybox-close="" href="#">Mua ngay</a>
-                            <a style="color:white!important;" class="btn hvr-hover" data-fancybox-close=""  itemid="@Model.ProductID" onclick="AddToCartInProductDetails(this)">Thêm vào giỏ hàng</a>
+                            <a style="color:white!important; background-color:#5c8416;" class="btn hvr-hover" data-fancybox-close="" itemid="@Model.ProductID" onclick="AddToCartInProductDetails(this)">Thêm vào giỏ hàng</a>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-
-        <div class="row my-5">
-            <div class="card card-outline-secondary my-4">
-                <div class="card-header">
-                    <h2>Đánh giá</h2>
-                </div>
-                <div class="card-body">
-                    <div class="media mb-3">
-                        <div class="mr-2">
-                            <img class="rounded-circle border p-1" src="data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2264%22%20height%3D%2264%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2064%2064%22%20preserveAspectRatio%3D%22none%22%3E%3Cdefs%3E%3Cstyle%20type%3D%22text%2Fcss%22%3E%23holder_160c142c97c%20text%20%7B%20fill%3Argba(255%2C255%2C255%2C.75)%3Bfont-weight%3Anormal%3Bfont-family%3AHelvetica%2C%20monospace%3Bfont-size%3A10pt%20%7D%20%3C%2Fstyle%3E%3C%2Fdefs%3E%3Cg%20id%3D%22holder_160c142c97c%22%3E%3Crect%20width%3D%2264%22%20height%3D%2264%22%20fill%3D%22%23777%22%3E%3C%2Frect%3E%3Cg%3E%3Ctext%20x%3D%2213.5546875%22%20y%3D%2236.5%22%3E64x64%3C%2Ftext%3E%3C%2Fg%3E%3C%2Fg%3E%3C%2Fsvg%3E" alt="Generic placeholder image">
-                        </div>
-                        <div class="media-body">
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Omnis et enim aperiam inventore, similique necessitatibus neque non! Doloribus, modi sapiente laboriosam aperiam fugiat laborum. Sequi mollitia, necessitatibus quae sint natus.</p>
-                            <small class="text-muted">Posted by Anonymous on 3/1/18</small>
-                        </div>
-                    </div>
-                    <hr>
-                    <a href="#" class="btn hvr-hover">Leave a Review</a>
-                </div>
-            </div>
-        </div>
-
         <div class="row my-5">
             <div class="col-lg-12">
+                <br />
+                <br />
+                <br />
+                <br />
                 <div class="title-all text-left">
-                    <h1>SẢN PHẨM CÙNG LOẠI</h1>
+                    <h2 class="noo-sh-title" style="color: #361800;">Sản phẩm cùng loại</h2>
                     <hr />
                 </div>
                 <div class="featured-products-box owl-carousel owl-theme owl-loaded owl-drag">
@@ -118,20 +98,20 @@
                                     {
                                         <div class="owl-item" style="width: 266.25px; margin-right: 15px;">
                                             <div class="item">
-                                                <div class="products-single fix">
+                                                <div class="products-single fix" style="box-shadow: 0px 0px 15px rgba(0,0,0,0.15);">
                                                     <div class="box-img-hover">
                                                         <img src="~/images/Product/@item3.image" class="img-fluid" alt="Image">
                                                         <div class="mask-icon">
                                                             <ul>
-                                                                <li><a href="@Url.Action("productDetail", "ProDuct", new { id = item2.ProductID})" data-toggle="tooltip" data-placement="right" title="" data-original-title="View"><i class="fas fa-eye"></i></a></li>
-                                                                <li><a href="#" data-toggle="tooltip" data-placement="right" title="" data-original-title="Add to Wishlist"><i class="far fa-heart"></i></a></li>
+                                                                <li><a style="background-color:#5c8416" href="@Url.Action("productDetail", "ProDuct", new { id = item3.ProductID})" data-toggle="tooltip" data-placement="right" title="Xem ngay"><i class="fas fa-eye"></i></a></li>
                                                             </ul>
-                                                            <a class="cart" href="#">Add to Cart</a>
+                                                            <a class="cart" itemid="@item3.ProductID" onclick="AddToCart(this)" style="background-color:#5c8416">Thêm vào giỏ hàng</a>
                                                         </div>
                                                     </div>
-                                                    <div class="why-text">
+                                                    <div class="why-text" style="background: #f5f5f54a">
                                                         <h4>@item3.ProductName</h4>
-                                                        <h5> @item3.SellPrice</h5>
+                                                        <h5 style="background-color:#5c8416">@item3.SellPrice VNĐ</h5>
+
                                                     </div>
                                                 </div>
                                             </div>
@@ -142,20 +122,20 @@
                                 {
                                     <div class="owl-item" style="width: 266.25px; margin-right: 15px;">
                                         <div class="item">
-                                            <div class="products-single fix">
+                                            <div class="products-single fix" style="box-shadow: 0px 0px 15px rgba(0,0,0,0.15);">
                                                 <div class="box-img-hover">
                                                     <img src="~/images/Product/@item2.image" class="img-fluid" alt="Image">
                                                     <div class="mask-icon">
                                                         <ul>
-                                                            <li><a href="@Url.Action("productDetail", "ProDuct", new { id = item2.ProductID})" data-toggle="tooltip" data-placement="right" title="" data-original-title="View"><i class="fas fa-eye"></i></a></li>
-                                                            <li><a href="#" data-toggle="tooltip" data-placement="right" title="" data-original-title="Add to Wishlist"><i class="far fa-heart"></i></a></li>
+                                                            <li><a style="background-color:#5c8416" href="@Url.Action("productDetail", "ProDuct", new { id = item2.ProductID})" data-toggle="tooltip" data-placement="right" title="Xem ngay"><i class="fas fa-eye"></i></a></li>
                                                         </ul>
-                                                        <a class="cart" href="#">Add to Cart</a>
+                                                        <a class="cart" itemid="@item2.ProductID" onclick="AddToCart(this)" style="background-color:#5c8416">Thêm vào giỏ hàng</a>
                                                     </div>
                                                 </div>
-                                                <div class="why-text">
+                                                <div class="why-text" style="background: #f5f5f54a">
                                                     <h4>@item2.ProductName</h4>
-                                                    <h5> @item2.BuyPriceCurrent</h5>
+                                                    <h5 style="background-color:#5c8416">@item2.SellPrice VNĐ</h5>
+
                                                 </div>
                                             </div>
                                         </div>
@@ -164,7 +144,11 @@
                                 }
                             }
                         </div>
-                    </div><div class="owl-nav"><button type="button" role="presentation" class="owl-prev"><i class="fas fa-arrow-left"></i></button><button type="button" role="presentation" class="owl-next"><i class="fas fa-arrow-right"></i></button></div><div class="owl-dots disabled"></div>
+                    </div>
+                    <div class="owl-nav">
+                        <button type="button" role="presentation" class="owl-prev" ><i class="fas fa-arrow-left" ></i> </button>
+                        <button type="button" role="presentation" class="owl-next"><i class="fas fa-arrow-right"></i> </button>
+                    </div>
                 </div>
             </div>
         </div>

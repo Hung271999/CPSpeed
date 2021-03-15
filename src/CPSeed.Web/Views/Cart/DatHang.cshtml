@@ -11,7 +11,7 @@
                         <div class="title-left">
                             <h3>Địa chỉ</h3>
                         </div>
-                        <form class="needs-validation" novalidate="">
+                        <form class="needs-validation" novalidate="" onClick='submitDetailsForm()'>
                             <div class="row">
                                 <div class="col-md-6 mb-3">
                                     <label for="firstName">Họ *</label>
@@ -94,11 +94,15 @@
                             <hr>
                         </div>
                     </div>
-                    <button type="submit"></button>
-                    <div class="col-12 d-flex shopping-box"> <a class="ml-auto btn hvr-hover" type=""> Place Order</a> </div>
+                    <button class="ml-auto btn hvr-hover ">Đặt hàng</button>              
                 </div>
             </div>
         </div>
 
     </div>
 }
+<script>
+    function submitDetailsForm() {
+        $("#formId").submit();
+    }
+</script>

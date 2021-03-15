@@ -29,7 +29,7 @@
         display: inline;
     }
 </style>
-<div class="box-add-products" id="techonogy">
+<div class="box-add-products technology" id="techonogy">
     <div class="container">
         <div class="row">
             <div class="about-box-main">
@@ -38,24 +38,28 @@
                     {
                         <div class="row">
                             <div class="col-lg-6">
-                                <div class="banner-frame">
-                                    <img class="img-fluid" src="~/images/Post/@item.image" alt="" />
+                                <div class="banner-frame ">
+                                    <img class="img-fluid img-fluid-tech" src="~/images/Post/@item.image" alt="" />
                                 </div>
                             </div>
-                            <div class="col-lg-6">
-                                <h2 class="noo-sh-title-top">@item.Title </h2>
-                                <br />
-                                <p style="font-size:20px">
-                                    @item.contents
-                                </p>
+                            <div class="col-md-6 techLeft">
+                                <div class="techContent">
+                                    <div class="techContentTop">
+                                        <h2 class="noo-sh-title-top">@item.Title</h2>
+                                        <hr class="techDive" />
+                                        <p style="font-size:20px">
+                                            @item.contents
+                                        </p>
+                                    </div>
+                                    <div class="MenuTrang" style="text-align:center; color:#789A3D">
+                                        @Html.PagedListPager(Model, page => Url.Action("Technology", new { page }), PagedListRenderOptions.EnableUnobtrusiveAjaxReplacing(new AjaxOptions() { HttpMethod = "Get", UpdateTargetId = "techonogy" }))
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     }
                 </div>
             </div>
         </div>
-    </div>
-    <div class="MenuTrang" style="text-align:center">
-        @Html.PagedListPager(Model, page => Url.Action("Technology", new { page }), PagedListRenderOptions.EnableUnobtrusiveAjaxReplacing(new AjaxOptions() { HttpMethod = "Get", UpdateTargetId = "techonogy" }))
     </div>
 </div>

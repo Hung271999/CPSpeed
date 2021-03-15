@@ -30,63 +30,65 @@
     <!-- Bootstrap CSS -->
     @Styles.Render("~/Contents/css")
     @Scripts.Render("~/bundles/modernizr")
-
+    <link href="~/css/win2.css" rel="stylesheet" />
 </head>
 
 <body>
     <!-- Start Main Top -->
     <header class="main-header">
         <!-- Start Navigation -->
-        <nav class="navbar navbar-expand-lg navbar-light bg-light navbar-default bootsnav">
+        <nav class="navbar navbar-expand-lg navbar-light bg-light navbar-default bootsnav fixed-top">
             <div class="container">
                 <!-- Logo -->
                 <div class="navbar-header" style="">
                     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-menu" aria-controls="navbars-rs-food" aria-expanded="false" aria-label="Toggle navigation">
                         <i class="fa fa-bars"></i>
                     </button>
-                    <a class="navbar-brand" href="@Url.Action("Index","Home")"><img src="~/images/logo.png" class="logo" alt="" style="width:300px; margin-left:-100px"></a>
+                    <a class="navbar-brand" href="@Url.Action("Index","Home")"><img src="~/images/logo.png" class="logo" alt="" style="width:300px;"></a>
                 </div>
                 <!-- Logo -->
-                <!-- Thanh điều hướng -->
-                <div class="collapse navbar-collapse" id="navbar-menu" style=" width:100px">
-                    <ul class="nav navbar-nav ml-auto" data-in="fadeInDown" data-out="fadeOutUp">
-                        <li class="nav-item "><a class="nav-link" href="~/" style="">Home</a></li>
-                        @Html.Action("ProductTypeMenu", "Home")
-                        @Html.Action("New", "Home")
-                        @Html.Action("Pots", "Home", new { id = 3 })
-                        @Html.Partial("_LoginPartial")
-                        <li class="nav-item"><a class="nav-link" href="@Url.Action("Index","Contact")">Liên hệ</a></li>
-                    </ul>
+                <div class="navMenu">
+                    <!-- Giỏ hàng -->
+                    <div class="attr-nav" style="width:100%">
+                        <!-- Tìm kiếm -->
+                        <div class="top-search">
+                            <input type="text" class="form-control" placeholder="Search...?" id="myInput" onchange="getInputValue()">
+                        </div>
+                        <!-- Tìm kiếm -->
+                        <ul>
+                            <li class="search"><a href=""><i class="fa fa-search"></i></a></li>
+                            <li class=""><a>|</a></li>
+                            <li class=""><a href=""><img src="~/images/icons/vn-flag.png" /></a></li>
+                            <li class=""><a href=""><img src="~/images/icons/en-flag.png" /></a></li>
+                            <li class=""><a>|</a></li>
+                            <li class=" ">
+                                <a href="@Url.Action("GioHang","Cart")">
+                                    <i class="fa fa-shopping-bag"></i>
+                                    <b> Giỏ Hàng</b>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <!-- Giỏ hàng -->
+                    <!-- Thanh điều hướng -->
+                    <div class="collapse navbar-collapse" id="navbar-menu" style="width:100%">
+                        <ul class="nav navbar-nav ml-auto" data-in="fadeInDown" data-out="fadeOutUp">
+                            <li class="nav-item "><a class="nav-link" href="~/" style="">Home</a></li>
+                            @Html.Action("ProductTypeMenu", "Home")
+                            @Html.Action("New", "Home")
+                            @Html.Action("Pots", "Home", new { id = 3 })
+                            @Html.Partial("_LoginPartial")
+                            <li class="nav-item"><a class="nav-link" href="@Url.Action("Index","Contact")">Liên hệ</a></li>
+                        </ul>
+                    </div>
+                    <!-- Thanh điều hướng -->
                 </div>
-                <!-- Thanh điều hướng -->
-                <!-- Giỏ hàng -->
-                <div class="attr-nav">
-                    <ul>
-                        <li class="search"><a href=""><i class="fa fa-search"></i></a></li>
-                        <li class=" ">
-                            <a href="@Url.Action("GioHang","Cart")"><i class="fa fa-shopping-bag"></i>           
-                                                                    <b> Giỏ Hàng</b>
-      </a>
-                        </li>
-                    </ul>
-                </div>
-                <!-- Giỏ hàng -->
             </div>
+
         </nav>
         <!-- End Navigation -->
     </header>
     <!-- End Main Top -->
-    <!-- Tìm kiếm -->
-    <div class="top-search">
-        <div class="container">
-            <div class="input-group">
-                <span class="input-group-addon"><i class="fa fa-search"></i></span>
-                <input type="text" class="form-control" placeholder="Search" id="myInput" onchange="getInputValue()">
-                <span class="input-group-addon close-search"><i class="fa fa-times"></i></span>
-            </div>
-        </div>
-    </div>
-    <!-- Tìm kiếm -->
     <div id="multiple">
         @RenderBody()
     </div>
@@ -280,6 +282,11 @@
                 }
             });
         }
+    </script>
+    <script>
+        $(window).scroll(function () {
+            $('nav').toggleClass('scrolled', $(this).scrollTop() > 50);
+        });
     </script>
     <!-- Scrips  -->
 </body>

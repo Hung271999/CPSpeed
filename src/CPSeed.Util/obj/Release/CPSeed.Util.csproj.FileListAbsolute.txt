@@ -1,0 +1,5 @@
+D:\CPSpeed\src\CPSeed.Util\obj\Release\CPSeed.Util.csprojAssemblyReference.cache
+D:\CPSpeed\src\CPSeed.Util\obj\Release\CPSeed.Util.ResourceUtil.resources
+D:\CPSpeed\src\CPSeed.Util\obj\Release\CPSeed.Util.ResourceUtil.en.resources
+D:\CPSpeed\src\CPSeed.Util\obj\Release\CPSeed.Util.csproj.GenerateResource.cache
+D:\CPSpeed\src\CPSeed.Util\obj\Release\CPSeed.Util.csproj.CoreCompileInputs.cache

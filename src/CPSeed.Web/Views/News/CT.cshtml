@@ -1,0 +1,61 @@
+﻿@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@model CPSeed.Models.NewDetail
+@Html.Action("Banner", "Home", new { image = "banner-gionglua-v1-637214382473750803.png", title = "TRUYỀN THÔNG" })
+<div class="shop-box-inner">
+    <div class="container">
+        <div class="row">
+            <div class="col-xl-9 col-lg-9 col-sm-12 col-xs-12 shop-content-right">
+                <div class="right-product-box">
+                    <div class="product-categorie-box">
+                        <div class="tab-content">
+                            <div role="tabpanel" class="tab-pane fade show active" id="grid-view">
+                                <div class="row">
+                                    <div class="container">
+                                        <div class="row my-4">
+                                            <div class="col-12">
+                                                <h2 class="noo-sh-title">@Model.Title</h2>
+                                            </div>
+
+                                            <div class="col-md-6 col-lg-4 col-xl-4">
+                                                <div class="blog-box">
+                                                    <div class="blog-img">
+                                                        <img class="img-fluid" src="~/images/@Model.image" alt="">
+                                                    </div>
+                                                    <div class="blog-content">
+                                                        <div class="title-blog">
+                                                            <h3>@Model.Title</h3>
+                                                            <b>@Model.contents</b>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                        <hr />
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xl-3 col-lg-3 col-sm-12 col-xs-12 sidebar-shop-left" style="padding-top:110px">
+                <div class="product-categori">
+
+                    <div class="filter-sidebar-left">
+                        <div class="title-left">
+                            <h3> Truyền thông</h3>
+                        </div>
+                        @Html.Action("Communicationcategory", "News")
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    @Html.Action("AllNews", "News", new { id = 1 })
+</div>

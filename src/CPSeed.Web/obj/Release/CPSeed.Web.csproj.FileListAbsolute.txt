@@ -1,0 +1,2 @@
+D:\CPSpeed\src\CPSeed.Web\obj\Release\CPSeed.Web.csprojAssemblyReference.cache
+D:\CPSpeed\src\CPSeed.Web\obj\Release\CPSeed.Web.csproj.CoreCompileInputs.cache

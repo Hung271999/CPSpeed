@@ -4,41 +4,25 @@
 }
 @Html.Action("Banner", "Home", new { image = "2.jpg", title = "Truyền Thông" })
 <div class="shop-box-inner">
-    <div class="container">
+    <div class="">
+        <h2 class="noo-sh-title" style="font-size:32px;color:#005b36; padding-top:-500px;margin-left:550px">Truyền thông</h2>
         <div class="row">
-            <div class="col-xl-9 col-lg-9 col-sm-12 col-xs-12 shop-content-right">
-                <div class="right-product-box">
-                    <div class="product-categorie-box">
-                        <div class="tab-content">
-                            <div role="tabpanel" class="tab-pane fade show active" id="grid-view">
-                                <div class="row">
-                                    @Html.Action("News", "News", new { status = 1 })
-                                    @Html.Action("events", "News")
-                                </div>
-                            </div>
-
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-xl-3 col-lg-3 col-sm-12 col-xs-12 sidebar-shop-left" style="padding-top:110px">
-                <div class="product-categori">
-                    <div class="search-product">
-                        <form action="#">
-                            <input class="form-control" placeholder="Search here..." type="text">
-                            <button type="submit"> <i class="fa fa-search"></i> </button>
-                        </form>
-                    </div>
-                    <div class="filter-sidebar-left">
+            <div class="col-xl-3 col-lg-3 col-sm-12 col-xs-12 sidebar-shop-left" style="top:-40px; margin-left:100px">
+                <div class="product-categori ">
+                    <div class="filter-sidebar-left menu-right>" style="margin-left:-30px;background-color: white;box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.08);padding: 30px 25px;border-radius: 2px;margin-top: -150px;">
                         <div class="title-left">
-                            <h3> Truyền thông</h3>
+                            <h2 class="noo-sh-title" style="color: #361800;">Truyền Thông</h2>
                         </div>
                         @Html.Action("Communicationcategory", "News")
                     </div>
                 </div>
-            </div>
 
+            </div>
         </div>
+        @Html.Action("News", "News", new { status = 1 })
+        @Html.Action("events", "News")
+        @Html.Action("Imagegallery", "News")
     </div>
 </div>
+
 
