@@ -4,54 +4,59 @@
 }
 @model IEnumerable<CPSeed.Models.NewDetail>
 @Html.Action("Banner", "Home", new { image = "banner-gionglua-v1-637214382473750803.png", title = "TRUYỀN THÔNG" })
-<div class="shop-box-inner">
-    <div class="">
-        <h2 class="noo-sh-title" style="font-size:32px;color:#005b36; padding-top:-500px;margin-left:550px">Truyền thông</h2>
-        <div class="row">
-            <div class="col-xl-3 col-lg-3 col-sm-12 col-xs-12 sidebar-shop-left" style="top:-40px; margin-left:100px">
-                <div class="product-categori ">
-                    <div class="filter-sidebar-left menu-right>" style="margin-left:-30px;background-color: white;box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.08);padding: 30px 25px;border-radius: 2px;margin-top: -150px;">
-                        <div class="title-left">
-                            <h2 class="noo-sh-title" style="color: #361800;">Truyền Thông</h2>
-                        </div>
-                        @Html.Action("Communicationcategory", "News")
-                    </div>
-                </div>
-
-            </div>
-        </div>
-        <div class="container" style="margin-left:-210px; padding-top:-5px; max-width:initial;">
+    <div class="shop-box-inner">
+        <div class="container">
             <div class="row">
-                <div class="col-lg-12">
-                    <div class="title-all text-center">
-                        <h2 class="noo-sh-title" style="color: #005b36;margin-left:-710px">@ViewBag.Name mới nhất</h2>
+                <div class="col-xl-3 col-lg-3 col-sm-12 col-xs-12 sidebar-shop-left " style="padding-top:20px;">
+                    <div class="product-categori ">
+                        <div class="filter-sidebar-left menu-right">
+                            <div class="title-left">
+                                <h2 class="noo-sh-title" style="">TRUYỀN THÔNG</h2>
+                            </div>
+                            @Html.Action("Communicationcategory", "News")
+                        </div>
                     </div>
                 </div>
+                <div class="col-xl-9 col-lg-9 col-sm-12 col-xs-12 shop-content-right" style="padding-left:50px;">
+                    <h2 class="noo-sh-title" style="font-size:32px;color:#005b36;">TRUYỀN THÔNG</h2>
+                    <p>CP Seeds cung cấp cho bà con nông dân nhiều sản phẩm hạt giống chất lượng, không chỉ kháng sâu bệnh mà còn cho năng suất và hiệu quả cao. Các sản phẩm của hạt giống CP bao gồm rau, cây trồng trên đồng ruộng và các yếu tố thực vật. Công ty có 13 sản phẩm giống ngô lai tiên tiến, chất lượng cao và 4 sản phẩm ngô ăn có chất lượng tốt nhất. Nó có 2 giống lai năng suất cao cho bông  </p>
+                    <br />
+                </div>
             </div>
-            <div class="row" style="margin-left:248px">
-                @foreach (var item in Model)
-                {
-                    <div class="col-md-6 col-lg-6 col-xl-4">
-                        <div class="blog-img">
-                            <img class="img-fluid" src="~/images/@item.image" alt="">
+            <div class="container">
+                <div class="row">
+                    <div class="row" style="margin-bottom:10px;">
+                        <div class="col-lg-12">
+                            <div class="title-all text-center">
+                                <h2 class="noo-sh-title" style="color: #005b36; float: left; border-bottom: 2.5px solid #789A3D">@ViewBag.Name mới nhất</h2>
+                            </div>
                         </div>
-                        <div class="blog-content">
-                            <div class="wp-content-news" style="margin-top:22px;">
-                                <a href="" class="content-news-txt" style="font-family: fml-bold; font-size: 22px; line-height: 23px; transition: 0.3s; height: 70px; display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; color: #161616;line-height:35px">@item.Title</a>
-                                <div class="wp-btn-detail" style=" margin-top: 18px; display: flex; align-items: center; flex-wrap: wrap;">
-                                    <div class="btn-detail" style=" margin-right: 0; margin-bottom: 5px;">
-                                        <a style=" color: #363636; background: #ECECEC; font-size: 15px; line-height: 17px; padding:9px 13px; padding-bottom: 8px; display: inline-block; border-radius: 100px; transition: all 0.3s; ">@ViewBag.Name CPSeed</a>
+                    </div>
+                    <div class="row">
+                        @foreach (var item in Model)
+                        {
+                            <div class="col-md-6 col-lg-6 col-xl-4">
+                                <div class="blog-img">
+                                    <img class="img-fluid" src="~/images/@item.image" alt="">
+                                </div>
+                                <div class="blog-content">
+                                    <div class="wp-content-news" style="margin-top:22px;">
+                                        <a href="" class="content-news-txt" style="font-family: fml-bold; font-size: 22px; line-height: 23px; transition: 0.3s; display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; color: #161616;line-height:35px">@item.Title</a>
+                                        <div class="wp-btn-detail" style=" margin-top: 18px; display: flex; align-items: center; flex-wrap: wrap;">
+                                            <div class="btn-detail" style=" margin-right: 0; margin-bottom: 5px;">
+                                                <a style=" color: #363636; background: #ECECEC; font-size: 15px; line-height: 17px; padding:9px 13px; padding-bottom: 8px; display: inline-block; border-radius: 100px; transition: all 0.3s; ">@ViewBag.Name CPSeed</a>
+                                            </div>
+                                            <p class="btn-detail-time" style="margin-left:10px">@item.CreateDate</p>
+                                        </div>
                                     </div>
-                                    <p class="btn-detail-time" style="margin-left:10px">@item.CreateDate</p>
                                 </div>
                             </div>
+                        }
 
-                        </div>
                     </div>
-                }
+                </div>
 
             </div>
+            @Html.Action("AllNews", "News")
         </div>
-        @Html.Action("AllNews", "News")
     </div>
-</div>

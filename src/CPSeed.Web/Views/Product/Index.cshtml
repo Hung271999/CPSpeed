@@ -28,7 +28,42 @@
                 background-color: #ddd;
             }
 </style>
-
+<script>
+    function basic() {
+        var e = document.getElementById("basic");
+        var value = e.options[e.selectedIndex].value;
+        var booksDiv = $("#product")
+        $.ajax({
+            url: '/Product/select',
+            type: 'GET',
+            data: { "value": value },
+            dataType: 'html',
+            success: function (data) {
+                booksDiv.html(data);
+            },
+            error: function () {
+                alert('Có lỗi xảy ra.')
+            }
+        });
+    }
+    function basic2() {
+        var e = document.getElementById("basic");
+        var value = e.options[e.selectedIndex].value;
+        var booksDiv = $("#product")
+        $.ajax({
+            url: '/Product/select',
+            type: 'GET',
+            data: { "value": value, "id": @ViewBag.id},
+            dataType: 'html',
+            success: function (data) {
+                booksDiv.html(data);
+            },
+            error: function () {
+                alert('Có lỗi xảy ra.')
+            }
+        });
+    }
+</script>
 
 @Html.Action("Banner", "Home", new { image = "3.jpg", title = "Danh mục sản phẩm" })
 <!-- End All Title Box -->
@@ -38,36 +73,35 @@
     <div class="shop-box-inner">
         <div class="container">
             <div class="row">
-                <div class="col-xl-3 col-lg-3 col-sm-12 col-xs-12 sidebar-shop-left" style="padding-top:20px;">
+                <div class="col-xl-3 col-lg-3 col-sm-12 col-xs-12 sidebar-shop-left " style="padding-top:20px;">
                     <div class="product-categori ">
-                        <div class="filter-sidebar-left menu-right>" style="margin-left: -150px;background-color: white;box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.08);padding: 30px 25px;border-radius: 2px;margin-top: -150px;">
+                        <div class="filter-sidebar-left menu-right">
                             <div class="title-left">
-                                <h2 class="noo-sh-title" style="color: #361800;">Danh mục sản phẩm</h2>
+                                <h2 class="noo-sh-title" style="">Danh mục sản phẩm</h2>
                             </div>
                             @Html.Action("ProductType", "Product")
                         </div>
                     </div>
-
                 </div>
-                <div class="col-xl-9 col-lg-9 col-sm-12 col-xs-12 shop-content-right" style="left:100px;padding-top:-20px;">
+                <div class="col-xl-9 col-lg-9 col-sm-12 col-xs-12 shop-content-right" style="padding-left:50px;">
                         <h2 class="noo-sh-title" style="font-size:32px;color:#005b36;">sản phẩm kinh doanh</h2>
-                        <p style="vertical-align: inherit; font-size:20px">CP Seeds cung cấp cho bà con nông dân nhiều sản phẩm hạt giống chất lượng, không chỉ kháng sâu bệnh mà còn cho năng suất và hiệu quả cao. Các sản phẩm của hạt giống CP bao gồm rau, cây trồng trên đồng ruộng và các yếu tố thực vật. Công ty có 13 sản phẩm giống ngô lai tiên tiến, chất lượng cao và 4 sản phẩm ngô ăn có chất lượng tốt nhất. Nó có 2 giống lai năng suất cao cho bông  </p>
+                        <p>CP Seeds cung cấp cho bà con nông dân nhiều sản phẩm hạt giống chất lượng, không chỉ kháng sâu bệnh mà còn cho năng suất và hiệu quả cao. Các sản phẩm của hạt giống CP bao gồm rau, cây trồng trên đồng ruộng và các yếu tố thực vật. Công ty có 13 sản phẩm giống ngô lai tiên tiến, chất lượng cao và 4 sản phẩm ngô ăn có chất lượng tốt nhất. Nó có 2 giống lai năng suất cao cho bông  </p>
                     <br />
                     <div class="right-product-box">
                         @if (ViewBag.id == 0)
                         {
-                        <div class="product-item-filter row">
-                            <div class="col-12 col-sm-8 text-center text-sm-left">
-                                <div class="toolbar-sorter-right" style="color: black;">
-                                    <span><b style="color: #361800;">Sắp Xếp</b> </span>
-                                    <select id="basic" class="selectpicker show-tick form-control" style="color: #5c8416;" data-placeholder="$ USD" onchange="basic();">
-                                        <option value="3" data-display="Select">Giá cao → Gía thấp</option>
-                                        <option value="2">Giá thấp → Giá cao</option>
-                                    </select>
+                            <div class="product-item-filter row">
+                                <div class="col-12 col-sm-8 text-center text-sm-left">
+                                    <div class="toolbar-sorter-right" style="color: black;">
+                                        <span><b style="color: #361800;">Sắp Xếp</b> </span>
+                                        <select id="basic" class="selectpicker show-tick form-control" style="color: #5c8416;" data-placeholder="$ USD" onchange="basic();">
+                                            <option value="2">Giá thấp → Giá cao</option>
+                                            <option value="3" data-display="Select">Giá cao → Gía thấp</option>
+                                        </select>
+                                    </div>
                                 </div>
+                                <b style="margin-right:100px;padding:10px;color: #361800;"> Đã tìm thấy @ViewBag.Count sản phẩm</b>
                             </div>
-                            <b style="margin-right:100px;padding:10px;color: #361800;"> Đã tìm thấy @ViewBag.Count sản phẩm</b>
-                        </div>
                             <div class="product-categorie-box" id="product">
                                 <div class="tab-content">
                                     @{Html.RenderAction("GetPaging", "Product", new { page = Page }); }
@@ -77,25 +111,23 @@
                         }
                         else
                         {
-                    <div class="product-item-filter row">
-                        <div class="col-12 col-sm-8 text-center text-sm-left">
-                            <div class="toolbar-sorter-right" style="color: black;">
-                                <span><b>Sắp Xếp</b> </span>
-                                <select id="basic" class="selectpicker show-tick form-control" style="color: #5c8416;" data-placeholder="$ USD" onchange="basic2();">
-                                    <option value="3" data-display="Select">Giá cao → Gía thấp</option>
-                                    <option value="2">Giá thấp → Giá cao</option>
-                                </select>
+                            <div class="product-item-filter row">
+                                <div class="col-12 col-sm-8 text-center text-sm-left">
+                                    <div class="toolbar-sorter-right" style="color: black;">
+                                        <span><b style="color: #361800;">Sắp Xếp</b> </span>
+                                        <select id="basic" class="selectpicker show-tick form-control" style="color: #5c8416;" data-placeholder="$ USD" onchange="basic2();">
+                                            <option value="2">Giá thấp → Giá cao</option>
+                                            <option value="3" data-display="Select">Giá cao → Gía thấp</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <b style="margin-right:100px;padding:10px;color: #361800;"> Đã tìm thấy @ViewBag.Count sản phẩm</b>
                             </div>
-                        </div>
-                        <b style="margin-right:100px;padding:10px"> Đã tìm thấy @ViewBag.Count sản phẩm</b>
-                    </div>
                             <div class="product-categorie-box" id="product">
                                 <div class="tab-content">
                                     @{Html.RenderAction("GetPaging", "Product", new { page = 1, id = ViewBag.id }); }
-
                                 </div>
                             </div>
-
                         }
                     </div>
                 </div>

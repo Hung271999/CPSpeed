@@ -4,7 +4,7 @@
     <div class="list-group-collapse sub-men">
         @foreach (var item in Model)
         {
-            <a class="list-group-item list-group-item-action" href="#@item.NewsID" style=" display: block; background: #f3f3f399; transition: 0.5s; color: #5c8416; font-size:25px;margin: 10px;" data-toggle="collapse" aria-expanded="true" aria-controls="@item.NewsID">
+            <a class="list-group-item list-group-item-action dad" href="#@item.NewsID" data-toggle="collapse" aria-expanded="true" aria-controls="@item.NewsID">
                 @item.Title
                 @{
                     CPSeedContext data1 = new CPSeedContext();
@@ -33,7 +33,7 @@
                     <div class="list-group">
                         @foreach (var item3 in NewDetail)
                         {
-                            <a href="@Url.Action("productDetail", "ProDuct", new { id = item3.NewDetailID})" style="color: #5c8416;font-size:20px"  class="list-group-item list-group-item-action">@item3.Title</a>
+                            <a href="@Url.Action("productDetail", "ProDuct", new { id = item3.NewDetailID})" style="color: #5c8416;font-size:20px" class="list-group-item list-group-item-action">@item3.Title</a>
 
                         }
                     </div>

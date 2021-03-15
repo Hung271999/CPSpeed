@@ -93,6 +93,13 @@ nav.navbar.bootsnav li.dropdown ul.dropdown-menu {
     background: #789A3D;
     border-radius: 25px;
 }
+
+@media (max-width: 992px) {
+    nav.navbar.bootsnav .navbar-header {
+        text-align: left;
+        width:auto;
+    }
+}
 /*tam nhin su menh*/
 .mission {
     margin-top: -55px;
@@ -201,10 +208,13 @@ nav.navbar.bootsnav li.dropdown ul.dropdown-menu {
     background-color: #ffffff;
     box-shadow: 8px 8px 8px 8px rgba(0, 0, 0, 0.2), 8px 8px 8px 8px rgba(0, 0, 0, 0.19);
 }
-.why-text {
-    text-align: center;
-    border-bottom: 10px solid #005b36;
+.item {
+    box-shadow: 0 8px 15px 0 rgb(0 0 0 / 25%);
 }
+    .why-text {
+        text-align: center;
+        border-bottom: 10px solid #005b36;
+    }
 .why-text h4{
     padding: 15px;
     text-align: center;
