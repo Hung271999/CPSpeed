@@ -21,5 +21,10 @@ namespace CPSeed.Controllers
             var categoryPost = data.Posts.Where(n => n.CategoryID == 3).ToList();
             return PartialView(categoryPost);
         }
+        public ActionResult a()
+        {
+            return View();
+        }
+
     }
 }
