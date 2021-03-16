@@ -33,13 +33,14 @@
     <div class="row">
         @foreach (var item in Model)
         {
+            var link = "/san-pham/" + item.ProductName + "-" + item.ProductID;
         <div class="col-sm-6 col-md-6 col-lg-4 col-xl-4">
             <div class="products-single fix" style="box-shadow: 0px 0px 15px rgba(0,0,0,0.15);">
                 <div class="box-img-hover">
                     <img src="~/images/Product/@item.image" class="img-fluid" alt="Image">
                     <div class="mask-icon">
                         <ul>
-                            <li><a style="background-color:#5c8416" href="@Url.Action("productDetail", "ProDuct", new { id = item.ProductID})" data-toggle="tooltip" data-placement="right" title="Xem ngay"><i class="fas fa-eye"></i></a></li>
+                            <li><a style="background-color:#5c8416" href="@link" data-toggle="tooltip" data-placement="right" title="Xem ngay"><i class="fas fa-eye"></i></a></li>
                         </ul>
                         <a class="cart" itemid="@item.ProductID" onclick="AddToCart(this)" style="background-color:#5c8416">Thêm vào giỏ hàng</a>
                     </div>
