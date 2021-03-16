@@ -19,13 +19,13 @@ namespace CPSeed.Controllers
         }
         public ActionResult events()
         {
-            var events = data.NewDetails.Where(n => n.NewsID==2).Take(3).OrderBy(n=>n.CreateDate);
+            var events = data.NewDetails.Where(n => n.NewsID==2).Where(n => n.Priority == 0).Take(3).OrderBy(n=>n.CreateDate);
             return PartialView(events);
         }
         public ActionResult News(int ? status)
         { 
             ViewBag.Status = status;
-            var News = data.NewDetails.Where(n => n.NewsID == 1).Take(3).OrderBy(n => n.CreateDate);
+            var News = data.NewDetails.Where(n => n.NewsID == 1).Where(n=>n.Priority==0).Take(3).OrderBy(n => n.CreateDate);
             return PartialView(News);
         }
         public ActionResult Imagegallery()
@@ -49,14 +49,16 @@ namespace CPSeed.Controllers
             int pagesize = 3;
             ViewBag.Name = "Tin";
             int pageNum = (page ?? 1);
-            var AllNews = data.NewDetails.Where(n=>n.Priority==0).ToList();
+            var AllNews = data.NewDetails.Where(n=>n.NewsID==1).Where(n=>n.Priority==0).ToList();
             return PartialView(AllNews.OrderBy(n=>n.CreateDate).ToPagedList(pageNum, pagesize));
         }
         public ActionResult NewsDetail(int? id, int? page)
         {
             int pagesize = 3;
             int pageNum = (page ?? 1);
-            var AllNews = data.NewDetails.Where(n => n.NewsID == id).ToList();
+            News a = data.News.Where(n => n.NewsID ==id).SingleOrDefault();
+            ViewBag.name = a;
+            var AllNews = data.NewDetails.Where(n => n.NewsID == id).Where(n => n.Priority == 0).ToList();
             return PartialView(AllNews.OrderBy(n => n.CreateDate).ToPagedList(pageNum, pagesize));
         }
     }

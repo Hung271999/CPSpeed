@@ -18,7 +18,7 @@
                     </div>
                 </div>
                 <div class="col-xl-9 col-lg-9 col-sm-12 col-xs-12 shop-content-right" style="padding-left:50px;">
-                    <h2 class="noo-sh-title" style="font-size:32px;color:#005b36;">TRUYỀN THÔNG</h2>
+                    <h2 class="noo-sh-title" style="font-size:32px;color:#005b36;">@ViewBag.name.Title</h2>
                     <p>CP Seeds cung cấp cho bà con nông dân nhiều sản phẩm hạt giống chất lượng, không chỉ kháng sâu bệnh mà còn cho năng suất và hiệu quả cao. Các sản phẩm của hạt giống CP bao gồm rau, cây trồng trên đồng ruộng và các yếu tố thực vật. Công ty có 13 sản phẩm giống ngô lai tiên tiến, chất lượng cao và 4 sản phẩm ngô ăn có chất lượng tốt nhất. Nó có 2 giống lai năng suất cao cho bông  </p>
                     <br />
                 </div>
@@ -26,7 +26,7 @@
             <div class="row">
                 <div class="col-lg-12">
                     <div class="title-all">
-                        <h2 class="noo-sh-title" style="color: #005b36; border-bottom: 2.5px solid #789A3D">@ViewBag.Name mới nhất</h2>
+                        <h2 class="noo-sh-title" style="color: #005b36; border-bottom: 2.5px solid #789A3D">@ViewBag.name.Title mới nhất</h2>
                     </div>
                     <div class="see-all" style="position: absolute; top: 40%; right: 1%; transform: translateY(-50%);">
                         <a href="" style=" transition: 0.3s; color: #191818; font-size: 20px; transition: all 0.3s;">Xem tất cả &gt</a>
@@ -45,7 +45,7 @@
                                 <a href="" class="content-news-txt">@item.Title</a>
                                 <div class="wp-btn-detail" style="">
                                     <div class="btn-detail">
-                                        <a style="">Tin CPSeed</a>
+                                        <a style="">@ViewBag.name.Title CPSeed</a>
                                     </div>
                                     <p class="btn-detail-time" style="margin-left:10px">@item.CreateDate</p>
                                 </div>

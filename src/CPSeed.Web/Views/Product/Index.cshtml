@@ -65,7 +65,7 @@
     }
 </script>
 
-@Html.Action("Banner", "Home", new { image = "3.jpg", title = "Danh mục sản phẩm" })
+@Html.Action("Banner", "Home", new { image = "raupg.jpg", title = "Danh mục sản phẩm" })
 <!-- End All Title Box -->
 <!-- Start Shop Page  -->
 
@@ -78,13 +78,21 @@
                         <div class="filter-sidebar-left menu-right">
                             <div class="title-left">
                                 <h2 class="noo-sh-title" style="">Danh mục sản phẩm</h2>
+
                             </div>
                             @Html.Action("ProductType", "Product")
                         </div>
                     </div>
                 </div>
                 <div class="col-xl-9 col-lg-9 col-sm-12 col-xs-12 shop-content-right">
-                    <h2 class="noo-sh-title">sản phẩm kinh doanh</h2>
+                    @if (ViewBag.name == null)
+                    {
+                             <h2 class="noo-sh-title">sản phẩm kinh doanh</h2>
+                    }
+                    else
+                    {
+                        <h2 class="noo-sh-title"> @ViewBag.name.ProductTypeName</h2>
+                    }
                     <p>CP Seeds cung cấp cho bà con nông dân nhiều sản phẩm hạt giống chất lượng, không chỉ kháng sâu bệnh mà còn cho năng suất và hiệu quả cao. Các sản phẩm của hạt giống CP bao gồm rau, cây trồng trên đồng ruộng và các yếu tố thực vật. Công ty có 13 sản phẩm giống ngô lai tiên tiến, chất lượng cao và 4 sản phẩm ngô ăn có chất lượng tốt nhất. Nó có 2 giống lai năng suất cao cho bông  </p>
                     <br />
                     <div class="right-product-box">

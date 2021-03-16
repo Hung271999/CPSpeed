@@ -18,16 +18,15 @@
                 </div>
             </div>
             <div class="col-xl-9 col-lg-9 col-sm-12 col-xs-12 post-content" style="padding-left:50px;">
-                <h2 class="noo-sh-title" style="font-size:32px;color:#005b36;">@Model.Title asdasd sd asd sadd chất lượng, không chỉ kháng s chất lượng, không chỉ kháng s chất lượng, không chỉ kháng s chất lượng, không chỉ kháng s chất lượng, không chỉ kháng s ad ada das sa d as as dsa sad asd a</h2>
+                <h2 class="noo-sh-title" style="font-size:32px;color:#005b36;">@Model.Title </h2>
                 <div class="wp-btn-detail" style="margin:10px 0 20px 0;padding: 10px 0px; border-top: 0.5px solid #005b36;border-bottom: 0.5px solid #005b36;">
                     <div class="btn-detail ">
                         <a style="">Tin CPSeed</a>
                     </div>
                     <p class="btn-detail-time" style="margin-left:10px">@Model.CreateDate</p>
                 </div>
-                <img class="img-fluid" src="~/images/@Model.image" alt="">
-                <p>@Model.contents asd asd ada as das dasd asd asd asd as saadd chất lượng, không chỉ khánông chỉ kháng s chấtadông chỉ kháng s chấtadông chỉ kháng s chấtadông chỉ kháng s chấtadông chỉ kháng s chấtadông chỉ kháng s chấtadông chỉ kháng s chấtadông chỉ kháng s chấtadông chỉ kháng s chấtadông chỉ kháng s chấtadông chỉ kháng s chấtadg s chấtadd chất lượng, không chỉ kháng s chấtadd chất lượng, không chỉ kháng s chấtadd chất lượng, không chỉ kháng s chấtadd chất lượng, không chỉ kháng s chấtadd chất lượng, không chỉ kháng s chấtadd chất lượng, không chỉ kháng s chấtadd chất lượng, không chỉ kháng s chấtadd chất lượng, không chỉ kháng s chấtadd chất lượng, không chỉ kháng s chất</p>                
-                <br />
+               @* <img class="img-fluid" src="~/images/@Model.image" alt="">*@
+                <p>@Html.Raw(Model.contents)
             </div>
         </div>
     </div>
