@@ -78,8 +78,9 @@
                             @Html.Action("ProductTypeMenu", "Home")
                             @Html.Action("New", "Home")
                             @Html.Action("Pots", "Home", new { id = 3 })
-                            @Html.Partial("_LoginPartial")
                             <li class="nav-item"><a class="nav-link" href="@Url.Action("Index","Contact")">Liên hệ</a></li>
+
+                            @Html.Partial("_LoginPartial")
                         </ul>
                     </div>
                     <!-- Thanh điều hướng -->
@@ -131,12 +132,7 @@
         </div>
     </div>
     <!-- Footer copy right  -->
-    <div class="footer-copyright">
-        <p class="footer-company">
-            All Rights Reserved. © 2018 <a href="#">ThewayShop</a> Design By :
-            <a href="https://html.design/">html design</a>
-        </p>
-    </div>
+
     <!-- Footer copy right  -->
     <!-- End Footer  -->
     <!-- Scrips  -->

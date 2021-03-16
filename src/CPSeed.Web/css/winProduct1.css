@@ -200,3 +200,17 @@ a.list-group-item.list-group-item-action.dad {
     border: 3px solid #28a745;
     font-weight: 500;
 }
+
+/*giohang*/
+.table-main.table-responsive {
+    box-shadow: 0px 0px 25px rgb(0 0 0 / 25%);  
+}
+.thanhtoan {
+    box-shadow: 0px 0px 25px rgb(0 0 0 / 25%);
+    padding:25px;
+}
+
+/*home*/
+.deMap{
+    margin-bottom:-100px;
+}
