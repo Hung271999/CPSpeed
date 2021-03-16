@@ -71,3 +71,15 @@ D:\WebChallenge\project\CPSpeed\src\CPSeed.Util\obj\Debug\en\CPSeed.Util.resourc
 D:\WebChallenge\project\CPSpeed\src\CPSeed.Util\obj\Debug\CPSeed.Util.csproj.CopyComplete
 D:\WebChallenge\project\CPSpeed\src\CPSeed.Util\obj\Debug\CPSeed.Util.dll
 D:\WebChallenge\project\CPSpeed\src\CPSeed.Util\obj\Debug\CPSeed.Util.pdb
+D:\New folder\CPSpeed\src\CPSeed.Util\bin\Debug\CPSeed.Util.dll
+D:\New folder\CPSpeed\src\CPSeed.Util\bin\Debug\CPSeed.Util.pdb
+D:\New folder\CPSpeed\src\CPSeed.Util\bin\Debug\en\CPSeed.Util.resources.dll
+D:\New folder\CPSpeed\src\CPSeed.Util\obj\Debug\CPSeed.Util.csprojAssemblyReference.cache
+D:\New folder\CPSpeed\src\CPSeed.Util\obj\Debug\CPSeed.Util.ResourceUtil.resources
+D:\New folder\CPSpeed\src\CPSeed.Util\obj\Debug\CPSeed.Util.ResourceUtil.en.resources
+D:\New folder\CPSpeed\src\CPSeed.Util\obj\Debug\CPSeed.Util.csproj.GenerateResource.cache
+D:\New folder\CPSpeed\src\CPSeed.Util\obj\Debug\CPSeed.Util.csproj.CoreCompileInputs.cache
+D:\New folder\CPSpeed\src\CPSeed.Util\obj\Debug\en\CPSeed.Util.resources.dll
+D:\New folder\CPSpeed\src\CPSeed.Util\obj\Debug\CPSeed.Util.csproj.CopyComplete
+D:\New folder\CPSpeed\src\CPSeed.Util\obj\Debug\CPSeed.Util.dll
+D:\New folder\CPSpeed\src\CPSeed.Util\obj\Debug\CPSeed.Util.pdb

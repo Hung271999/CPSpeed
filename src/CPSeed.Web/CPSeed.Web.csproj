@@ -497,6 +497,7 @@
     <Content Include="Views\Home\Slide.cshtml" />
     <Content Include="Views\Home\Technology.cshtml" />
     <Content Include="Views\Home\Vision_mission.cshtml" />
+    <Content Include="Views\Pots\categoryPost.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
