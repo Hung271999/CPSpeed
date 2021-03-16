@@ -267,6 +267,7 @@
     <Content Include="images\2231.jpg" />
     <Content Include="images\3.jpg" />
     <Content Include="images\aa.jpg" />
+    <Content Include="images\abc.jpg" />
     <Content Include="images\about-img.jpg" />
     <Content Include="images\add-img-01.jpg" />
     <Content Include="images\add-img-02.jpg" />
@@ -285,6 +286,7 @@
     <Content Include="images\banner\banner1.jpg" />
     <Content Include="images\banner\banner2.jpg" />
     <Content Include="images\bb.jpg" />
+    <Content Include="images\best.jpg" />
     <Content Include="images\bg-section.png" />
     <Content Include="images\big-img-01.jpg" />
     <Content Include="images\big-img-02.jpg" />
@@ -295,7 +297,10 @@
     <Content Include="images\categories_img_01.jpg" />
     <Content Include="images\categories_img_02.jpg" />
     <Content Include="images\categories_img_03.jpg" />
+    <Content Include="images\cc.jpg" />
     <Content Include="images\contact-bg.jpg" />
+    <Content Include="images\cp.jpg" />
+    <Content Include="images\cpsed..jpg" />
     <Content Include="images\favicon.ico" />
     <Content Include="images\gallery-img-01.jpg" />
     <Content Include="images\gallery-img-02.jpg" />
@@ -339,6 +344,8 @@
     <Content Include="images\instagram-img-08.jpg" />
     <Content Include="images\instagram-img-09.jpg" />
     <Content Include="images\logo.png" />
+    <Content Include="images\new1.jpg" />
+    <Content Include="images\nguoi-dua-giong-lua-thom-rvt-ve-dat-nuoc-1517541-637425370456542740.jpg" />
     <Content Include="images\payment-icon\1.png" />
     <Content Include="images\payment-icon\2.png" />
     <Content Include="images\payment-icon\3.png" />
