@@ -1,0 +1,60 @@
+﻿.body {
+    font-family: UTM-NeoSans-Intel, sans-serif;
+}
+.all-title-box {
+    height: 350px;
+}
+.all-title-box h2 {
+    margin-top: 100px;
+}
+    .all-title-box .breadcrumb {
+        margin-top: 100px;
+    }
+.filter-sidebar-left.menu-right {
+    background-color: white;
+    box-shadow: 0px 0px 25px rgb(0 0 0 / 25%);
+    padding: 20px 20px;
+    border-radius: 2px;
+    margin-top: -100px;
+}
+.title-left {
+    color: #361800;
+    border-bottom: 3px solid #361800;
+}
+.noo-sh-title {
+    font-size: 28px;
+    text-transform: uppercase;
+    font-style: normal;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+a.list-group-item.list-group-item-action.dad {
+    background: #f3f3f3;
+    transition: 0.2s;
+    color: #5c8416;
+    font-size: 25px;
+    position: relative;
+    color: #361800;
+    border-radius: 2px;
+    margin-bottom: 5px;
+    border: 1px solid rgb(0 0 0 / 5%);
+    padding: 5px;
+}
+.list-group-item[data-toggle="collapse"]::after {
+    top: 8px;
+    right: 30px;
+    content: '+';
+}
+.shop-box-inner {
+    padding: 40px 0px;
+}
+.shop-content-right p {
+    font-size: 20px;
+    color: #161616;
+    display: -webkit-box;
+    overflow: hidden;
+    -webkit-line-clamp: 4;
+    -webkit-box-orient: vertical;
+    text-align: justify;
+    font-family: UTM-NeoSans-Intel, sans-serif;
+}

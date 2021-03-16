@@ -1,0 +1,23 @@
+﻿@model IEnumerable<CPSeed.Models.Post>
+<br />
+<br />
+<div class="box-add-products mission">
+    <div class="container">
+        <div>
+            <h1 style="font-size:40px;color: #ffffff;" class="noo-sh-title-top">@ViewBag.Message.Title</h1>
+        </div>
+        <br />
+        <div class="row">
+            @foreach (var item in Model)
+            {
+                <div class="col-sm-6 col-lg-4">
+                    <div class="service-block-inner">
+                        <img src="~/images/@item.image" alt="">
+                        <h3>@item.Title</h3>
+                        <p style="font-size:20px">@item.Summary </p>
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+</div>

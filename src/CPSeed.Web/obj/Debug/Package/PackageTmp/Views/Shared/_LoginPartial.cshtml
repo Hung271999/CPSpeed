@@ -1,0 +1,31 @@
+﻿@using Microsoft.AspNet.Identity
+@if (Request.IsAuthenticated)
+{
+    using (Html.BeginForm("LogOff", "Account", FormMethod.Post, new { id = "logoutForm", @class = "navbar-right" }))
+    {
+        @Html.AntiForgeryToken()
+
+        <li class="dropdown">
+            <a href="#" class="nav-link dropdown-toggle arrow" data-toggle="dropdown" style="font-weight: 800;font-size: 20px;color: #161616;padding: 5px 0px 5px 30px;height: 35px; text-transform: uppercase;">Tài Khoản</a>
+            <ul class="dropdown-menu">
+                <li>
+                    @Html.ActionLink(User.Identity.GetUserName(), "", "", routeValues: null, htmlAttributes: new { title = "Manage" })
+                </li>
+                <li>
+                    @Html.ActionLink("Change your password", "ChangePassword","Manage", routeValues: null, htmlAttributes: new { title = "Manage" })
+                </li>
+                <li><a href="javascript:document.getElementById('logoutForm').submit()">Log off</a></li>
+            </ul>
+        </li>
+    }
+}
+else
+{
+    <li class="dropdown">
+        <a href="#" class="nav-link dropdown-toggle arrow" data-toggle="dropdown">Tài Khoản</a>
+        <ul class="dropdown-menu">
+            <li>@Html.ActionLink("Register", "Register", "Account", routeValues: null, htmlAttributes: new { id = "registerLink" })</li>
+            <li>@Html.ActionLink("Log in", "Login", "Account", routeValues: null, htmlAttributes: new { id = "loginLink" })</li>
+        </ul>
+    </li>
+}

@@ -6,7 +6,7 @@
                     <h2 class="noo-sh-title" style="color: #005b36; border-bottom: 2.5px solid #789A3D">Sự kiện</h2>
                 </div>
                 <div class="see-all" style="position: absolute; top: 40%; right: 1%; transform: translateY(-50%);">
-                    <a href="" style=" transition: 0.3s; color: #191818; font-size: 20px; transition: all 0.3s;">Xem tất cả &gt</a>
+                    <a href="@Url.Action("NewsDetail","News",new { id=2})" style=" transition: 0.3s; color: #191818; font-size: 20px; transition: all 0.3s;">Xem tất cả &gt</a>
                 </div>
             </div>
         </div>
@@ -19,7 +19,7 @@
                     </div>
                     <div class="blog-content">
                         <div class="wp-content-news" style="margin-top:20px;">
-                            <a href="" class="content-news-txt">@item.Title</a>
+                            <a href="@Url.Action("CT","News",new {id=item.NewDetailID})" class="content-news-txt">@item.Title</a>
                             <div class="wp-btn-detail" style="">
                                 <div class="btn-detail">
                                     <a style="">Sự kiện CPSeed</a>

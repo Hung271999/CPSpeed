@@ -1,0 +1,72 @@
+﻿@model IEnumerable<CPSeed.Models.NewDetail>
+
+<div class="box-add-products news">
+    <div class="categories-shop">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="title-all">
+                        <h1 style="font-size:40px">TIN TỨC</h1>
+                    </div>
+                    <hr class="productDive" />
+                </div>
+            </div>
+            <div class="row deMap">
+                @{
+                    int i = 0;
+                    foreach (var item in Model)
+                    {
+                        var link = "/chi-tiet-tin/" + item.Title + "-" + item.NewDetailID;
+                        i++;
+                        if (i == 1)
+                        {
+                            <div class="col-md-6 col-lg-4 col-xl-4">
+                                <div class="blog-box">
+                                    <div class="blog-img">
+                                        <img class="img-fluid" src="~/images/@item.image" alt="">
+                                    </div>
+                                    <div class="blog-content">
+                                        <div class="title-blog">
+                                            <h3>@item.Title</h3>
+                                            <hr class="newsDive" />
+                                            <p style="font-size:18px">@item.Summary</p>
+                                            <br />
+                                            <button type="button" class="btn btn-outline-dark"><a href="@link">Xem Thêm</a></button>
+                                        </div>
+                                        <div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        }
+                        else
+                        {
+                            <div class="col-md-6 col-lg-8 col-xl-8">
+                                <div class="blog-box">
+                                    <div class="blog-img">
+                                        <img class="img-fluid" src="~/images/@item.image" alt="">
+                                    </div>
+                                    <div class="blog-content ">
+                                        <div class="title-blog big">
+                                            <div class="col-md-4 bigLeft">
+                                                <h3>@item.Title</h3>
+                                                <button type="button" class="btn btn-outline-dark"><a href="@link">Xem Thêm</a></button>
+                                            </div>
+                                            <div class="col-md-8 bigRight">
+                                                <p style="font-size:18px">@item.Summary</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        }
+                    }
+
+                }
+
+
+            </div>
+        </div>
+    </div>
+</div>
