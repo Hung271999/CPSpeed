@@ -21,7 +21,7 @@
                     <div class="list-group">
                         @foreach (var item3 in NewDetail)
                         {
-                            <a href="@Url.Action("CT", "News", new { id = item3.NewDetailID})" style="color: #5c8416; font-size:20px" class="list-group-item list-group-item-action">@item3.Title</a>
+                            <a href="@Url.Action("productDetail", "ProDuct", new { id = item3.NewDetailID})" style="color: #5c8416; font-size:20px" class="list-group-item list-group-item-action">@item3.Title</a>
                         }
                     </div>
                 </div>
@@ -33,16 +33,7 @@
                     <div class="list-group">
                         @foreach (var item3 in NewDetail)
                         {
-                            if (item3.NewsID == 3)
-                            {
-                                <a href="" style="color: #5c8416;font-size:20px" class="list-group-item list-group-item-action">@item3.Title</a>
-
-                            }
-                            else
-                            {
-                                <a href="@Url.Action("CT", "News", new { id = item3.NewDetailID})" style="color: #5c8416;font-size:20px" class="list-group-item list-group-item-action">@item3.Title</a>
-
-                            }
+                            <a href="@Url.Action("productDetail", "ProDuct", new { id = item3.NewDetailID})" style="color: #5c8416;font-size:20px" class="list-group-item list-group-item-action">@item3.Title</a>
 
                         }
                     </div>

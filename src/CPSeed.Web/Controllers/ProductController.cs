@@ -22,8 +22,6 @@ namespace CPSeed.Controllers
             else
             {
                 ViewBag.id = id;
-                ProductType a = data.ProductTypes.Where(n => n.ProductTypeID == id).SingleOrDefault();
-                ViewBag.name = a;
                 ViewBag.Count=data.Products.Where(n => n.ProductTypeID == id).Count();
             }
             return View();

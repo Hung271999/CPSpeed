@@ -258,6 +258,7 @@
     <Content Include="css\superslides.css" />
     <Content Include="css\win2.css" />
     <Content Include="css\winProduct.css" />
+    <Content Include="css\winProduct1.css" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
@@ -496,7 +497,6 @@
     <Content Include="Views\Home\Slide.cshtml" />
     <Content Include="Views\Home\Technology.cshtml" />
     <Content Include="Views\Home\Vision_mission.cshtml" />
-    <Content Include="Views\Pots\categoryPost.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

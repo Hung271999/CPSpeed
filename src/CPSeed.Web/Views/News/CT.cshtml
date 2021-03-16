@@ -7,54 +7,28 @@
 <div class="shop-box-inner">
     <div class="container">
         <div class="row">
-            <div class="col-xl-9 col-lg-9 col-sm-12 col-xs-12 shop-content-right">
-                <div class="right-product-box">
-                    <div class="product-categorie-box">
-                        <div class="tab-content">
-                            <div role="tabpanel" class="tab-pane fade show active" id="grid-view">
-                                <div class="row">
-                                    <div class="container">
-                                        <div class="row my-4">
-                                            <div class="col-12">
-                                                <h2 class="noo-sh-title">@Model.Title</h2>
-                                            </div>
-
-                                            <div class="col-md-6 col-lg-4 col-xl-4">
-                                                <div class="blog-box">
-                                                    <div class="blog-img">
-                                                        <img class="img-fluid" src="~/images/@Model.image" alt="">
-                                                    </div>
-                                                    <div class="blog-content">
-                                                        <div class="title-blog">
-                                                            <h3>@Model.Title</h3>
-                                                            <b>@Model.contents</b>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-
-                                        </div>
-                                        <hr />
-                                    </div>
-                                </div>
-                            </div>
-
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-xl-3 col-lg-3 col-sm-12 col-xs-12 sidebar-shop-left" style="padding-top:110px">
-                <div class="product-categori">
-
-                    <div class="filter-sidebar-left">
+            <div class="col-xl-3 col-lg-3 col-sm-12 col-xs-12 sidebar-shop-left ">
+                <div class="product-categori ">
+                    <div class="filter-sidebar-left menu-right">
                         <div class="title-left">
-                            <h3> Truyền thông</h3>
+                            <h2 class="noo-sh-title" style="">TRUYỀN THÔNG</h2>
                         </div>
                         @Html.Action("Communicationcategory", "News")
                     </div>
                 </div>
             </div>
-
+            <div class="col-xl-9 col-lg-9 col-sm-12 col-xs-12 post-content" style="padding-left:50px;">
+                <h2 class="noo-sh-title" style="font-size:32px;color:#005b36;">@Model.Title asdasd sd asd sadd chất lượng, không chỉ kháng s chất lượng, không chỉ kháng s chất lượng, không chỉ kháng s chất lượng, không chỉ kháng s chất lượng, không chỉ kháng s ad ada das sa d as as dsa sad asd a</h2>
+                <div class="wp-btn-detail" style="margin:10px 0 20px 0;padding: 10px 0px; border-top: 0.5px solid #005b36;border-bottom: 0.5px solid #005b36;">
+                    <div class="btn-detail ">
+                        <a style="">Tin CPSeed</a>
+                    </div>
+                    <p class="btn-detail-time" style="margin-left:10px">@Model.CreateDate</p>
+                </div>
+                <img class="img-fluid" src="~/images/@Model.image" alt="">
+                <p>@Model.contents asd asd ada as das dasd asd asd asd as saadd chất lượng, không chỉ khánông chỉ kháng s chấtadông chỉ kháng s chấtadông chỉ kháng s chấtadông chỉ kháng s chấtadông chỉ kháng s chấtadông chỉ kháng s chấtadông chỉ kháng s chấtadông chỉ kháng s chấtadông chỉ kháng s chấtadông chỉ kháng s chấtadông chỉ kháng s chấtadg s chấtadd chất lượng, không chỉ kháng s chấtadd chất lượng, không chỉ kháng s chấtadd chất lượng, không chỉ kháng s chấtadd chất lượng, không chỉ kháng s chấtadd chất lượng, không chỉ kháng s chấtadd chất lượng, không chỉ kháng s chấtadd chất lượng, không chỉ kháng s chấtadd chất lượng, không chỉ kháng s chấtadd chất lượng, không chỉ kháng s chất</p>                
+                <br />
+            </div>
         </div>
     </div>
     @Html.Action("AllNews", "News", new { id = 1 })

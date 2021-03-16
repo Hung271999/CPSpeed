@@ -124,7 +124,6 @@ namespace CPSeed.Controllers
                     }
                     else
                     {
-                        ViewBag.Count = product.Count();
                         return PartialView(product.ToPagedList(pageNum, pagesize));
                     }
                 }

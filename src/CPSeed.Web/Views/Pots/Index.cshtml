@@ -1,40 +1,73 @@
 ﻿@model IEnumerable<CPSeed.Models.Post>
-@{ ViewBag.Title = "Index";
-    Layout = "~/Views/Shared/_Layout.cshtml"; }
-@Html.Action("Banner", "Home", new { image = "2.jpg", title = "Tuyển dụng" })
-<div class="shop-box-inner">
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@Html.Action("Banner", "Home", new { image = "4.jpg", title = "Tuyển dụng" })
+<div class="about-box-main">
     <div class="container">
-        <div class="row">
-            <div class="col-xl-3 col-lg-3 col-sm-12 col-xs-12 sidebar-shop-left " style="padding-top:20px;">
-                <div class="product-categori ">
-                    <div class="filter-sidebar-left menu-right">
-                        <div class="title-left">
-                            <h2 class="noo-sh-title" style="">Tuyển dụng</h2>
-                        </div>
-                        @Html.Action("categoryPost", "Pots")
-                    </div>
-                </div>
-            </div>
-            <div class="col-xl-9 col-lg-9 col-sm-12 col-xs-12 shop-content-right" style="padding-left:50px;">
-                <h2 class="noo-sh-title" style="font-size:32px;color:#005b36;">TUYỂN DỤNG</h2>
-                <p>CP Seed là doanh nghiệp khoa học công nghệ chuyên cung cấp giống cây trồng và các giải pháp phát triển nông nghiệp hàng đầu. Tập đoàn đang có nhu cầu tuyển dụng các vị trí công việc sau: </p>
-                <br />
+        <div class="row my-4">
+            <div class="col-12">
+                <h2 class="noo-sh-title">Thông tin tuyển dụng</h2>
+                <hr />
             </div>
             @foreach (var item in Model)
             {
                 <div class="col-sm-6 col-lg-3">
-                    <div class="hover-team" style="border:1px solid">
+                    <div class="hover-team">
                         <div class="our-team">
                             <img src="~/images/Post/@item.image" alt="">
                         </div>
                         <div class="team-description" style="text-align:center">
-                            <b style="display: inline-block; font-family: fml-bold; text-align: center; width: 100%; color: #005b36; transition: 0.2s; margin-top: 15px; line-height: 21px; font-size: 17px;">@item.Title</b>
+                            <b>@item.Title</b>
                         </div>
                     </div>
                 </div>
-             }
+            }
         </div>
     </div>
 </div>
+<!-- Start Shop Page  -->
+<div class="shop-box-inner" style="padding-top:1px">
+    <div class="container">
+        <div class="row">
+            <div class="col-xl-9 col-lg-9 col-sm-12 col-xs-12 shop-content-right">
+                <div class="right-product-box">
+                    <div class="product-item-filter row">
+                        <div class="col-12 col-sm-8 text-center text-sm-left">
+                            <div class="toolbar-sorter-right">
+                                <span>Sort by </span>
+                                <select id="basic" class="selectpicker show-tick form-control" data-placeholder="$ USD">
+                                </select>
+                            </div>
+                            <p> Số lượng: tin</p>
+                        </div>
+                    </div>
+                    <div class="product-categorie-box">
+                        <div class="tab-content">
+                            <div role="tabpanel" class="tab-pane fade show active" id="grid-view">
+                            </div>
+                            <div role="tabpanel" class="tab-pane fade" id="list-view">
+                                <div class="list-view-box">
 
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xl-3 col-lg-3 col-sm-12 col-xs-12 sidebar-shop-left">
+                <div class="product-categori">
+                    <div class="search-product">
+                        <form action="#">
+                            <input class="form-control" placeholder="Search here..." type="text">
+                            <button type="submit"> <i class="fa fa-search"></i> </button>
+                        </form>
+                    </div>
 
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>

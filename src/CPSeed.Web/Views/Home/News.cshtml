@@ -16,7 +16,6 @@
                     int i = 0;
                     foreach (var item in Model)
                     {
-                        var link = "/chi-tiet-tin/" + item.Title + "-" + item.NewDetailID;
                         i++;
                         if (i == 1)
                         {
@@ -31,7 +30,7 @@
                                             <hr class="newsDive" />
                                             <p style="font-size:18px">@item.Summary</p>
                                             <br />
-                                            <button type="button" class="btn btn-outline-dark"><a style="color: green;" href="@link">Xem Thêm</a></button>
+                                            <button type="button" class="btn btn-outline-dark">Xem thêm</button>
                                         </div>
                                         <div>
                                         </div>
@@ -50,7 +49,7 @@
                                         <div class="title-blog big">
                                             <div class="col-md-4 bigLeft">
                                                 <h3>@item.Title</h3>
-                                                <button type="button" class="btn btn-outline-dark" style="margin-top:13px;"><a style="color: green;" href="@link">Xem Thêm</a></button>
+                                                <button type="button" class="btn btn-outline-dark" style="margin-top:13px;">Xem thêm</button>
                                             </div>
                                             <div class="col-md-8 bigRight">
                                                 <p style="font-size:18px">@item.Summary</p>
