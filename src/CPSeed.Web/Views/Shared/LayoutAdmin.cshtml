@@ -40,6 +40,7 @@
         });
     </script>
     <script src="~/assets/js/jquery-3.3.1.min.js"></script>
+    @RenderSection("upload", required: false)
     <!-- https://jquery.com/download/ -->
     <script src="~/assets/js/moment.min.js"></script>
     <!-- https://momentjs.com/ -->
@@ -51,7 +52,7 @@
     <script src="~/assets/js/plugins/ckeditor/ckeditor.js"></script>
     <script src="~/assets/js/plugins/ckfinder/ckfinder.js"></script>
     <script src="~/assets/js/cktool.js"></script>
-    @RenderSection("upload", required: false)
+
     <script>
         Chart.defaults.global.defaultFontColor = 'white';
         let ctxLine,

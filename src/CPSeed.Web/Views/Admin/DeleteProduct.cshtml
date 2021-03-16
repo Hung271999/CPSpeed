@@ -4,77 +4,86 @@
     ViewBag.Title = "DeleteProduct";
     Layout = "~/Views/Shared/LayoutAdmin.cshtml";
 }
-
 @using (Html.BeginForm())
 {
     @Html.AntiForgeryToken()
 
-    <nav class="navbar navbar-expand-xl">
-        <div class="container h-100">
-            <a class="navbar-brand" href="index">
-                <h1 class="tm-site-title mb-0">Product Admin</h1>
-            </a>
-            <button class="navbar-toggler ml-auto mr-0"
-                    type="button"
-                    data-toggle="collapse"
-                    data-target="#navbarSupportedContent"
-                    aria-controls="navbarSupportedContent"
-                    aria-expanded="false"
-                    aria-label="Toggle navigation">
-                <i class="fas fa-bars tm-nav-icon"></i>
-            </button>
+<nav class="navbar navbar-expand-xl">
+    <div class="container h-100">
+        <a class="navbar-brand" href="index">
+            <h1 class="tm-site-title mb-0">Product Admin</h1>
+        </a>
+        <button class="navbar-toggler ml-auto mr-0"
+                type="button"
+                data-toggle="collapse"
+                data-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent"
+                aria-expanded="false"
+                aria-label="Toggle navigation">
+            <i class="fas fa-bars tm-nav-icon"></i>
+        </button>
 
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav mx-auto h-100">
-                    <li class="nav-item">
-                        <a class="nav-link" href="home">
-                            <i class="fas fa-tachometer-alt"></i> Dashboard
-                            <span class="sr-only">(current)</span>
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">
-                            <i class="fas fa-file-alt"></i> Reports
-                            <span class="sr-only">(current)</span>
-                        </a>
-                    </li>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mx-auto h-100">
+                <li class="nav-item">
+                    <a class="nav-link" href="Index">
+                        <i class="fas fa-tachometer-alt"></i> Dashboard
+                        <span class="sr-only">(current)</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">
+                        <i class="fas fa-file-alt"></i> Report
+                        <span class="sr-only">(current)</span>
+                    </a>
+                </li>
 
-                    <li class="nav-item">
-                        <a class="nav-link active" href="products">
-                            <i class="fas fa-shopping-cart"></i> Products
-                        </a>
-                    </li>
+                <li class="nav-item">
+                    <a class="nav-link active" href="Product">
+                        <i class="fas fa-shopping-cart"></i> Product
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link " href="Post">
+                        <i class="fas fa-file-alt"></i> Post
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link " href="Slide">
+                        <i class="fas fa-file-alt"></i> Slide
+                    </a>
+                </li>
 
-                    <li class="nav-item">
-                        <a class="nav-link" href="accounts">
-                            <i class="far fa-user"></i> Accounts
-                        </a>
-                    </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="Account">
+                        <i class="far fa-user"></i> Account
+                    </a>
+                </li>
 
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">
-                            <i class="fas fa-cog"></i> Settings
-                        </a>
-                    </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">
+                        <i class="fas fa-cog"></i> Setting
+                    </a>
+                </li>
 
-                </ul>
-                <ul class="navbar-nav">
-                    <li class="nav-item">
-                        <a class="nav-link d-block" href="login">
-                            Admin, <b>Logout</b>
-                        </a>
-                    </li>
-                </ul>
-            </div>
+            </ul>
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link d-block" href="Login">
+                        Admin, <b>Logout</b>
+                    </a>
+                </li>
+            </ul>
         </div>
-    </nav>
+    </div>
+</nav>
     <div class="container tm-mt-big tm-mb-big">
         <div class="row">
             <div class="col-xl-9 col-lg-10 col-md-12 col-sm-12 mx-auto">
                 <div class="tm-bg-primary-dark tm-block tm-block-h-auto">
                     <div class="row">
                         <div class="col-12">
-                            <h2 class="tm-block-title d-inline-block">Add Product</h2>
+                            <h2 class="tm-block-title d-inline-block">Delete Product</h2>
                         </div>
                     </div>
                     <div class="row tm-edit-product-row">
@@ -84,159 +93,80 @@
                                     <label for="name">
                                         Product ID
                                     </label>
-                                    @Html.EditorFor(model => model.ProductID, new { htmlAttributes = new { @class = "form-control" } })
-                                    @Html.ValidationMessageFor(model => model.ProductID, "", new { @class = "text-danger" })
+                                    <input style="color:black"
+                                           type="text"
+                                           value="@Model.ProductID"
+                                           class="form-control validate"
+                                           readonly                                          
+                                           required />
                                 </div>
                                 <div class="form-group mb-3">
                                     <label for="name">
                                         Product Name
                                     </label>
-                                    @Html.EditorFor(model => model.ProductName, new { htmlAttributes = new { @class = "form-control" } })
-                                    @Html.ValidationMessageFor(model => model.ProductName, "", new { @class = "text-danger" })
+                                    <input style="color:black"
+                                           type="text"
+                                           value="@Model.ProductName"
+                                           class="form-control validate"
+                                           readonly
+                                           required />
                                 </div>
 
                                 <div class="form-group mb-3">
                                     <label for="name">
                                         Product Types
                                     </label>
-                                    @Html.DropDownList("ProductTypeID", (IEnumerable<SelectListItem>)ViewBag.ProductTypeID, new { @class = "custom-select tm-select-accounts" })
-                                </div>
-
-                                <div class="row">
-                                    <div class="form-group mb-3 col-xs-12 col-sm-6">
-                                        <label for="expire_date">
-                                            Unit ID
-                                        </label>
-                                        @Html.EditorFor(model => model.UnitID, new { htmlAttributes = new { @class = "form-control" } })
-                                        @Html.ValidationMessageFor(model => model.UnitID, "", new { @class = "text-danger" })
-                                    </div>
-                                    <div class="form-group mb-3 col-xs-12 col-sm-6">
-                                        <label for="stock">
-                                            Unit Name
-                                        </label>
-                                        @Html.EditorFor(model => model.UnitName, new { htmlAttributes = new { @class = "form-control" } })
-                                        @Html.ValidationMessageFor(model => model.UnitName, "", new { @class = "text-danger" })
-                                    </div>
-                                </div>
-
-                                <div class="row">
-                                    <div class="form-group mb-3 col-xs-12 col-sm-6">
-                                        <label for="expire_date">
-                                            Provider ID
-                                        </label>
-                                        @Html.EditorFor(model => model.ProviderID, new { htmlAttributes = new { @class = "form-control" } })
-                                        @Html.ValidationMessageFor(model => model.ProviderID, "", new { @class = "text-danger" })
-                                    </div>
-                                    <div class="form-group mb-3 col-xs-12 col-sm-6">
-                                        <label for="stock">
-                                            Provider Name
-                                        </label>
-                                        @Html.EditorFor(model => model.ProviderName, new { htmlAttributes = new { @class = "form-control" } })
-                                        @Html.ValidationMessageFor(model => model.ProviderName, "", new { @class = "text-danger" })
-                                    </div>
+                                    <input style="color:black"
+                                           type="text"
+                                           value="@ViewBag.ProductType"
+                                           class="form-control validate"
+                                           readonly
+                                           required />
                                 </div>
 
                                 <div class="form-group mb-3">
                                     <label for="name">
                                         Buy Price
                                     </label>
-                                    @Html.EditorFor(model => model.BuyPriceCurrent, new { htmlAttributes = new { @class = "form-control" } })
-                                    @Html.ValidationMessageFor(model => model.BuyPriceCurrent, "", new { @class = "text-danger" })
+                                    <input style="color:black"                                           
+                                           type="text"
+                                           value="@ViewBag.BuyPrice"
+                                           class="form-control validate"
+                                           readonly
+                                           required />
                                 </div>
 
                                 <div class="form-group mb-3">
                                     <label for="name">
                                         Sell Price
                                     </label>
-                                    @Html.EditorFor(model => model.SellPrice, new { htmlAttributes = new { @class = "form-control" } })
-                                    @Html.ValidationMessageFor(model => model.SellPrice, "", new { @class = "text-danger" })
+                                    <input style="color:black"
+                                           type="text"
+                                           value="@ViewBag.SellPrice"
+                                           class="form-control validate"
+                                           readonly
+                                           required />
                                 </div>
-
-
                             </form>
                         </div>
-                        <div class="col-xl-6 col-lg-6 col-md-12 mx-auto mb-4">
-                            <div class="tm-product-img-dummy mx-auto">
-                                <img src="@Url.Content("~/images/" + Model.image)" width="700px" height="350px" />
-                            </div>
-                            <div class="custom-file mt-3 mb-3">
-                                @*<input id="fileInput" type="file" style="display:none;" />
-                                    <input type="button"
-                                           id="btn_fileinput"
-                                           class="btn btn-primary btn-block mx-auto"
-                                           value="UPLOAD PRODUCT IMAGE" />*@
-                                <input type="file" name="btn_fileinput" />
-                                @ViewBag.ThongBao
-                            </div>
-                            <div class="row" style="padding-top:90px">
-                                <div class="form-group mb-3 col-xs-12 col-sm-4">
-                                    <label for="expire_date">
-                                        Export Buy
-                                    </label>
-                                    @Html.EditorFor(model => model.ExportBuy, new { htmlAttributes = new { @class = "form-control" } })
-                                    @Html.ValidationMessageFor(model => model.ExportBuy, "", new { @class = "text-danger" })
-                                </div>
-                                <div class="form-group mb-3 col-xs-12 col-sm-4">
-                                    <label for="stock">
-                                        Export Offer
-                                    </label>
-                                    @Html.EditorFor(model => model.ExportOffer, new { htmlAttributes = new { @class = "form-control" } })
-                                    @Html.ValidationMessageFor(model => model.ExportOffer, "", new { @class = "text-danger" })
-                                </div>
-                                <div class="form-group mb-3 col-xs-12 col-sm-4">
-                                    <label for="stock">
-                                        Is Deleted
-                                    </label>
-                                    @Html.EditorFor(model => model.IsDeleted, new { htmlAttributes = new { @class = "form-control" } })
-                                    @Html.ValidationMessageFor(model => model.IsDeleted, "", new { @class = "text-danger" })
-                                </div>
-                            </div>
 
-                            <div class="row">
-                                <div class="form-group mb-3 col-xs-12 col-sm-6">
-                                    <label for="expire_date">
-                                        Create User
-                                    </label>
-                                    @Html.EditorFor(model => model.CreateUser, new { htmlAttributes = new { @class = "form-control" } })
-                                    @Html.ValidationMessageFor(model => model.ProductID, "", new { @class = "text-danger" })
-                                </div>
-                                <div class="form-group mb-3 col-xs-12 col-sm-6">
-                                    <label for="stock">
-                                        Update User
-                                    </label>
-                                    @Html.EditorFor(model => model.UpdateUser, new { htmlAttributes = new { @class = "form-control" } })
-                                    @Html.ValidationMessageFor(model => model.UpdateUser, "", new { @class = "text-danger" })
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="form-group mb-3 col-xs-12 col-sm-6">
-                                    <label for="expire_date">
-                                        Update Date
-                                    </label>
-                                    <input type="date" name="UpdateDate" />
-                                    @Html.ValidationMessageFor(model => model.UpdateDate, "", new { @class = "text-danger" })
-                                </div>
-                                <div class="form-group mb-3 col-xs-12 col-sm-6">
-                                    <label for="stock">
-                                        Create Date
-                                    </label>
-                                    <input type="date" name="CreateDate" />
-                                    @Html.ValidationMessageFor(model => model.CreateDate, "", new { @class = "text-danger" })
-                                </div>
+                        <div class="col-xl-6 col-lg-6 col-md-12 mx-auto mb-4">
+                            <div style="padding-top:18px" class="custom-file mt-3 mb-3">                                                                
+                                <img src="@Url.Content("~/images/Product/" + Model.image)" id="pictureUpload" width="358" height="350" />
                             </div>
                         </div>
                         <div class="form-group mb-3 col-xs-12 col-sm-12">
                             <label for="description">Description</label>
-                            <textarea id="description">@Model.description</textarea>
+                            <textarea id="description" name="description" readonly>@Model.description</textarea>
                         </div>
                         <div class="col-12">
                             <button type="submit" class="btn btn-primary btn-block text-uppercase">Delete Product</button>
                         </div>
-
-
                     </div>
                 </div>
             </div>
         </div>
     </div>
 }
+
+

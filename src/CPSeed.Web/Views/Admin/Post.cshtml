@@ -28,7 +28,6 @@
                         <span class="sr-only">(current)</span>
                     </a>
                 </li>
-
                 <li class="nav-item">
                     <a class="nav-link" href="#">
                         <i class="fas fa-file-alt"></i> Report
@@ -37,19 +36,17 @@
                 </li>
 
                 <li class="nav-item">
-                    <a class="nav-link " href="Product">
+                    <a class="nav-link active" href="Product">
                         <i class="fas fa-shopping-cart"></i> Product
                     </a>
                 </li>
-
                 <li class="nav-item">
-                    <a class="nav-link active" href="Post">
+                    <a class="nav-link " href="Post">
                         <i class="fas fa-file-alt"></i> Post
                     </a>
                 </li>
-
                 <li class="nav-item">
-                    <a class="nav-link " href="slide">
+                    <a class="nav-link " href="Slide">
                         <i class="fas fa-file-alt"></i> Slide
                     </a>
                 </li>
@@ -69,7 +66,7 @@
             </ul>
             <ul class="navbar-nav">
                 <li class="nav-item">
-                    <a class="nav-link d-block" href="login">
+                    <a class="nav-link d-block" href="Login">
                         Admin, <b>Logout</b>
                     </a>
                 </li>
@@ -85,11 +82,11 @@
                     <table class="table table-hover tm-table-small tm-product-table">
                         <thead>
                             <tr>
-                                <th scope="col">&nbsp;</th>
                                 <th scope="col">TITLE NAME</th>
                                 <th scope="col">SUMMARY</th>
                                 <th scope="col">CONTENT</th>
                                 <th scope="col">CATEGORY</th>
+                                <th scope="col">&nbsp;</th>
                                 <th scope="col">&nbsp;</th>
                             </tr>
                         </thead>
@@ -97,18 +94,22 @@
 
                             @foreach (var item in Model)
                             {
-                                <tr>
-                                    <th scope="row"><input type="checkbox" /></th>
-                                    <td >@Html.DisplayFor(modelItem => item.Title)</td>
-                                    <td>@Html.DisplayFor(modelItem => item.Summary)</td>
-                                    <td>@Html.DisplayFor(modelItem => item.contents)</td>
-                                    <td>@Html.DisplayFor(modelItem => item.CategoryID)</td>
-                                    <td>
-                                        <a href="#" class="tm-product-delete-link">
-                                            <i class="far fa-trash-alt tm-product-delete-icon"></i>
-                                        </a>
-                                    </td>
-                                </tr>
+                            <tr>
+                                <td width="150">@Html.DisplayFor(modelItem => item.Title)</td>
+                                <td width="350">@Html.DisplayFor(modelItem => item.Summary)</td>
+                                <td>@Html.DisplayFor(modelItem => item.contents)</td>
+                                <td>@Html.DisplayFor(modelItem => item.CategoryID)</td>
+                                <td>
+                                    <a href="@Url.Action("DeletePost", "Admin" , new { id = item.PostID })" class="tm-product-delete-link">
+                                        <i class="far fa-trash-alt tm-product-delete-icon"></i>
+                                    </a>
+                                </td>
+                                <td>
+                                    <a href="@Url.Action("EditPost", "Admin" , new { id = item.PostID })">
+                                        <span style="color:white">Edit</span>
+                                    </a>
+                                </td>
+                            </tr>
                             }
                         </tbody>
                     </table>

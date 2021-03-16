@@ -5,8 +5,6 @@
     Layout = "~/Views/Shared/LayoutAdmin.cshtml";
 }
 
-<h2>AddProduct</h2>
-
 @using (Html.BeginForm("AddProduct", "Admin", FormMethod.Post, new { @enctype = "multipart/form-data" }))
 {
     @Html.AntiForgeryToken()
@@ -29,40 +27,50 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav mx-auto h-100">
                     <li class="nav-item">
-                        <a class="nav-link" href="home">
+                        <a class="nav-link" href="Index">
                             <i class="fas fa-tachometer-alt"></i> Dashboard
                             <span class="sr-only">(current)</span>
                         </a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#">
-                            <i class="fas fa-file-alt"></i> Reports
+                            <i class="fas fa-file-alt"></i> Report
                             <span class="sr-only">(current)</span>
                         </a>
                     </li>
 
                     <li class="nav-item">
-                        <a class="nav-link active" href="products">
-                            <i class="fas fa-shopping-cart"></i> Products
+                        <a class="nav-link active" href="Product">
+                            <i class="fas fa-shopping-cart"></i> Product
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link " href="Post">
+                            <i class="fas fa-file-alt"></i> Post
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link " href="Slide">
+                            <i class="fas fa-file-alt"></i> Slide
                         </a>
                     </li>
 
                     <li class="nav-item">
-                        <a class="nav-link" href="accounts">
-                            <i class="far fa-user"></i> Accounts
+                        <a class="nav-link" href="Account">
+                            <i class="far fa-user"></i> Account
                         </a>
                     </li>
 
                     <li class="nav-item">
                         <a class="nav-link" href="#">
-                            <i class="fas fa-cog"></i> Settings
+                            <i class="fas fa-cog"></i> Setting
                         </a>
                     </li>
 
                 </ul>
                 <ul class="navbar-nav">
                     <li class="nav-item">
-                        <a class="nav-link d-block" href="login">
+                        <a class="nav-link d-block" href="Login">
                             Admin, <b>Logout</b>
                         </a>
                     </li>
@@ -89,7 +97,7 @@
                                     <input name="ProductID"
                                            type="text"
                                            class="form-control validate"
-                                           required />                                    
+                                           required />
                                     @ViewData["Loi1"]
                                 </div>
                                 <div class="form-group mb-3">
@@ -106,7 +114,7 @@
                                 <div class="form-group mb-3">
                                     <label for="name">
                                         Product Types
-                                    </label>                                    
+                                    </label>
                                     @Html.DropDownList("ProductTypeID", (IEnumerable<SelectListItem>)ViewBag.ProductTypeID, new { @class = "custom-select tm-select-accounts" })
                                     @ViewData["Loi3"]
                                 </div>
@@ -119,7 +127,7 @@
                                     <input name="BuyPriceCurrent"
                                            type="text"
                                            class="form-control validate"
-                                           required />                                    
+                                           required />
                                     @ViewData["Loi4"]
                                 </div>
 
@@ -130,7 +138,7 @@
                                     <input name="SellPrice"
                                            type="text"
                                            class="form-control validate"
-                                           required />                                    
+                                           required />
                                     @ViewData["Loi5"]
                                 </div>
 
@@ -138,26 +146,20 @@
                             </form>
                         </div>
                         <div class="col-xl-6 col-lg-6 col-md-12 mx-auto mb-4">
-                            <!--<div class="tm-product-img-dummy mx-auto">-->
-
-                                @*<i class="fas fa-cloud-upload-alt tm-upload-icon"></i>*@
-                                @*<img id="pictureUpload" width="300" height="300" />*@
-                            <!--</div>-->
-                            <div class="custom-file mt-3 mb-3">
-                                @*<input type="text" name="picture" id="picture" class="form-control" />*@
-                                @*<input id="fileUpload" accept="image/*" name="fileUpload" type="file" style="display:none;" />
+                            <div style="padding-top:18px" class="custom-file mt-3 mb-3">
+                                <input type="text" name="picture" id="picture" class="form-control" />
+                                <input type="file" accept="image/*" id="fileUpload" name="fileUpload" style="display:none" ; />
                                 <input type="button"
-                                id="btnUpload"
-                                class="btn btn-success btn-primary btn-block mx-auto "
-                                value="UPLOAD PRODUCT IMAGE" />*@
-                                <input type="file" id="fileUpload" name="fileUpload" />                                
-                                @ViewBag.ThongBao
+                                       id="btnUpload"
+                                       class="btn btn-success btn-primary btn-block mx-auto "
+                                       value="UPLOAD PRODUCT IMAGE" />
+                                <img id="pictureUpload" width="348" height="350" />
                             </div>
                         </div>
                     </div>
                     <div class="form-group mb-3 col-xs-12 col-sm-12">
                         <label for="description">Description</label>
-                        <textarea name="description"></textarea>
+                        <textarea name="description" id="description"></textarea>
                         @ViewData["Loi6"]
                     </div>
                     <div class="col-12">
@@ -189,7 +191,7 @@
                             processData: false,
                             data: formData,
                             success: function (urlImage) {
-                                $('#pictureUpload').attr('src', ulrImage);
+                                $('#pictureUpload').attr('src', urlImage);
                                 $('#picture').val(urlImage);
                             },
                             error: function (err) {

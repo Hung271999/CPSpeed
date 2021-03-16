@@ -8,3 +8,12 @@
         finder.popup();
     });
 });
+$(document).ready(function () {
+    CKEDITOR.replace("Title");    
+});
+$(document).ready(function () {
+    CKEDITOR.replace("Summary");
+});
+$(document).ready(function () {
+    CKEDITOR.replace("Content");
+});
