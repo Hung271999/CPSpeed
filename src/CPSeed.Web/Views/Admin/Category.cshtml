@@ -1,0 +1,9 @@
+﻿@model IEnumerable<CPSeed.Models.Category>
+
+@{
+    Layout = null;
+}
+@foreach (var item in Model)
+{    
+    @Html.DisplayFor(modelItem => item.Title)
+}
