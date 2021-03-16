@@ -4,15 +4,15 @@
 }
 
     <div class="shop-box-inner register-form">
-        <div class="register">
-            <div class="container">
+        <div class="shop-box-inner register-form">
+            <div class="container register">
                 <div class="row content">
                     <div class="col-md-6">
-                        <h2 class="font-weight-bold mt-2 register-title">@ViewBag.Title.</h2>
+                        <h2 class="font-weight-bold mt-2">@ViewBag.Title.</h2>
                         @using (Html.BeginForm("Register", "Account", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
                         {
                             @Html.AntiForgeryToken()
-                            <hr   style="height:1px; background-color:#28a745"/>
+                            <hr />
                             @Html.ValidationSummary("", new { @class = "text-danger" })
                             <div class="form-group">
                                 @Html.LabelFor(m => m.Email, new { @class = "row px-3 control-label" })
@@ -32,8 +32,10 @@
                                     @Html.PasswordFor(m => m.ConfirmPassword, new { @class = "form-control" })
                                 </div>
                             </div>
-                            <div class="form-group btn-register">
-                                <input type="submit" class="btn btn-outline-success" value="Register" />
+                            <div class="form-group">
+                                <div class="col-md-offset-2 col-md-10 p-0">
+                                    <input type="submit" class="btn btn-outline-success" value="Register" />
+                                </div>
                             </div>
                         }
                     </div>

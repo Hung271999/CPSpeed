@@ -278,6 +278,7 @@
     <Content Include="images\banner-01.jpg" />
     <Content Include="images\banner-02.jpg" />
     <Content Include="images\banner-03.jpg" />
+    <Content Include="images\banner-login.jpg" />
     <Content Include="images\banner\1.jpg" />
     <Content Include="images\banner\2.jpg" />
     <Content Include="images\banner\3.jpg" />
@@ -285,6 +286,9 @@
     <Content Include="images\banner\banner-gionglua-v1-637214382473750803.png" />
     <Content Include="images\banner\banner1.jpg" />
     <Content Include="images\banner\banner2.jpg" />
+    <Content Include="images\banner\raupg.jpg" />
+    <Content Include="images\banner\truyenthong.jpg" />
+    <Content Include="images\banner\tuyeudung.jpg" />
     <Content Include="images\bb.jpg" />
     <Content Include="images\best.jpg" />
     <Content Include="images\bg-section.png" />
@@ -387,6 +391,7 @@
     <Content Include="images\Product\e.jpg" />
     <Content Include="images\Product\f.jpg" />
     <Content Include="images\Product\hung.jpg" />
+    <Content Include="images\raupg.jpg" />
     <Content Include="images\SLICE_SMALL_BANNER_4.jpg" />
     <Content Include="images\SLICE_SMALL_BANNER_6.jpg" />
     <Content Include="images\smp-img-01.jpg" />
