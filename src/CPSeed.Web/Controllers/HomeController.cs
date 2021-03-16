@@ -113,7 +113,7 @@ namespace CPSeed.Controllers
                     if (product.Count() == 0)
                     {
                         ViewBag.Status = 1;
-                        var news = data.NewDetails.Where(n => n.Title.Contains(key)).Take(10).ToList();
+                        var news = data.NewDetails.Where(n => n.Title.Contains(key)).Where(n=>n.Priority==0).Take(10).ToList();
                         if (news.Count() == 0)
                         {
                             ViewBag.Status = 2;

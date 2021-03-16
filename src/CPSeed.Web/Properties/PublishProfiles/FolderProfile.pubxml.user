@@ -14,10 +14,10 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
       <publishTime>03/16/2021 12:55:50</publishTime>
     </File>
     <File Include="bin/CPSeed.dll">
-      <publishTime>03/16/2021 16:37:30</publishTime>
+      <publishTime>03/16/2021 17:15:43</publishTime>
     </File>
     <File Include="bin/CPSeed.pdb">
-      <publishTime>03/16/2021 16:37:30</publishTime>
+      <publishTime>03/16/2021 17:15:43</publishTime>
     </File>
     <File Include="bin/CPSeed.Util.dll">
       <publishTime>03/16/2021 12:56:39</publishTime>
@@ -449,7 +449,7 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
       <publishTime>03/16/2021 15:54:13</publishTime>
     </File>
     <File Include="images/banner/truyenthong.jpg">
-      <publishTime>03/16/2021 15:56:00</publishTime>
+      <publishTime>01/01/0001 00:00:00</publishTime>
     </File>
     <File Include="images/banner/tuyeudung.jpg">
       <publishTime>03/16/2021 15:49:29</publishTime>
@@ -992,7 +992,7 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
       <publishTime>03/16/2021 12:55:49</publishTime>
     </File>
     <File Include="Views/News/AllNews.cshtml">
-      <publishTime>03/16/2021 15:30:37</publishTime>
+      <publishTime>03/16/2021 17:10:35</publishTime>
     </File>
     <File Include="Views/News/Communicationcategory.cshtml">
       <publishTime>03/16/2021 13:16:26</publishTime>
@@ -1001,7 +1001,7 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
       <publishTime>03/16/2021 13:30:10</publishTime>
     </File>
     <File Include="Views/News/events.cshtml">
-      <publishTime>03/16/2021 14:16:01</publishTime>
+      <publishTime>03/16/2021 17:02:25</publishTime>
     </File>
     <File Include="Views/News/Imagegallery.cshtml">
       <publishTime>03/16/2021 15:15:46</publishTime>
@@ -1010,10 +1010,10 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
       <publishTime>03/16/2021 15:56:55</publishTime>
     </File>
     <File Include="Views/News/News.cshtml">
-      <publishTime>03/16/2021 12:55:49</publishTime>
+      <publishTime>03/16/2021 17:01:08</publishTime>
     </File>
     <File Include="Views/News/NewsDetail.cshtml">
-      <publishTime>03/16/2021 16:04:23</publishTime>
+      <publishTime>03/16/2021 17:06:05</publishTime>
     </File>
     <File Include="Views/Pots/categoryPost.cshtml">
       <publishTime>03/16/2021 13:01:06</publishTime>

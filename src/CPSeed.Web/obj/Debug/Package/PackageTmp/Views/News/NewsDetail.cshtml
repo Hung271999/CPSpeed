@@ -28,9 +28,6 @@
                     <div class="title-all">
                         <h2 class="noo-sh-title" style="color: #005b36; border-bottom: 2.5px solid #789A3D">@ViewBag.name.Title mới nhất</h2>
                     </div>
-                    <div class="see-all" style="position: absolute; top: 40%; right: 1%; transform: translateY(-50%);">
-                        <a href="" style=" transition: 0.3s; color: #191818; font-size: 20px; transition: all 0.3s;">Xem tất cả &gt</a>
-                    </div>
                 </div>
             </div>
             <div class="row">
@@ -59,7 +56,7 @@
         </div>
         <br />
         <br />
-        @Html.Action("AllNews", "News")
+        @Html.Action("AllNews", "News", new { id= ViewBag.id })
     </div>
 
     
