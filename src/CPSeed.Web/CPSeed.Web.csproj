@@ -277,6 +277,7 @@
     <Content Include="images\banner-01.jpg" />
     <Content Include="images\banner-02.jpg" />
     <Content Include="images\banner-03.jpg" />
+    <Content Include="images\banner-login.jpg" />
     <Content Include="images\banner\1.jpg" />
     <Content Include="images\banner\2.jpg" />
     <Content Include="images\banner\3.jpg" />
