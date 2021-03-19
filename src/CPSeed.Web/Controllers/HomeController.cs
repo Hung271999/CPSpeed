@@ -76,6 +76,14 @@ namespace CPSeed.Controllers
             var Technology = data.Posts.Where(n => n.CategoryID == 2). Where(n=>n.Status == true).ToList();
             return PartialView(Technology.ToPagedList(pageNum,pagesize));
         }
+        //linh vuc
+        public ActionResult LV(int? page)
+        {
+            int pagesize = 1;
+            int pageNum = (page ?? 1);
+            var lv = data.Posts.Where(n => n.CategoryID == 4).Where(n => n.Status == true).ToList();
+            return PartialView(lv.ToPagedList(pageNum, pagesize));
+        }
         // Danh sách loại sản phẩm dạng menu
         public ActionResult ProductTypeMenu()
         {

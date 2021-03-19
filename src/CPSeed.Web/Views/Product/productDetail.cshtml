@@ -56,9 +56,7 @@
                     <h2 class="noo-sh-title" style="color: #361800;">@Model.ProductName</h2>
                     <h5 style="color:#5c8416"> Giá: @Model.SellPrice</h5>
                     <h4>Mô tả:</h4>
-                    <p>
-                        @Model.description 
-                    </p>
+                   @Html.Raw(Model.description)
                     <ul>
                         <li>
                             <div class="form-group quantity-box">

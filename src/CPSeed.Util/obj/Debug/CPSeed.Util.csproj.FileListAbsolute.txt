@@ -104,3 +104,15 @@ C:\Users\Tri Nguyen\Desktop\New folder (3)\CPSpeed\src\CPSeed.Util\obj\Debug\CPS
 C:\Users\Tri Nguyen\Desktop\New folder (3)\CPSpeed\src\CPSeed.Util\obj\Debug\en\CPSeed.Util.resources.dll
 C:\Users\Tri Nguyen\Desktop\New folder (3)\CPSpeed\src\CPSeed.Util\obj\Debug\CPSeed.Util.dll
 C:\Users\Tri Nguyen\Desktop\New folder (3)\CPSpeed\src\CPSeed.Util\obj\Debug\CPSeed.Util.pdb
+D:\dad\CPSpeed\src\CPSeed.Util\bin\Debug\CPSeed.Util.dll
+D:\dad\CPSpeed\src\CPSeed.Util\bin\Debug\CPSeed.Util.pdb
+D:\dad\CPSpeed\src\CPSeed.Util\bin\Debug\en\CPSeed.Util.resources.dll
+D:\dad\CPSpeed\src\CPSeed.Util\obj\Debug\CPSeed.Util.csprojAssemblyReference.cache
+D:\dad\CPSpeed\src\CPSeed.Util\obj\Debug\CPSeed.Util.ResourceUtil.resources
+D:\dad\CPSpeed\src\CPSeed.Util\obj\Debug\CPSeed.Util.ResourceUtil.en.resources
+D:\dad\CPSpeed\src\CPSeed.Util\obj\Debug\CPSeed.Util.csproj.GenerateResource.cache
+D:\dad\CPSpeed\src\CPSeed.Util\obj\Debug\CPSeed.Util.csproj.CoreCompileInputs.cache
+D:\dad\CPSpeed\src\CPSeed.Util\obj\Debug\en\CPSeed.Util.resources.dll
+D:\dad\CPSpeed\src\CPSeed.Util\obj\Debug\CPSeed.Util.csproj.CopyComplete
+D:\dad\CPSpeed\src\CPSeed.Util\obj\Debug\CPSeed.Util.dll
+D:\dad\CPSpeed\src\CPSeed.Util\obj\Debug\CPSeed.Util.pdb

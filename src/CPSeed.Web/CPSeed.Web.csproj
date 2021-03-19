@@ -1105,9 +1105,8 @@
     <Content Include="css\slick.css" />
     <Content Include="css\style.css" />
     <Content Include="css\superslides.css" />
-    <Content Include="css\win2.css" />
-    <Content Include="css\winProduct.css" />
-    <Content Include="css\winProduct1.css" />
+    <Content Include="css\win1.css" />
+    <Content Include="css\win3.css" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
@@ -1406,6 +1405,7 @@
     <Content Include="Views\Admin\Slide.cshtml" />
     <Content Include="Views\Shared\LayoutAdmin.cshtml" />
     <Content Include="Views\Admin\DeleteProduct.cshtml" />
+    <Content Include="Views\Home\LV.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

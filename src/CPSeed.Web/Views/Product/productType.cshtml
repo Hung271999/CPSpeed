@@ -13,9 +13,9 @@
                 }
                 <small class="text-muted">(@ViewBag.Count)</small>
             </a>
-            CPSeedContext data = new CPSeedContext();
-            List<Product> Product = data.Products.Where(n => n.ProductTypeID == item.ProductTypeID).ToList();         
-            if (ViewBag.Status == item.ProductTypeID)
+                    CPSeedContext data = new CPSeedContext();
+                    List<Product> Product = data.Products.Where(n => n.ProductTypeID == item.ProductTypeID).ToList();         
+                    if (ViewBag.Status == item.ProductTypeID)
             {
                 <div class="collapse show" id="@item.ProductTypeID" data-parent="#list-group-men">
                     <div class="list-group">
