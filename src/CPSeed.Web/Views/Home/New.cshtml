@@ -10,12 +10,12 @@
 
                 <li><a href="@link">@item.Title</a></li>
 
-}
-else
-{
-                    var a = "/truyen-thong/" + item.Title + "-" + item.NewsID;
-                    <li><a href="@a">@item.Title</a></li>
-                    }
             }
+            else
+            {
+                var a = "/truyen-thong/" + item.Title + "-" + item.NewsID;
+                <li><a href="@a">@item.Title</a></li>
+            }
+        }
     </ul>
 </li>

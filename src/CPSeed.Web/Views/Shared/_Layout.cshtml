@@ -20,10 +20,11 @@
     <link rel="apple-touch-icon" href="~/images/apple-touch-icon.png">
 
     <!--Csss -->
+    <link href="~/css/aos.css" rel="stylesheet" />
     <link href="~/css/main.css" rel="stylesheet" />
     <link href="~/css/slick.css" rel="stylesheet" />
-    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <!--js  -->
+    <script src="~/js/aos.js"></script>
     <link href="~/Scripts/jquery.validate.unobtrusive.min.js" rel="stylesheet" />
     <script src="https://cdn.tiny.cloud/1/x863nqkjuo6tfzhecu7j78hea7txwu6n7ky3durf03u5rmc4/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>
     <link href='http://fonts.googleapis.com/css?family=Oxygen:400,300,700|Open+Sans:400,300,600,700' rel='stylesheet' type='text/css'>
@@ -31,7 +32,7 @@
     @Styles.Render("~/Contents/css")
     @Scripts.Render("~/bundles/modernizr")
     <link href="~/css/win1.css" rel="stylesheet" />
-    <link href="~/css/win3.css" rel="stylesheet" />
+    <link href="~/css/win2.css" rel="stylesheet" />
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-MVWHZCR1MF"></script>
     <script>
@@ -142,7 +143,6 @@
         </div>
     </div>
     <!-- Footer copy right  -->
-
     <!-- Footer copy right  -->
     <!-- End Footer  -->
     <!-- Scrips  -->
@@ -287,6 +287,9 @@
         $(window).scroll(function () {
             $('nav').toggleClass('scrolled', $(this).scrollTop() > 50);
         });
+    </script>
+    <script>
+        AOS.init();
     </script>
     <!-- Scrips  -->
 </body>

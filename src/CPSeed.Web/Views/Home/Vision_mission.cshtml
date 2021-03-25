@@ -4,14 +4,14 @@
 <div class="box-add-products mission">
     <div class="container">
         <div>
-            <h1 style="font-size:40px;color: #ffffff;" class="noo-sh-title-top">@ViewBag.Message.Title</h1>
+            <h1 style="font-size:40px;color: #ffffff;width: fit-content" class="noo-sh-title-top" data-aos="zoom-in" data-aos-duration="1000">@ViewBag.Message.Title</h1>
         </div>
         <br />
         <div class="row">
             @foreach (var item in Model)
             {
-                <div class="col-sm-6 col-lg-4">
-                    <div class="service-block-inner">
+                <div class="col-sm-6 col-lg-4" data-aos="fade-up" data-aos-duration="1000">
+                    <div class="mission-content">
                         <img src="~/images/@item.image" alt="">
                         <h3>@item.Title</h3>
                         <p style="font-size:20px">@item.Summary </p>

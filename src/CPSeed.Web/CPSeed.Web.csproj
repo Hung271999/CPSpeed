@@ -1089,6 +1089,7 @@
     <Content Include="Content\PagedList.css" />
     <Content Include="css\all.css" />
     <Content Include="css\animate.css" />
+    <Content Include="css\aos.css" />
     <Content Include="css\baguetteBox.min.css" />
     <Content Include="css\bootsnav.css" />
     <Content Include="css\bootstrap-select.css" />
@@ -1096,6 +1097,7 @@
     <Content Include="css\carousel-ticker.css" />
     <Content Include="css\code_animate.css" />
     <Content Include="css\custom.css" />
+    <Content Include="css\win1.css" />
     <Content Include="css\hung.css" />
     <Content Include="css\jquery-ui.css" />
     <Content Include="css\login.css" />
@@ -1105,8 +1107,7 @@
     <Content Include="css\slick.css" />
     <Content Include="css\style.css" />
     <Content Include="css\superslides.css" />
-    <Content Include="css\win1.css" />
-    <Content Include="css\win3.css" />
+    <Content Include="css\win2.css" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
@@ -1245,6 +1246,7 @@
     <Content Include="images\smp-img-01.jpg" />
     <Content Include="images\smp-img-02.jpg" />
     <Content Include="images\smp-img-03.jpg" />
+    <Content Include="js\aos.js" />
     <Content Include="js\baguetteBox.min.js" />
     <Content Include="js\bootsnav.js" />
     <Content Include="js\bootstrap-select.js" />
@@ -1257,6 +1259,7 @@
     <Content Include="js\isotope.min.js" />
     <Content Include="js\jquery-3.2.1.min.js" />
     <Content Include="js\jquery-ui.js" />
+    <Content Include="js\jquery.lazy.min.js" />
     <Content Include="js\jquery.nicescroll.min.js" />
     <Content Include="js\jquery.superslides.min.js" />
     <Content Include="js\owl.carousel.min.js" />
