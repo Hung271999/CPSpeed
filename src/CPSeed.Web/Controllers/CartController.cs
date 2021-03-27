@@ -216,7 +216,6 @@ namespace CPSeed.Controllers
 
             var counter = cartItem.quantity;
             var total = TongTien();
-            //var total = String.Format("{0:0,0}", TotalMoney());
 
 
             return Json(new { count = counter, totalMoney = total }, JsonRequestBehavior.AllowGet);

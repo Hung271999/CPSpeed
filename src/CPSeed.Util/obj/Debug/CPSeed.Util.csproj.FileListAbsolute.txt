@@ -50,7 +50,6 @@ D:\WebChallenge\CPSpeed\src\CPSeed.Util\obj\Debug\CPSeed.Util.pdb
 D:\CPSpeed\src\CPSeed.Util\bin\Debug\CPSeed.Util.dll
 D:\CPSpeed\src\CPSeed.Util\bin\Debug\CPSeed.Util.pdb
 D:\CPSpeed\src\CPSeed.Util\bin\Debug\en\CPSeed.Util.resources.dll
-D:\CPSpeed\src\CPSeed.Util\obj\Debug\CPSeed.Util.csprojAssemblyReference.cache
 D:\CPSpeed\src\CPSeed.Util\obj\Debug\CPSeed.Util.ResourceUtil.resources
 D:\CPSpeed\src\CPSeed.Util\obj\Debug\CPSeed.Util.ResourceUtil.en.resources
 D:\CPSpeed\src\CPSeed.Util\obj\Debug\CPSeed.Util.csproj.GenerateResource.cache
@@ -127,3 +126,4 @@ C:\Users\Admin\Desktop\LOL\CPSpeed\src\CPSeed.Util\obj\Debug\en\CPSeed.Util.reso
 C:\Users\Admin\Desktop\LOL\CPSpeed\src\CPSeed.Util\obj\Debug\CPSeed.Util.csproj.CopyComplete
 C:\Users\Admin\Desktop\LOL\CPSpeed\src\CPSeed.Util\obj\Debug\CPSeed.Util.dll
 C:\Users\Admin\Desktop\LOL\CPSpeed\src\CPSeed.Util\obj\Debug\CPSeed.Util.pdb
+D:\CPSpeed\src\CPSeed.Util\obj\Debug\CPSeed.Util.csprojAssemblyReference.cache

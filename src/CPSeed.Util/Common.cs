@@ -36,7 +36,7 @@ namespace CPSeed.Util
             {
                 return ResourceUtil.Instance.GetString(key);
             }
-            catch
+            catch (Exception ex)
             {
                 return "";
             }

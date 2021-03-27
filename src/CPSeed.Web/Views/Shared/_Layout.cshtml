@@ -44,7 +44,6 @@
     </script>
     <script>!function (s, u, b, i, z) { var o, t, r, y; s[i] || (s._sbzaccid = z, s[i] = function () { s[i].q.push(arguments) }, s[i].q = [], s[i]("setAccount", z), r = ["widget.subiz.net", "storage.googleapis" + (t = ".com"), "app.sbz.workers.dev", i + "a" + (o = function (k, t) { var n = t <= 6 ? 5 : o(k, t - 1) + o(k, t - 3); return k !== t ? n : n.toString(32) })(20, 20) + t, i + "b" + o(30, 30) + t, i + "c" + o(40, 40) + t], (y = function (k) { var t, n; s._subiz_init_2094850928430 || r[k] && (t = u.createElement(b), n = u.getElementsByTagName(b)[0], t.async = 1, t.src = "https://" + r[k] + "/sbz/app.js?accid=" + z, n.parentNode.insertBefore(t, n), setTimeout(y, 2e3, k + 1)) })(0)) }(window, document, "script", "subiz", "acqyfndvzizymqqymvai");</script>
 </head>
-
 <body>
     <!-- Start Main Top -->
     <header class="main-header">
@@ -70,8 +69,17 @@
                         <ul>
                             <li class="search"><a href=""><i class="fa fa-search"></i></a></li>
                             <li class=""><a>|</a></li>
-                            <li class=""><a href=""><img src="~/images/icons/vn-flag.png" /></a></li>
-                            <li class=""><a href=""><img src="~/images/icons/en-flag.png" /></a></li>
+                            <li class=""><a ><img src="~/images/icons/vn-flag.png" /></a></li>
+                            <li class=""><a><img src="~/images/icons/en-flag.png" /></a></li>
+                            @{
+                                foreach (var i in CPSeed.LanguageMang.AvailableLanguages)
+                                {
+                                                        <li class="">
+                                                            @Html.ActionLink(i.LanguageFullName, "ChangeLanguage", "Home", new { lang = i.LanguageCultureName }, null)
+                                                        </li>
+                                    
+                                }
+                            }
                             <li class=""><a>|</a></li>
                             <li class=" ">
                                 <a href="@Url.Action("GioHang","Cart")">
@@ -85,7 +93,7 @@
                     <!-- Thanh điều hướng -->
                     <div class="collapse navbar-collapse" id="navbar-menu" style="width:100%">
                         <ul class="nav navbar-nav ml-auto" data-in="fadeInDown" data-out="fadeOutUp">
-                            <li class="nav-item "><a class="nav-link" href="~/" style="">Trang chủ</a></li>
+                            <li class="nav-item "><a class="nav-link" href="~/" style=""> @Resource.Home</a></li>
                             @Html.Action("ProductTypeMenu", "Home")
                             @Html.Action("New", "Home")
                             @Html.Action("Pots", "Home", new { id = 3 })

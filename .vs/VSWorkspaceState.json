@@ -1,6 +1,9 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\src",
+    "\\src\\CPSeed.Web"
   ],
+  "SelectedNode": "\\src\\CPSeed.sln",
   "PreviewInSolutionExplorer": false
 }

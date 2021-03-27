@@ -9,21 +9,37 @@ namespace CPSeed.Controllers
 {
     public class PotsController : Controller
     {
+        private static log4net.ILog logger = log4net.LogManager.GetLogger(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
         CPSeedContext data = new CPSeedContext();
         // GET: Pots
+        // trang chu tuyen dung
         public ActionResult Index()
         {
-            var td = data.Posts.Where(n => n.CategoryID == 3).Take(4).ToList();
-            return View(td);
+            try
+            {
+                var td = data.Posts.Where(n => n.CategoryID == 3).Take(4).ToList();
+                return View(td);
+            }
+            catch (Exception ex) {
+                logger.Debug("Index Post contronller");
+                return View();
+            }
+            
         }
+        // danh mục tuyển dụng
         public ActionResult categoryPost(int? id)
         {
-            var categoryPost = data.Posts.Where(n => n.CategoryID == 3).ToList();
-            return PartialView(categoryPost);
-        }
-        public ActionResult a()
-        {
-            return View();
+            try
+            {
+                var categoryPost = data.Posts.Where(n => n.CategoryID == 3).ToList();
+                return PartialView(categoryPost);
+            }
+            catch (Exception ex)
+            {
+                logger.Debug("categoryPost");
+                return View();
+            }
+            
         }
 
     }
