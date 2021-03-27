@@ -117,7 +117,121 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="Account" xml:space="preserve">
+    <value>Account</value>
+  </data>
+  <data name="Add" xml:space="preserve">
+    <value>Add to cart</value>
+  </data>
+  <data name="Addedtocart" xml:space="preserve">
+    <value>Added to cart</value>
+  </data>
+  <data name="Addreess" xml:space="preserve">
+    <value>Addreess</value>
+  </data>
+  <data name="Addresstoreceivethegoods" xml:space="preserve">
+    <value>Address to receive</value>
+  </data>
+  <data name="Bussinessproduct" xml:space="preserve">
+    <value>BUSINESS PRODUCTS</value>
+  </data>
+  <data name="Cart" xml:space="preserve">
+    <value>Cart</value>
+  </data>
+  <data name="Changepassword" xml:space="preserve">
+    <value>Changepassword</value>
+  </data>
+  <data name="Checkout" xml:space="preserve">
+    <value>Checkout</value>
+  </data>
+  <data name="Contact" xml:space="preserve">
+    <value>Contact</value>
+  </data>
+  <data name="Delete" xml:space="preserve">
+    <value>Delete</value>
+  </data>
+  <data name="Event" xml:space="preserve">
+    <value>Sự kiện</value>
+  </data>
+  <data name="FirstName" xml:space="preserve">
+    <value>First Name</value>
+  </data>
+  <data name="found" xml:space="preserve">
+    <value>Found</value>
+  </data>
+  <data name="highprice" xml:space="preserve">
+    <value>High Price</value>
+  </data>
   <data name="Home" xml:space="preserve">
-    <value>aaddad</value>
+    <value>Home</value>
+  </data>
+  <data name="Imagegallery" xml:space="preserve">
+    <value>IMAGE GALLERY</value>
+  </data>
+  <data name="LastName" xml:space="preserve">
+    <value>Last Name</value>
+  </data>
+  <data name="Login" xml:space="preserve">
+    <value>Login</value>
+  </data>
+  <data name="LogOff" xml:space="preserve">
+    <value>Log Out</value>
+  </data>
+  <data name="low price" xml:space="preserve">
+    <value>Low Price</value>
+  </data>
+  <data name="Media" xml:space="preserve">
+    <value>Media</value>
+  </data>
+  <data name="News" xml:space="preserve">
+    <value>NEWS</value>
+  </data>
+  <data name="Outstandingtechnology" xml:space="preserve">
+    <value>HIGHLIGHTS TECHNOLOGY</value>
+  </data>
+  <data name="Phone" xml:space="preserve">
+    <value>Phone</value>
+  </data>
+  <data name="Price" xml:space="preserve">
+    <value>Phone</value>
+  </data>
+  <data name="Productcategory" xml:space="preserve">
+    <value>Product Category</value>
+  </data>
+  <data name="products" xml:space="preserve">
+    <value>Products</value>
+  </data>
+  <data name="Quantity" xml:space="preserve">
+    <value>Quantity</value>
+  </data>
+  <data name="Recruitment" xml:space="preserve">
+    <value>Recruitment</value>
+  </data>
+  <data name="Register" xml:space="preserve">
+    <value>Register</value>
+  </data>
+  <data name="Secc" xml:space="preserve">
+    <value>Check out ok</value>
+  </data>
+  <data name="Seemore" xml:space="preserve">
+    <value>See more</value>
+  </data>
+  <data name="Send" xml:space="preserve">
+    <value>Send</value>
+  </data>
+  <data name="THEMAINCOMMERCIALASPECT" xml:space="preserve">
+    <value>THE MAIN COMMERCIAL ASPECT</value>
+  </data>
+  <data name="Title" xml:space="preserve">
+    <value>Title</value>
+  </data>
+  <data name="Total" xml:space="preserve">
+    <value>Total</value>
+  </data>
+  <data name="Totalorders" xml:space="preserve">
+    <value>Total orders</value>
+  </data>
+  <data name="Visionmission" xml:space="preserve">
+    <value>VISION MISSION</value>
   </data>
 </root>

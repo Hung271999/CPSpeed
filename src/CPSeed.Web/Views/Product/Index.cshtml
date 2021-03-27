@@ -77,7 +77,7 @@
                     <div class="product-categori ">
                         <div class="filter-sidebar-left menu-right">
                             <div class="title-left">
-                                <h2 class="noo-sh-title" style="">Danh mục sản phẩm</h2>
+                                <h2 class="noo-sh-title" style="">@Resource.Productcategory</h2>
 
                             </div>
                             @Html.Action("ProductType", "Product")
@@ -87,7 +87,7 @@
                 <div class="col-xl-9 col-lg-9 col-sm-12 col-xs-12 shop-content-right">
                     @if (ViewBag.name == null)
                     {
-                             <h2 class="noo-sh-title">sản phẩm kinh doanh</h2>
+                             <h2 class="noo-sh-title">@Resource.Bussinessproduct</h2>
                     }
                     else
                     {
@@ -103,12 +103,12 @@
                                     <div class="toolbar-sorter-right">
                                         <span><b style="color: #361800;">Sắp Xếp: </b> </span>
                                         <select id="basic" class="selectpicker show-tick form-control" data-placeholder="$ USD" onchange="basic();">
-                                            <option value="2">Giá thấp → Giá cao</option>
-                                            <option value="3" data-display="Select">Giá cao → Gía thấp</option>
+                                            <option value="2">@Resource.low_price → @Resource.highprice</option>
+                                            <option value="3" data-display="Select">@Resource.highprice → @Resource.low_price</option>
                                         </select>
                                     </div>
                                 </div>
-                                <b style="padding:10px;color: #361800;"> Đã tìm thấy @ViewBag.Count sản phẩm</b>
+                                <b style="padding:10px;color: #361800;">@Resource.found @ViewBag.Count @Resource.products</b>
                             </div>
                             <div class="product-categorie-box" id="product">
                                 <div class="tab-content">
@@ -124,12 +124,12 @@
                                     <div class="toolbar-sorter-right">
                                         <span><b style="color: #361800;">Sắp Xếp: </b> </span>
                                         <select id="basic" class="selectpicker show-tick form-control" data-placeholder="$ USD" onchange="basic2();">
-                                            <option value="2">Giá thấp → Giá cao</option>
-                                            <option value="3" data-display="Select">Giá cao → Gía thấp</option>
+                                            <option value="2">@Resource.low_price → @Resource.highprice</option>
+                                            <option value="3" data-display="Select">@Resource.highprice → @Resource.low_price</option>
                                         </select>
                                     </div>
                                 </div>
-                                <b style="padding:10px;color: #361800;"> Đã tìm thấy @ViewBag.Count sản phẩm</b>
+                                 <b style="padding:10px;color: #361800;">@Resource.found @ViewBag.Count @Resource.products</b>
                             </div>
                             <div class="product-categorie-box" id="product">
                                 <div class="tab-content">

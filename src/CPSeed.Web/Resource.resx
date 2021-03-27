@@ -117,7 +117,121 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="Account" xml:space="preserve">
+    <value>Tài khoản</value>
+  </data>
+  <data name="Add" xml:space="preserve">
+    <value>Thêm vào giỏ hàng</value>
+  </data>
+  <data name="Addedtocart" xml:space="preserve">
+    <value>Đã thêm vào giỏ hàng</value>
+  </data>
+  <data name="Addreess" xml:space="preserve">
+    <value>Địa chỉ</value>
+  </data>
+  <data name="Addresstoreceivethegoods" xml:space="preserve">
+    <value>Địa chỉ nhận hàng</value>
+  </data>
+  <data name="Bussinessproduct" xml:space="preserve">
+    <value>SẢN PHẨM KINH DOANH</value>
+  </data>
+  <data name="Cart" xml:space="preserve">
+    <value>Giỏ hàng</value>
+  </data>
+  <data name="Changepassword" xml:space="preserve">
+    <value>Thay đổi mật khẩu</value>
+  </data>
+  <data name="Checkout" xml:space="preserve">
+    <value>Thanh toán</value>
+  </data>
+  <data name="Contact" xml:space="preserve">
+    <value>Liên hệ</value>
+  </data>
+  <data name="Delete" xml:space="preserve">
+    <value>Xóa</value>
+  </data>
+  <data name="Event" xml:space="preserve">
+    <value>Sự kiện</value>
+  </data>
+  <data name="FirstName" xml:space="preserve">
+    <value>Họ</value>
+  </data>
+  <data name="found" xml:space="preserve">
+    <value>Đã tìm thấy</value>
+  </data>
+  <data name="highprice" xml:space="preserve">
+    <value>Giá cao</value>
+  </data>
   <data name="Home" xml:space="preserve">
     <value>Trang chủ</value>
+  </data>
+  <data name="Imagegallery" xml:space="preserve">
+    <value>THƯ VIỆN HÌNH ẢNH</value>
+  </data>
+  <data name="LastName" xml:space="preserve">
+    <value>Tên</value>
+  </data>
+  <data name="Login" xml:space="preserve">
+    <value>Đăng nhập</value>
+  </data>
+  <data name="LogOff" xml:space="preserve">
+    <value>Đăng xuất</value>
+  </data>
+  <data name="low price" xml:space="preserve">
+    <value>Giá thấp</value>
+  </data>
+  <data name="Media" xml:space="preserve">
+    <value>Truyền thông</value>
+  </data>
+  <data name="News" xml:space="preserve">
+    <value>TIN TỨC</value>
+  </data>
+  <data name="Outstandingtechnology" xml:space="preserve">
+    <value>CÔNG NGHỆ NỔI BẬT</value>
+  </data>
+  <data name="Phone" xml:space="preserve">
+    <value>SĐT</value>
+  </data>
+  <data name="Price" xml:space="preserve">
+    <value>Giá</value>
+  </data>
+  <data name="Productcategory" xml:space="preserve">
+    <value>Danh mục sản phẩm</value>
+  </data>
+  <data name="products" xml:space="preserve">
+    <value>Sản phẩm</value>
+  </data>
+  <data name="Quantity" xml:space="preserve">
+    <value>Số lượng</value>
+  </data>
+  <data name="Recruitment" xml:space="preserve">
+    <value>Tuyển dụng</value>
+  </data>
+  <data name="Register" xml:space="preserve">
+    <value>Đăng ký</value>
+  </data>
+  <data name="Secc" xml:space="preserve">
+    <value>Đặt hàng thành công</value>
+  </data>
+  <data name="Seemore" xml:space="preserve">
+    <value>Xem thêm</value>
+  </data>
+  <data name="Send" xml:space="preserve">
+    <value>Gửi</value>
+  </data>
+  <data name="THEMAINCOMMERCIALASPECT" xml:space="preserve">
+    <value>LĨNH VỰC KINH DOANH CHÍNH</value>
+  </data>
+  <data name="Title" xml:space="preserve">
+    <value>Tên</value>
+  </data>
+  <data name="Total" xml:space="preserve">
+    <value>Tổng tiến</value>
+  </data>
+  <data name="Totalorders" xml:space="preserve">
+    <value>Tổng đơn hàng</value>
+  </data>
+  <data name="Visionmission" xml:space="preserve">
+    <value>TẦM NHÌN SỨ MỆNH</value>
   </data>
 </root>

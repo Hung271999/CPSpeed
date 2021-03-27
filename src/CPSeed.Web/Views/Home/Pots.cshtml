@@ -1,7 +1,7 @@
 ﻿@model IEnumerable<CPSeed.Models.Post>
 @{ var link = "/tuyen-dung";}
 <li class="dropdown">
-    <a href="@Url.Action("Index","Pots")" class="nav-link dropdown-toggle arrow" data-toggle="dropdown">Tuyển dụng</a>
+    <a href="@Url.Action("Index","Pots")" class="nav-link dropdown-toggle arrow" data-toggle="dropdown">@Resource.Recruitment</a>
     <ul class="dropdown-menu">
         @foreach (var item in Model)
         {

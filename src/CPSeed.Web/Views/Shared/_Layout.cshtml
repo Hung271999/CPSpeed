@@ -84,7 +84,7 @@
                             <li class=" ">
                                 <a href="@Url.Action("GioHang","Cart")">
                                     <i class="fa fa-shopping-bag"></i>
-                                    <b> Giỏ Hàng</b>
+                                    <b> @Resource.Cart</b>
                                 </a>
                             </li>
                         </ul>
@@ -97,7 +97,7 @@
                             @Html.Action("ProductTypeMenu", "Home")
                             @Html.Action("New", "Home")
                             @Html.Action("Pots", "Home", new { id = 3 })
-                            <li class="nav-item"><a class="nav-link" href="@Url.Action("Index","Contact")">Liên hệ</a></li>
+                            <li class="nav-item"><a class="nav-link" href="@Url.Action("Index","Contact")">@Resource.Contact</a></li>
 
                             @Html.Partial("_LoginPartial")
                         </ul>
