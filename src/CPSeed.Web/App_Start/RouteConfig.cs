@@ -43,6 +43,12 @@ namespace CPSeed
                namespaces: new[] { "CPSeed.Controllers" }
            );
             routes.MapRoute(
+               name: "chi-tiet-tuyen-dung",
+                 url: "chi-tiet-tuyen-dung/{title}-{id}",
+               defaults: new { controller = "Pots", action = "PostDetail", id = UrlParameter.Optional },
+               namespaces: new[] { "CPSeed.Controllers" }
+           );
+            routes.MapRoute(
                name: "lien he",
                url: "lien-he",
                defaults: new { controller = "Contact", action = "Index", id = UrlParameter.Optional },
@@ -84,7 +90,13 @@ namespace CPSeed
                defaults: new { controller = "News", action = "CT", id = UrlParameter.Optional },
                namespaces: new[] { "CPSeed.Controllers" }
            );
-            
+            routes.MapRoute(
+               name: "chi-tiet-su-kien",
+               url: "chi-tiet-su-kien/{title}-{id}",
+               defaults: new { controller = "News", action = "CT", id = UrlParameter.Optional },
+               namespaces: new[] { "CPSeed.Controllers" }
+           );
+
             routes.MapRoute(
                 name: "Default",
                 url: "{controller}/{action}/{id}",

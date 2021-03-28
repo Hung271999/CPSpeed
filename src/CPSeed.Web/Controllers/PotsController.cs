@@ -41,6 +41,20 @@ namespace CPSeed.Controllers
             }
             
         }
+        public ActionResult PostDetail(int id)
+        {
+            try
+            {
+                var news = data.Posts.Where(n => n.PostID == id).Where(n=>n.CategoryID==3).Single();
+                return View(news);
+            }
+            catch (Exception ex)
+            {
+                logger.Debug("PostDetail");
+                return View();
+            }
+
+        }
 
     }
 }

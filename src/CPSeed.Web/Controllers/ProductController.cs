@@ -158,7 +158,6 @@ namespace CPSeed.Controllers
                 logger.Debug("select contronller");
                 return PartialView();
             }
-
             
         }
     }

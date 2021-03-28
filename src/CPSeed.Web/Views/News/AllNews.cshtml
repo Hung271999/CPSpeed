@@ -1,6 +1,7 @@
 ﻿@model PagedList.IPagedList<CPSeed.Models.NewDetail>
 @using PagedList.Mvc;
 @using PagedList;
+@using CPSeed.Util;
 <style>
 
     .pagination {
@@ -42,23 +43,36 @@
         <div class="row">
             @foreach (var item in Model)
             {
-                <div class="col-md-6 col-lg-6 col-xl-4">
-                    <div class="blog-img">
-                        <img class="img-fluid" src="~/images/@item.image" alt="">
-                    </div>
-                    <div class="blog-content">
-                        <div class="wp-content-news" style="margin-top:20px;">
-                            <a href="" class="content-news-txt">@item.Title</a>
-                            <div class="wp-btn-detail" style="">
-                                <div class="btn-detail">
-                                    <a style="">@ViewBag.name.Title CPSeed</a>
-                                </div>
-                                <p class="btn-detail-time" style="margin-left:10px">@item.CreateDate</p>
-                            </div>
-                        </div>
-
-                    </div>
+            <div class="col-md-6 col-lg-6 col-xl-4">
+                <div class="blog-img">
+                    <img class="img-fluid" src="~/images/@item.image" alt="">
                 </div>
+                @{
+                    var link = "/chi-tiet-tin/" + Common.str(item.Title) + "-" + item.NewDetailID;
+
+                    var link2 = "/chi-tiet-su-kien/" + Common.str(item.Title) + "-" + item.NewDetailID;
+                }
+                <div class="blog-content">
+                    <div class="wp-content-news" style="margin-top:20px;">
+                        @if (item.NewsID == 2)
+                        {
+                            <a href="@link2" class="content-news-txt">@item.Title</a>
+                        }
+                        else
+                        {
+                            <a href="@link" class="content-news-txt">@item.Title</a>
+
+                        }
+                        <div class="wp-btn-detail" style="">
+                            <div class="btn-detail">
+                                <a style="">@ViewBag.name.Title CPSeed</a>
+                            </div>
+                            <p class="btn-detail-time" style="margin-left:10px">@item.CreateDate</p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
             }
 
         </div>

@@ -25,6 +25,7 @@ namespace CPSeed
                         "~/js/form-validator.min.js",
                         "~/js/contact-form-script.js",
                         "~/js/custom.js",
+                        /*"~/js/jquery.lazy.min.js",*/
                         "~/Scripts/jquery.unobtrusive-ajax.min.js",
                         "~/Scripts/jquery-{version}.js"));
 

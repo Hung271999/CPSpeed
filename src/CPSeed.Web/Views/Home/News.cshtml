@@ -1,5 +1,5 @@
 ﻿@model IEnumerable<CPSeed.Models.NewDetail>
-
+@using CPSeed.Util;
 <div class="box-add-products news">
     <div class="categories-shop">
         <div class="container">
@@ -16,7 +16,7 @@
                     int i = 0;
                     foreach (var item in Model)
                     {
-                        var link = "/chi-tiet-tin/" + item.Title + "-" + item.NewDetailID;
+                        var link = "/chi-tiet-tin/" + Common.str(item.Title) + "-" + item.NewDetailID;
                         i++;
                         if (i == 1)
                         {

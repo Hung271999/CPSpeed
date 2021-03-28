@@ -1,4 +1,5 @@
 ﻿@model IEnumerable<CPSeed.Models.Post>
+@using CPSeed.Util;
 @{ ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_Layout.cshtml"; }
 @Html.Action("Banner", "Home", new { image = "tuyeudung.jpg", title = "Tuyển dụng" })
@@ -22,10 +23,11 @@
             </div>
             @foreach (var item in Model)
             {
+                var link = "/chi-tiet-tuyen-dung/" + Common.str(item.Title) + "-" + item.PostID;
                 <div class="col-sm-6 col-lg-3">
                     <div class="hover-team" style="box-shadow: 0px 0px 25px rgb(0 0 0 / 25%);  ">
                         <div class="our-team">
-                            <img src="~/images/Post/@item.image" alt="">
+                            <a href="@link"> <img src="~/images/Post/@item.image" alt="">
                         </div>
                         <div class="team-description" style="text-align:center">
                             <b style="display: inline-block; font-family: fml-bold; text-align: center; width: 100%; color: #005b36; transition: 0.2s; margin-top: 15px; line-height: 21px; font-size: 17px;">@item.Title</b>

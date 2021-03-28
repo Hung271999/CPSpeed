@@ -167,6 +167,180 @@ namespace CPSeed.Util
             }
             return null;
         }
+        public static string RemoveUnicode(string text)
+        {
+            string[] arr1 = new string[] { "á", "à", "ả", "ã", "ạ", "â", "ấ", "ầ", "ẩ", "ẫ", "ậ", "ă", "ắ", "ằ", "ẳ", "ẵ", "ặ",
+    "đ",
+    "é","è","ẻ","ẽ","ẹ","ê","ế","ề","ể","ễ","ệ",
+    "í","ì","ỉ","ĩ","ị",
+    "ó","ò","ỏ","õ","ọ","ô","ố","ồ","ổ","ỗ","ộ","ơ","ớ","ờ","ở","ỡ","ợ",
+    "ú","ù","ủ","ũ","ụ","ư","ứ","ừ","ử","ữ","ự",
+    "ý","ỳ","ỷ","ỹ","ỵ",};
+            string[] arr2 = new string[] { "a", "a", "a", "a", "a", "a", "a", "a", "a", "a", "a", "a", "a", "a", "a", "a", "a",
+    "d",
+    "e","e","e","e","e","e","e","e","e","e","e",
+    "i","i","i","i","i",
+    "o","o","o","o","o","o","o","o","o","o","o","o","o","o","o","o","o",
+    "u","u","u","u","u","u","u","u","u","u","u",
+    "y","y","y","y","y",};
+            for (int i = 0; i < arr1.Length; i++)
+            {
+                text = text.Replace(arr1[i], arr2[i]);
+                text = text.Replace(arr1[i].ToUpper(), arr2[i].ToUpper());
+            }
+            return text;
+        }
+        public static string str(string chuoi)
+        {
+
+            string result = "";
+            string a="";
+            for (int i = 0; i < chuoi.Length; i++)
+            {
+                if (chuoi[i] == 'P')
+                {
+                    chuoi = chuoi.Replace(chuoi[i], 'p');
+                }
+                if (chuoi[i] == 'A')
+                {
+                    chuoi = chuoi.Replace(chuoi[i], 'a');
+                }
+                if (chuoi[i] == 'B')
+                {
+                    chuoi = chuoi.Replace(chuoi[i], 'b');
+                }
+                if (chuoi[i] == 'C')
+                {
+                    chuoi = chuoi.Replace(chuoi[i], 'c');
+                }
+                if (chuoi[i] == 'D')
+                {
+                    chuoi = chuoi.Replace(chuoi[i], 'd');
+                }
+                if (chuoi[i] == 'E')
+                {
+                    chuoi = chuoi.Replace(chuoi[i], 'e');
+                }
+                if (chuoi[i] == 'F')
+                {
+                    chuoi = chuoi.Replace(chuoi[i], 'f');
+
+                }
+                if (chuoi[i] == 'G')
+                {
+                    chuoi = chuoi.Replace(chuoi[i], 'g');
+                }
+                if (chuoi[i] == 'H')
+                {
+                    chuoi = chuoi.Replace(chuoi[i], 'h');
+                }
+                if (chuoi[i] == 'J')
+                {
+                    chuoi = chuoi.Replace(chuoi[i], 'j');
+                }
+                if (chuoi[i] == 'K')
+                {
+                    chuoi = chuoi.Replace(chuoi[i], 'k');
+                }
+                if (chuoi[i] == 'L')
+                {
+                    chuoi = chuoi.Replace(chuoi[i], 'l');
+                }
+                if (chuoi[i] == 'Z')
+                {
+                    chuoi = chuoi.Replace(chuoi[i], 'z');
+                }
+                if (chuoi[i] == 'X')
+                {
+                    chuoi = chuoi.Replace(chuoi[i], 'x');
+                }
+                if (chuoi[i] == 'Q')
+                {
+                    chuoi = chuoi.Replace(chuoi[i], 'q');
+                }
+                if (chuoi[i] == 'M')
+                {
+                    chuoi = chuoi.Replace(chuoi[i], 'm');
+                }
+                if (chuoi[i] == 'N')
+                {
+                    chuoi = chuoi.Replace(chuoi[i], 'n');
+                }
+                if (chuoi[i] == 'I')
+                {
+                    chuoi = chuoi.Replace(chuoi[i], 'i');
+                }
+                if (chuoi[i] == 'O')
+                {
+                    chuoi = chuoi.Replace(chuoi[i], 'o');
+                }
+                if (chuoi[i] == 'Y')
+                {
+                    chuoi = chuoi.Replace(chuoi[i], 'y');
+                }
+                if (chuoi[i] == 'T')
+                {
+                    chuoi = chuoi.Replace(chuoi[i], 't');
+                }
+                if (chuoi[i] == 'R')
+                {
+                    chuoi = chuoi.Replace(chuoi[i], 'r');
+                }
+                if (chuoi[i] == 'E')
+                {
+                    chuoi = chuoi.Replace(chuoi[i], 'e');
+                }
+                if (chuoi[i] == 'W')
+                {
+                    chuoi = chuoi.Replace(chuoi[i], 'w');
+                }
+                if (chuoi[i] == 'V')
+                {
+                    chuoi = chuoi.Replace(chuoi[i], 'v');
+                }
+                if (chuoi[i] == 'U')
+                {
+                    chuoi = chuoi.Replace(chuoi[i], 'u');
+                }
+                if (chuoi[i] == 'S')
+                {
+                    chuoi = chuoi.Replace(chuoi[i], 's');
+                }
+                if (chuoi[i] == '.')
+                    continue;
+                if (chuoi[i] == ',')
+                    continue;
+                if (chuoi[i] == ';')
+                    continue;
+                if (chuoi[i] == ':')
+                    continue;
+                if (chuoi[i] == '/')
+                    continue;
+                if (chuoi[i] == '@')
+                    continue;
+                if (chuoi[i] == '#')
+                    continue;
+                if (chuoi[i] == '*')
+                    continue;
+                if (chuoi[i] == '(')
+                    continue;
+                if (chuoi[i] == ')')
+                    continue;
+                if (chuoi[i] == '>')
+                    continue;
+                if (chuoi[i] == '<')
+                    continue;
+                if (chuoi[i] == ' ')
+                {
+                    chuoi = chuoi.Replace(chuoi[i], '-');
+                    result += chuoi[i];
+                }
+                else
+                    result += chuoi[i];
+            }
+            
+            return RemoveUnicode(result);
+        }
         #region AppSetting
         public static string AppSettingKey(string key)
         {

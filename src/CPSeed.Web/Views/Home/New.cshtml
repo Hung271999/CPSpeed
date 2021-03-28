@@ -1,4 +1,5 @@
 ﻿@model IEnumerable<CPSeed.Models.News>
+@using CPSeed.Util;
 @{ var link = "/truyen-thong";}
 <li class="dropdown">
     <a href="@link" class="nav-link dropdown-toggle arrow" data-toggle="dropdown">@Resource.Media</a>
@@ -13,7 +14,7 @@
             }
             else
             {
-                var a = "/truyen-thong/" + item.Title + "-" + item.NewsID;
+                var a = "/truyen-thong/" + Common.str(item.Title) + "-" + item.NewsID;
                 <li><a href="@a">@item.Title</a></li>
             }
         }

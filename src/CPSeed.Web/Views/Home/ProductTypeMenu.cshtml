@@ -1,13 +1,19 @@
 ﻿@model IEnumerable<CPSeed.Models.ProductType>
+@using CPSeed.Util;
 
 @{ var link = "/danh-muc-san-pham";}
 <li class="dropdown">
     <a href="@link" class="nav-link dropdown-toggle arrow" data-toggle="dropdown">@Resource.Productcategory </a>
     <ul class="dropdown-menu">
-        @foreach (var item in Model)
-        {
-            var url = "/danh-muc-san-pham/" + item.ProductTypeName + "-" + item.ProductTypeID;
-<li><a href="@url">@item.ProductTypeName</a></li>}
+        @{
+            foreach (var item in Model)
+            {
+                
+                var url = "/danh-muc-san-pham/" +Common.str(item.ProductTypeName) + "-" + item.ProductTypeID;
+                <li><a href="@url">@item.ProductTypeName</a></li>
+            }
+        }
+
     </ul>
 </li>
 
