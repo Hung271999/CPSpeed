@@ -3,9 +3,8 @@
 <!-- Basic -->
 
 <head>
-    <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <!-- Mobile Metas -->
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -32,7 +31,7 @@
     @Styles.Render("~/Contents/css")
     @Scripts.Render("~/bundles/modernizr")
     <link href="~/css/win1.css" rel="stylesheet" />
-    <link href="~/css/win2.css" rel="stylesheet" />
+    <link href="~/css/win3.css" rel="stylesheet" />
     <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jquery.lazy/1.7.9/jquery.lazy.min.js"></script>
     <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jquery.lazy/1.7.9/jquery.lazy.plugins.min.js"></script>
     <!-- Global site tag (gtag.js) - Google Analytics -->
@@ -71,21 +70,12 @@
                         <ul>
                             <li class="search"><a href=""><i class="fa fa-search"></i></a></li>
                             <li class=""><a>|</a></li>
-                            <li class=""><a ><img src="~/images/icons/vn-flag.png" /></a></li>
-                            <li class=""><a><img src="~/images/icons/en-flag.png" /></a></li>
-                            @{
-                                foreach (var i in CPSeed.LanguageMang.AvailableLanguages)
-                                {
-                                                        <li class="">
-                                                            @Html.ActionLink(i.LanguageFullName, "ChangeLanguage", "Home", new { lang = i.LanguageCultureName }, null)
-                                                        </li>
-                                    
-                                }
-                            }
+                            <li class=""><a href="@Url.Action("ChangeLanguage", "Home",new { lang = "en" }, null)"><img src="~/images/icons/vn-flag.png" /></a></li>
+                            <li class=""><a href="@Url.Action("ChangeLanguage", "Home",new { lang = "Ja" }, null)"><img src="~/images/icons/en-flag.png" /></a></li>                        
                             <li class=""><a>|</a></li>
                             <li class=" ">
                                 <a href="@Url.Action("GioHang","Cart")">
-                                    <i class="fa fa-shopping-bag"></i>
+                                    <i class="fa fa-shopping-cart"></i>
                                     <b> @Resource.Cart</b>
                                 </a>
                             </li>

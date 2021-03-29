@@ -156,6 +156,10 @@ nav.navbar.bootsnav li.dropdown ul.dropdown-menu {
     padding-left: 5%;
 }
 
+.techRight {
+    padding-right: 5%;
+}
+
 .techContent {
     height: 100%;
     flex-direction: column;
@@ -212,9 +216,6 @@ nav.navbar.bootsnav li.dropdown ul.dropdown-menu {
     box-shadow: 8px 8px 8px 8px rgba(0, 0, 0, 0.2), 8px 8px 8px 8px rgba(0, 0, 0, 0.19);
 }
 
-.item {
-    box-shadow: 0 8px 15px 0 rgb(0 0 0 / 25%);
-}
 
 .why-text {
     text-align: center;
@@ -313,7 +314,7 @@ nav.navbar.bootsnav li.dropdown ul.dropdown-menu {
     z-index: 4;
     height: 0px;
     width: 100%;
-    display:flex;
+    display: flex;
     justify-content: space-around;
 }
 
@@ -550,4 +551,31 @@ nav.navbar.bootsnav li.dropdown ul.dropdown-menu {
         -webkit-transform: translate3d(-400px,680px,0) rotate(0deg);
         opacity: 0;
     }
-}   
+}
+
+
+.tooltip {
+    position: relative;
+    display: inline-block;
+    border-bottom: 1px dotted black;
+}
+
+    .tooltip .tooltiptext {
+        visibility: hidden;
+        width: 120px;
+        background-color: black;
+        color: #fff;
+        text-align: center;
+        border-radius: 6px;
+        padding: 5px 0;
+        /* Position the tooltip */
+        position: absolute;
+        z-index: 1;
+        bottom: 100%;
+        left: 50%;
+        margin-left: -60px;
+    }
+
+    .tooltip:hover .tooltiptext {
+        visibility: visible;
+    }

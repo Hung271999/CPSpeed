@@ -29,11 +29,11 @@
         display: inline;
     }
 </style>
-<div id="a">
+<div id="a" data-aos="fade-right" data-aos-duration="1000">
     @foreach (var item in Model)
     {
         <div class="row">
-            <div class="col-lg-6" data-aos="fade-right" data-aos-duration="1000">
+            <div class="col-lg-6 techRight">
                 <br />
                 <br />
                 <br />
@@ -58,7 +58,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-md-6 techLeft" data-aos="fade-left" data-aos-duration="1000">
+            <div class="col-md-6">
                 <div class="banner-frame ">
                     <img class="img-fluid img-fluid-lv" src="~/images/Post/@item.image" alt="" />
                 </div>

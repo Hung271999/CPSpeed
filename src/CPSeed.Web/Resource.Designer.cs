@@ -61,7 +61,7 @@ namespace CPSeed {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Tài khoản.
+        ///   Looks up a localized string similar to Tài khoản.
         /// </summary>
         public static string Account {
             get {
@@ -70,7 +70,7 @@ namespace CPSeed {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Thêm vào giỏ hàng.
+        ///   Looks up a localized string similar to Thêm vào giỏ hàng.
         /// </summary>
         public static string Add {
             get {
@@ -79,7 +79,7 @@ namespace CPSeed {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Đã thêm vào giỏ hàng.
+        ///   Looks up a localized string similar to Đã thêm vào giỏ hàng.
         /// </summary>
         public static string Addedtocart {
             get {
@@ -88,7 +88,7 @@ namespace CPSeed {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Địa chỉ.
+        ///   Looks up a localized string similar to Địa chỉ.
         /// </summary>
         public static string Addreess {
             get {
@@ -97,7 +97,7 @@ namespace CPSeed {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Địa chỉ nhận hàng.
+        ///   Looks up a localized string similar to Địa chỉ nhận hàng.
         /// </summary>
         public static string Addresstoreceivethegoods {
             get {
@@ -106,7 +106,7 @@ namespace CPSeed {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to SẢN PHẨM KINH DOANH.
+        ///   Looks up a localized string similar to SẢN PHẨM KINH DOANH.
         /// </summary>
         public static string Bussinessproduct {
             get {
@@ -115,7 +115,7 @@ namespace CPSeed {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Giỏ hàng.
+        ///   Looks up a localized string similar to Giỏ hàng.
         /// </summary>
         public static string Cart {
             get {
@@ -124,7 +124,7 @@ namespace CPSeed {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Thay đổi mật khẩu.
+        ///   Looks up a localized string similar to Thay đổi maatk khẩu.
         /// </summary>
         public static string Changepassword {
             get {
@@ -133,7 +133,7 @@ namespace CPSeed {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Thanh toán.
+        ///   Looks up a localized string similar to Thanh toán.
         /// </summary>
         public static string Checkout {
             get {
@@ -142,7 +142,7 @@ namespace CPSeed {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Liên hệ.
+        ///   Looks up a localized string similar to Liên hệ.
         /// </summary>
         public static string Contact {
             get {
@@ -151,7 +151,7 @@ namespace CPSeed {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Xóa.
+        ///   Looks up a localized string similar to Xóa.
         /// </summary>
         public static string Delete {
             get {
@@ -160,7 +160,7 @@ namespace CPSeed {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Sự kiện.
+        ///   Looks up a localized string similar to Sự kiện.
         /// </summary>
         public static string Event {
             get {
@@ -169,7 +169,7 @@ namespace CPSeed {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Họ.
+        ///   Looks up a localized string similar to Họ.
         /// </summary>
         public static string FirstName {
             get {
@@ -178,7 +178,7 @@ namespace CPSeed {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Đã tìm thấy.
+        ///   Looks up a localized string similar to Đã tìm thấy.
         /// </summary>
         public static string found {
             get {
@@ -187,7 +187,7 @@ namespace CPSeed {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Giá cao.
+        ///   Looks up a localized string similar to Giá cao.
         /// </summary>
         public static string highprice {
             get {
@@ -196,7 +196,7 @@ namespace CPSeed {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Trang chủ.
+        ///   Looks up a localized string similar to Trang chủ.
         /// </summary>
         public static string Home {
             get {
@@ -205,7 +205,7 @@ namespace CPSeed {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to THƯ VIỆN HÌNH ẢNH.
+        ///   Looks up a localized string similar to THƯ VIỆN HÌNH ẢNH.
         /// </summary>
         public static string Imagegallery {
             get {
@@ -223,7 +223,7 @@ namespace CPSeed {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Đăng nhập.
+        ///   Looks up a localized string similar to Đăng nhập.
         /// </summary>
         public static string Login {
             get {
@@ -232,7 +232,7 @@ namespace CPSeed {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Đăng xuất.
+        ///   Looks up a localized string similar to Đăng xuất.
         /// </summary>
         public static string LogOff {
             get {
@@ -241,7 +241,7 @@ namespace CPSeed {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Giá thấp.
+        ///   Looks up a localized string similar to Giá thấp.
         /// </summary>
         public static string low_price {
             get {
@@ -250,7 +250,7 @@ namespace CPSeed {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Truyền thông.
+        ///   Looks up a localized string similar to Truyền thông.
         /// </summary>
         public static string Media {
             get {
@@ -259,7 +259,7 @@ namespace CPSeed {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to TIN TỨC.
+        ///   Looks up a localized string similar to TIN TỨC.
         /// </summary>
         public static string News {
             get {
@@ -268,7 +268,7 @@ namespace CPSeed {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to CÔNG NGHỆ NỔI BẬT.
+        ///   Looks up a localized string similar to CÔNG NGHỆ NỔI BẬT.
         /// </summary>
         public static string Outstandingtechnology {
             get {
@@ -286,7 +286,7 @@ namespace CPSeed {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Giá.
+        ///   Looks up a localized string similar to Giá.
         /// </summary>
         public static string Price {
             get {
@@ -295,7 +295,7 @@ namespace CPSeed {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Danh mục sản phẩm.
+        ///   Looks up a localized string similar to Danh mục sản phẩm.
         /// </summary>
         public static string Productcategory {
             get {
@@ -304,7 +304,7 @@ namespace CPSeed {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Sản phẩm.
+        ///   Looks up a localized string similar to Sản phẩm.
         /// </summary>
         public static string products {
             get {
@@ -313,7 +313,7 @@ namespace CPSeed {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Số lượng.
+        ///   Looks up a localized string similar to Số lượng.
         /// </summary>
         public static string Quantity {
             get {
@@ -322,7 +322,7 @@ namespace CPSeed {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Tuyển dụng.
+        ///   Looks up a localized string similar to Tuyển dụng.
         /// </summary>
         public static string Recruitment {
             get {
@@ -331,7 +331,7 @@ namespace CPSeed {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Đăng ký.
+        ///   Looks up a localized string similar to Đăng ký.
         /// </summary>
         public static string Register {
             get {
@@ -340,7 +340,7 @@ namespace CPSeed {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Đặt hàng thành công.
+        ///   Looks up a localized string similar to Đặt hàng thành công.
         /// </summary>
         public static string Secc {
             get {
@@ -358,7 +358,7 @@ namespace CPSeed {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Gửi.
+        ///   Looks up a localized string similar to Gửi.
         /// </summary>
         public static string Send {
             get {
@@ -367,7 +367,7 @@ namespace CPSeed {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to LĨNH VỰC KINH DOANH CHÍNH.
+        ///   Looks up a localized string similar to LĨNH VỰC KINH DOANH CHÍNH.
         /// </summary>
         public static string THEMAINCOMMERCIALASPECT {
             get {
@@ -385,7 +385,7 @@ namespace CPSeed {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Tổng tiến.
+        ///   Looks up a localized string similar to Tổng tiền.
         /// </summary>
         public static string Total {
             get {
@@ -394,7 +394,7 @@ namespace CPSeed {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Tổng đơn hàng.
+        ///   Looks up a localized string similar to Tổng đơn hàng.
         /// </summary>
         public static string Totalorders {
             get {
@@ -403,7 +403,7 @@ namespace CPSeed {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to TẦM NHÌN SỨ MỆNH.
+        ///   Looks up a localized string similar to TẦM NHÌN SỨ MỆNH.
         /// </summary>
         public static string Visionmission {
             get {

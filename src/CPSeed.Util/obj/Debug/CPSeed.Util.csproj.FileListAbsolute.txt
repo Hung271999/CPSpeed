@@ -127,3 +127,14 @@ C:\Users\Admin\Desktop\LOL\CPSpeed\src\CPSeed.Util\obj\Debug\CPSeed.Util.csproj.
 C:\Users\Admin\Desktop\LOL\CPSpeed\src\CPSeed.Util\obj\Debug\CPSeed.Util.dll
 C:\Users\Admin\Desktop\LOL\CPSpeed\src\CPSeed.Util\obj\Debug\CPSeed.Util.pdb
 D:\CPSpeed\src\CPSeed.Util\obj\Debug\CPSeed.Util.csprojAssemblyReference.cache
+C:\Users\Admin\Desktop\TH.CMPTPM\CPSpeed\src\CPSeed.Util\bin\Debug\CPSeed.Util.dll
+C:\Users\Admin\Desktop\TH.CMPTPM\CPSpeed\src\CPSeed.Util\bin\Debug\CPSeed.Util.pdb
+C:\Users\Admin\Desktop\TH.CMPTPM\CPSpeed\src\CPSeed.Util\bin\Debug\en\CPSeed.Util.resources.dll
+C:\Users\Admin\Desktop\TH.CMPTPM\CPSpeed\src\CPSeed.Util\obj\Debug\CPSeed.Util.csprojAssemblyReference.cache
+C:\Users\Admin\Desktop\TH.CMPTPM\CPSpeed\src\CPSeed.Util\obj\Debug\CPSeed.Util.ResourceUtil.resources
+C:\Users\Admin\Desktop\TH.CMPTPM\CPSpeed\src\CPSeed.Util\obj\Debug\CPSeed.Util.ResourceUtil.en.resources
+C:\Users\Admin\Desktop\TH.CMPTPM\CPSpeed\src\CPSeed.Util\obj\Debug\CPSeed.Util.csproj.GenerateResource.cache
+C:\Users\Admin\Desktop\TH.CMPTPM\CPSpeed\src\CPSeed.Util\obj\Debug\en\CPSeed.Util.resources.dll
+C:\Users\Admin\Desktop\TH.CMPTPM\CPSpeed\src\CPSeed.Util\obj\Debug\CPSeed.Util.csproj.CopyComplete
+C:\Users\Admin\Desktop\TH.CMPTPM\CPSpeed\src\CPSeed.Util\obj\Debug\CPSeed.Util.dll
+C:\Users\Admin\Desktop\TH.CMPTPM\CPSpeed\src\CPSeed.Util\obj\Debug\CPSeed.Util.pdb

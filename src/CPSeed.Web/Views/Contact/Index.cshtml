@@ -8,11 +8,11 @@
     @Html.Action("Banner", "Home", new { image = "1.jpg", title = "Liên hệ" })
     <!-- Start Contact Us  -->
 
-        <div class="container" style="max-width: 1000px">
+        <div class="container" style="max-width: 700px">
             <div class="row">
                 <div class="col-sm-12">
                     <div class="contact-form-right">
-                        <h2 style="font-size:32px">Liên hệ chúng tôi</h2>
+                        <h2 style="font-size:32px;color: #005b36;text-align:center; margin-bottom: 20px">LIÊN HỆ CHÚNG TÔI</h2>
                         @if (ViewBag.Status == 1)
                         {
                             <div id="display-success"><img src="~/images/icons/correct.png" alt="Success" /> @ViewBag.Message</div>
