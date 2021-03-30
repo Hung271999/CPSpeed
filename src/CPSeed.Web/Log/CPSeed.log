@@ -720,3 +720,7 @@
 2021-03-29 17:27:57,975 [CPSeed.Util.Common] [1] DEBUG CPSeed.Util.Common - InitLog4Net completed
 2021-03-29 17:28:35,103 [CPSeed.Util.Common] [1] DEBUG CPSeed.Util.Common - Init log4net completed
 2021-03-29 17:28:35,109 [CPSeed.Util.Common] [1] DEBUG CPSeed.Util.Common - InitLog4Net completed
+2021-03-30 12:58:26,105 [CPSeed.Util.Common] [16920] DEBUG CPSeed.Util.Common - Init log4net completed
+2021-03-30 12:58:26,118 [CPSeed.Util.Common] [16920] DEBUG CPSeed.Util.Common - InitLog4Net completed
+2021-03-30 13:02:03,322 [CPSeed.Util.Common] [24148] DEBUG CPSeed.Util.Common - Init log4net completed
+2021-03-30 13:02:03,332 [CPSeed.Util.Common] [24148] DEBUG CPSeed.Util.Common - InitLog4Net completed

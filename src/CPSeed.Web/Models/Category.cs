@@ -10,26 +10,25 @@ namespace CPSeed.Models
     [Table("Category")]
     public class Category
     {
-     
-            public int CategoryID { get; set; }
+        [DatabaseGenerated(DatabaseGeneratedOption.None)]
+        public int CategoryID { get; set; }
 
-            [StringLength(100)]
-            public string Title { get; set; }
+        [StringLength(100)]
+        public string Title { get; set; }
 
-            public bool? Status { get; set; }
+        public bool? Status { get; set; }
 
-            public bool? IsDeleted { get; set; }
+        public bool IsDeleted { get; set; }
 
-            public DateTime CreateDate { get; set; }
+        public DateTime? CreateDate { get; set; }
 
-            [Required]
-            [StringLength(256)]
-            public string CreateUser { get; set; }
+        [StringLength(256)]
+        public string CreateUser { get; set; }
 
-            public DateTime UpdateDate { get; set; }
+        public DateTime UpdateDate { get; set; }
 
-            [Required]
-            [StringLength(256)]
-            public string UpdateUser { get; set; }
+        [Required]
+        [StringLength(256)]
+        public string UpdateUser { get; set; }
     }
 }

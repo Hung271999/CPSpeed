@@ -1,5 +1,5 @@
 ﻿@model IEnumerable<CPSeed.Models.Post>
-
+@using CPSeed.Models;
 @{
     ViewBag.Title = "Post";
     Layout = "~/Views/Shared/LayoutAdmin.cshtml";
@@ -22,12 +22,7 @@
 
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav mx-auto h-100">
-                <li class="nav-item">
-                    <a class="nav-link" href="Index">
-                        <i class="fas fa-tachometer-alt"></i> Dashboard
-                        <span class="sr-only">(current)</span>
-                    </a>
-                </li>
+                
                 <li class="nav-item">
                     <a class="nav-link" href="#">
                         <i class="fas fa-file-alt"></i> Report
@@ -36,12 +31,12 @@
                 </li>
 
                 <li class="nav-item">
-                    <a class="nav-link active" href="Product">
+                    <a class="nav-link " href="Product">
                         <i class="fas fa-shopping-cart"></i> Product
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link " href="Post">
+                    <a class="nav-link active" href="Post">
                         <i class="fas fa-file-alt"></i> Post
                     </a>
                 </li>
@@ -50,18 +45,28 @@
                         <i class="fas fa-file-alt"></i> Slide
                     </a>
                 </li>
-
+                <li class="nav-item">
+                    <a class="nav-link " href="Contactus">
+                        <i class="fas fa-file-alt"></i> Contact
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link " href="NewsDetail">
+                        <i class="fas fa-file-alt"></i> News
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link " href="Order">
+                        <i class="fas fa-file-alt"></i> Order
+                    </a>
+                </li>
                 <li class="nav-item">
                     <a class="nav-link" href="Account">
                         <i class="far fa-user"></i> Account
                     </a>
                 </li>
 
-                <li class="nav-item">
-                    <a class="nav-link" href="#">
-                        <i class="fas fa-cog"></i> Setting
-                    </a>
-                </li>
+
 
             </ul>
             <ul class="navbar-nav">
@@ -76,16 +81,17 @@
 </nav>
 <div class="container mt-5">
     <div class="row tm-content-row">
-        <div class="col-sm-12 col-md-12 col-lg-12 col-xl-12 tm-block-col">
+        <div class="col-sm-12 col-md-12 col-lg-12 col-xl-8 tm-block-col">
             <div class="tm-bg-primary-dark tm-block tm-block-products">
-                <div class="tm-product-table-container">
+                <h2 class="tm-block-title">Posts</h2>
+                <div style="max-height: 525px;" class="tm-product-table-container">
                     <table class="table table-hover tm-table-small tm-product-table">
                         <thead>
                             <tr>
-                                <th scope="col">TITLE NAME</th>
+                                <th scope="col">TITLE</th>
                                 <th scope="col">SUMMARY</th>
                                 <th scope="col">CONTENT</th>
-                                <th scope="col">CATEGORY</th>
+                                <th scope="col">CATE</th>
                                 <th scope="col">&nbsp;</th>
                                 <th scope="col">&nbsp;</th>
                             </tr>
@@ -94,33 +100,50 @@
 
                             @foreach (var item in Model)
                             {
-                            <tr>
-                                <td width="150">@Html.DisplayFor(modelItem => item.Title)</td>
-                                <td width="350">@Html.DisplayFor(modelItem => item.Summary)</td>
-                                <td>@Html.DisplayFor(modelItem => item.contents)</td>
-                                <td>@Html.DisplayFor(modelItem => item.CategoryID)</td>
-                                <td>
-                                    <a href="@Url.Action("DeletePost", "Admin" , new { id = item.PostID })" class="tm-product-delete-link">
-                                        <i class="far fa-trash-alt tm-product-delete-icon"></i>
-                                    </a>
-                                </td>
-                                <td>
-                                    <a href="@Url.Action("EditPost", "Admin" , new { id = item.PostID })">
-                                        <span style="color:white">Edit</span>
-                                    </a>
-                                </td>
-                            </tr>
+
+                                {
+                                    CPSeedContext data = new CPSeedContext();
+                                    var category = data.Categories.Where(n => n.CategoryID == item.CategoryID).Single();
+                                    ViewBag.category = category;
+                                }
+                                <tr>
+                                    <td style="max-width:100px"><p>@Html.Raw(item.Title)</p></td>
+                                    <td><p style="max-width: 150px; overflow: hidden; text-overflow: ellipsis; line-height: 20px; -webkit-line-clamp: 5; display: -webkit-box; -webkit-box-orient: vertical;">@Html.Raw(item.Summary)</p></td>
+                                    <td><p style="max-width: 150px; overflow: hidden; text-overflow: ellipsis; line-height: 20px; -webkit-line-clamp: 5; display: -webkit-box; -webkit-box-orient: vertical;">@Html.Raw(item.contents)</p></td>
+                                    <td>
+                                        <p>@ViewBag.category.Title</p>
+                                    </td>
+                                    <td>
+                                        <a href="@Url.Action("DeletePost", "Admin" , new { id = item.PostID })" class="tm-product-delete-link">
+                                            <i class="far fa-trash-alt tm-product-delete-icon"></i>
+                                        </a>
+                                    </td>
+                                    <td>
+                                        <a href="@Url.Action("EditPost", "Admin" , new { id = item.PostID })">
+                                            <span style="color:white">Edit</span>
+                                        </a>
+                                    </td>
+                                </tr>
                             }
                         </tbody>
                     </table>
                 </div>
-                <!-- table container -->
-                <a href="add-product"
-                   class="btn btn-primary btn-block text-uppercase mb-3">Add new product</a>
-                <button class="btn btn-primary btn-block text-uppercase">
-                    Delete selected products
-                </button>
+                <a href="AddPost"
+                   class="btn btn-primary btn-block text-uppercase mb-3">Add new post</a>
             </div>
-        </div>       
+        </div>
+        <div class="col-sm-12 col-md-12 col-lg-4 col-xl-4 tm-block-col">
+            <div style="max-height: none;" class="tm-bg-primary-dark tm-block tm-block-product-categories">
+                <h2 class="tm-block-title">Post Categories</h2>
+                <div style="max-height: 525px;" class="tm-product-table-container">
+                    <table class="table tm-table-small tm-product-table">
+                        @Html.Action("Category", "Admin")
+                    </table>
+                </div>
+                <a style="margin-bottom: 0rem!important;" href="AddCategory"
+                   class="btn btn-primary btn-block text-uppercase mb-3">ADD NEW CATEGORY</a>
+
+            </div>
+        </div>
     </div>
 </div>

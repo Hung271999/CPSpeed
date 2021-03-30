@@ -3,7 +3,23 @@
 @{
     Layout = null;
 }
-@foreach (var item in Model)
-{    
-    @Html.DisplayFor(modelItem => item.Title)
-}
+
+<tbody>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td class="tm-product-name">@Html.DisplayFor(modelItem => item.Title)</td>
+            <td>
+                <a href="@Url.Action("DeleteCategory", "Admin" , new { id = item.CategoryID })" class="tm-product-delete-link">
+                    <i class="far fa-trash-alt tm-product-delete-icon"></i>
+                </a>
+            </td>
+            <td>
+                <a href="@Url.Action("EditCategory", "Admin" , new { id = item.CategoryID })">
+                    <span style="color:white">Edit</span>
+                </a>
+            </td>
+
+        </tr>
+    }
+</tbody>

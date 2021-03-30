@@ -14,14 +14,28 @@
     <link rel="stylesheet" href="~/assets/css/bootstrap.min.css" />
     <!-- https://getbootstrap.com/ -->
     <link rel="stylesheet" href="~/assets/css/templatemo-style.css">
-    
+
     <script src="https://cdn.tiny.cloud/1/no-api-key/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>
-    
+
+    <style>
+        ::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+            color: #f1f1f1;
+            opacity: 1; /* Firefox */
+        }
+
+        :-ms-input-placeholder { /* Internet Explorer 10-11 */
+            color: #f1f1f1;
+        }
+
+        ::-ms-input-placeholder { /* Microsoft Edge */
+            color: #f1f1f1;
+        }
+    </style>
 </head>
 <body>
 
     @RenderBody();
-    <footer class="tm-footer row tm-mt-small">
+    <footer style="margin-top: -10px;" class="tm-footer row tm-mt-small">
         <div class="col-12 font-weight-light">
             <p class="text-center text-white mb-0 px-4 small">
                 Copyright &copy; <b>@DateTime.Now.Year</b>
@@ -49,9 +63,10 @@
     <script src="~/assets/js/bootstrap.min.js"></script>
     <!-- https://getbootstrap.com/ -->
     <script src="~/assets/js/tooplate-scripts.js"></script>
+    <script src="~/assets/js/cktool.js"></script>
     <script src="~/assets/js/plugins/ckeditor/ckeditor.js"></script>
     <script src="~/assets/js/plugins/ckfinder/ckfinder.js"></script>
-    <script src="~/assets/js/cktool.js"></script>
+
 
     <script>
         Chart.defaults.global.defaultFontColor = 'white';

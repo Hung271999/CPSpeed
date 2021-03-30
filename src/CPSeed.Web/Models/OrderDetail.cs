@@ -11,12 +11,15 @@ namespace CPSeed.Models
     public class OrderDetail
     {
         public int OrderDetailID { get; set; }
+
         public int OrderID { get; set; }
+
+        public int? Quantity { get; set; }
+
+        [Column(TypeName = "money")]
+        public decimal? SellPrice { get; set; }
 
         [StringLength(20)]
         public string ProductID { get; set; }
-        public int Quantity { get; set; }
-        [Column(TypeName = "money")]
-        public decimal? SellPrice { get; set; }
     }
 }

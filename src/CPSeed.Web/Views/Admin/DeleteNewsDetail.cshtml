@@ -1,0 +1,147 @@
+﻿@model CPSeed.Models.NewDetail
+
+@{
+    ViewBag.Title = "DeleteNewsDetail";
+    Layout = "~/Views/Shared/LayoutAdmin.cshtml";
+}
+
+@using (Html.BeginForm("DeleteNewsDetail", "Admin", FormMethod.Post, new { @enctype = "multipart/form-data" }))
+{
+    @Html.AntiForgeryToken()
+
+    <nav class="navbar navbar-expand-xl">
+        <div class="container h-100">
+            <a class="navbar-brand" href="index">
+                <h1 class="tm-site-title mb-0">Product Admin</h1>
+            </a>
+            <button class="navbar-toggler ml-auto mr-0"
+                    type="button"
+                    data-toggle="collapse"
+                    data-target="#navbarSupportedContent"
+                    aria-controls="navbarSupportedContent"
+                    aria-expanded="false"
+                    aria-label="Toggle navigation">
+                <i class="fas fa-bars tm-nav-icon"></i>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mx-auto h-100">
+                    
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">
+                            <i class="fas fa-file-alt"></i> Report
+                            <span class="sr-only">(current)</span>
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link " href="Product">
+                            <i class="fas fa-shopping-cart"></i> Product
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link " href="Post">
+                            <i class="fas fa-file-alt"></i> Post
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link " href="Slide">
+                            <i class="fas fa-file-alt"></i> Slide
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link " href="Contactus">
+                            <i class="fas fa-file-alt"></i> Contact
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="NewsDetail">
+                            <i class="fas fa-file-alt"></i> News
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link " href="Order">
+                            <i class="fas fa-file-alt"></i> Order
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="Account">
+                            <i class="far fa-user"></i> Account
+                        </a>
+                    </li>
+
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div class="container tm-mt-big tm-mb-big">
+        <div class="row">
+            <div class="col-xl-9 col-lg-10 col-md-12 col-sm-12 mx-auto">
+                <div class="tm-bg-primary-dark tm-block tm-block-h-auto">
+                    <div class="row">
+                        <div class="col-12">
+                            <h2 class="tm-block-title d-inline-block">Delete News</h2>
+                        </div>
+                    </div>
+                    <div style="padding-left:20px" class="row tm-edit-product-row">
+                        <div class="form-group mb-3 col-xs-12 col-sm-12">
+                            <label for="name">
+                                News Detail ID
+                            </label>
+                            <input style="color:black"
+                                   readonly
+                                   value="@Model.NewDetailID"
+                                   name="NewDetailID"
+                                   type="text"
+                                   class="form-control validate"
+                                   required />
+                            
+                        </div>
+
+                        <div class="form-group mb-3 col-xs-12 col-sm-12">
+                            <label for="name">
+                                Title
+                            </label>
+                            <textarea readonly name="Title" id="description">@Model.Title</textarea>
+                           
+                        </div>
+
+                        <div class="form-group mb-3 col-xs-12 col-sm-12">
+                            <label for="name">
+                                Summary
+                            </label>
+                            <textarea readonly name="Summary" id="description">@Model.Summary</textarea>
+                            
+                        </div>
+
+                        <div class="form-group mb-3 col-xs-12 col-sm-12">
+                            <label for="name">
+                                Content
+                            </label>
+                            <textarea readonly name="Content" id="description">@Model.contents</textarea>
+                            
+                        </div>
+
+                        <div style="padding-left:15px" class="form-group mb-3">
+                            <label for="name">
+                                News Category
+                            </label>
+                            @ViewBag.News
+                            
+                        </div>
+
+                        <div class="form-group mb-3 col-xs-12 col-sm-12">
+                            <div style="padding-top:18px" class="custom-file mt-3 mb-3">
+                                <input type="text" value="@Model.image" name="picture" id="picture" class="form-control" readonly style="color:black" />
+                                <img src="@Url.Content("~/images/News/" + Model.image)" id="pictureUpload" width="725" />
+                            </div>
+                        </div>
+                    </div>
+                    <div style="padding-top:150px; padding-left:35px" class="col-12">
+                        <button type="submit" class="btn btn-primary btn-block text-uppercase">Edit News Now</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+}

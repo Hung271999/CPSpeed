@@ -27,12 +27,7 @@
 
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav mx-auto h-100">
-                <li class="nav-item">
-                    <a class="nav-link" href="Index">
-                        <i class="fas fa-tachometer-alt"></i> Dashboard
-                        <span class="sr-only">(current)</span>
-                    </a>
-                </li>
+                
                 <li class="nav-item">
                     <a class="nav-link" href="#">
                         <i class="fas fa-file-alt"></i> Report
@@ -55,18 +50,27 @@
                         <i class="fas fa-file-alt"></i> Slide
                     </a>
                 </li>
-
+                <li class="nav-item">
+                    <a class="nav-link " href="Contactus">
+                        <i class="fas fa-file-alt"></i> Contact
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link " href="NewsDetail">
+                        <i class="fas fa-file-alt"></i> News
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link " href="Order">
+                        <i class="fas fa-file-alt"></i> Order
+                    </a>
+                </li>
                 <li class="nav-item">
                     <a class="nav-link" href="Account">
                         <i class="far fa-user"></i> Account
                     </a>
                 </li>
 
-                <li class="nav-item">
-                    <a class="nav-link" href="#">
-                        <i class="fas fa-cog"></i> Setting
-                    </a>
-                </li>
 
             </ul>
             <ul class="navbar-nav">
@@ -95,21 +99,25 @@
                                     <label for="name">
                                         Product ID
                                     </label>
-                                    <input name="ProductID"
+                                    <input style="color:black"
+                                           name="ProductID"
                                            type="text"
                                            value="@Model.ProductID"
                                            class="form-control validate"
+                                           readonly
                                            required />
+                                    @ViewData["Loi1"]
                                 </div>
                                 <div class="form-group mb-3">
                                     <label for="name">
                                         Product Name
                                     </label>
-                                    <input name="ProductID"
+                                    <input name="ProductName"
                                            type="text"
                                            value="@Model.ProductName"
                                            class="form-control validate"
                                            required />
+                                    @ViewData["Loi2"]
                                 </div>
 
                                 <div class="form-group mb-3">
@@ -117,46 +125,50 @@
                                         Product Types
                                     </label>
                                     @Html.DropDownList("ProductTypeID", (IEnumerable<SelectListItem>)ViewBag.ProductTypeID, new { @class = "custom-select tm-select-accounts" })
+                                    @ViewData["Loi3"]
                                 </div>
 
                                 <div class="form-group mb-3">
                                     <label for="name">
                                         Buy Price
                                     </label>
-                                    <input name="ProductID"
+                                    <input name="BuyPriceCurrent"
                                            type="text"
                                            value="@ViewBag.BuyPrice"
                                            class="form-control validate"
                                            required />
+                                    @ViewData["Loi4"]
                                 </div>
 
                                 <div class="form-group mb-3">
                                     <label for="name">
                                         Sell Price
                                     </label>
-                                    <input name="ProductID"
+                                    <input name="SellPrice"
                                            type="text"
                                            value="@ViewBag.SellPrice"
                                            class="form-control validate"
                                            required />
+                                    @ViewData["Loi5"]
                                 </div>
                             </form>
                         </div>
                         
                         <div class="col-xl-6 col-lg-6 col-md-12 mx-auto mb-4">                            
-                            <div style="padding-top:18px" class="custom-file mt-3 mb-3">                                                                                               
-                                <input type="text" name="picture" id="picture" class="form-control" />
+                            <div style="padding-top:18px" class="custom-file mt-3 mb-3">
+                                <input style="color:black" type="text" value="@Model.image" name="picture" id="picture" class="form-control" readonly />
                                 <input type="file" accept="image/*" id="fileUpload" name="fileUpload" style="display:none" ; />
                                 <input type="button"
-                                id="btnUpload"
-                                class="btn btn-success btn-primary btn-block mx-auto "
-                                value="UPLOAD PRODUCT IMAGE" />
-                                <img src="@Url.Content("~/images/Product/" + Model.image)" id="pictureUpload" width="358" height="350" />                                
+                                       id="btnUpload"
+                                       class="btn btn-success btn-primary btn-block mx-auto "
+                                       value="UPLOAD PRODUCT IMAGE" />
+                                <img src="@Url.Content("~/images/Product/" + Model.image)" id="pictureUpload" width="358"/>
                             </div>
                         </div>
                         <div class="form-group mb-3 col-xs-12 col-sm-12">
                             <label for="description">Description</label>
                             <textarea id="description" name="description">@Model.description</textarea>
+                            @ViewData["Loi7"]
                         </div>
                         <div class="col-12">
                             <button type="submit" class="btn btn-primary btn-block text-uppercase">Edit Product</button>

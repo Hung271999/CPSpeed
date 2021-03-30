@@ -1,5 +1,5 @@
 ﻿@model IEnumerable<CPSeed.Models.Product>
-
+@using CPSeed.Models;
 @{
     ViewBag.Title = "Product";
     Layout = "~/Views/Shared/LayoutAdmin.cshtml";
@@ -23,12 +23,7 @@
 
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav mx-auto h-100">
-                <li class="nav-item">
-                    <a class="nav-link" href="Index">
-                        <i class="fas fa-tachometer-alt"></i> Dashboard
-                        <span class="sr-only">(current)</span>
-                    </a>
-                </li>
+
                 <li class="nav-item">
                     <a class="nav-link" href="#">
                         <i class="fas fa-file-alt"></i> Report
@@ -51,18 +46,28 @@
                         <i class="fas fa-file-alt"></i> Slide
                     </a>
                 </li>
-
+                <li class="nav-item">
+                    <a class="nav-link " href="Contactus">
+                        <i class="fas fa-file-alt"></i> Contact
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link " href="NewsDetail">
+                        <i class="fas fa-file-alt"></i> News
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link " href="Order">
+                        <i class="fas fa-file-alt"></i> Order
+                    </a>
+                </li>
                 <li class="nav-item">
                     <a class="nav-link" href="Account">
                         <i class="far fa-user"></i> Account
                     </a>
                 </li>
 
-                <li class="nav-item">
-                    <a class="nav-link" href="#">
-                        <i class="fas fa-cog"></i> Setting
-                    </a>
-                </li>
+
 
             </ul>
             <ul class="navbar-nav">
@@ -79,11 +84,13 @@
     <div class="row tm-content-row">
         <div class="col-sm-12 col-md-12 col-lg-8 col-xl-8 tm-block-col">
             <div class="tm-bg-primary-dark tm-block tm-block-products">
-                <div class="tm-product-table-container">
+                <h2 class="tm-block-title">Products</h2>
+                <div style="max-height: 525px;" class="tm-product-table-container">
                     <table class="table table-hover tm-table-small tm-product-table">
                         <thead>
                             <tr>
                                 <th scope="col">PRODUCT NAME</th>
+                                <th scope="col">PRODUCT TYPE</th>
                                 <th scope="col">BUY PRICE CURRENT</th>
                                 <th scope="col">SELL PRICE</th>
                                 <th scope="col">CREATE DATE</th>
@@ -95,23 +102,34 @@
 
                             @foreach (var item in Model)
                             {
-                                <tr>
-                                    <td class="tm-product-name">@Html.DisplayFor(modelItem => item.ProductName)</td>
-                                    <td>@Html.DisplayFor(modelItem => item.BuyPriceCurrent)</td>
-                                    <td>@Html.DisplayFor(modelItem => item.SellPrice)</td>
-                                    <td>@Html.DisplayFor(modelItem => item.CreateDate)</td>
-                                    <td>
-                                        <a href="@Url.Action("DeleteProduct", "Admin" , new { id = item.ProductID })" class="tm-product-delete-link">
-                                            <i class="far fa-trash-alt tm-product-delete-icon"></i>
-                                        </a>
-                                    </td>
-                                    <td>
-                                        <a href="@Url.Action("EditProduct", "Admin" , new { id = item.ProductID })">
-                                            <span style="color:white">Edit</span>
-                                        </a>
-                                    </td>
+                                {
+                                    CPSeedContext data = new CPSeedContext();
+                                    var product = data.Products.Where(n => n.ProductID == item.ProductID).Single();
+                                    var producttype = data.ProductTypes.Where(n => n.ProductTypeID == item.ProductTypeID).Single();
+                                    int sp = Decimal.ToInt32((decimal)product.SellPrice);
+                                    int bp = Decimal.ToInt32((decimal)product.BuyPriceCurrent);
+                                    ViewBag.BuyPriceCurrent = sp;
+                                    ViewBag.SellPrice = bp;
+                                    ViewBag.producttype = producttype.ProductTypeName;
+                                }
+                            <tr>
+                                <td class="tm-product-name"><p style="max-width:100px; word-wrap: break-word;">@item.ProductName</p></td>
+                                <td><p style="max-width:100px; word-wrap: break-word;">@ViewBag.producttype</p></td>
+                                <td>@ViewBag.BuyPriceCurrent</td>
+                                <td>@ViewBag.SellPrice</td>
+                                <td><p style="max-width:100px; word-wrap: break-word;">@item.CreateDate</p></td>
+                                <td>
+                                    <a href="@Url.Action("DeleteProduct", "Admin" , new { id = item.ProductID })" class="tm-product-delete-link">
+                                        <i class="far fa-trash-alt tm-product-delete-icon"></i>
+                                    </a>
+                                </td>
+                                <td>
+                                    <a href="@Url.Action("EditProduct", "Admin" , new { id = item.ProductID })">
+                                        <span style="color:white">Edit</span>
+                                    </a>
+                                </td>
 
-                                </tr>
+                            </tr>
                             }
                         </tbody>
                     </table>
@@ -122,19 +140,17 @@
             </div>
         </div>
         <div class="col-sm-12 col-md-12 col-lg-4 col-xl-4 tm-block-col">
-            <div class="tm-bg-primary-dark tm-block tm-block-product-categories">
+            <div style="max-height: none;" class="tm-bg-primary-dark tm-block tm-block-product-categories">
                 <h2 class="tm-block-title">Product Categories</h2>
-                <div class="tm-product-table-container">
+                <div style="max-height: 525px;" class="tm-product-table-container">
                     <table class="table tm-table-small tm-product-table">
                         @Html.Action("ProductTypes", "Admin")
                     </table>
                 </div>
                 <!-- table container -->
-                <a href="addproducttype"
+                <a style="margin-bottom: 0rem!important;" href="AddProductType"
                    class="btn btn-primary btn-block text-uppercase mb-3">ADD NEW PRODUCT TYPE</a>
-                @*<button class="btn btn-primary btn-block text-uppercase mb-3">
-                        ADD NEW PRODUCT TYPE
-                    </button>*@
+
             </div>
         </div>
     </div>

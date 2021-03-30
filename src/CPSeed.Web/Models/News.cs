@@ -10,6 +10,7 @@ namespace CPSeed.Models
     [Table("News")]
     public class News
     {
+        [DatabaseGenerated(DatabaseGeneratedOption.None)]
         public int NewsID { get; set; }
 
         [Column(TypeName = "ntext")]
@@ -17,11 +18,10 @@ namespace CPSeed.Models
 
         public bool? Status { get; set; }
 
-        public bool? IsDeleted { get; set; }
+        public bool IsDeleted { get; set; }
 
-        public DateTime CreateDate { get; set; }
+        public DateTime? CreateDate { get; set; }
 
-        [Required]
         [StringLength(256)]
         public string CreateUser { get; set; }
 

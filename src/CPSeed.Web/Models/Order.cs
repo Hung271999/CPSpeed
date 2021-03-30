@@ -11,31 +11,34 @@ namespace CPSeed.Models
     public class Order
     {
         public int OrderID { get; set; }
+
         public bool? Status { get; set; }
+
         public bool? Paid { get; set; }
 
-        public DateTime CreateDate { get; set; }
-        public DateTime ReceivedDate { get; set; }
+        public DateTime? CreateDate { get; set; }
+
+        public DateTime? ReceivedDate { get; set; }
 
         [StringLength(256)]
         public string CreateUser { get; set; }
 
-        public DateTime UpdateDate { get; set; }
+        public DateTime? UpdateDate { get; set; }
+
         [StringLength(256)]
         public string UpdateUser { get; set; }
-        public int Priority { get; set; }
-        public float Total { get; set; }
 
+        public int? Priority { get; set; }
+
+        public double? Total { get; set; }
 
         [StringLength(256)]
         public string Email { get; set; }
 
         [StringLength(256)]
         public string Address { get; set; }
-        [StringLength(20)]
+
+        [StringLength(50)]
         public string Phone { get; set; }
-
-
-
     }
 }
