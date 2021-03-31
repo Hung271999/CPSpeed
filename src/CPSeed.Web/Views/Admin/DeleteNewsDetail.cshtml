@@ -36,16 +36,26 @@
                             <label for="name">
                                 Title
                             </label>
-                            <textarea readonly name="Title" id="description">@Model.Title</textarea>
-                           
+                            <textarea name="Title"
+                                      style="color:black"
+                                      type="text"
+                                      class="form-control validate"
+                                      readonly
+                                      required>@Model.Title</textarea>
+
                         </div>
 
                         <div class="form-group mb-3 col-xs-12 col-sm-12">
                             <label for="name">
                                 Summary
                             </label>
-                            <textarea readonly name="Summary" id="description">@Model.Summary</textarea>
-                            
+                            <textarea name="Summary"
+                                      style="color:black"
+                                      type="text"
+                                      class="form-control validate"
+                                      readonly
+                                      required>@Model.Summary</textarea>
+
                         </div>
 
                         <div class="form-group mb-3 col-xs-12 col-sm-12">
@@ -60,8 +70,12 @@
                             <label for="name">
                                 News Category
                             </label>
-                            @ViewBag.News
-                            
+                            <input style="color:black"
+                                   type="text"
+                                   value="@ViewBag.News"
+                                   class="form-control validate"
+                                   readonly
+                                   required />
                         </div>
 
                         <div class="form-group mb-3 col-xs-12 col-sm-12">

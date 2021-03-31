@@ -36,7 +36,10 @@
                             <label for="name">
                                 Tiêu đề
                             </label>
-                            <textarea name="Title" id="description">@Model.Title</textarea>
+                            <textarea name="Title"
+                                      type="text"
+                                      class="form-control validate"
+                                      required>@Model.Title</textarea>
                             @ViewData["Loi2"]
                         </div>
 
@@ -44,7 +47,10 @@
                             <label for="name">
                                 Tóm tắt
                             </label>
-                            <textarea name="Summary" id="description">@Model.Summary</textarea>
+                            <textarea name="Summary"
+                                      type="text"
+                                      class="form-control validate"
+                                      required>@Model.Summary</textarea>
                             @ViewData["Loi3"]
                         </div>
 

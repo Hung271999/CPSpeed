@@ -23,15 +23,21 @@
                             <label for="name">
                                 Tiêu Đề
                             </label>
-                            <textarea name="Title" id="description"></textarea>
+                            <textarea name="Title"
+                                   type="text"
+                                   class="form-control validate"
+                                   required ></textarea>                           
                             @ViewData["Loi2"]
-                        </div>
+                            </div>
 
                         <div class="form-group mb-3 col-xs-12 col-sm-12">
                             <label for="name">
                                 Mô Tả
                             </label>
-                            <textarea name="Summary" id="description"></textarea>
+                            <textarea name="Summary"
+                                      type="text"
+                                      class="form-control validate"
+                                      required></textarea>
                             @ViewData["Loi3"]
                         </div>
 

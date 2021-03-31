@@ -172,7 +172,7 @@ namespace CPSeed.Controllers
 
                 int pagesize = 1;
                 int pageNum = (page ?? 1);
-                var lv = data.Posts.Where(n => n.CategoryID == 4).Where(n => n.Status == true).ToList();
+                var lv = data.Posts.Where(n => n.CategoryID == 132).Where(n => n.Status == true).ToList();
                 if (lv == null)
                 {
                     logger.Error("LV is null or id not ==4 or status is not true");
