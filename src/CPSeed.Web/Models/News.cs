@@ -10,7 +10,6 @@ namespace CPSeed.Models
     [Table("News")]
     public class News
     {
-        [DatabaseGenerated(DatabaseGeneratedOption.None)]
         public int NewsID { get; set; }
 
         [Column(TypeName = "ntext")]

@@ -1,8 +1,10 @@
 ﻿using CPSeed.Models;
+using Microsoft.AspNet.Identity;
 using System;
 using System.Collections.Generic;
 using System.Data.Entity;
 using System.Data.Entity.Migrations;
+using System.Data.SqlClient;
 using System.IO;
 using System.Linq;
 using System.Web;
@@ -15,7 +17,8 @@ namespace CPSeed.Controllers
         CPSeedContext data = new CPSeedContext();
         public ActionResult Index()
         {
-            return View();
+            var a = data.Orders.ToList().OrderBy(n=>n.CreateDate);
+            return View(a);
         }
 
 
@@ -56,76 +59,98 @@ namespace CPSeed.Controllers
         [ValidateInput(false)]
         public ActionResult AddProduct(FormCollection collection, Product product, HttpPostedFileBase fileUpload)
         {
-            ViewBag.ProductTypeID = new SelectList(data.ProductTypes.ToList().OrderBy(n => n.ProductTypeName), "ProductTypeID", "ProductTypeName");
+            try
+            {
+                ViewBag.ProductTypeID = new SelectList(data.ProductTypes.ToList().OrderBy(n => n.ProductTypeName), "ProductTypeID", "ProductTypeName");
 
-            var productid = collection["ProductID"];
-            var productname = collection["ProductName"];
-            var producttypeid = collection["ProductTypeID"];
-            var buypricecurrent = collection["BuyPriceCurrent"];
-            var sellprice = collection["SellPrice"];
-            var picture = collection["picture"];
-            var descriptionn = collection["description"];
+                var productid = collection["ProductID"];
+                var a = data.Products.Where(n => n.ProductID == productid).Count();
+                var productname = collection["ProductName"];
+                var producttypeid = collection["ProductTypeID"];
+                var buypricecurrent = collection["BuyPriceCurrent"];
+                var sellprice = collection["SellPrice"];
+                var picture = collection["picture"];
+                var descriptionn = collection["description"];
+                int ouput;
+                bool result = int.TryParse(sellprice, out ouput);
+                bool result2 = int.TryParse(buypricecurrent, out ouput);
+                if (result == false)
+                {
+                    return RedirectToAction("AddProduct", "Admin");
+                }
+                if (result == false)
+                {
+                    return RedirectToAction("AddProduct", "Admin");
+                }
+                if (a > 0)
+                {
+                    ViewData["Loi1"] = "Id đã tồn tại!";
+                }
+                else if (String.IsNullOrEmpty(productid))
+                {
+                    ViewData["Loi1"] = "Please enter product ID !";
+                }
+                else if (String.IsNullOrEmpty(productname))
+                {
+                    ViewData["Loi2"] = "Please enter product name !";
+                }
+                else if (String.IsNullOrEmpty(producttypeid))
+                {
+                    ViewData["Loi3"] = "Please choose product type !";
+                }
+                else if (String.IsNullOrEmpty(buypricecurrent))
+                {
+                    ViewData["Loi4"] = "Please enter buy price !";
+                }
+                else if (String.IsNullOrEmpty(sellprice))
+                {
+                    ViewData["Loi5"] = "Please enter sell price !";
+                }
+                else if (String.IsNullOrEmpty(picture))
+                {
+                    ViewData["Loi6"] = "Please choose image !";
+                }
+                else if (String.IsNullOrEmpty(descriptionn))
+                {
+                    ViewData["Loi7"] = "Please enter description !";
+                }
+                else
+                {
+                    var fileName = Path.GetFileName(fileUpload.FileName);
+                    var path = Path.Combine(Server.MapPath("~/images/Product"), fileName);
+                    fileUpload.SaveAs(path);
+                    product.ProductID = productid;
+                    product.ProductName = productname;
+                    product.ProductTypeID = int.Parse(producttypeid);
+                    product.BuyPriceCurrent = Decimal.Parse(buypricecurrent);
+                    product.SellPrice = Decimal.Parse(sellprice);
+                    product.description = descriptionn;
+                    product.image = fileName;
+                    product.UnitID = "UnitID";
+                    product.UnitName = "UnitName";
+                    product.ProviderID = "ProviderID";
+                    product.ProviderName = "ProviderName";
+                    product.BuyPriceAverage = Decimal.Parse(buypricecurrent);
+                    product.BuyPricePrevious = Decimal.Parse(buypricecurrent);
+                    product.ExportBuy = 1;
+                    product.ExportOffer = 1;
+                    product.IsDeleted = false;
+                    product.CreateUser = User.Identity.GetUserName();
+                    product.UpdateUser = User.Identity.GetUserName();
+                    product.CreateDate = DateTime.Now;
+                    product.UpdateDate = DateTime.Now;
 
-            if (String.IsNullOrEmpty(productid))
-            {
-                ViewData["Loi1"] = "Please enter product ID !";
+                    data.Products.Add(product);
+                    data.SaveChanges();
+                    return RedirectToAction("Product");
+                }
+                return this.AddProduct();
             }
-            else if (String.IsNullOrEmpty(productname))
+            catch(Exception ex)
             {
-                ViewData["Loi2"] = "Please enter product name !";
+                ViewData["Loi1"] = "Vui lòng nhập đúng thông tin!";
+                return View();
             }
-            else if (String.IsNullOrEmpty(producttypeid))
-            {
-                ViewData["Loi3"] = "Please choose product type !";
-            }
-            else if (String.IsNullOrEmpty(buypricecurrent))
-            {
-                ViewData["Loi4"] = "Please enter buy price !";
-            }
-            else if (String.IsNullOrEmpty(sellprice))
-            {
-                ViewData["Loi5"] = "Please enter sell price !";
-            }
-            else if (String.IsNullOrEmpty(picture))
-            {
-                ViewData["Loi6"] = "Please choose image !";
-            }
-            else if (String.IsNullOrEmpty(descriptionn))
-            {
-                ViewData["Loi7"] = "Please enter description !";
-            }
-            else
-            {
-                var fileName = Path.GetFileName(fileUpload.FileName);
-                var path = Path.Combine(Server.MapPath("~/images/Product"), fileName);
-                fileUpload.SaveAs(path);
-
-                product.ProductID = productid;
-                product.ProductName = productname;
-                product.ProductTypeID = int.Parse(producttypeid);
-                product.BuyPriceCurrent = Decimal.Parse(buypricecurrent);
-                product.SellPrice = Decimal.Parse(sellprice);
-                product.description = descriptionn;
-                product.image = fileName;
-                product.UnitID = "UnitID";
-                product.UnitName = "UnitName";
-                product.ProviderID = "ProviderID";
-                product.ProviderName = "ProviderName";
-                product.BuyPriceAverage = Decimal.Parse(buypricecurrent);
-                product.BuyPricePrevious = Decimal.Parse(buypricecurrent);
-                product.ExportBuy = 1;
-                product.ExportOffer = 1;
-                product.IsDeleted = false;
-                product.CreateUser = "tri";
-                product.UpdateUser = "tri";
-                product.CreateDate = DateTime.Now;
-                product.UpdateDate = DateTime.Now;
-
-                data.Products.Add(product);
-                data.SaveChanges();
-                return RedirectToAction("Product");
-            }
-            return this.AddProduct();
         }
 
 
@@ -136,13 +161,14 @@ namespace CPSeed.Controllers
         [HttpGet]
         public ActionResult EditProduct(string id)
         {
+            
             Product product = data.Products.SingleOrDefault(n => n.ProductID == id);
             if (product == null)
             {
                 Response.StatusCode = 404;
                 return null;
-            }
-            ViewBag.ProductTypeID = new SelectList(data.ProductTypes.ToList().OrderBy(n => n.ProductTypeName), "ProductTypeID", "ProductTypeName");
+            };
+            ViewBag.ProductTypeID =data.ProductTypes.ToList();
             int sp = Decimal.ToInt32((decimal)product.SellPrice);
             int bp = Decimal.ToInt32((decimal)product.BuyPriceCurrent);
 
@@ -160,81 +186,100 @@ namespace CPSeed.Controllers
         [ValidateInput(false)]
         public ActionResult EditProduct(FormCollection collection, Product product, HttpPostedFileBase fileUpload, string id)
         {
-            ViewBag.ProductTypeID = new SelectList(data.ProductTypes.ToList().OrderBy(n => n.ProductTypeName), "ProductTypeID", "ProductTypeName");
-
-            var productid = collection["ProductID"];
-            var productname = collection["ProductName"];
-            var producttypeid = collection["ProductTypeID"];
-            var buypricecurrent = collection["BuyPriceCurrent"];
-            var sellprice = collection["SellPrice"];
-            var picture = collection["picture"];
-            var descriptionn = collection["description"];
-
-            if (String.IsNullOrEmpty(productid))
+            try
             {
-                ViewData["Loi1"] = "Please enter product ID !";
-            }
-            else if (String.IsNullOrEmpty(productname))
-            {
-                ViewData["Loi2"] = "Please enter product name !";
-            }
-            else if (String.IsNullOrEmpty(producttypeid))
-            {
-                ViewData["Loi3"] = "Please choose product type !";
-            }
-            else if (String.IsNullOrEmpty(buypricecurrent))
-            {
-                ViewData["Loi4"] = "Please enter buy price !";
-            }
-            else if (String.IsNullOrEmpty(sellprice))
-            {
-                ViewData["Loi5"] = "Please enter sell price !";
-            }
-            else if (String.IsNullOrEmpty(descriptionn))
-            {
-                ViewData["Loi7"] = "Please enter description !";
-            }
-            else
-            {
-                Product productroot = data.Products.SingleOrDefault(n => n.ProductID == id);
-                if (fileUpload != null)
+                ViewBag.ProductTypeID = data.ProductTypes.ToList();
+                var productid = collection["ProductID"];
+                var a = data.Products.Where(n => n.ProductID == productid);
+                var productname = collection["ProductName"];
+                var producttypeid = collection["ProductTypeID"];
+                var buypricecurrent = collection["BuyPriceCurrent"];
+                var sellprice = collection["SellPrice"];
+                int ouput;
+                bool result = int.TryParse(sellprice, out ouput);
+                bool result2 = int.TryParse(buypricecurrent, out ouput);
+                if (result==false)
                 {
-                    var fileName = Path.GetFileName(fileUpload.FileName);
-                    var path = Path.Combine(Server.MapPath("~/images/Product"), fileName);
-                    fileUpload.SaveAs(path);
-                    product.image = fileName;
+                    return RedirectToAction("EditProduct", "Admin", new { id=id});
+                }
+                 if (result==false)
+                {
+                    return RedirectToAction("EditProduct", "Admin", new { id=id});
+                }
+                var picture = collection["picture"];
+                var descriptionn = collection["description"];
+
+                if (String.IsNullOrEmpty(productid))
+                {
+                    ViewData["Loi1"] = "Please enter product ID !";
+                }
+                else if (String.IsNullOrEmpty(productname))
+                {
+                    ViewData["Loi2"] = "Please enter product name !";
+                }
+                else if (String.IsNullOrEmpty(producttypeid))
+                {
+                    ViewData["Loi3"] = "Please choose product type !";
+                }
+                else if (String.IsNullOrEmpty(buypricecurrent))
+                {
+                    ViewData["Loi4"] = "Please enter buy price !";
+                }
+                else if (String.IsNullOrEmpty(sellprice))
+                {
+                    ViewData["Loi5"] = "Please enter sell price !";
+                }
+                else if (String.IsNullOrEmpty(descriptionn))
+                {
+                    ViewData["Loi7"] = "Please enter description !";
                 }
                 else
                 {
-                    product.image = productroot.image;
+                    Product productroot = data.Products.SingleOrDefault(n => n.ProductID == id);
+                    if (fileUpload != null)
+                    {
+                        var fileName = Path.GetFileName(fileUpload.FileName);
+                        var path = Path.Combine(Server.MapPath("~/images/Product"), fileName);
+                        fileUpload.SaveAs(path);
+                        product.image = fileName;
+                    }
+                    else
+                    {
+                        product.image = productroot.image;
+                    }
+
+                    product.ProductID = productid;
+                    product.ProductName = productname;
+                    product.ProductTypeID = int.Parse(producttypeid);
+                    product.BuyPriceCurrent = Decimal.Parse(buypricecurrent);
+                    product.SellPrice = Decimal.Parse(sellprice);
+                    product.description = descriptionn;
+                    product.UnitID = "UnitID";
+                    product.UnitName = "UnitName";
+                    product.ProviderID = "ProviderID";
+                    product.ProviderName = "ProviderName";
+                    product.BuyPriceAverage = Decimal.Parse(buypricecurrent);
+                    product.BuyPricePrevious = Decimal.Parse(buypricecurrent);
+                    product.ExportBuy = 1;
+                    product.ExportOffer = 1;
+                    product.IsDeleted = false;
+                    product.CreateDate = productroot.CreateDate;
+                    product.CreateUser = productroot.CreateUser;
+                    product.UpdateUser = "tri";
+                    product.UpdateDate = DateTime.Now;
+
+                    //data.Entry(product).State = EntityState.Modified;
+                    data.Products.AddOrUpdate(product);
+                    data.SaveChanges();
+                    return RedirectToAction("Product");
                 }
-
-                product.ProductID = productid;
-                product.ProductName = productname;
-                product.ProductTypeID = int.Parse(producttypeid);
-                product.BuyPriceCurrent = Decimal.Parse(buypricecurrent);
-                product.SellPrice = Decimal.Parse(sellprice);
-                product.description = descriptionn;
-                product.UnitID = "UnitID";
-                product.UnitName = "UnitName";
-                product.ProviderID = "ProviderID";
-                product.ProviderName = "ProviderName";
-                product.BuyPriceAverage = Decimal.Parse(buypricecurrent);
-                product.BuyPricePrevious = Decimal.Parse(buypricecurrent);
-                product.ExportBuy = 1;
-                product.ExportOffer = 1;
-                product.IsDeleted = false;
-                product.CreateDate = productroot.CreateDate;
-                product.CreateUser = productroot.CreateUser;
-                product.UpdateUser = "tri";
-                product.UpdateDate = DateTime.Now;
-
-                //data.Entry(product).State = EntityState.Modified;
-                data.Products.AddOrUpdate(product);
-                data.SaveChanges();
-                return RedirectToAction("Product");
+                return View();
             }
-            return View();
+            catch(Exception ex)
+            {
+                ViewData["Loi1"] = "Vui lòng nhập đúng thông tin !";
+                return View();
+            }
         }
 
 
@@ -313,64 +358,66 @@ namespace CPSeed.Controllers
         [ValidateInput(false)]
         public ActionResult AddPost(FormCollection collection, Post post, HttpPostedFileBase fileUpload)
         {
-            ViewBag.CategoryPost = new SelectList(data.Categories.ToList().OrderBy(n => n.Title), "CategoryID", "Title");
+            try
+            {
+                ViewBag.CategoryPost = new SelectList(data.Categories.ToList().OrderBy(n => n.Title), "CategoryID", "Title");
+                var title = collection["Title"];
+                var summary = collection["Summary"];
+                var contentss = collection["Content"];
+                var categoryid = collection["CategoryPost"];
+                var image = collection["picture"];
+                var Priority = collection["Priority"];
 
-            var postid = collection["PostID"];
-            var title = collection["Title"];
-            var summary = collection["Summary"];
-            var contentss = collection["Content"];
-            var categoryid = collection["CategoryPost"];
-            var image = collection["picture"];
-            if (string.IsNullOrEmpty(postid))
-            {
-                ViewData["Loi1"] = "Please enter PostID !";
-            }
-            else if (String.IsNullOrEmpty(title))
-            {
-                ViewData["Loi2"] = "Please enter Title !";
-            }
-            else if (String.IsNullOrEmpty(summary))
-            {
-                ViewData["Loi3"] = "Please enter Summary !";
-            }
-            else if (String.IsNullOrEmpty(contentss))
-            {
-                ViewData["Loi4"] = "Please enter Contents !";
-            }
-            else if (String.IsNullOrEmpty(categoryid))
-            {
-                ViewData["Loi5"] = "Please choose CategoryID !";
-            }
-            else if (String.IsNullOrEmpty(categoryid))
-            {
-                ViewData["Loi6"] = "Please choose image !";
-            }
-            else
-            {
-                var fileName = Path.GetFileName(fileUpload.FileName);
-                var path = Path.Combine(Server.MapPath("~/images/Post"), fileName);
-                fileUpload.SaveAs(path);
+                if (String.IsNullOrEmpty(title))
+                {
+                    ViewData["Loi2"] = "Please enter Title !";
+                }
+                else if (String.IsNullOrEmpty(summary))
+                {
+                    ViewData["Loi3"] = "Please enter Summary !";
+                }
+                else if (String.IsNullOrEmpty(contentss))
+                {
+                    ViewData["Loi4"] = "Please enter Contents !";
+                }
+                else if (String.IsNullOrEmpty(categoryid))
+                {
+                    ViewData["Loi5"] = "Please choose CategoryID !";
+                }
+                else if (String.IsNullOrEmpty(categoryid))
+                {
+                    ViewData["Loi6"] = "Please choose image !";
+                }
+                else
+                {
+                    var fileName = Path.GetFileName(fileUpload.FileName);
+                    var path = Path.Combine(Server.MapPath("~/images/Post"), fileName);
+                    fileUpload.SaveAs(path);
+                    post.Title = title;
+                    post.Summary = summary;
+                    post.contents = contentss;
+                    post.image = fileName;
+                    post.CategoryID = int.Parse(categoryid);
+                    post.Status = true;
+                    post.IsDeleted = false;
+                    post.CreateDate = post.UpdateDate = DateTime.Now;
+                    post.PublicDate = DateTime.Now;
+                    post.CreateUser = User.Identity.GetUserName();
+                    post.UpdateUser = User.Identity.GetUserName();
+                    post.Priority = int.Parse(Priority);
 
-                post.PostID = int.Parse(postid);
-                post.Title = title;
-                post.Summary = summary;
-                post.contents = contentss;
-                post.image = fileName;
-                post.CategoryID = int.Parse(categoryid);
-                post.Status = true;
-                post.IsDeleted = false;
-                post.CreateDate = post.UpdateDate = DateTime.Now;
-                post.PublicDate = DateTime.Now;
-                post.CreateUser = "tri";
-                post.UpdateUser = "tri";
-                post.Priority = 0;
+                    data.Posts.Add(post);
+                    data.SaveChanges();
+                    return RedirectToAction("Post");
+                }
 
-                data.Posts.Add(post);
-                data.SaveChanges();
-                return RedirectToAction("Post");
+                return View();
             }
-
-            return View();
+            catch (Exception e)
+            {
+                return RedirectToAction("AddPost");
+            }
+           
         }
 
 
@@ -402,73 +449,79 @@ namespace CPSeed.Controllers
         [ValidateInput(false)]
         public ActionResult EditPost(FormCollection collection, Post post, HttpPostedFileBase fileUpload, int id)
         {
-            ViewBag.CategoryPost = new SelectList(data.Categories.ToList().OrderBy(n => n.Title), "CategoryID", "Title");
-
-            var postid = collection["PostID"];
-            var title = collection["Title"];
-            var summary = collection["Summary"];
-            var contentss = collection["Content"];
-            var categoryid = collection["CategoryPost"];
-            var image = collection["picture"];
-            if (string.IsNullOrEmpty(postid))
+            try
             {
-                ViewData["Loi1"] = "Please enter PostID !";
-            }
-            else if (String.IsNullOrEmpty(title))
-            {
-                ViewData["Loi2"] = "Please enter Title !";
-            }
-            else if (String.IsNullOrEmpty(summary))
-            {
-                ViewData["Loi3"] = "Please enter Summary !";
-            }
-            else if (String.IsNullOrEmpty(contentss))
-            {
-                ViewData["Loi4"] = "Please enter Contents !";
-            }
-            else if (String.IsNullOrEmpty(categoryid))
-            {
-                ViewData["Loi5"] = "Please choose CategoryID !";
-            }
-            else if (String.IsNullOrEmpty(categoryid))
-            {
-                ViewData["Loi6"] = "Please choose image !";
-            }
-            else
-            {
-                Post postroot = data.Posts.SingleOrDefault(n => n.PostID == id);
-                if (fileUpload != null)
+                var postid = collection["PostID"];
+                var title = collection["Title"];
+                var Priority = collection["Priority"];
+                var summary = collection["Summary"];
+                var contentss = collection["Content"];
+                var categoryid = collection["CategoryPost"];
+                var image = collection["picture"];
+                if (string.IsNullOrEmpty(postid))
                 {
-                    var fileName = Path.GetFileName(fileUpload.FileName);
-                    var path = Path.Combine(Server.MapPath("~/images/Post"), fileName);
-                    fileUpload.SaveAs(path);
-                    post.image = fileName;
+                    ViewData["Loi1"] = "Please enter PostID !";
+                }
+                else if (String.IsNullOrEmpty(title))
+                {
+                    ViewData["Loi2"] = "Please enter Title !";
+                }
+                else if (String.IsNullOrEmpty(summary))
+                {
+                    ViewData["Loi3"] = "Please enter Summary !";
+                }
+                else if (String.IsNullOrEmpty(contentss))
+                {
+                    ViewData["Loi4"] = "Please enter Contents !";
+                }
+                else if (String.IsNullOrEmpty(categoryid))
+                {
+                    ViewData["Loi5"] = "Please choose CategoryID !";
+                }
+                else if (String.IsNullOrEmpty(categoryid))
+                {
+                    ViewData["Loi6"] = "Please choose image !";
                 }
                 else
                 {
-                    post.image = postroot.image;
+                    Post postroot = data.Posts.SingleOrDefault(n => n.PostID == id);
+                    if (fileUpload != null)
+                    {
+                        var fileName = Path.GetFileName(fileUpload.FileName);
+                        var path = Path.Combine(Server.MapPath("~/images/Post"), fileName);
+                        fileUpload.SaveAs(path);
+                        post.image = fileName;
+                    }
+                    else
+                    {
+                        post.image = postroot.image;
+                    }
+
+                    post.PostID = int.Parse(postid);
+                    post.Title = title;
+                    post.Summary = summary;
+                    post.contents = contentss;
+                    post.CategoryID = int.Parse(categoryid);
+                    post.Status = true;
+                    post.IsDeleted = false;
+                    post.CreateDate = postroot.CreateDate;
+                    post.PublicDate = postroot.PublicDate;
+                    post.UpdateDate = DateTime.Now;
+                    post.CreateUser = postroot.CreateUser;
+                    post.UpdateUser = User.Identity.GetUserName();
+                    post.Priority = int.Parse(Priority);
+
+                    data.Posts.AddOrUpdate(post);
+                    data.SaveChanges();
+                    return RedirectToAction("Post");
                 }
 
-                post.PostID = int.Parse(postid);
-                post.Title = title;
-                post.Summary = summary;
-                post.contents = contentss;
-                post.CategoryID = int.Parse(categoryid);
-                post.Status = true;
-                post.IsDeleted = false;
-                post.CreateDate = postroot.CreateDate;
-                post.PublicDate = postroot.PublicDate;
-                post.UpdateDate = DateTime.Now;
-                post.CreateUser = postroot.CreateUser;
-                post.UpdateUser = "tri";
-                post.Priority = 0;
-
-                data.Posts.AddOrUpdate(post);
-                data.SaveChanges();
-                return RedirectToAction("Post");
+                return View();
             }
-
-            return View();
+            catch (Exception e)
+            {
+                return RedirectToAction("EditPost", "Admin", new { id = id });
+            }
         }
 
 
@@ -545,47 +598,39 @@ namespace CPSeed.Controllers
         [ValidateInput(false)]
         public ActionResult AddProductType(FormCollection collection, ProductType productType, HttpPostedFileBase fileUpload)
         {
-            var producttypeid = collection["ProductTypeID"];
-            var producttypename = collection["ProductTypeName"];
-            var taxpercent = collection["TaxPercent"];
-            var image = collection["pictute"];
-            if (String.IsNullOrEmpty(producttypeid))
+            try
             {
-                ViewData["Loi1"] = "Please enter Product Type ID !";
-            }
-            else if (String.IsNullOrEmpty(producttypename))
-            {
-                ViewData["Loi2"] = "Please enter Product Type Name !";
-            }
-            else if (String.IsNullOrEmpty(taxpercent))
-            {
-                ViewData["Loi3"] = "Please enter Tax Percent !";
-            }
-            else if (String.IsNullOrEmpty(taxpercent))
-            {
-                ViewData["Loi4"] = "Please choose image !";
-            }
-            else
-            {
-                var fileName = Path.GetFileName(fileUpload.FileName);
-                var path = Path.Combine(Server.MapPath("~/images/producttype"), fileName);
-                fileUpload.SaveAs(path);
+                var producttypename = collection["ProductTypeName"];
+                var image = collection["picture"];
+                if (String.IsNullOrEmpty(producttypename))
+                {
+                    ViewData["Loi2"] = "Please enter Product Type Name !";
+                }
+                else
+                {
+                    var fileName = Path.GetFileName(fileUpload.FileName);
 
-                productType.ProductTypeID = int.Parse(producttypeid);
-                productType.ProductTypeName = producttypename;
-                productType.TaxPercent = int.Parse(taxpercent);
-                productType.image = fileName;
-                productType.CreateDate = DateTime.Now;
-                productType.UpdateDate = DateTime.Now;
-                productType.CreateUser = "tri";
-                productType.UpdateUser = "tri";
+                    var path = Path.Combine(Server.MapPath("~/images/producttype"), fileName);
+                    fileUpload.SaveAs(path);
+                    productType.ProductTypeName = producttypename;
+                    productType.TaxPercent = 121;
+                    productType.image = fileName;
+                    productType.CreateDate = DateTime.Now;
+                    productType.UpdateDate = DateTime.Now;
+                    productType.CreateUser = User.Identity.GetUserName();
+                    productType.UpdateUser = User.Identity.GetUserName();
+                    data.ProductTypes.Add(productType);
+                    data.SaveChanges();
+                    return RedirectToAction("Product");
+                }
 
-                data.ProductTypes.Add(productType);
-                data.SaveChanges();
-                return RedirectToAction("Product");
+                return this.AddProductType();
             }
-
-            return this.AddProductType();
+            catch (Exception e)
+            {
+                return RedirectToAction("AddProductType");
+            }
+          
         }
 
 
@@ -654,54 +699,46 @@ namespace CPSeed.Controllers
         [ValidateInput(false)]
         public ActionResult EditProductType(FormCollection collection, ProductType productType, HttpPostedFileBase fileUpload, int id)
         {
-            var producttypeid = collection["ProductTypeID"];
-            var producttypename = collection["ProductTypeName"];
-            var taxpercent = collection["TaxPercent"];
-            var image = collection["pictute"];
-            if (String.IsNullOrEmpty(producttypeid))
+            try
             {
-                ViewData["Loi1"] = "Please enter Product Type ID !";
-            }
-            else if (String.IsNullOrEmpty(producttypename))
-            {
-                ViewData["Loi2"] = "Please enter Product Type Name !";
-            }
-            else if (String.IsNullOrEmpty(taxpercent))
-            {
-                ViewData["Loi3"] = "Please enter Tax Percent !";
-            }
-            else if (String.IsNullOrEmpty(image))
-            {
-                ViewData["Loi4"] = "Please choose image !";
-            }
-            else
-            {
-                ProductType productTyperoot = data.ProductTypes.SingleOrDefault(n => n.ProductTypeID == id);
-                if (fileUpload != null)
+                var producttypename = collection["ProductTypeName"];
+                var image = collection["picture"];
+                if (String.IsNullOrEmpty(producttypename))
                 {
-                    var fileName = Path.GetFileName(fileUpload.FileName);
-                    var path = Path.Combine(Server.MapPath("~/images/producttype"), fileName);
-                    fileUpload.SaveAs(path);
-                    productType.image = fileName;
+                    ViewData["Loi2"] = "Please enter Product Type Name !";
                 }
                 else
                 {
-                    productType.image = productTyperoot.image;
+                    ProductType productTyperoot = data.ProductTypes.SingleOrDefault(n => n.ProductTypeID == id);
+                    if (fileUpload != null)
+                    {
+                        var fileName = Path.GetFileName(fileUpload.FileName);
+                        var path = Path.Combine(Server.MapPath("~/images/producttype"), fileName);
+                        fileUpload.SaveAs(path);
+                        productType.image = fileName;
+                    }
+                    else
+                    {
+                        productType.image = productTyperoot.image;
+                    }
+                    productType.ProductTypeName = producttypename;
+                    productType.CreateUser = productTyperoot.CreateUser;
+                    productType.UpdateUser = User.Identity.GetUserName();
+                    productType.TaxPercent = 121;
+                    productType.CreateDate = productTyperoot.CreateDate;
+                    productType.UpdateDate = DateTime.Now;
+
+                    data.ProductTypes.AddOrUpdate(productType);
+                    data.SaveChanges();
+                    return RedirectToAction("Product");
                 }
 
-                productType.ProductTypeID = int.Parse(producttypeid);
-                productType.ProductTypeName = producttypename;
-                productType.TaxPercent = int.Parse(taxpercent);
-                productType.CreateUser = productTyperoot.CreateUser;
-                productType.UpdateUser = "tri";
-                productType.CreateDate = productTyperoot.CreateDate;
-                productType.UpdateDate = DateTime.Now;
-
-                data.ProductTypes.AddOrUpdate(productType);
-                data.SaveChanges();
-                return RedirectToAction("Product");
+                return View();
             }
-            return View();
+            catch(Exception ex)
+            {
+                return View();
+            }
         }
 
 
@@ -733,16 +770,12 @@ namespace CPSeed.Controllers
         [ValidateInput(false)]
         public ActionResult AddSlide(FormCollection collection, Slide slide, HttpPostedFileBase fileUpload)
         {
-            var slideid = collection["SlideID"];
             var url = collection["Url"];
             var content = collection["Content"];
+            var status = collection["Priority"];
             var image = collection["picture"];
 
-            if (String.IsNullOrEmpty(slideid))
-            {
-                ViewData["Loi1"] = "Please enter Slide ID !";
-            }
-            else if (String.IsNullOrEmpty(url))
+           if (String.IsNullOrEmpty(url))
             {
                 ViewData["Loi2"] = "Please enter Url !";
             }
@@ -759,18 +792,15 @@ namespace CPSeed.Controllers
                 var fileName = Path.GetFileName(fileUpload.FileName);
                 var path = Path.Combine(Server.MapPath("~/images/banner"), fileName);
                 fileUpload.SaveAs(path);
-
-                slide.SlideID = int.Parse(slideid);
                 slide.url = url;
                 slide.contents = content;
                 slide.image = fileName;
                 slide.CreateDate = DateTime.Now;
                 slide.UpdateDate = DateTime.Now;
                 slide.PublicDate = DateTime.Now;
-                slide.CreateUser = "tri";
-                slide.UpdateUser = "tri";
-                slide.Status = true;
-
+                slide.CreateUser = User.Identity.GetUserName();
+                slide.UpdateUser = User.Identity.GetUserName();
+                slide.Status = Boolean.Parse(status);
                 data.Slides.Add(slide);
                 data.SaveChanges();
                 return RedirectToAction("Slide");
@@ -806,16 +836,12 @@ namespace CPSeed.Controllers
         [ValidateInput(false)]
         public ActionResult EditSlide(FormCollection collection, Slide slide, HttpPostedFileBase fileUpload, int id)
         {
-            var slideid = collection["SlideID"];
             var url = collection["Url"];
             var content = collection["Content"];
+            var status = collection["Priority"];
             var image = collection["picture"];
 
-            if (String.IsNullOrEmpty(slideid))
-            {
-                ViewData["Loi1"] = "Please enter Slide ID !";
-            }
-            else if (String.IsNullOrEmpty(url))
+            if (String.IsNullOrEmpty(url))
             {
                 ViewData["Loi2"] = "Please enter Url !";
             }
@@ -841,15 +867,13 @@ namespace CPSeed.Controllers
                 {
                     slide.image = slideroot.image;
                 }
-
-                slide.SlideID = int.Parse(slideid);
                 slide.url = url;
                 slide.contents = content;
                 slide.CreateDate = slideroot.CreateDate;
                 slide.UpdateDate = DateTime.Now;
                 slide.PublicDate = slideroot.PublicDate;
                 slide.CreateUser = slideroot.CreateUser;
-                slide.UpdateUser = "tri";
+                slide.UpdateUser = User.Identity.GetUserName();
 
                 data.Slides.AddOrUpdate(slide);
                 data.SaveChanges();
@@ -926,27 +950,22 @@ namespace CPSeed.Controllers
         [ValidateInput(false)]
         public ActionResult AddCategory(FormCollection collection, Category category)
         {
-            var categoryid = collection["CategoryID"];
             var title = collection["TitleCategory"];
+            var Status = collection["Priority"];
 
-            if (string.IsNullOrEmpty(categoryid))
-            {
-                ViewData["Loi1"] = "Please enter Category ID !";
-            }
-            else if (String.IsNullOrEmpty(title))
+
+            if (String.IsNullOrEmpty(title))
             {
                 ViewData["Loi2"] = "Please enter Title !";
             }
             else
             {
-                category.CategoryID = int.Parse(categoryid);
                 category.Title = title;
-                category.Status = true;
+                category.Status = Boolean.Parse(Status);
                 category.IsDeleted = false;
                 category.CreateDate = category.UpdateDate = DateTime.Now;
-                category.CreateUser = "tri";
-                category.UpdateUser = "tri";
-
+                category.CreateUser = User.Identity.GetUserName();
+                category.UpdateUser = User.Identity.GetUserName();
                 data.Categories.Add(category);
                 data.SaveChanges();
                 return RedirectToAction("Post");
@@ -983,29 +1002,24 @@ namespace CPSeed.Controllers
         [ValidateInput(false)]
         public ActionResult EditCategory(FormCollection collection, Category category, int id)
         {
-            var categoryid = collection["CategoryID"];
             var title = collection["TitleCategory"];
+            var Status = collection["Priority"];
 
-            if (string.IsNullOrEmpty(categoryid))
-            {
-                ViewData["Loi1"] = "Please enter Category ID !";
-            }
-            else if (String.IsNullOrEmpty(title))
+
+            if (String.IsNullOrEmpty(title))
             {
                 ViewData["Loi2"] = "Please enter Title !";
             }
             else
             {
                 Category categoryroot = data.Categories.SingleOrDefault(n => n.CategoryID == id);
-
-                category.CategoryID = int.Parse(categoryid);
                 category.Title = title;
-                category.Status = true;
+                category.Status = Boolean.Parse(Status);
                 category.IsDeleted = false;
                 category.CreateDate = categoryroot.CreateDate;
                 category.UpdateDate = DateTime.Now;
                 category.CreateUser = categoryroot.CreateUser;
-                category.UpdateUser = "tri";
+                category.UpdateUser = User.Identity.GetUserName();
 
                 data.Categories.AddOrUpdate(category);
                 data.SaveChanges();
@@ -1084,17 +1098,12 @@ namespace CPSeed.Controllers
         [ValidateInput(false)]
         public ActionResult AddContact(FormCollection collection, Contact contact)
         {
-            var contactid = collection["ContactID"];
             var title = collection["TitleContact"];
             var content = collection["Content"];
             var icon = collection["Icon"];
             var url = collection["Url"];
-
-            if (string.IsNullOrEmpty(contactid))
-            {
-                ViewData["Loi1"] = "Please enter Category ID !";
-            }
-            else if (String.IsNullOrEmpty(title))
+          
+        if (String.IsNullOrEmpty(title))
             {
                 ViewData["Loi2"] = "Please enter Title !";
             }
@@ -1112,7 +1121,6 @@ namespace CPSeed.Controllers
             }
             else
             {
-                contact.ContactID = int.Parse(contactid);
                 contact.Title = title;
                 contact.Status = true;
                 contact.contents = content;
@@ -1263,7 +1271,9 @@ namespace CPSeed.Controllers
                 Response.StatusCode = 404;
                 return null;
             }
-            return View(contactus);
+            data.Contactus.Remove(contactus);
+            data.SaveChanges();
+            return RedirectToAction("Contactus");
         }
 
 
@@ -1320,18 +1330,13 @@ namespace CPSeed.Controllers
         public ActionResult AddNewsDetail(FormCollection collection, NewDetail newDetail, HttpPostedFileBase fileUpload)
         {
             ViewBag.NewsID = new SelectList(data.News.ToList().OrderBy(n => n.Title), "NewsID", "Title");
-
-            var newdetailid = collection["NewDetailID"];
             var title = collection["Title"];
+            var Priority = collection["Priority"];
             var summary = collection["Summary"];
             var content = collection["Content"];
             var newsid = collection["NewsID"];
             var image = collection["picture"];
-            if (string.IsNullOrEmpty(newdetailid))
-            {
-                ViewData["Loi1"] = "Please enter PostID !";
-            }
-            else if (String.IsNullOrEmpty(title))
+            if (String.IsNullOrEmpty(title))
             {
                 ViewData["Loi2"] = "Please enter Title !";
             }
@@ -1356,8 +1361,6 @@ namespace CPSeed.Controllers
                 var fileName = Path.GetFileName(fileUpload.FileName);
                 var path = Path.Combine(Server.MapPath("~/images/News"), fileName);
                 fileUpload.SaveAs(path);
-
-                newDetail.NewDetailID = int.Parse(newdetailid);
                 newDetail.Title = title;
                 newDetail.Summary = summary;
                 newDetail.contents = content;
@@ -1367,10 +1370,9 @@ namespace CPSeed.Controllers
                 newDetail.IsDeleted = false;
                 newDetail.CreateDate = newDetail.UpdateDate = DateTime.Now;
                 newDetail.PublicDate = DateTime.Now;
-                newDetail.CreateUser = "tri";
-                newDetail.UpdateUser = "tri";
-                newDetail.Priority = 0;
-
+                newDetail.CreateUser = User.Identity.GetUserName();
+                newDetail.UpdateUser = User.Identity.GetUserName();
+                newDetail.Priority = int.Parse(Priority);
                 data.NewDetails.Add(newDetail);
                 data.SaveChanges();
                 return RedirectToAction("NewsDetail");
@@ -1408,19 +1410,14 @@ namespace CPSeed.Controllers
         [ValidateInput(false)]
         public ActionResult EditNewsDetail(FormCollection collection, NewDetail newDetail, HttpPostedFileBase fileUpload, int id)
         {
-            ViewBag.NewsID = new SelectList(data.News.ToList().OrderBy(n => n.Title), "NewsID", "Title");
-
-            var newdetailid = collection["NewDetailID"];
             var title = collection["Title"];
+            var Priority = collection["Priority"];
             var summary = collection["Summary"];
-            var content = collection["Content"];
+            var content = collection["contents"];
             var newsid = collection["NewsID"];
             var image = collection["picture"];
-            if (string.IsNullOrEmpty(newdetailid))
-            {
-                ViewData["Loi1"] = "Please enter PostID !";
-            }
-            else if (String.IsNullOrEmpty(title))
+           
+           if (String.IsNullOrEmpty(title))
             {
                 ViewData["Loi2"] = "Please enter Title !";
             }
@@ -1454,8 +1451,6 @@ namespace CPSeed.Controllers
                 {
                     newDetail.image = newDetailroot.image;
                 }
-
-                newDetail.NewDetailID = int.Parse(newdetailid);
                 newDetail.Title = title;
                 newDetail.Summary = summary;
                 newDetail.contents = content;
@@ -1466,8 +1461,8 @@ namespace CPSeed.Controllers
                 newDetail.UpdateDate = newDetailroot.UpdateDate;
                 newDetail.PublicDate = DateTime.Now;
                 newDetail.CreateUser = newDetailroot.UpdateUser;
-                newDetail.UpdateUser = "tri";
-                newDetail.Priority = 0;
+                newDetail.UpdateUser = User.Identity.GetUserName();
+                newDetail.Priority = int.Parse(Priority);
 
                 data.NewDetails.AddOrUpdate(newDetail);
                 data.SaveChanges();
@@ -1549,27 +1544,20 @@ namespace CPSeed.Controllers
         [ValidateInput(false)]
         public ActionResult AddNews(FormCollection collection, News news)
         {
-            var newsid = collection["NewsID"];
             var title = collection["TitleNews"];
-
-            if (string.IsNullOrEmpty(newsid))
-            {
-                ViewData["Loi1"] = "Please enter News ID !";
-            }
-            else if (String.IsNullOrEmpty(title))
+            var status = collection["Priority"];
+            if (String.IsNullOrEmpty(title))
             {
                 ViewData["Loi2"] = "Please enter Title !";
             }
             else
             {
-                news.NewsID = int.Parse(newsid);
                 news.Title = title;
-                news.Status = true;
+                news.Status = Boolean.Parse(status);
                 news.IsDeleted = false;
                 news.CreateDate = news.UpdateDate = DateTime.Now;
-                news.CreateUser = "tri";
-                news.UpdateUser = "tri";
-
+                news.CreateUser = User.Identity.GetUserName();
+                news.UpdateUser = User.Identity.GetUserName();
                 data.News.Add(news);
                 data.SaveChanges();
                 return RedirectToAction("NewsDetail");
@@ -1606,29 +1594,22 @@ namespace CPSeed.Controllers
         [ValidateInput(false)]
         public ActionResult EditNews(FormCollection collection, News news, int id)
         {
-            var newsid = collection["NewsID"];
             var title = collection["TitleNews"];
-
-            if (string.IsNullOrEmpty(newsid))
-            {
-                ViewData["Loi1"] = "Please enter News ID !";
-            }
-            else if (String.IsNullOrEmpty(title))
+            var status = collection["Priority"];
+            if (String.IsNullOrEmpty(title))
             {
                 ViewData["Loi2"] = "Please enter Title !";
             }
             else
             {
                 News newsroot = data.News.SingleOrDefault(n => n.NewsID == id);
-
-                news.NewsID = int.Parse(newsid);
                 news.Title = title;
-                news.Status = true;
+                news.Status = Boolean.Parse(status);
                 news.IsDeleted = false;
                 news.CreateDate = newsroot.CreateDate;
                 news.UpdateDate = DateTime.Now;
                 news.CreateUser = newsroot.CreateUser;
-                news.UpdateUser = "tri";
+                news.UpdateUser = User.Identity.GetUserName();
 
                 data.News.AddOrUpdate(news);
                 data.SaveChanges();
@@ -1679,9 +1660,10 @@ namespace CPSeed.Controllers
         //------------------------------------------------------------------------------------------------------------
 
 
-        public ActionResult Order()
+        public ActionResult Order(int id)
         {
-            return View(data.OrderDetails.ToList());
+            var a = data.OrderDetails.Where(n => n.OrderID == id);
+            return View(a);
         }
 
 
@@ -1829,11 +1811,9 @@ namespace CPSeed.Controllers
                 Response.StatusCode = 404;
                 return null;
             }
-            var product = data.Products.SingleOrDefault(n => n.ProductID == orderDetail.ProductID);
-            ViewBag.ProductName = product.ProductName;
-            int sp = Decimal.ToInt32((decimal)orderDetail.SellPrice);
-            ViewBag.SellPrice = sp;
-            return View(orderDetail);
+            data.OrderDetails.Remove(orderDetail);
+            data.SaveChanges();
+            return RedirectToAction("Order",new { id= orderDetail.OrderID});;
         }
 
 

@@ -10,7 +10,6 @@ namespace CPSeed.Models
     [Table("Contact")]
     public class Contact
     {
-        [DatabaseGenerated(DatabaseGeneratedOption.None)]
         public int ContactID { get; set; }
 
         [Column(TypeName = "ntext")]

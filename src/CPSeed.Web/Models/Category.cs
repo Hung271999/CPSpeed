@@ -10,7 +10,6 @@ namespace CPSeed.Models
     [Table("Category")]
     public class Category
     {
-        [DatabaseGenerated(DatabaseGeneratedOption.None)]
         public int CategoryID { get; set; }
 
         [StringLength(100)]

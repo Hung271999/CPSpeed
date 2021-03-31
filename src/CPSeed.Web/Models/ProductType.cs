@@ -9,7 +9,6 @@ namespace CPSeed.Models
     [Table("ProductType")]
     public partial class ProductType
     {
-        [DatabaseGenerated(DatabaseGeneratedOption.None)]
         public int ProductTypeID { get; set; }
 
         [StringLength(250)]
@@ -29,7 +28,7 @@ namespace CPSeed.Models
         [StringLength(256)]
         public string UpdateUser { get; set; }
 
-        [StringLength(50)]
+        [StringLength(256)]
         public string image { get; set; }
     }
 }

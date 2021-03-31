@@ -8,106 +8,19 @@
 @using (Html.BeginForm("AddSlide", "Admin", FormMethod.Post, new { @enctype = "multipart/form-data" }))
 {
     @Html.AntiForgeryToken()
-
-    <nav class="navbar navbar-expand-xl">
-        <div class="container h-100">
-            <a class="navbar-brand" href="index">
-                <h1 class="tm-site-title mb-0">Product Admin</h1>
-            </a>
-            <button class="navbar-toggler ml-auto mr-0"
-                    type="button"
-                    data-toggle="collapse"
-                    data-target="#navbarSupportedContent"
-                    aria-controls="navbarSupportedContent"
-                    aria-expanded="false"
-                    aria-label="Toggle navigation">
-                <i class="fas fa-bars tm-nav-icon"></i>
-            </button>
-
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav mx-auto h-100">
-
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">
-                            <i class="fas fa-file-alt"></i> Report
-                            <span class="sr-only">(current)</span>
-                        </a>
-                    </li>
-
-                    <li class="nav-item">
-                        <a class="nav-link active" href="Product">
-                            <i class="fas fa-shopping-cart"></i> Product
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link " href="Post">
-                            <i class="fas fa-file-alt"></i> Post
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link active" href="Slide">
-                            <i class="fas fa-file-alt"></i> Slide
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link " href="Contactus">
-                            <i class="fas fa-file-alt"></i> Contact
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link " href="NewsDetail">
-                            <i class="fas fa-file-alt"></i> News
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link " href="Order">
-                            <i class="fas fa-file-alt"></i> Order
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="Account">
-                            <i class="far fa-user"></i> Account
-                        </a>
-                    </li>
-
-
-
-                </ul>
-                <ul class="navbar-nav">
-                    <li class="nav-item">
-                        <a class="nav-link d-block" href="Login">
-                            Admin, <b>Logout</b>
-                        </a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </nav>
     <div class="container tm-mt-big tm-mb-big">
         <div class="row">
             <div class="col-xl-9 col-lg-10 col-md-12 col-sm-12 mx-auto">
                 <div class="tm-bg-primary-dark tm-block tm-block-h-auto">
                     <div class="row">
                         <div class="col-12">
-                            <h2 class="tm-block-title d-inline-block">Add Slide</h2>
+                            <h2 class="tm-block-title d-inline-block">Thêm Banner</h2>
                         </div>
                     </div>
                     <div style="padding-left:20px" class="row tm-edit-product-row">
                         <div class="form-group mb-3 col-xs-12 col-sm-12">
                             <label for="name">
-                                Slide ID
-                            </label>
-                            <input placeholder="Slide ID là số"
-                                   name="SlideID"
-                                   type="text"
-                                   class="form-control validate"
-                                   required />
-                            @ViewData["Loi1"]
-                        </div>
-
-                        <div class="form-group mb-3 col-xs-12 col-sm-12">
-                            <label for="name">
-                                Url
+                                Đính kèm link
                             </label>
                             <input name="Url"
                                    type="text"
@@ -118,13 +31,16 @@
 
                         <div class="form-group mb-3 col-xs-12 col-sm-12">
                             <label for="name">
-                                Content
+                                Mô tả
                             </label>
                             <textarea name="Content" id="description"></textarea>
                             @ViewData["Loi3"]
                         </div>
 
-
+                        <select id="UserId" name="Priority" class="custom-select tm-select-accounts">
+                            <option value="true" selected>Hiển hị</option>
+                            <option value="false">Không hiển thị</option>
+                        </select>
                         <div class="form-group mb-3 col-xs-12 col-sm-12">
                             <div style="padding-top:18px" class="custom-file mt-3 mb-3">
                                 <input type="text" name="picture" id="picture" class="form-control" readonly style="color:black" />
@@ -132,13 +48,13 @@
                                 <input type="button"
                                        id="btnUpload"
                                        class="btn btn-success btn-primary btn-block mx-auto "
-                                       value="UPLOAD SLIDE IMAGE" />
+                                       value="Thêm hình ảnh" />
                                 <img id="pictureUpload" width="725" />
                             </div>
                         </div>
                     </div>
                     <div style="padding-top:150px; padding-left:35px" class="col-12">
-                        <button type="submit" class="btn btn-primary btn-block text-uppercase">Add Slide Now</button>
+                        <button type="submit" class="btn btn-primary btn-block text-uppercase">Thêm</button>
                     </div>
                 </div>
             </div>

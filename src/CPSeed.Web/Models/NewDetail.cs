@@ -10,7 +10,6 @@ namespace CPSeed.Models
     [Table("NewDetail")]
     public class NewDetail
     {
-        [DatabaseGenerated(DatabaseGeneratedOption.None)]
         public int NewDetailID { get; set; }
 
         [Column(TypeName = "ntext")]
@@ -37,7 +36,7 @@ namespace CPSeed.Models
         [StringLength(256)]
         public string UpdateUser { get; set; }
 
-        [StringLength(50)]
+        [StringLength(256)]
         public string image { get; set; }
 
         public int? Priority { get; set; }

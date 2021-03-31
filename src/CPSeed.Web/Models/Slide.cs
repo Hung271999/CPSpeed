@@ -10,7 +10,6 @@ namespace CPSeed.Models
     [Table("Slide")]
     public class Slide
     {
-        [DatabaseGenerated(DatabaseGeneratedOption.None)]
         public int SlideID { get; set; }
 
         [StringLength(250)]
@@ -18,7 +17,7 @@ namespace CPSeed.Models
 
         public string contents { get; set; }
 
-        [StringLength(50)]
+        [StringLength(256)]
         public string image { get; set; }
 
         public bool? Status { get; set; }

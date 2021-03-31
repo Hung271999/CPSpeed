@@ -56,7 +56,7 @@
         [Column(TypeName = "ntext")]
         public string description { get; set; }
 
-        [StringLength(50)]
+        [StringLength(256)]
         public string image { get; set; }
 
         [Required]

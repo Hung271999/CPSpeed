@@ -9,8 +9,7 @@ namespace CPSeed.Models
 {
     [Table("Posts")]
     public class Post
-    {
-        [DatabaseGenerated(DatabaseGeneratedOption.None)]
+    { 
         public int PostID { get; set; }
 
         [Column(TypeName = "ntext")]
@@ -40,7 +39,7 @@ namespace CPSeed.Models
         [StringLength(256)]
         public string UpdateUser { get; set; }
 
-        [StringLength(50)]
+        [StringLength(256)]
         public string image { get; set; }
 
         public int? Priority { get; set; }
