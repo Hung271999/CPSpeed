@@ -59,7 +59,7 @@
                                             <div class="media-body">
                                                 <a href="detail.html">@item.sProductName</a>
                                                 <div class="small text-muted">
-                                                    Giá: @item.sSellPrice <span class="mx-2">|</span> Số lượng: @item.quantity <span class="mx-2">|</span> Tổng: @item.total <span />
+                                                    Giá: @String.Format("{0:#,##0.##}", @item.sSellPrice) VND <span class="mx-2">|</span> Số lượng: @item.quantity <span class="mx-2">|</span> Tổng: @item.total <span />
                                                 </div>
                                             </div>
                                         </div>
@@ -92,7 +92,7 @@
                                 <hr>
                                 <div class="d-flex gr-total">
                                     <h5>Tổng tiền</h5>
-                                    <div class="ml-auto h5">  @ViewBag.Tongtien đ </div>
+                                    <div class="ml-auto h5"> @String.Format("{0:#,##0.##}", @ViewBag.Tongtien) VNĐ </div>
                                 </div>
                                 <hr>
                             </div>

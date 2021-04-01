@@ -2615,7 +2615,7 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
       <publishTime>04/01/2021 14:11:49</publishTime>
     </File>
     <File Include="bin/Ar/CPSeed.resources.dll">
-      <publishTime>04/01/2021 17:23:36</publishTime>
+      <publishTime>04/01/2021 18:42:36</publishTime>
     </File>
     <File Include="bin/CKFinder.dll">
       <publishTime>04/01/2021 14:11:48</publishTime>
@@ -2630,10 +2630,10 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
       <publishTime>04/01/2021 14:11:48</publishTime>
     </File>
     <File Include="bin/CPSeed.dll">
-      <publishTime>04/01/2021 17:23:36</publishTime>
+      <publishTime>04/01/2021 18:42:35</publishTime>
     </File>
     <File Include="bin/CPSeed.pdb">
-      <publishTime>04/01/2021 17:23:36</publishTime>
+      <publishTime>04/01/2021 18:42:35</publishTime>
     </File>
     <File Include="bin/CPSeed.Util.dll">
       <publishTime>04/01/2021 14:11:48</publishTime>
@@ -2699,10 +2699,10 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
       <publishTime>04/01/2021 14:11:50</publishTime>
     </File>
     <File Include="bin/Hi/CPSeed.resources.dll">
-      <publishTime>04/01/2021 17:23:36</publishTime>
+      <publishTime>04/01/2021 18:42:36</publishTime>
     </File>
     <File Include="bin/Ja/CPSeed.resources.dll">
-      <publishTime>04/01/2021 17:23:36</publishTime>
+      <publishTime>04/01/2021 18:42:36</publishTime>
     </File>
     <File Include="bin/log4net.dll">
       <publishTime>04/01/2021 14:11:49</publishTime>
@@ -3887,7 +3887,7 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
       <publishTime>04/01/2021 14:11:49</publishTime>
     </File>
     <File Include="Log/CPSeed.log">
-      <publishTime>04/01/2021 16:53:48</publishTime>
+      <publishTime>04/01/2021 18:42:44</publishTime>
     </File>
     <File Include="Microsoft.DiaSymReader.Native.amd64.dll">
       <publishTime>04/01/2021 14:11:51</publishTime>
@@ -4097,13 +4097,13 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
       <publishTime>04/01/2021 14:11:48</publishTime>
     </File>
     <File Include="Views/Cart/DatHang.cshtml">
-      <publishTime>04/01/2021 14:11:48</publishTime>
+      <publishTime>04/01/2021 18:29:33</publishTime>
     </File>
     <File Include="Views/Cart/GioHang.cshtml">
-      <publishTime>04/01/2021 14:11:48</publishTime>
+      <publishTime>04/01/2021 18:34:21</publishTime>
     </File>
     <File Include="Views/Cart/TotalMoney.cshtml">
-      <publishTime>04/01/2021 14:11:48</publishTime>
+      <publishTime>04/01/2021 18:32:45</publishTime>
     </File>
     <File Include="Views/Contact/Contact.cshtml">
       <publishTime>04/01/2021 14:11:48</publishTime>
@@ -4148,7 +4148,7 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
       <publishTime>04/01/2021 14:11:48</publishTime>
     </File>
     <File Include="Views/Home/Seach.cshtml">
-      <publishTime>04/01/2021 14:35:47</publishTime>
+      <publishTime>04/01/2021 18:26:24</publishTime>
     </File>
     <File Include="Views/Home/Slide.cshtml">
       <publishTime>04/01/2021 14:11:48</publishTime>
@@ -4223,10 +4223,10 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
       <publishTime>11/03/2021 22:52:03</publishTime>
     </File>
     <File Include="Views/Product/Product.cshtml">
-      <publishTime>04/01/2021 14:15:32</publishTime>
+      <publishTime>04/01/2021 18:21:29</publishTime>
     </File>
     <File Include="Views/Product/productDetail.cshtml">
-      <publishTime>04/01/2021 14:32:46</publishTime>
+      <publishTime>04/01/2021 18:25:08</publishTime>
     </File>
     <File Include="Views/Product/Products2.cshtml">
       <publishTime>11/03/2021 22:52:37</publishTime>
@@ -4265,7 +4265,7 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
       <publishTime>04/01/2021 14:11:48</publishTime>
     </File>
     <File Include="Web.config">
-      <publishTime>04/01/2021 15:31:47</publishTime>
+      <publishTime>04/01/2021 18:43:43</publishTime>
     </File>
     <File Include="webfonts/fa-brands-400.eot">
       <publishTime>04/01/2021 14:11:49</publishTime>

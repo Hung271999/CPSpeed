@@ -54,7 +54,7 @@
             <div class="col-xl-7 col-lg-7 col-md-6">
                 <div class="single-product-details" style="box-shadow: 0px 0px 15px rgba(0,0,0,0.15);padding: 30px">
                     <h2 class="noo-sh-title" style="color: #361800;">@Model.ProductName</h2>
-                    <h5 style="color:#5c8416"> Giá: @Model.SellPrice VNĐ</h5>
+                    <h5>@String.Format("{0:#,##0.##}", Model.SellPrice) VND</h5>
                     <h4>Mô tả:</h4>
                     @Html.Raw(Model.description)
                     <ul>
@@ -108,7 +108,7 @@
                                                     </div>
                                                     <div class="why-text">
                                                         <h4>@item3.ProductName</h4>
-                                                        <h5>@item3.SellPrice VNĐ</h5>
+                                                        <h5>@String.Format("{0:#,##0.##}", @item3.SellPrice) VND</h5>
                                                     </div>
                                                 </div>
                                             </div>
@@ -131,7 +131,7 @@
                                                 </div>
                                                 <div class="why-text">
                                                     <h4>@item2.ProductName</h4>
-                                                    <h5>@item2.SellPrice VNĐ</h5>
+                                                    <h5>@String.Format("{0:#,##0.##}", @item2.SellPrice) VND</h5>
                                                 </div>
                                             </div>
                                         </div>
