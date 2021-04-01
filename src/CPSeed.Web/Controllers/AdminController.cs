@@ -1886,7 +1886,9 @@ namespace CPSeed.Controllers
 
         public ActionResult Accounts()
         {
-            return View();
+            var context = new ApplicationDbContext();
+            var allUsers = context.Users.ToList();
+            return View(allUsers);
         }
 
 

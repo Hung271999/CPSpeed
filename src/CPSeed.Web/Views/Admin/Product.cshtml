@@ -41,7 +41,7 @@
                                 <td><p>@ViewBag.producttype</p></td>
                                 <td>@ViewBag.BuyPriceCurrent VNĐ</td>
                                 <td>@ViewBag.SellPrice VNĐ</td>
-                                <td><p> @String.Format("{0:M/d/yyyy}", item.CreateDate)</p></td>
+                                <td><p> @String.Format("{0:d/M/yyyy}", item.CreateDate)</p></td>
                                 <td>
                                     <a href="@Url.Action("DeleteProduct", "Admin" , new { id = item.ProductID })" class="tm-product-delete-link">
                                         <i class="far fa-trash-alt tm-product-delete-icon"></i>

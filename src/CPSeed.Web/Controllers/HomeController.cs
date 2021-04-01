@@ -273,7 +273,8 @@ namespace CPSeed.Controllers
                 {
                     if (!String.IsNullOrEmpty(key))
                     {
-                        var product = data.Products.Take(10).Where(n => n.ProductName.Contains(key)).ToList();
+                       var product = data.Products.Take(10).Where(n => n.ProductName.Contains(key)).ToList();
+                     
                         if (product.Count() == 0)
                         {
                             ViewBag.Status = 1;

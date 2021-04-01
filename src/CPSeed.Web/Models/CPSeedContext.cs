@@ -11,7 +11,6 @@ namespace CPSeed.Models
             : base("name=CPSeedConnectString")
         {
         }
-
         public virtual DbSet<Customer> Customers { get; set; }
         public virtual DbSet<Employee> Employees { get; set; }
         public virtual DbSet<Inventory> Inventories { get; set; }

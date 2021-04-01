@@ -76,6 +76,11 @@
                             <i class="far fa-newspaper"></i> Tin Tức
                         </a>
                     </li>
+                    <li class="nav-item">
+                        <a class="nav-link " href="@Url.Action("Accounts","Admin")">
+                            <i class="far fa-newspaper"></i> Người Dùng
+                        </a>
+                    </li>
                     @if (Request.IsAuthenticated)
                     {
                         using (Html.BeginForm("LogOff", "Account", FormMethod.Post, new { id = "logoutForm", @class = "navbar-right" }))
@@ -85,7 +90,8 @@
                                 <a class="nav-link" href="javascript:document.getElementById('logoutForm').submit()">
                                     <i class="fas fa-sign-out-alt"></i>Logout
                                 </a>
-                            </li>  
+                            </li>
+
                         }
                     }
                     <li class="nav-item">
