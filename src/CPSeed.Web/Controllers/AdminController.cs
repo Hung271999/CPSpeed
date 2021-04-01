@@ -9,28 +9,33 @@ using System.IO;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
-
+using PagedList;
+using PagedList.Mvc;
 namespace CPSeed.Controllers
 {
     public class AdminController : Controller
     {
         CPSeedContext data = new CPSeedContext();
-        public ActionResult Index()
+        [Authorize(Roles = "Admin")]
+        public ActionResult Index(int? page)
         {
+            int pagesize = 1;
+            int pageNum = (page ?? 1);
             var a = data.Orders.ToList().OrderBy(n=>n.CreateDate);
-            return View(a);
+            return View(a.ToPagedList(pageNum, pagesize));
         }
 
 
         //------------------------------------------------------------------------------------------------------------
 
 
-
+        [Authorize(Roles = "Admin")]
         public ActionResult Home()
         {
             return View();
         }
         //------------------------------------------------------------------------------------------------------------
+        [Authorize(Roles = "Admin")]
         public ActionResult Product()
         {
             return View(data.Products.ToList());
@@ -41,7 +46,7 @@ namespace CPSeed.Controllers
         //------------------------------------------------------------------------------------------------------------
 
 
-
+        [Authorize(Roles = "Admin")]
         [HttpGet]
         public ActionResult AddProduct()
         {
@@ -54,7 +59,7 @@ namespace CPSeed.Controllers
         //------------------------------------------------------------------------------------------------------------
 
 
-
+        [Authorize(Roles = "Admin")]
         [HttpPost]
         [ValidateInput(false)]
         public ActionResult AddProduct(FormCollection collection, Product product, HttpPostedFileBase fileUpload)
@@ -157,7 +162,7 @@ namespace CPSeed.Controllers
         //------------------------------------------------------------------------------------------------------------
 
 
-
+        [Authorize(Roles = "Admin")]
         [HttpGet]
         public ActionResult EditProduct(string id)
         {
@@ -181,7 +186,7 @@ namespace CPSeed.Controllers
         //------------------------------------------------------------------------------------------------------------
 
 
-
+        [Authorize(Roles = "Admin")]
         [HttpPost]
         [ValidateInput(false)]
         public ActionResult EditProduct(FormCollection collection, Product product, HttpPostedFileBase fileUpload, string id)
@@ -265,7 +270,7 @@ namespace CPSeed.Controllers
                     product.IsDeleted = false;
                     product.CreateDate = productroot.CreateDate;
                     product.CreateUser = productroot.CreateUser;
-                    product.UpdateUser = "tri";
+                    product.UpdateUser = User.Identity.GetUserName();
                     product.UpdateDate = DateTime.Now;
 
                     //data.Entry(product).State = EntityState.Modified;
@@ -286,7 +291,7 @@ namespace CPSeed.Controllers
         //------------------------------------------------------------------------------------------------------------
 
 
-
+        [Authorize(Roles = "Admin")]
         [HttpGet]
         public ActionResult DeleteProduct(string id)
         {
@@ -311,7 +316,7 @@ namespace CPSeed.Controllers
         //------------------------------------------------------------------------------------------------------------
 
 
-
+        [Authorize(Roles = "Admin")]
         [HttpPost, ActionName("DeleteProduct")]
         public ActionResult DeleteAllProduct(string id)
         {
@@ -331,7 +336,7 @@ namespace CPSeed.Controllers
         //------------------------------------------------------------------------------------------------------------
 
 
-
+        [Authorize(Roles = "Admin")]
         public ActionResult Post()
         {
             return View(data.Posts.ToList());
@@ -341,7 +346,7 @@ namespace CPSeed.Controllers
         //------------------------------------------------------------------------------------------------------------
 
 
-
+        [Authorize(Roles = "Admin")]
         [HttpGet]
         public ActionResult AddPost()
         {
@@ -353,7 +358,7 @@ namespace CPSeed.Controllers
         //------------------------------------------------------------------------------------------------------------
 
 
-
+        [Authorize(Roles = "Admin")]
         [HttpPost]
         [ValidateInput(false)]
         public ActionResult AddPost(FormCollection collection, Post post, HttpPostedFileBase fileUpload)
@@ -425,7 +430,7 @@ namespace CPSeed.Controllers
         //------------------------------------------------------------------------------------------------------------
 
 
-
+        [Authorize(Roles = "Admin")]
         [HttpGet]
         public ActionResult EditPost(int id)
         {
@@ -444,7 +449,7 @@ namespace CPSeed.Controllers
         //------------------------------------------------------------------------------------------------------------
 
 
-
+        [Authorize(Roles = "Admin")]
         [HttpPost]
         [ValidateInput(false)]
         public ActionResult EditPost(FormCollection collection, Post post, HttpPostedFileBase fileUpload, int id)
@@ -529,7 +534,7 @@ namespace CPSeed.Controllers
         //------------------------------------------------------------------------------------------------------------
 
 
-
+        [Authorize(Roles = "Admin")]
         [HttpGet]
         public ActionResult DeletePost(int id)
         {
@@ -550,7 +555,7 @@ namespace CPSeed.Controllers
         //------------------------------------------------------------------------------------------------------------
 
 
-
+        [Authorize(Roles = "Admin")]
         [HttpPost, ActionName("DeletePost")]
         public ActionResult DeleteAllPost(int id)
         {
@@ -570,7 +575,7 @@ namespace CPSeed.Controllers
         //------------------------------------------------------------------------------------------------------------
 
 
-
+        [Authorize(Roles = "Admin")]
         public ActionResult ProductTypes()
         {
             return View(data.ProductTypes.ToList());
@@ -581,7 +586,7 @@ namespace CPSeed.Controllers
         //------------------------------------------------------------------------------------------------------------
 
 
-
+        [Authorize(Roles = "Admin")]
         [HttpGet]
         public ActionResult AddProductType()
         {
@@ -593,7 +598,7 @@ namespace CPSeed.Controllers
         //------------------------------------------------------------------------------------------------------------
 
 
-
+        [Authorize(Roles = "Admin")]
         [HttpPost]
         [ValidateInput(false)]
         public ActionResult AddProductType(FormCollection collection, ProductType productType, HttpPostedFileBase fileUpload)
@@ -638,7 +643,7 @@ namespace CPSeed.Controllers
         //------------------------------------------------------------------------------------------------------------
 
 
-
+        [Authorize(Roles = "Admin")]
         [HttpGet]
         public ActionResult DeleteProductType(int id)
         {
@@ -655,7 +660,7 @@ namespace CPSeed.Controllers
 
         //------------------------------------------------------------------------------------------------------------
 
-
+        [Authorize(Roles = "Admin")]
 
         [HttpPost, ActionName("DeleteProductType")]
         public ActionResult DeleteAllProductType(int id)
@@ -676,7 +681,7 @@ namespace CPSeed.Controllers
         //------------------------------------------------------------------------------------------------------------
 
 
-
+        [Authorize(Roles = "Admin")]
         [HttpGet]
         public ActionResult EditProductType(int id)
         {
@@ -694,7 +699,7 @@ namespace CPSeed.Controllers
         //------------------------------------------------------------------------------------------------------------
 
 
-
+        [Authorize(Roles = "Admin")]
         [HttpPost]
         [ValidateInput(false)]
         public ActionResult EditProductType(FormCollection collection, ProductType productType, HttpPostedFileBase fileUpload, int id)
@@ -745,7 +750,7 @@ namespace CPSeed.Controllers
 
         //------------------------------------------------------------------------------------------------------------
 
-
+        [Authorize(Roles = "Admin")]
         public ActionResult Slide()
         {
             return View(data.Slides.ToList());
@@ -753,7 +758,7 @@ namespace CPSeed.Controllers
 
 
         //------------------------------------------------------------------------------------------------------------
-
+        [Authorize(Roles = "Admin")]
         [HttpGet]
         public ActionResult AddSlide()
         {
@@ -765,7 +770,7 @@ namespace CPSeed.Controllers
         //------------------------------------------------------------------------------------------------------------
 
 
-
+        [Authorize(Roles = "Admin")]
         [HttpPost]
         [ValidateInput(false)]
         public ActionResult AddSlide(FormCollection collection, Slide slide, HttpPostedFileBase fileUpload)
@@ -813,7 +818,7 @@ namespace CPSeed.Controllers
 
         //------------------------------------------------------------------------------------------------------------
 
-
+        [Authorize(Roles = "Admin")]
         [HttpGet]
         public ActionResult EditSlide(int id)
         {
@@ -831,7 +836,7 @@ namespace CPSeed.Controllers
         //------------------------------------------------------------------------------------------------------------
 
 
-
+        [Authorize(Roles = "Admin")]
         [HttpPost]
         [ValidateInput(false)]
         public ActionResult EditSlide(FormCollection collection, Slide slide, HttpPostedFileBase fileUpload, int id)
@@ -886,7 +891,7 @@ namespace CPSeed.Controllers
         //------------------------------------------------------------------------------------------------------------
 
 
-
+        [Authorize(Roles = "Admin")]
         [HttpGet]
         public ActionResult DeleteSlide(int id)
         {
@@ -904,7 +909,7 @@ namespace CPSeed.Controllers
         //------------------------------------------------------------------------------------------------------------
 
 
-
+        [Authorize(Roles = "Admin")]
         [HttpPost, ActionName("DeleteSlide")]
         public ActionResult DeleteAllSlide(int id)
         {
@@ -923,7 +928,7 @@ namespace CPSeed.Controllers
 
         //------------------------------------------------------------------------------------------------------------
 
-
+        [Authorize(Roles = "Admin")]
 
         public ActionResult Category()
         {
@@ -934,7 +939,7 @@ namespace CPSeed.Controllers
         //------------------------------------------------------------------------------------------------------------
 
 
-
+        [Authorize(Roles = "Admin")]
         [HttpGet]
         public ActionResult AddCategory()
         {
@@ -945,7 +950,7 @@ namespace CPSeed.Controllers
         //------------------------------------------------------------------------------------------------------------
 
 
-
+        [Authorize(Roles = "Admin")]
         [HttpPost]
         [ValidateInput(false)]
         public ActionResult AddCategory(FormCollection collection, Category category)
@@ -979,7 +984,7 @@ namespace CPSeed.Controllers
         //------------------------------------------------------------------------------------------------------------
 
 
-
+        [Authorize(Roles = "Admin")]
         [HttpGet]
         public ActionResult EditCategory(int id)
         {
@@ -997,7 +1002,7 @@ namespace CPSeed.Controllers
         //------------------------------------------------------------------------------------------------------------
 
 
-
+        [Authorize(Roles = "Admin")]
         [HttpPost]
         [ValidateInput(false)]
         public ActionResult EditCategory(FormCollection collection, Category category, int id)
@@ -1033,7 +1038,7 @@ namespace CPSeed.Controllers
         //------------------------------------------------------------------------------------------------------------
 
 
-
+        [Authorize(Roles = "Admin")]
         [HttpGet]
         public ActionResult DeleteCategory(int id)
         {
@@ -1051,7 +1056,7 @@ namespace CPSeed.Controllers
         //------------------------------------------------------------------------------------------------------------
 
 
-
+        [Authorize(Roles = "Admin")]
         [HttpPost, ActionName("DeleteCategory")]
         public ActionResult DeleteAllCategory(int id)
         {
@@ -1071,7 +1076,7 @@ namespace CPSeed.Controllers
         //------------------------------------------------------------------------------------------------------------
 
 
-
+        [Authorize(Roles = "Admin")]
         public ActionResult Contact()
         {
             return View(data.Contacts.ToList());
@@ -1080,7 +1085,7 @@ namespace CPSeed.Controllers
 
         //------------------------------------------------------------------------------------------------------------
 
-
+        [Authorize(Roles = "Admin")]
 
         [HttpGet]
         public ActionResult AddContact()
@@ -1092,7 +1097,7 @@ namespace CPSeed.Controllers
 
         //------------------------------------------------------------------------------------------------------------
 
-
+        [Authorize(Roles = "Admin")]
 
         [HttpPost]
         [ValidateInput(false)]
@@ -1140,7 +1145,7 @@ namespace CPSeed.Controllers
         //------------------------------------------------------------------------------------------------------------
 
 
-
+        [Authorize(Roles = "Admin")]
         [HttpGet]
         public ActionResult EditContact(int id)
         {
@@ -1158,7 +1163,7 @@ namespace CPSeed.Controllers
         //------------------------------------------------------------------------------------------------------------
 
 
-
+                [Authorize(Roles = "Admin")]
         [HttpPost]
         [ValidateInput(false)]
         public ActionResult EditContact(FormCollection collection, Contact contact, int id)
@@ -1212,7 +1217,7 @@ namespace CPSeed.Controllers
         //------------------------------------------------------------------------------------------------------------
 
 
-
+        [Authorize(Roles = "Admin")]
         [HttpGet]
         public ActionResult DeleteContact(int id)
         {
@@ -1230,7 +1235,7 @@ namespace CPSeed.Controllers
         //------------------------------------------------------------------------------------------------------------
 
 
-
+        [Authorize(Roles = "Admin")]
         [HttpPost, ActionName("DeleteContact")]
         public ActionResult DeleteAllContact(int id)
         {
@@ -1250,7 +1255,7 @@ namespace CPSeed.Controllers
         //------------------------------------------------------------------------------------------------------------
 
 
-
+        [Authorize(Roles = "Admin")]
         public ActionResult Contactus()
         {
             return View(data.Contactus.ToList());
@@ -1261,7 +1266,7 @@ namespace CPSeed.Controllers
 
 
 
-
+        [Authorize(Roles = "Admin")]
         [HttpGet]
         public ActionResult DeleteContactus(int id)
         {
@@ -1281,7 +1286,7 @@ namespace CPSeed.Controllers
         //------------------------------------------------------------------------------------------------------------
 
 
-
+        [Authorize(Roles = "Admin")]
         [HttpPost, ActionName("DeleteContactus")]
         public ActionResult DeleteAllContactus(int id)
         {
@@ -1302,7 +1307,7 @@ namespace CPSeed.Controllers
 
 
 
-
+        [Authorize(Roles = "Admin")]
         public ActionResult NewsDetail()
         {
             return View(data.NewDetails.ToList());
@@ -1312,7 +1317,7 @@ namespace CPSeed.Controllers
         //------------------------------------------------------------------------------------------------------------
 
 
-
+        [Authorize(Roles = "Admin")]
         [HttpGet]
         public ActionResult AddNewsDetail()
         {
@@ -1324,7 +1329,7 @@ namespace CPSeed.Controllers
         //------------------------------------------------------------------------------------------------------------
 
 
-
+        [Authorize(Roles = "Admin")]
         [HttpPost]
         [ValidateInput(false)]
         public ActionResult AddNewsDetail(FormCollection collection, NewDetail newDetail, HttpPostedFileBase fileUpload)
@@ -1385,7 +1390,7 @@ namespace CPSeed.Controllers
 
         //------------------------------------------------------------------------------------------------------------
 
-
+        [Authorize(Roles = "Admin")]
 
         [HttpGet]
         public ActionResult EditNewsDetail(int id)
@@ -1405,7 +1410,7 @@ namespace CPSeed.Controllers
         //------------------------------------------------------------------------------------------------------------
 
 
-
+        [Authorize(Roles = "Admin")]
         [HttpPost]
         [ValidateInput(false)]
         public ActionResult EditNewsDetail(FormCollection collection, NewDetail newDetail, HttpPostedFileBase fileUpload, int id)
@@ -1477,7 +1482,7 @@ namespace CPSeed.Controllers
         //------------------------------------------------------------------------------------------------------------
 
 
-
+        [Authorize(Roles = "Admin")]
         [HttpGet]
         public ActionResult DeleteNewsDetail(int id)
         {
@@ -1498,7 +1503,7 @@ namespace CPSeed.Controllers
         //------------------------------------------------------------------------------------------------------------
 
 
-
+        [Authorize(Roles = "Admin")]
         [HttpPost, ActionName("DeleteNewsDetail")]
         public ActionResult DeleteAllNewsDetail(int id)
         {
@@ -1518,7 +1523,7 @@ namespace CPSeed.Controllers
         //------------------------------------------------------------------------------------------------------------
 
 
-
+        [Authorize(Roles = "Admin")]
         public ActionResult News()
         {
             return View(data.News.ToList());
@@ -1527,7 +1532,7 @@ namespace CPSeed.Controllers
 
         //------------------------------------------------------------------------------------------------------------
 
-
+        [Authorize(Roles = "Admin")]
 
         [HttpGet]
         public ActionResult AddNews()
@@ -1539,7 +1544,7 @@ namespace CPSeed.Controllers
         //------------------------------------------------------------------------------------------------------------
 
 
-
+        [Authorize(Roles = "Admin")]
         [HttpPost]
         [ValidateInput(false)]
         public ActionResult AddNews(FormCollection collection, News news)
@@ -1571,7 +1576,7 @@ namespace CPSeed.Controllers
         //------------------------------------------------------------------------------------------------------------
 
 
-
+        [Authorize(Roles = "Admin")]
         [HttpGet]
         public ActionResult EditNews(int id)
         {
@@ -1589,7 +1594,7 @@ namespace CPSeed.Controllers
         //------------------------------------------------------------------------------------------------------------
 
 
-
+        [Authorize(Roles = "Admin")]
         [HttpPost]
         [ValidateInput(false)]
         public ActionResult EditNews(FormCollection collection, News news, int id)
@@ -1623,7 +1628,7 @@ namespace CPSeed.Controllers
         //------------------------------------------------------------------------------------------------------------
 
 
-
+        [Authorize(Roles = "Admin")]
         [HttpGet]
         public ActionResult DeleteNews(int id)
         {
@@ -1641,7 +1646,7 @@ namespace CPSeed.Controllers
         //------------------------------------------------------------------------------------------------------------
 
 
-
+        [Authorize(Roles = "Admin")]
         [HttpPost, ActionName("DeleteNews")]
         public ActionResult DeleteAllNews(int id)
         {
@@ -1659,7 +1664,7 @@ namespace CPSeed.Controllers
 
         //------------------------------------------------------------------------------------------------------------
 
-
+        [Authorize(Roles = "Admin")]
         public ActionResult Order(int id)
         {
             var a = data.OrderDetails.Where(n => n.OrderID == id);
@@ -1671,7 +1676,7 @@ namespace CPSeed.Controllers
         //------------------------------------------------------------------------------------------------------------
 
 
-
+        [Authorize(Roles = "Admin")]
         [HttpGet]
         public ActionResult EditOrder(int id)
         {
@@ -1699,7 +1704,7 @@ namespace CPSeed.Controllers
         //------------------------------------------------------------------------------------------------------------
 
 
-
+        [Authorize(Roles = "Admin")]
         [HttpPost]
         [ValidateInput(false)]
         public ActionResult EditOrder(FormCollection collection, Order order, OrderDetail orderDetail, int id)

@@ -82,7 +82,7 @@ namespace CPSeed.Controllers
         {
             try
             {
-                var News = data.NewDetails.OrderByDescending(n => n.CreateDate).Where(n => n.Status == true).Where(n => n.Priority == 1).ToList();
+                var News = data.NewDetails.OrderByDescending(n => n.CreateDate).Where(n => n.Status == true).Where(n => n.Priority == 1).Take(2).ToList();
                 if (News == null)
                 {
                     logger.Error("NewDetails Priority is null");
@@ -288,6 +288,7 @@ namespace CPSeed.Controllers
                         }
                         else
                         {
+                            ViewBag.Count = product.Count();
                             return PartialView(product.ToPagedList(pageNum, pagesize));
                         }
                     }
