@@ -1489,7 +1489,7 @@
     <Content Include="css\superslides.css" />
     <Content Include="css\win2.css" />
     <Content Include="css\win3.css" />
-    <Content Include="css\winAdmin.css" />
+    <Content Include="css\winAd.css" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />

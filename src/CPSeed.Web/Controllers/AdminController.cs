@@ -21,7 +21,7 @@ namespace CPSeed.Controllers
         {
             int pagesize = 1;
             int pageNum = (page ?? 1);
-            var a = data.Orders.ToList().OrderBy(n=>n.CreateDate);
+            var a = data.Orders.ToList().OrderBy(n => n.CreateDate);
             return View(a.ToPagedList(pageNum, pagesize));
         }
 
@@ -151,7 +151,7 @@ namespace CPSeed.Controllers
                 }
                 return this.AddProduct();
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 ViewData["Loi1"] = "Vui lòng nhập đúng thông tin!";
                 return View();
@@ -166,14 +166,14 @@ namespace CPSeed.Controllers
         [HttpGet]
         public ActionResult EditProduct(string id)
         {
-            
+
             Product product = data.Products.SingleOrDefault(n => n.ProductID == id);
             if (product == null)
             {
                 Response.StatusCode = 404;
                 return null;
             };
-            ViewBag.ProductTypeID =data.ProductTypes.ToList();
+            ViewBag.ProductTypeID = data.ProductTypes.ToList();
             int sp = Decimal.ToInt32((decimal)product.SellPrice);
             int bp = Decimal.ToInt32((decimal)product.BuyPriceCurrent);
 
@@ -203,13 +203,13 @@ namespace CPSeed.Controllers
                 int ouput;
                 bool result = int.TryParse(sellprice, out ouput);
                 bool result2 = int.TryParse(buypricecurrent, out ouput);
-                if (result==false)
+                if (result == false)
                 {
-                    return RedirectToAction("EditProduct", "Admin", new { id=id});
+                    return RedirectToAction("EditProduct", "Admin", new { id = id });
                 }
-                 if (result==false)
+                if (result == false)
                 {
-                    return RedirectToAction("EditProduct", "Admin", new { id=id});
+                    return RedirectToAction("EditProduct", "Admin", new { id = id });
                 }
                 var picture = collection["picture"];
                 var descriptionn = collection["description"];
@@ -280,7 +280,7 @@ namespace CPSeed.Controllers
                 }
                 return View();
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 ViewData["Loi1"] = "Vui lòng nhập đúng thông tin !";
                 return View();
@@ -422,7 +422,7 @@ namespace CPSeed.Controllers
             {
                 return RedirectToAction("AddPost");
             }
-           
+
         }
 
 
@@ -635,7 +635,7 @@ namespace CPSeed.Controllers
             {
                 return RedirectToAction("AddProductType");
             }
-          
+
         }
 
 
@@ -740,7 +740,7 @@ namespace CPSeed.Controllers
 
                 return View();
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 return View();
             }
@@ -780,7 +780,7 @@ namespace CPSeed.Controllers
             var status = collection["Priority"];
             var image = collection["picture"];
 
-           if (String.IsNullOrEmpty(url))
+            if (String.IsNullOrEmpty(url))
             {
                 ViewData["Loi2"] = "Please enter Url !";
             }
@@ -1107,8 +1107,8 @@ namespace CPSeed.Controllers
             var content = collection["Content"];
             var icon = collection["Icon"];
             var url = collection["Url"];
-          
-        if (String.IsNullOrEmpty(title))
+
+            if (String.IsNullOrEmpty(title))
             {
                 ViewData["Loi2"] = "Please enter Title !";
             }
@@ -1163,7 +1163,7 @@ namespace CPSeed.Controllers
         //------------------------------------------------------------------------------------------------------------
 
 
-                [Authorize(Roles = "Admin")]
+        [Authorize(Roles = "Admin")]
         [HttpPost]
         [ValidateInput(false)]
         public ActionResult EditContact(FormCollection collection, Contact contact, int id)
@@ -1421,8 +1421,8 @@ namespace CPSeed.Controllers
             var content = collection["contents"];
             var newsid = collection["NewsID"];
             var image = collection["picture"];
-           
-           if (String.IsNullOrEmpty(title))
+
+            if (String.IsNullOrEmpty(title))
             {
                 ViewData["Loi2"] = "Please enter Title !";
             }
@@ -1818,7 +1818,7 @@ namespace CPSeed.Controllers
             }
             data.OrderDetails.Remove(orderDetail);
             data.SaveChanges();
-            return RedirectToAction("Order",new { id= orderDetail.OrderID});;
+            return RedirectToAction("Order", new { id = orderDetail.OrderID }); ;
         }
 
 

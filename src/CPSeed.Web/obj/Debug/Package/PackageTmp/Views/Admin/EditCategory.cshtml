@@ -1,0 +1,72 @@
+﻿@model CPSeed.Models.Category
+
+@{
+    ViewBag.Title = "EditCategory";
+    Layout = "~/Views/Shared/LayoutAdmin.cshtml";
+}
+
+@using (Html.BeginForm("EditCategory", "Admin", FormMethod.Post, new { @enctype = "multipart/form-data" }))
+{
+    @Html.AntiForgeryToken()
+    <div class="container tm-mt-big tm-mb-big">
+        <div class="row">
+            <div class="col-xl-9 col-lg-10 col-md-12 col-sm-12 mx-auto">
+                <div class="tm-bg-primary-dark tm-block tm-block-h-auto">
+                    <div class="row">
+                        <div class="col-12">
+                            <h2 class="tm-block-title d-inline-block">Chỉnh Sửa Danh Mục Bài Viết</h2>
+                        </div>
+                    </div>
+                    <div style="padding-left:20px" class="row tm-edit-product-row">
+                        <div class="form-group mb-3 col-xs-12 col-sm-12">
+                            <label for="name">
+                                Mã bài viết
+                            </label>
+                            <input style="color:black"
+                                   name="CategoryID"
+                                   type="text"
+                                   value="@Model.CategoryID"
+                                   class="form-control validate"
+                                   readonly
+                                   required />
+                            @ViewData["Loi1"]
+                        </div>
+
+                        <div class="form-group mb-3 col-xs-12 col-sm-12">
+                            <label for="name">
+                                Tiêu đề
+                            </label>
+                            <input style="color:white"
+                                   name="TitleCategory"
+                                   type="text"
+                                   value="@Model.Title"
+                                   class="form-control validate"
+                                   required />
+                            @ViewData["Loi2"]
+                        </div>
+                        <select id="UserId" name="Priority" class="custom-select tm-select-accounts">
+                            @if (Model.Status == true)
+                            {
+                                <option value="true" selected>Hiển thị</option>
+                                <option value="false">
+                                    Không hiển thị
+                                </option>
+                            }
+                            else
+                            {
+                                <option value="false" selected>
+                                    Không hiển thị
+                                </option>
+                                <option value="true">Hiển thị</option>
+
+                            }
+                        </select>
+                    </div>
+                    <div style="padding-top:20px; padding-left:25px" class="col-12">
+                        <button type="submit" class="btn btn-primary btn-block text-uppercase">Sửa</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+}

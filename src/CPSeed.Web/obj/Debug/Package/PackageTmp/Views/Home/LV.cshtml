@@ -1,0 +1,68 @@
+﻿@using PagedList.Mvc;
+@using PagedList;
+@model PagedList.IPagedList<CPSeed.Models.Post>
+<style>
+    .pagination {
+        display: inline-block;
+    }
+
+        .pagination a {
+            color: black;
+            float: left;
+            padding: 8px 16px;
+            text-decoration: none;
+            transition: background-color .3s;
+            border: 1px solid #ddd;
+        }
+
+            .pagination a.active {
+                background-color: #4CAF50;
+                color: white;
+                border: 1px solid #4CAF50;
+            }
+
+            .pagination a:hover:not(.active) {
+                background-color: #ddd;
+            }
+
+    .MenuTrang li {
+        display: inline;
+    }
+</style>
+<div id="a" data-aos="fade-right" data-aos-duration="1000">
+    @foreach (var item in Model)
+    {
+        <div class="row">
+            <div class="col-lg-6 techRight">
+                <br />
+                <br />
+                <br />
+
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="title-all">
+                            <h1 style="font-size:40px">@Resource.THEMAINCOMMERCIALASPECT</h1>
+                        </div>
+                    </div>
+                </div>
+                <div class="techContent">
+                    <div class="techContentTop">
+                        <h2 class="noo-sh-title-top">@item.Title</h2>
+                        <hr class="techDive" />
+                        <p style="font-size:20px">
+                            @Html.Raw(item.Summary)
+                        </p>
+                        <div class="MenuTrang" style="text-align:center;margin-top:25px; color:#789A3D">
+                            @Html.PagedListPager(Model, page => Url.Action("LV", "Home", new { page }), PagedListRenderOptions.EnableUnobtrusiveAjaxReplacing(new AjaxOptions() { HttpMethod = "Get", UpdateTargetId = "a" }))
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="banner-frame ">
+                    <img class="img-fluid img-fluid-lv" src="~/images/Post/@item.image" alt="" />
+                </div>
+            </div>
+        </div>
+    }
+</div>

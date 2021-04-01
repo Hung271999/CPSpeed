@@ -1,0 +1,59 @@
+﻿@model IEnumerable<CPSeed.Models.Contactus>
+
+@{
+    ViewBag.Title = "Contactus";
+    Layout = "~/Views/Shared/LayoutAdmin.cshtml";
+}
+
+<div class="container mt-5">
+    <div class="row tm-content-row">
+        <div class="col-sm-12 col-md-12 col-lg-12 col-xl-7 tm-block-col">
+            <div class="tm-bg-primary-dark tm-block tm-block-products">
+                <h2 class="tm-block-title">Yêu Cầu Liên Hệ</h2>
+                <div style="max-height: 525px;" class="tm-product-table-container">
+                    <table class="table table-hover tm-table-small tm-product-table">
+                        <thead>
+                            <tr>
+                                <th scope="col">Email</th>
+                                <th scope="col">Nội dung</th>
+                                <th scope="col">Ngày gửi</th>
+                                <th scope="col">Người gửi</th>
+                                <th scope="col">&nbsp;</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+
+                            @foreach (var item in Model)
+                            {
+                                <tr>
+                                    <td style="max-width:200px"><p>@Html.Raw(item.Email)</p></td>
+                                    <td><p>@Html.Raw(item.contents)</p></td>
+                                    <td style="max-width:100px"><p>@Html.Raw(item.CreateDate)</p></td>
+                                    <td style="max-width:100px"><p>@Html.Raw(item.CreateUser)</p></td>
+                                    <td>
+                                        <a href="@Url.Action("DeleteContactus", "Admin" , new { id = item.ContactusID })" class="tm-product-delete-link">
+                                            <i class="far fa-trash-alt tm-product-delete-icon"></i>
+                                        </a>
+                                    </td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-12 col-md-12 col-lg-5 col-xl-5 tm-block-col">
+            <div style="max-height: none;" class="tm-bg-primary-dark tm-block tm-block-product-categories">
+                <h2 class="tm-block-title">Thông Tin Liên Hệ</h2>
+                <div style="max-height: 525px;" class="tm-product-table-container">
+                    <table class="table tm-table-small tm-product-table">
+                        @Html.Action("Contact", "Admin")
+                    </table>
+                </div>
+                <a style="margin-bottom: 0rem!important;" href="@Url.Action("AddContact", "Admin")"
+                   class="btn btn-primary btn-block text-uppercase mb-3">Thêm Liên Hệ</a>
+
+            </div>
+        </div>
+    </div>
+</div>

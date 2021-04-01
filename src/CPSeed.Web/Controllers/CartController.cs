@@ -17,7 +17,7 @@ namespace CPSeed.Controllers
         {
             return View();
         }
-        
+
         public List<Cart> Laygiohang()
         {
             List<Cart> lstGiohang = Session["Cart"] as List<Cart>;
@@ -91,8 +91,8 @@ namespace CPSeed.Controllers
         }
         [HttpGet]
         public ActionResult DatHang()
-        {   
-            if(Request.IsAuthenticated)
+        {
+            if (Request.IsAuthenticated)
             {
                 if (Session["Cart"] == null)
                 {
@@ -105,7 +105,7 @@ namespace CPSeed.Controllers
                     ViewBag.Tongtien = TongTien();
                     return View(lstGiohang);
                 }
-            } 
+            }
             else
             {
                 return RedirectToAction("Login", "Account");

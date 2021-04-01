@@ -1,0 +1,44 @@
+﻿@model IEnumerable<CPSeed.Models.ProductType>
+@using CPSeed.Models;
+
+<div class="list-group list-group-collapse list-group-sm list-group-tree" id="list-group-men" data-children=".sub-men">
+    <div class="list-group-collapse sub-men">
+        @foreach (var item in Model)
+        {
+            <a  class="list-group-item list-group-item-action dad" href="#@item.ProductTypeID" data-toggle="collapse" aria-expanded="true" aria-controls="@item.ProductTypeID">
+                @item.ProductTypeName
+                @{
+                    CPSeedContext data1 = new CPSeedContext();
+                    ViewBag.Count = data1.Products.Where(n => n.ProductTypeID == @item.ProductTypeID).Count();
+                }
+                <small class="text-muted">(@ViewBag.Count)</small>
+            </a>
+                    CPSeedContext data = new CPSeedContext();
+                    List<Product> Product = data.Products.Where(n => n.ProductTypeID == item.ProductTypeID).ToList();         
+                    if (ViewBag.Status == item.ProductTypeID)
+            {
+                <div class="collapse show" id="@item.ProductTypeID" data-parent="#list-group-men">
+                    <div class="list-group">
+                        @foreach (var item3 in Product)
+                        {
+                            <a href="@Url.Action("productDetail", "ProDuct", new { id = item3.ProductID})" class="list-group-item list-group-item-action">@item3.ProductName </a>
+                        }
+                    </div>
+                </div>
+
+            }
+            else
+            {
+                <div class="collapse" id="@item.ProductTypeID" data-parent="#list-group-men">
+                    <div class="list-group">
+                        @foreach (var item3 in Product)
+                        {
+                            <a href="@Url.Action("productDetail", "ProDuct", new { id = item3.ProductID})"  class="list-group-item list-group-item-action">@item3.ProductName </a>
+                        }
+                    </div>
+                </div>
+            }
+        }
+    </div>
+
+</div>

@@ -1,0 +1,112 @@
+﻿@using CPSeed.Models.Cart;
+@model List<Cart>
+@using (Html.BeginForm("DatHang", "Cart"))
+{
+    @Html.Action("Banner", "Home", new { image = "2.jpg", title = "Thanh toán" })
+    <div class="cart-box-main">
+        <div class="container">
+            <div class="row ">
+                <div class="col-sm-6 col-lg-6 p-5 mb-2">
+                    <h2 style="font-size:32px; margin-bottom:10px; font-weight:700">THANH TOÁN</h2>
+                    <div class="checkout-address thanhtoan">
+                        <div class="title-left">
+                            <h3>Địa chỉ</h3>
+                        </div>
+                        <form class="needs-validation" novalidate="" onClick='submitDetailsForm()'>
+                            <div class="row">
+                                <div class="col-md-6 mb-3">
+                                    <label for="firstName">@Resource.FirstName *</label>
+                                    <input type="text" class="form-control" name="firstName" placeholder="" value="" required="">
+                                    <div class="invalid-feedback"> Không được để trống. </div>
+                                </div>
+                                <div class="col-md-6 mb-3">
+                                    <label for="lastName">@Resource.LastName *</label>
+                                    <input type="text" class="form-control" name="lastName" placeholder="" value="" required="">
+                                    <div class="invalid-feedback"> Không được để trống. </div>
+                                </div>
+                            </div>
+                            <div class="mb-3">
+                                <label for="address2">@Resource.Phone *</label>
+                                <input type="text" class="form-control" name="phone" placeholder="" required="">
+                                <div class="invalid-feedback"> Không được để trống. </div>
+                            </div>
+                            <div class="mb-3">
+                                <label for="email">Email *</label>
+                                <input type="email" class="form-control" name="email" placeholder="" required="">
+                                <div class="invalid-feedback"> Vui lòng nhập emails. </div>
+                            </div>
+                            <div class="mb-3">
+                                <label for="address">@Resource.Addresstoreceivethegoods *</label>
+                                <input type="text" class="form-control" name="address" placeholder="" required="">
+                                <div class="invalid-feedback"> Please enter your shipping address. </div>
+                            </div>
+                            <hr />
+                        </form>
+
+                    </div>
+                </div>
+                <div class="col-sm-6 col-lg-6 mb-3 p-3">
+                    <div class="row thanhtoan">
+                        <div class="col-md-12 col-lg-12">
+                            <div class="odr-box">
+                                <div class="title-left">
+                                    <h3>Giỏ hàng</h3>
+                                </div>
+                                <div class="rounded bg-light">
+                                    @foreach (var item in Model)
+                                    {
+                                        <div class="media mb-2 border-bottom">
+                                            <div class="media-body">
+                                                <a href="detail.html">@item.sProductName</a>
+                                                <div class="small text-muted">
+                                                    Giá: @item.sSellPrice <span class="mx-2">|</span> Số lượng: @item.quantity <span class="mx-2">|</span> Tổng: @item.total <span />
+                                                </div>
+                                            </div>
+                                        </div>
+                                    }
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <br />  
+                    <div class="row thanhtoan">
+                        <div class="col-md-12 col-lg-12">
+                            <div class="order-box">
+                                <div class="title-left">
+                                    <h3>Đơn hàng</h3>
+                                </div>
+                                <div class="d-flex">
+                                    <div class="font-weight-bold">Chi phí</div>
+                                    <div class="ml-auto font-weight-bold">Tổng tiền</div>
+                                </div>
+                                <hr class="my-1">
+                                <div class="d-flex">
+                                    <h4>Giảm giá</h4>
+                                    <div class="ml-auto font-weight-bold"> 0 </div>
+                                </div>
+                                <hr class="my-1">
+                                <div class="d-flex">
+                                    <h4>Shipping Cost</h4>
+                                    <div class="ml-auto font-weight-bold"> 0 </div>
+                                </div>
+                                <hr>
+                                <div class="d-flex gr-total">
+                                    <h5>Tổng tiền</h5>
+                                    <div class="ml-auto h5">  @ViewBag.Tongtien đ </div>
+                                </div>
+                                <hr>
+                            </div>
+                            <button class="ml-auto btn hvr-hover ">Đặt hàng</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+}
+<script>
+    function submitDetailsForm() {
+        $("#formId").submit();
+    }
+</script>

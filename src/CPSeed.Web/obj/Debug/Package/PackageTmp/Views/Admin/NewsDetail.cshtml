@@ -1,0 +1,71 @@
+﻿@model IEnumerable<CPSeed.Models.NewDetail>
+@using CPSeed.Models;
+@{
+    ViewBag.Title = "NewsDetail";
+    Layout = "~/Views/Shared/LayoutAdmin.cshtml";
+}
+<div class="container mt-5">
+    <div class="row tm-content-row">
+        <div class="col-sm-12 col-md-12 col-lg-12 col-xl-8 tm-block-col">
+            <div class="tm-bg-primary-dark tm-block tm-block-products">
+                <h2 class="tm-block-title">Tin Tức</h2>
+                <div style="max-height: 525px;" class="tm-product-table-container">
+                    <table class="table table-hover tm-table-small tm-product-table">
+                        <thead>
+                            <tr>
+                                <th scope="col">Tiêu đề</th>
+                                <th scope="col">Tóm tắt</th>
+                                <th scope="col">Danh mục</th>
+                                <th scope="col">&nbsp;</th>
+                                <th scope="col">&nbsp;</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                                @foreach (var item in Model)
+                                {
+
+                                    {
+                                        CPSeedContext data = new CPSeedContext();
+                                        var news = data.News.Where(n => n.NewsID == item.NewsID).Single();
+                                        ViewBag.news = news;
+                                    }
+                                    <tr>
+                                        <td style="width:100px"><p>@Html.Raw(item.Title)</p></td>
+                                        <td><p style="overflow: hidden; text-overflow: ellipsis; line-height: 20px; -webkit-line-clamp: 5; display: -webkit-box; -webkit-box-orient: vertical;">@Html.Raw(item.Summary)</p></td>
+                                        <td>
+                                            <p>@ViewBag.news.Title</p>
+                                        </td>
+                                        <td>
+                                            <a href="@Url.Action("DeleteNewsDetail", "Admin" , new { id = item.NewDetailID })" class="tm-product-delete-link">
+                                                <i class="far fa-trash-alt tm-product-delete-icon"></i>
+                                            </a>
+                                        </td>
+                                        <td>
+                                            <a href="@Url.Action("EditNewsDetail", "Admin" , new { id = item.NewDetailID })">
+                                                Sửa
+                                            </a>
+                                        </td>
+                                    </tr>
+                                }
+                        </tbody>
+                    </table>
+                </div>
+                <a href="AddNewsDetail"
+                   class="btn btn-primary btn-block text-uppercase mb-3">Thêm tin mới</a>
+            </div>
+        </div>
+        <div class="col-sm-12 col-md-12 col-lg-4 col-xl-4 tm-block-col">
+            <div style="max-height: none;" class="tm-bg-primary-dark tm-block tm-block-product-categories">
+                <h2 class="tm-block-title">Danh Mục Tin</h2>
+                <div style="max-height: 525px;" class="tm-product-table-container">
+                    <table class="table tm-table-small tm-product-table">
+                        @Html.Action("News", "Admin")
+                    </table>
+                </div>
+                <a style="margin-bottom: 0rem!important;" href="AddNews"
+                   class="btn btn-primary btn-block text-uppercase mb-3">Thêm danh mục</a>
+
+            </div>
+        </div>
+    </div>
+</div>

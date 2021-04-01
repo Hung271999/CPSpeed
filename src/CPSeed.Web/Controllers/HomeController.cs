@@ -17,7 +17,7 @@ namespace CPSeed.Controllers
         private static log4net.ILog logger = log4net.LogManager.GetLogger(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
         public ActionResult Index()
         {
-           
+
             return View();
         }
         public ActionResult ChangeLanguage(string lang)
@@ -273,8 +273,8 @@ namespace CPSeed.Controllers
                 {
                     if (!String.IsNullOrEmpty(key))
                     {
-                       var product = data.Products.Take(10).Where(n => n.ProductName.Contains(key)).ToList();
-                     
+                        var product = data.Products.Take(10).Where(n => n.ProductName.Contains(key)).ToList();
+
                         if (product.Count() == 0)
                         {
                             ViewBag.Status = 1;

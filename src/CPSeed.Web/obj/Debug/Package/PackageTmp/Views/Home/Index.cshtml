@@ -1,0 +1,28 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+<!-- Banner -->
+@Html.Action("Slide", "Home")
+<!-- Banner -->
+<!-- Tầm nhìn và sứ mệnh -->
+@Html.Action("Vision_mission", "Home", new { id = 1 })
+<!-- Tầm nhìn và sứ mệnh -->
+<div class="box-add-products technology">
+    <div class="container">
+        <div class="about-box-main">
+            <!-- Công nghệ -->
+            @{Html.RenderAction("Technology", "Home", new { page = 1 }); }
+            <!-- Công nghệ -->
+            <br />
+            <!-- Lĩnh vực -->
+            @{Html.RenderAction("LV", "Home", new { page = 1 }); }
+            <!-- Lĩnh vực -->
+        </div>
+    </div>
+</div>
+<!-- Danh mục sản phẩm -->
+@Html.Action("ProductType", "Home")
+<!-- Danh mục sản phẩm -->
+<!-- Tin tức được ưu tiên -->
+@Html.Action("News", "Home")
+@Html.Action("Contact", "Contact")

@@ -1,0 +1,68 @@
+﻿
+
+@model IEnumerable<CPSeed.Models.Slide>
+
+@{
+    ViewBag.Title = "Post";
+    Layout = "~/Views/Shared/LayoutAdmin.cshtml";
+}
+
+<div class="container mt-5">
+    <div class="row tm-content-row">
+        <div class="col-sm-12 col-md-12 col-lg-12 col-xl-12 tm-block-col">
+            <div class="tm-bg-primary-dark tm-block tm-block-products">
+                <h2 class="tm-block-title">Banner</h2>
+                <div style="max-height: 595px;" class="tm-product-table-container">
+                    <table class="table table-hover tm-table-small tm-product-table">
+                        <thead>
+                            <tr>
+                                <th scope="col">Link</th>
+                                <th scope="col">Hình</th>
+                                <th scope="col">Tình trạng</th>
+                                <th scope="col"></th>
+                                <th scope="col"></th>
+
+                            </tr>
+                        </thead>
+                        <tbody>
+
+                            @foreach (var item in Model)
+                            {
+                            <tr>
+                                <td><p>@Html.Raw(item.url)</p></td>
+
+                                <td><img src="@Url.Content("~/images/banner/" + item.image)" width="300" /></td>
+
+
+
+                                @if (item.Status == true)
+                                {
+                                    <td>Kích hoạt</td>
+                                }
+                                else
+                                {
+                                    <td>K hoạt</td>
+                                }
+                                <td>
+                                    <a href="@Url.Action("DeleteSlide", "Admin" , new { id = item.SlideID })" class="tm-product-delete-link">
+                                        <i class="far fa-trash-alt tm-product-delete-icon"></i>
+                                    </a>
+                                </td>
+                                <td>
+                                    <a href="@Url.Action("EditSlide", "Admin" , new { id = item.SlideID })">
+                                       Sửa
+                                        </a>
+                                </td>
+                            </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+                <!-- table container -->
+                <a href="AddSlide"
+                   class="btn btn-primary btn-block text-uppercase mb-3">Thêm Banner</a>
+            </div>
+        </div>
+    </div>
+</div>
+
