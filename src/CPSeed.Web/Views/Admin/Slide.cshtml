@@ -19,8 +19,8 @@
                                 <th scope="col">Link</th>
                                 <th scope="col">Hình</th>
                                 <th scope="col">Tình trạng</th>
-                                <th scope="col">&nbsp;</th>
-                                <th scope="col">&nbsp;</th>
+                                <th scope="col"></th>
+                                <th scope="col"></th>
 
                             </tr>
                         </thead>
@@ -33,11 +33,7 @@
 
                                 <td><img src="@Url.Content("~/images/banner/" + item.image)" width="300" /></td>
 
-                                <td>
-                                    <a href="@Url.Action("DeleteSlide", "Admin" , new { id = item.SlideID })" class="tm-product-delete-link">
-                                        <i class="far fa-trash-alt tm-product-delete-icon"></i>
-                                    </a>
-                                </td>
+
 
                                 @if (item.Status == true)
                                 {
@@ -48,9 +44,14 @@
                                     <td>K hoạt</td>
                                 }
                                 <td>
-                                    <a href="@Url.Action("EditSlide", "Admin" , new { id = item.SlideID })">
-                                        <span style="color:white">Edit</span>
+                                    <a href="@Url.Action("DeleteSlide", "Admin" , new { id = item.SlideID })" class="tm-product-delete-link">
+                                        <i class="far fa-trash-alt tm-product-delete-icon"></i>
                                     </a>
+                                </td>
+                                <td>
+                                    <a href="@Url.Action("EditSlide", "Admin" , new { id = item.SlideID })">
+                                       Sửa
+                                        </a>
                                 </td>
                             </tr>
                             }
@@ -59,7 +60,7 @@
                 </div>
                 <!-- table container -->
                 <a href="AddSlide"
-                   class="btn btn-primary btn-block text-uppercase mb-3">Add new slide</a>
+                   class="btn btn-primary btn-block text-uppercase mb-3">Thêm Banner</a>
             </div>
         </div>
     </div>

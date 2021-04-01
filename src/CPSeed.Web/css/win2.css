@@ -104,7 +104,7 @@ nav.navbar.bootsnav li.dropdown ul.dropdown-menu {
 .mission {
     margin-top: -55px;
     background-image: url('../images/background1.png');
-    padding: 70px 0px 120px 0px;
+    padding: 70px 0px 150px 0px;
 }
 
 .mission-content {
@@ -155,6 +155,7 @@ nav.navbar.bootsnav li.dropdown ul.dropdown-menu {
 .techLeft {
     padding-left: 5%;
 }
+
 .techRight {
     padding-right: 5%;
 }
@@ -218,12 +219,17 @@ nav.navbar.bootsnav li.dropdown ul.dropdown-menu {
 
 .why-text {
     text-align: center;
-    border-bottom: 10px solid #005b36;
+    box-shadow: 0 8px 15px 0 rgb(0 0 0 / 50%);
 }
 
     .why-text h4 {
         padding: 15px;
         text-align: center;
+    }
+
+    .why-text h5 {
+        background: none;
+        color: #bf081f;
     }
 
 .featured-products-box .owl-nav button.owl-prev {
@@ -551,3 +557,30 @@ nav.navbar.bootsnav li.dropdown ul.dropdown-menu {
         opacity: 0;
     }
 }
+
+
+.tooltip {
+    position: relative;
+    display: inline-block;
+    border-bottom: 1px dotted black;
+}
+
+    .tooltip .tooltiptext {
+        visibility: hidden;
+        width: 120px;
+        background-color: black;
+        color: #fff;
+        text-align: center;
+        border-radius: 6px;
+        padding: 5px 0;
+        /* Position the tooltip */
+        position: absolute;
+        z-index: 1;
+        bottom: 100%;
+        left: 50%;
+        margin-left: -60px;
+    }
+
+    .tooltip:hover .tooltiptext {
+        visibility: visible;
+    }

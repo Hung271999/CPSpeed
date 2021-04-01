@@ -50,7 +50,7 @@
                         <h2 class="noo-sh-title-top">@item.Title</h2>
                         <hr class="techDive" />
                         <p style="font-size:20px">
-                            @item.contents
+                            @Html.Raw(item.Summary)
                         </p>
                         <div class="MenuTrang" style="text-align:center;margin-top:25px; color:#789A3D">
                             @Html.PagedListPager(Model, page => Url.Action("LV", "Home", new { page }), PagedListRenderOptions.EnableUnobtrusiveAjaxReplacing(new AjaxOptions() { HttpMethod = "Get", UpdateTargetId = "a" }))

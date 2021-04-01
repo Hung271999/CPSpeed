@@ -1,0 +1,23 @@
+﻿.container {
+    max-width: 1300px;
+}
+.primary-win{
+    padding: 25px 50px;
+}
+.primary-content-win {
+    box-shadow: 0px 0px 25px rgb(0 0 0 / 25%);
+}
+.tm-product-table-container {
+    box-shadow: 0px 0px 25px rgb(0 0 0 / 25%);
+}
+.tm-block-title{
+    font-size: 30px;
+}
+.btn-primary {
+    box-shadow: 0px 0px 25px rgb(0 0 0 / 25%);
+    margin-top: 16px;
+    margin-bottom: 0rem !important;
+}
+nav {
+    box-shadow: 0px 0px 25px rgb(0 0 0 / 50%);
+}

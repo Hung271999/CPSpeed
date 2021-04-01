@@ -8,7 +8,7 @@
     <div class="row tm-content-row">
         <div class="col-sm-12 col-md-12 col-lg-8 col-xl-8 tm-block-col">
             <div class="tm-bg-primary-dark tm-block tm-block-products">
-                <h2 class="tm-block-title">Quản Lý Sản Phẩm</h2>
+                <h2 class="tm-block-title tm-block-title-win">Quản Lý Sản Phẩm</h2>
                 <div style="max-height: 525px;" class="tm-product-table-container">
                     <table class="table table-hover tm-table-small tm-product-table">
                         <thead>
@@ -49,7 +49,7 @@
                                 </td>
                                 <td>
                                     <a href="@Url.Action("EditProduct", "Admin" , new { id = item.ProductID })">
-                                        <span style="color:white">Sửa</span>
+                                        Sửa
                                     </a>
                                 </td>
 
@@ -65,7 +65,7 @@
         </div>
         <div class="col-sm-12 col-md-12 col-lg-4 col-xl-4 tm-block-col">
             <div style="max-height: none;" class="tm-bg-primary-dark tm-block tm-block-product-categories">
-                <h2 class="tm-block-title">Danh mục sản phẩm</h2>
+                <h2 class="tm-block-title tm-block-title-win">Danh Mục Sản Phẩm</h2>
                 <div style="max-height: 525px;" class="tm-product-table-container">
                     <table class="table tm-table-small tm-product-table">
                         @Html.Action("ProductTypes", "Admin")

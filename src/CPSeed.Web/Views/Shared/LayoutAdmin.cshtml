@@ -18,7 +18,7 @@
     <script src="https://cdn.tiny.cloud/1/no-api-key/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>
 
     <style>
-        ::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+        placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
             color: #f1f1f1;
             opacity: 1; /* Firefox */
         }
@@ -27,16 +27,17 @@
             color: #f1f1f1;
         }
 
-        ::-ms-input-placeholder { /* Microsoft Edge */
+        :-ms-input-placeholder { /* Microsoft Edge */
             color: #f1f1f1;
         }
     </style>
+    <link href="~/css/winAdmin.css" rel="stylesheet" />
 </head>
 <body>
     <nav class="navbar navbar-expand-xl">
         <div class="container h-100">
             <a class="navbar-brand" href="@Url.Action("Index","Admin")">
-                <h1 class="tm-site-title mb-0 ">CP SEED ADMin</h1>
+                <h1 class="tm-site-title mb-0 ">CPSEED ADMIN</h1>
             </a>
             <button class="navbar-toggler ml-auto mr-0"
                     type="button"
@@ -57,7 +58,7 @@
                     </li>
                     <li class="nav-item">
                         <a class="nav-link " href="@Url.Action("Post","Admin")">
-                            <i class="fas fa-file-alt"></i> Bài Viết
+                            <i class="fas fa-edit"></i> Bài Viết
                         </a>
                     </li>
                     <li class="nav-item">
@@ -67,33 +68,34 @@
                     </li>
                     <li class="nav-item">
                         <a class="nav-link " href="@Url.Action("Contactus","Admin")">
-                            <i class="fas fa-file-alt"></i> Liên Hệ
+                            <i class="fas fa-id-card"></i> Liên Hệ
                         </a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link " href="@Url.Action("NewsDetail","Admin")">
-                            <i class="fas fa-file-alt"></i> Tin Tức
+                            <i class="far fa-newspaper"></i> Tin Tức
                         </a>
                     </li>
-
-                    </ul>
-                <ul class="navbar-nav">
                     <li class="nav-item">
-                        <a class="nav-link d-block" href="Login">
-                            Admin: @User.Identity.GetUserName()
+                        <a class="nav-link" href="Login">
+                            <i class="fas fa-sign-out-alt"></i>Logout
                         </a>
-                        <b><a href="javascript:document.getElementById('logoutForm').submit()">@Resource.LogOff</a></b>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="">
+                            <i class="far fa-user"></i> @User.Identity.GetUserName()
+                        </a>
                     </li>
                 </ul>
             </div>
         </div>
     </nav>
     @RenderBody();
-    <footer style="margin-top: -10px;" class="tm-footer row tm-mt-small">
+    <footer class="tm-footer row tm-mt-small">
         <div class="col-12 font-weight-light">
-            <p class="text-center text-white mb-0 px-4 small">
-                <b>CPSeed</b>
-            </p>
+            <h2 style="color:white; text-align:center">
+                CPSeed
+            </h2>
         </div>
     </footer>
     <script src="~/assets/js/jquery-3.3.1.min.js"></script>

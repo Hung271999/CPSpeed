@@ -6,8 +6,8 @@
         display: inline;
     }
 </style>
-<div role="tabpanel" class="tab-pane fade show active" id="grid-view">
-    <div class="row">
+<div role="tabpanel" class="tab-pane fade show active" id="grid-view" >
+    <div class="row" style="box-shadow: 0px 0px 15px rgba(0,0,0,0.15);padding: 30px">
         @foreach (var item in Model)
         {
             var link = "/san-pham/" + Common.str(item.ProductName) + "-" + item.ProductID;
@@ -17,21 +17,20 @@
                         <img src="~/images/Product/@item.image" class="img-fluid" alt="Image">
                         <div class="mask-icon">
                             <ul>
-                                <li><a style="background-color:#5c8416" href="@link" data-toggle="tooltip" data-placement="right" title="Xem ngay"><i class="fas fa-eye"></i></a></li>
+                                <li><a href="@link" data-toggle="tooltip" data-placement="right" title="Xem ngay"><i class="fas fa-eye"></i></a></li>
                             </ul>
                             <a class="cart" itemid="@item.ProductID" onclick="AddToCart(this)">@Resource.Add</a>
                         </div>
                     </div>
                     <div class="why-text">
                         <h4>@item.ProductName</h4>
-                        <h5 style="color:red">@item.SellPrice VNĐ</h5>
-
+                        <h5>@item.SellPrice VNĐ</h5>
                     </div>
                 </div>
             </div>
         }
-    </div>
-    <div class="MenuTrang" style="text-align:center">
-        @Html.PagedListPager(Model, page => Url.Action("GetPaging", new { page }), PagedListRenderOptions.EnableUnobtrusiveAjaxReplacing(new AjaxOptions() { HttpMethod = "Get", UpdateTargetId = "product" }))
+        <div class="MenuTrang" style="text-align:center;width:100%">
+            @Html.PagedListPager(Model, page => Url.Action("GetPaging", new { page }), PagedListRenderOptions.EnableUnobtrusiveAjaxReplacing(new AjaxOptions() { HttpMethod = "Get", UpdateTargetId = "product" }))
+        </div>
     </div>
 </div>
