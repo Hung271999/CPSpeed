@@ -1524,8 +1524,12 @@
     <Content Include="images\News\cps-india-4-570x223.jpg" />
     <Content Include="images\News\cpseedcompany.jpg" />
     <Content Include="images\News\dabanh.jpg" />
+    <Content Include="images\News\dongchitranquocvuong.jpg" />
     <Content Include="images\News\gaoxuatkhau.jpg" />
+    <Content Include="images\News\hanam.jpg" />
+    <Content Include="images\News\lanhdao.jpg" />
     <Content Include="images\News\thutuong.jpg" />
+    <Content Include="images\News\vannghe.jpg" />
     <Content Include="images\payment-icon\1.png" />
     <Content Include="images\payment-icon\2.png" />
     <Content Include="images\payment-icon\3.png" />

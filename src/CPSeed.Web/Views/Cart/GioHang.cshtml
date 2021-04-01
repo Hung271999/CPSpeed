@@ -16,9 +16,9 @@
                             <tr>
                                 <th>@Resource.products</th>
                                 <th>@Resource.Title</th>
-                                <th>@String.Format("{0:#,##0.##}", @Resource.Price) VNĐ</th>
+                                <th>@Resource.Price</th>
                                 <th>@Resource.Quantity</th>
-                                <th>@String.Format("{0:#,##0.##}", @Resource.Total) VNĐ</th>
+                                <th>@Resource.Total</th>
                                 <th>@Resource.Delete</th>
                             </tr>
                         </thead>
@@ -37,11 +37,11 @@
                                         </a>
                                     </td>
                                     <td class="price-pr">
-                                        <p class="price-@item.iProductID">@String.Format("{0:#,##0.##}", @item.sSellPrice) VNĐ</p>
+                                        <p class="price-@item.iProductID">@item.sSellPrice</p> VNĐ
                                     </td>
                                     <td class="quantity-box"><input type="number" size="4" value="@item.quantity" min="0" step="1" class="c-input-text qty text quantity-@item.iProductID" itemid="@item.iProductID" oninput="UpdateQuantity(this)"></td>
                                     <td class="total-pr">
-                                        <p class="total-@item.iProductID">@String.Format("{0:#,##0.##}", @item.total) VNĐ</p>
+                                        <p class="total-@item.iProductID">@item.total</p> VNĐ
                                     </td>
                                     <td class="remove-pr">
                                         <a href="@Url.Action("RemoveFromCart","Cart", new {id=item.iProductID, strURL=Request.Url.ToString()})">
@@ -74,7 +74,7 @@
                             <h3>Tổng đơn hàng</h3>
                             <div class="d-flex">
                                 <h4>Số lượng</h4>
-                                <div class="ml-auto font-weight-bold">@ViewBag.Tongsoluong </div>
+                                <div class="ml-auto font-weight-bold grand-total1">@ViewBag.Tongsoluong </div>
                             </div>
                             <hr class="my-1">
                             <div class="d-flex">

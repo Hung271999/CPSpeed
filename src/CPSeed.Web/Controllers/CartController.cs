@@ -11,6 +11,7 @@ namespace CPSeed.Controllers
 {
     public class CartController : Controller
     {
+        private static log4net.ILog logger = log4net.LogManager.GetLogger(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
         CPSeedContext data = new CPSeedContext();
         // GET: Cart
         public ActionResult Index()
@@ -20,13 +21,11 @@ namespace CPSeed.Controllers
 
         public List<Cart> Laygiohang()
         {
-            List<Cart> lstGiohang = Session["Cart"] as List<Cart>;
-            if (lstGiohang == null)
+            if (this.Session["Cart"] == null)
             {
-                lstGiohang = new List<Cart>();
-                Session["Cart"] = lstGiohang;
+                this.Session["Cart"] = new List<Cart>();
             }
-            return lstGiohang;
+            return this.Session["Cart"] as List<Cart>;
         }
         public ActionResult ThemGiohang(String ProductID, string strURL)
         {
@@ -51,31 +50,12 @@ namespace CPSeed.Controllers
             List<Cart> lstGiohang = Laygiohang();
             if (lstGiohang.Count == 0)
             {
+                logger.Debug("Back to Home");
                 return RedirectToAction("Index", "Home");
             }
-            ViewBag.Tongsoluong = TongSoLuong();
-            ViewBag.Tongtien = TongTien();
+            ViewBag.Tongsoluong = lstGiohang.Sum(n => n.quantity);
+            ViewBag.Tongtien = lstGiohang.Sum(n => n.total);
             return View(lstGiohang);
-        }
-        private int TongSoLuong()
-        {
-            int iTongSoLuong = 0;
-            List<Cart> lstGiohang = Session["Cart"] as List<Cart>;
-            if (lstGiohang != null)
-            {
-                iTongSoLuong = lstGiohang.Sum(n => n.quantity);
-            }
-            return iTongSoLuong;
-        }
-        private double TongTien()
-        {
-            double iTongTien = 0;
-            List<Cart> lstGiohang = Session["Cart"] as List<Cart>;
-            if (lstGiohang != null)
-            {
-                iTongTien = lstGiohang.Sum(n => n.total);
-            }
-            return iTongTien;
         }
 
         public ActionResult TotalMoney()
@@ -83,7 +63,7 @@ namespace CPSeed.Controllers
             List<Cart> lstGiohang = Session["Cart"] as List<Cart>;
             if (lstGiohang != null)
             {
-                ViewBag.Total = TongTien();
+                ViewBag.Total = lstGiohang.Sum(n => n.quantity * n.sSellPrice);
                 return PartialView();
             }
             ViewBag.Total = 0;
@@ -92,7 +72,7 @@ namespace CPSeed.Controllers
         [HttpGet]
         public ActionResult DatHang()
         {
-            if (Request.IsAuthenticated)
+            if (User.Identity.IsAuthenticated)
             {
                 if (Session["Cart"] == null)
                 {
@@ -101,8 +81,8 @@ namespace CPSeed.Controllers
                 else
                 {
                     List<Cart> lstGiohang = Laygiohang();
-                    ViewBag.Tongsoluong = TongSoLuong();
-                    ViewBag.Tongtien = TongTien();
+                    ViewBag.Tongsoluong = lstGiohang.Sum(n => n.quantity);
+                    ViewBag.Tongtien = lstGiohang.Sum(n => n.total);
                     return View(lstGiohang);
                 }
             }
@@ -110,7 +90,6 @@ namespace CPSeed.Controllers
             {
                 return RedirectToAction("Login", "Account");
             }
-            return PartialView();
         }
 
         [HttpPost]
@@ -122,7 +101,7 @@ namespace CPSeed.Controllers
             var phone = Form["Phone"].ToString();
             var address = Form["address"];
             List<Cart> lstGiohang = Laygiohang();
-            order.Priority = TongSoLuong();
+            order.Priority = lstGiohang.Sum(n => n.quantity);
             order.Status = false;
             order.Paid = false;
             order.CreateUser = firstName + lastName;
@@ -130,7 +109,7 @@ namespace CPSeed.Controllers
             order.CreateDate = DateTime.Now;
             order.ReceivedDate = DateTime.Now;
             order.UpdateDate = DateTime.Now;
-            order.Total = (float)TongTien();
+            order.Total = lstGiohang.Sum(n => (n.total * n.sSellPrice));
             order.Email = email;
             order.Phone = phone;
             order.Address = address;
@@ -146,9 +125,8 @@ namespace CPSeed.Controllers
                 data.OrderDetails.Add(orderDetail);
                 data.SaveChanges();
             }
-            return Content("<script language='javascript' type='text/javascript'>alert('Đặt hàng thành công ');window.location.href = '../';</script>");
             Session["Cart"] = null;
-            return RedirectToAction("index", "Home");
+            return Content("<script language='javascript' type='text/javascript'>alert('Đặt hàng thành công ');window.location.href = '../';</script>");
         }
 
         [HttpPost]
@@ -165,10 +143,11 @@ namespace CPSeed.Controllers
             {
                 sanpham.quantity++;
             }
-
+            var sl = lstGiohang.Sum(n => n.quantity);
+            Session["Count"] = sl;
             var counter = lstGiohang.Sum(x => x.quantity);
 
-            return Json(counter, JsonRequestBehavior.AllowGet);
+            return Json(new { counter, sl1 = sl }, JsonRequestBehavior.AllowGet);
         }
 
         [HttpPost]
@@ -215,10 +194,11 @@ namespace CPSeed.Controllers
             cartItem.quantity = count;
 
             var counter = cartItem.quantity;
-            var total = TongTien();
+            var sl = lstGiohang.Sum(n => n.quantity);
+            var total = lstGiohang.Sum(n => n.total);
 
 
-            return Json(new { count = counter, totalMoney = total }, JsonRequestBehavior.AllowGet);
+            return Json(new { count = counter, totalMoney = total, sl1 = sl }, JsonRequestBehavior.AllowGet);
         }
 
     }

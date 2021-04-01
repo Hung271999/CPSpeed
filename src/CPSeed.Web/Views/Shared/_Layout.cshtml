@@ -70,12 +70,12 @@
                             <li class="search"><a href=""><i class="fa fa-search"></i></a></li>
                             <li class=""><a>|</a></li>
                             <li class=""><a href="@Url.Action("ChangeLanguage", "Home",new { lang = "en" }, null)"><img src="~/images/icons/vn-flag.png" /></a></li>
-                            <li class=""><a href="@Url.Action("ChangeLanguage", "Home",new { lang = "Ja" }, null)"><img src="~/images/icons/en-flag.png" /></a></li>                        
+                            <li class=""><a href="@Url.Action("ChangeLanguage", "Home",new { lang = "Ja" }, null)"><img src="~/images/icons/en-flag.png" /></a></li>
                             <li class=""><a>|</a></li>
                             <li class=" ">
                                 <a href="@Url.Action("GioHang","Cart")">
                                     <i class="fa fa-shopping-cart"></i>
-                                    <b> @Resource.Cart</b>
+                                    <b> @Resource.Cart</b> <span class="grand-total1">@Session["Count"]</span>
                                 </a>
                             </li>
                         </ul>
@@ -207,6 +207,7 @@
                 data: obj,
                 success: function (data) {
                     //$('#cart-counter').text(data);
+                    $('.grand-total1').text(data.sl1.toString());
                     $('.cart-noti').removeClass('d-none');
                     $('.cart-noti').fadeIn();
                     setTimeout(function () {
@@ -259,6 +260,7 @@
                     let quantity = $(".quantity-" + id).val();
                     let price = $(".price-" + id).text();
                     let total = quantity * price;
+                    $('.grand-total1').text(data.sl1.toString());
                     $('.total-' + id).text(total.toString());
                     $('.grand-total').text(data.totalMoney.toString());
                 },
