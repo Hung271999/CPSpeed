@@ -12,30 +12,46 @@
     box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.2), 4px 4px 4px 4px rgba(0, 0, 0, 0.19);
 }
 
+.logoName {
+    color: #ec3237;
+    font-weight: 900;
+    font-family: Bodoni;
+    font-size: 20px;
+    padding: 0px;
+    margin-left: 5px
+}
+
 .navMenu {
     width: 100%;
 }
 
+.navbar > .container, .navbar > .container-fluid {
+    -ms-flex-pack: justify;
+    justify-content: flex-start;
+}
+
 .attr-nav {
-    display: flex;
-    justify-content: flex-end;
     margin-left: 0px;
     margin-right: 0px;
+    padding:0px;
 }
 
     .attr-nav > ul > li > a {
-        padding: 8px 0px 14px 10px;
+        padding:5px 0px 5px 10px;
     }
 
 .top-search {
     padding: 0px;
     background: none;
+    width:100%;
 }
 
     .top-search input.form-control {
         color: #161616;
         font-weight: 600;
-        padding: 0px
+        padding: 0px;
+        border-radius:0px;
+        border-bottom: 1px solid #111111;
     }
 
 nav.navbar.bootsnav ul.nav > li > a {
@@ -88,18 +104,34 @@ nav.navbar.bootsnav li.dropdown ul.dropdown-menu {
     }
 
 #back-to-top {
+    bottom: 140px;
+    right: 32px;
     width: 40px;
     height: 40px;
     background: #789A3D;
     border-radius: 25px;
 }
 
-@media (max-width: 992px) {
+/*chatbot*/
+/*#subiz .widget-layout.widget-layout--right {
+    right: 100px !important;
+    left: unset !important;
+}
+
+#subiz .widget-layout {
+    bottom: 20px !important;
+}
+#subiz .mobile .widget-layout.widget-layout--right {
+    right: 200px !important;
+    left: unset !important;
+}*/
+
+/*@media (max-width: 992px) {
     nav.navbar.bootsnav .navbar-header {
         text-align: left;
         width: auto;
     }
-}
+}*/
 /*tam nhin su menh*/
 .mission {
     margin-top: -55px;
@@ -584,3 +616,89 @@ nav.navbar.bootsnav li.dropdown ul.dropdown-menu {
     .tooltip:hover .tooltiptext {
         visibility: visible;
     }
+
+
+.img-fluid-win {
+    width: 100%;
+    height: 210px;
+}
+
+.img-fluid-win1 {
+    width: 100%;
+    height: 265px;
+}
+
+
+nav.navbar.bootsnav li.dropdown a.dropdown-toggle:before {
+    display: none;
+}
+
+
+
+
+
+/*header-responsive*/
+
+@media (min-width: 768px) and (max-width: 991px) {
+    .navbar-light .navbar-toggler {
+        padding: 4px 6px;
+        margin-top: 0px;
+        border-radius: 5px;
+    }
+}
+@media (max-width: 767px) {
+    .navbar-light .navbar-toggler {
+        padding: 4px 6px;
+        margin-top: 0px;
+        border-radius: 5px;
+    }
+}
+
+@media (max-width: 992px) {
+    .attr-nav {
+        position: absolute;
+        right: 1rem;
+        top:10px;
+    }
+}
+
+
+@media (max-width: 767px){
+    .attr-nav > ul > li > a {
+        padding-left: 5px !important;
+    }
+}
+
+@media (max-width: 767px) {
+    .cardText {
+        display: none;
+    }
+}
+
+@media (max-width: 767px) {
+    .attr-nav {
+        top: 10px;
+    }
+}
+
+@media (max-width: 992px){
+    nav.navbar .navbar-brand img.logo {
+        width: 220px;
+    }
+}
+
+
+@media (max-width: 400px) {
+    .logoName {
+        display:none;
+    }
+}
+
+
+.navbar-light .navbar-toggler {
+    border-color: #b0b435;
+    color: #010101;
+    padding: 4px 6px;
+    margin-top: 0px;
+    border-radius: 5px;
+}

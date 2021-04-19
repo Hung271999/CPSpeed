@@ -14,8 +14,8 @@
     <meta name="author" content="">
 
     <!-- Site Icons -->
-    <link rel="shortcut icon" href="~/images/logo2.jpg" type="image/x-icon">
-    <link rel="apple-touch-icon" href="~/images/logo2.jpg">
+    <link rel="shortcut icon" href="~/images/logo-CPSEEDS.jpg" type="image/x-icon">
+    <link rel="apple-touch-icon" href="~/images/logo-CPSEEDS.jpg">
 
     <!--Csss -->
     <link href="~/css/aos.css" rel="stylesheet" />
@@ -24,12 +24,15 @@
     <!--js  -->
     <script src="~/js/aos.js"></script>
     <link href="~/Scripts/jquery.validate.unobtrusive.min.js" rel="stylesheet" />
+    <script src="https://cdn.tiny.cloud/1/x863nqkjuo6tfzhecu7j78hea7txwu6n7ky3durf03u5rmc4/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>
     <link href='http://fonts.googleapis.com/css?family=Oxygen:400,300,700|Open+Sans:400,300,600,700' rel='stylesheet' type='text/css'>
     <!-- Bootstrap CSS -->
     @Styles.Render("~/Contents/css")
     @Scripts.Render("~/bundles/modernizr")
     <link href="~/css/win2.css" rel="stylesheet" />
     <link href="~/css/win3.css" rel="stylesheet" />
+    <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jquery.lazy/1.7.9/jquery.lazy.min.js"></script>
+    <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jquery.lazy/1.7.9/jquery.lazy.plugins.min.js"></script>
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-MVWHZCR1MF"></script>
     <script>
@@ -48,20 +51,17 @@
         <nav class="navbar navbar-expand-lg navbar-light bg-light navbar-default bootsnav fixed-top">
             <div class="container">
                 <!-- Logo -->
-                <div class="navbar-header" style="">
-                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-menu" aria-controls="navbars-rs-food" aria-expanded="false" aria-label="Toggle navigation">
-                        <i class="fa fa-bars"></i>
-                    </button>
-                    <a class="navbar-brand" href="@Url.Action("Index","Home")"><img src="~/images/logo.png" class="logo" alt="" style=" max-width:300px;"></a>
-                </div>
+                <button style="margin-right: 10px" class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-menu" aria-controls="navbars-rs-food" aria-expanded="false" aria-label="Toggle navigation">
+                    <i class="fa fa-bars"></i>
+                </button>
+
+                <a class="navbar-brand" href="@Url.Action("Index","Home")" style="display:flex"><img src="~/images/logo-CPSEEDS.jpg" class="logo" alt="" style="border-radius:5px;width:50px"><h1 class="logoName" style="">C.P.SEEDS<br/>(VIETNAM)</h1></a>
+
                 <!-- Logo -->
                 <div class="navMenu">
                     <!-- Giỏ hàng -->
-                    <div class="attr-nav" style="width:100%">
+                    <div class="attr-nav">
                         <!-- Tìm kiếm -->
-                        <div class="top-search">
-                            <input type="text" class="form-control" placeholder="Search...?" id="myInput" onchange="getInputValue()">
-                        </div>
                         <!-- Tìm kiếm -->
                         <ul>
                             <li class="search"><a href=""><i class="fa fa-search"></i></a></li>
@@ -72,7 +72,7 @@
                             <li class=" ">
                                 <a href="@Url.Action("GioHang","Cart")">
                                     <i class="fa fa-shopping-cart"></i>
-                                    <b> @Resource.Cart</b> <span class="grand-total1">@Session["Count"]</span>
+                                    <b class="cardText"> @Resource.Cart</b> <span class="grand-total1">@Session["Count"]</span>
                                 </a>
                             </li>
                         </ul>
@@ -86,15 +86,19 @@
                             @Html.Action("New", "Home")
                             @Html.Action("Pots", "Home", new { id = 3 })
                             <li class="nav-item"><a class="nav-link" href="@Url.Action("Index","Contact")">@Resource.Contact</a></li>
-
                             @Html.Partial("_LoginPartial")
                         </ul>
                     </div>
                     <!-- Thanh điều hướng -->
                 </div>
             </div>
-
+            <div class="container">
+                <div class="top-search">
+                    <input type="text" class="form-control" placeholder="Search...?" id="myInput" onchange="getInputValue()">
+                </div>
+            </div>
         </nav>
+        
         <!-- End Navigation -->
     </header>
     <!-- End Main Top -->
@@ -159,6 +163,15 @@
         });
     </script>
     <script>
+        tinymce.init({
+            selector: 'textarea',
+            plugins: 'a11ychecker advcode casechange formatpainter linkchecker autolink lists checklist media mediaembed pageembed permanentpen powerpaste table advtable tinycomments tinymcespellchecker',
+            toolbar: 'a11ycheck addcomment showcomments casechange checklist code formatpainter pageembed permanentpen table',
+            toolbar_mode: 'floating',
+            tinycomments_mode: 'embedded',
+            tinycomments_author: 'Author name',
+        });
+
         function getInputValue() {
             // Selecting the input element and get its value
             var inputVal = document.getElementById("myInput").value;

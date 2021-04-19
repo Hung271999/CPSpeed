@@ -63,7 +63,7 @@ a.list-group-item.list-group-item-action.dad {
 }
 
 .shop-content-right {
-    padding-left: 50px;
+    /*padding-left: 50px;*/
 }
 
     .shop-content-right h2 {
@@ -83,7 +83,7 @@ a.list-group-item.list-group-item-action.dad {
     }
 
 .post-content {
-    padding-left: 50px;
+    /*padding-left: 50px;*/
 }
 
 .spost-content h2 {
@@ -226,17 +226,6 @@ a.list-group-item.list-group-item-action.dad {
 .thanhtoan {
     box-shadow: 0px 0px 25px rgb(0 0 0 / 25%);
     padding: 25px;
-}
-
-#subiz .widget-layout.widget-layout--right {
-    bottom: 90px !important;
-    margin-right: -25px !important;
-}
-
-.contact-form-right {
-    padding: 25px 30px;
-    margin: 30px 0px;
-    box-shadow: 0px 0px 25px rgb(0 0 0 / 25%);
 }
 
 /*img-product*/

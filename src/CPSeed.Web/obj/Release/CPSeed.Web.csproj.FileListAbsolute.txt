@@ -296,3 +296,11 @@ D:\CPSpeed\src\CPSeed.Web\obj\Release\Ja\CPSeed.resources.dll
 D:\CPSpeed\src\CPSeed.Web\obj\Release\CPSeed.Web.csproj.CopyComplete
 D:\CPSpeed\src\CPSeed.Web\obj\Release\CPSeed.dll
 D:\CPSpeed\src\CPSeed.Web\obj\Release\CPSeed.pdb
+C:\Users\Admin\Desktop\New folder\CPSpeed\src\CPSeed.Web\obj\Release\CPSeed.Web.csprojAssemblyReference.cache
+C:\Users\Admin\Desktop\New folder\CPSpeed\src\CPSeed.Web\obj\Release\CPSeed.Resource.resources
+C:\Users\Admin\Desktop\New folder\CPSpeed\src\CPSeed.Web\obj\Release\CPSeed.Resource.Ar.resources
+C:\Users\Admin\Desktop\New folder\CPSpeed\src\CPSeed.Web\obj\Release\CPSeed.Resource.Hi.resources
+C:\Users\Admin\Desktop\New folder\CPSpeed\src\CPSeed.Web\obj\Release\CPSeed.Resource.Ja.resources
+C:\Users\Admin\Desktop\New folder\CPSpeed\src\CPSeed.Web\obj\Release\CPSeed.Web.csproj.GenerateResource.cache
+C:\Users\Admin\Desktop\New folder\CPSpeed\src\CPSeed.Web\obj\Release\CPSeed.dll
+C:\Users\Admin\Desktop\New folder\CPSpeed\src\CPSeed.Web\obj\Release\CPSeed.pdb

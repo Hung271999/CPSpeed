@@ -2710,3 +2710,11 @@ D:\CPSpeed\src\CPSeed.Web\bin\Twilio.dll
 D:\CPSpeed\src\CPSeed.Web\bin\Microsoft.IdentityModel.Tokens.xml
 D:\CPSpeed\src\CPSeed.Web\bin\System.IdentityModel.Tokens.Jwt.xml
 D:\CPSpeed\src\CPSeed.Web\bin\Twilio.xml
+C:\Users\Admin\Desktop\New folder\CPSpeed\src\CPSeed.Web\obj\Debug\CPSeed.Web.csprojAssemblyReference.cache
+C:\Users\Admin\Desktop\New folder\CPSpeed\src\CPSeed.Web\obj\Debug\CPSeed.Resource.resources
+C:\Users\Admin\Desktop\New folder\CPSpeed\src\CPSeed.Web\obj\Debug\CPSeed.Resource.Ar.resources
+C:\Users\Admin\Desktop\New folder\CPSpeed\src\CPSeed.Web\obj\Debug\CPSeed.Resource.Hi.resources
+C:\Users\Admin\Desktop\New folder\CPSpeed\src\CPSeed.Web\obj\Debug\CPSeed.Resource.Ja.resources
+C:\Users\Admin\Desktop\New folder\CPSpeed\src\CPSeed.Web\obj\Debug\CPSeed.Web.csproj.GenerateResource.cache
+C:\Users\Admin\Desktop\New folder\CPSpeed\src\CPSeed.Web\obj\Debug\CPSeed.dll
+C:\Users\Admin\Desktop\New folder\CPSpeed\src\CPSeed.Web\obj\Debug\CPSeed.pdb
