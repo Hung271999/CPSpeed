@@ -1,0 +1,93 @@
+﻿@using CPSeed.Models.Cart;
+@model List<Cart>
+@{
+    ViewBag.Title = "GioHang";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@Html.Action("Banner", "Home", new { image = "2.jpg", title = "Giỏ hàng" })
+<!-- Start Cart  -->
+<div class="cart-box-main">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="table-main table-responsive">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>@Resource.products</th>
+                                <th>@Resource.Title</th>
+                                <th>@Resource.Price</th>
+                                <th>@Resource.Quantity</th>
+                                <th>@Resource.Total</th>
+                                <th>@Resource.Delete</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var item in Model)
+                            {
+                                <tr>
+                                    <td class="thumbnail-img">
+                                        <a href="#">
+                                            <img class="img-fluid" src="~/images/Product/@item.simage" alt="" />
+                                        </a>
+                                    </td>
+                                    <td class="name-pr">
+                                        <a href="#">
+                                            @item.sProductName
+                                        </a>
+                                    </td>
+                                    <td class="price-pr">
+                                        <p class="price-@item.iProductID">@item.sSellPrice</p>VNĐ
+                                    </td>
+                                    <td class="quantity-box"><input type="number" size="4" value="@item.quantity" min="0" step="1" class="c-input-text qty text quantity-@item.iProductID" itemid="@item.iProductID" oninput="UpdateQuantity(this)"></td>
+                                    <td class="total-pr">
+                                        <p class="total-@item.iProductID">@item.total</p>VNĐ
+                                    </td>
+                                    <td class="remove-pr">
+                                        <a href="@Url.Action("RemoveFromCart","Cart", new {id=item.iProductID, strURL=Request.Url.ToString()})">
+                                            <i class="fas fa-times"></i>
+                                        </a>
+                                    </td>
+                                </tr>
+
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <div class="row my-5">
+            <div class="col-lg-6 col-sm-6">
+                <div class="coupon-box">
+                    <div class="input-group input-group-sm">
+                        <input class="form-control" placeholder="Mã giảm giá....." aria-label="Coupon code" type="text">
+                        <div class="input-group-append">
+                            <button class="btn btn-theme" type="button">Nhập mã giá</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6 col-sm-6">
+                    <div class="col-lg-12 col-sm-12 thanhtoan">
+
+                        <div class="order-box">
+                            <h3>Tổng đơn hàng</h3>
+                            <div class="d-flex">
+                                <h4>Số lượng</h4>
+                                <div class="ml-auto font-weight-bold grand-total1">@ViewBag.Tongsoluong </div>
+                            </div>
+                            <hr>
+                            @Html.Action("TotalMoney", "Cart")
+                            <hr>
+                        </div>
+          
+                    <div class="col-12 d-flex shopping-box"><a href="@Url.Action("DatHang","Cart")" class="ml-auto btn hvr-hover">Checkout</a> </div>
+          </div>
+            </div>
+        </div>
+
+       
+
+    </div>
+</div>
+<!-- End Cart -->

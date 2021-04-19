@@ -1,0 +1,161 @@
+﻿@model CPSeed.Models.Product
+
+@{
+    ViewBag.Title = "EditProduct";
+    Layout = "~/Views/Shared/LayoutAdmin.cshtml";
+}
+
+@using (Html.BeginForm("EditProduct", "Admin", FormMethod.Post, new { @enctype = "multipart/form-data" }))
+{
+    @Html.AntiForgeryToken()
+    <div class="container tm-mt-big tm-mb-big">
+        <div class="row">
+            <div class="col-xl-9 col-lg-10 col-md-12 col-sm-12 mx-auto">
+                <div class="tm-bg-primary-dark tm-block tm-block-h-auto">
+                    <div class="row">
+                        <div class="col-12">
+                            <h2 class="tm-block-title d-inline-block">Chỉnh Sửa Sản phẩm</h2>
+                        </div>
+                    </div>
+                    <div class="row tm-edit-product-row">
+                        <div class="col-xl-6 col-lg-6 col-md-12">
+                            <form action="" class="tm-edit-product-form">
+                                <div class="form-group mb-3">
+                                    <label for="name">
+                                        Mã sản phẩm
+                                    </label>
+                                    <input style="color:black"
+                                           name="ProductID"
+                                           type="text"
+                                           value="@Model.ProductID"
+                                           class="form-control validate"
+                                           readonly
+                                           required />
+                                    @ViewData["Loi1"]
+                                </div>
+                                <div class="form-group mb-3">
+                                    <label for="name">
+                                        Tên sản phẩm
+                                    </label>
+                                    <input name="ProductName"
+                                           type="text"
+                                           value="@Model.ProductName"
+                                           class="form-control validate"
+                                           required />
+                                    @ViewData["Loi2"]
+                                </div>
+
+                                <div class="form-group mb-3">
+                                    <label for="name">
+                                        Danh mục sản phẩm
+                                    </label>
+                                    <select id="UserId" name="ProductTypeID" class="custom-select tm-select-accounts">
+                                        @foreach (var item in ViewBag.ProductTypeID)
+                                        {
+                                            int a = Model.ProductTypeID;
+                                            if (item.ProductTypeID==a)
+                                            {
+                                                <option value="@item.ProductTypeID" selected >@item.ProductTypeName</option>
+
+                                            }
+                                            else
+                                            {
+                                                <option value="@item.ProductTypeID">@item.ProductTypeName</option>
+
+                                            }
+
+                                        }
+
+                                    </select>
+                                    
+                                    @ViewData["Loi3"]
+                                </div>
+
+                                <div class="form-group mb-3">
+                                    <label for="name">
+                                      Giá mua
+                                    </label>
+                                    <input name="BuyPriceCurrent"
+                                           type="text"
+                                           value="@ViewBag.BuyPrice"
+                                           class="form-control validate"
+                                           required />
+                                    @ViewData["Loi4"]
+                                </div>
+
+                                <div class="form-group mb-3">
+                                    <label for="name">
+                                     Giá bán
+                                    </label>
+                                    <input name="SellPrice"
+                                           type="text"
+                                           value="@ViewBag.SellPrice"
+                                           class="form-control validate"
+                                           required />
+                                    @ViewData["Loi5"]
+                                </div>
+                            </form>
+                        </div>
+                        
+                        <div class="col-xl-6 col-lg-6 col-md-12 mx-auto mb-4">                            
+                            <div style="padding-top:18px" class="custom-file mt-3 mb-3">
+                                <input style="color:black" type="text" value="@Model.image" name="picture" id="picture" class="form-control" readonly />
+                                <input type="file" accept="image/*" id="fileUpload" name="fileUpload" style="display:none" ; />
+                                <input type="button"
+                                       id="btnUpload"
+                                       class="btn btn-success btn-primary btn-block mx-auto "
+                                       value="Thêm hình cho sản phẩm" />
+                                <img src="@Url.Content("~/images/Product/" + Model.image)" id="pictureUpload" width="358"/>
+                            </div>
+                        </div>
+                        <div class="form-group mb-3 col-xs-12 col-sm-12">
+                            <label for="description">Mô tả</label>
+                            <textarea id="description" name="description">@Model.description</textarea>
+                            @ViewData["Loi7"]
+                        </div>
+                        <div class="col-12">
+                            <button type="submit" class="btn btn-primary btn-block text-uppercase">Chỉnh sửa</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+}
+@section upload
+{
+    <script>
+        $(function () {
+            $('#btnUpload').click(function () {
+                $('#fileUpload').trigger('click');
+            });
+            $('#fileUpload').change(function () {
+                if (window.FormData !== undefined) {
+                    var fileUpload = $('#fileUpload').get(0);
+                    var files = fileUpload.files;
+                    var formData = new FormData();
+                    formData.append('file', files[0]);
+                    $.ajax(
+                        {
+                            type: 'POST',
+                            url: '/Admin/ProcessUpload',
+                            contentType: false,
+                            processData: false,
+                            data: formData,
+                            success: function (urlImage) {
+                                $('#pictureUpload').attr('src', urlImage);
+                                $('#picture').val(urlImage);
+                            },
+                            error: function (err) {
+                                alert('Có lỗi khi upload ' + err.statusText);
+                            }
+                        });
+                }
+            });
+        });
+    </script>
+}
+
+
+
+

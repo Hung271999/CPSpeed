@@ -1,0 +1,59 @@
+﻿@model IEnumerable<CPSeed.Models.News>
+@using CPSeed.Models;
+<div class="list-group list-group-collapse list-group-sm list-group-tree" id="list-group-men" data-children=".sub-men">
+    <div class="list-group-collapse sub-men">
+        @foreach (var item in Model)
+        {
+            <a class="list-group-item list-group-item-action dad" href="#@item.NewsID" data-toggle="collapse" aria-expanded="true" aria-controls="@item.NewsID">
+                @item.Title
+                @{
+                    using (CPSeedContext data1 = new CPSeedContext())
+                    {
+                        ViewBag.Count = data1.NewDetails.Where(n => n.NewsID == @item.NewsID).Count();
+                    }
+                }
+                <small class="text-muted">(@ViewBag.Count)</small>
+
+            </a>
+                    using (CPSeedContext data = new CPSeedContext())
+                    {
+                        List<NewDetail> NewDetail = data.NewDetails.Where(n => n.NewsID == item.NewsID).ToList();
+                        if (ViewBag.Status == item.NewsID)
+                        {
+                <div class="collapse show" id="@item.NewsID" data-parent="#list-group-men">
+                    <div class="list-group">
+                        @foreach (var item3 in NewDetail)
+                        {
+                            <a href="@Url.Action("CT", "News", new { id = item3.NewDetailID })" style="color: #5c8416; font-size:20px" class="list-group-item list-group-item-action">@item3.Title</a>
+                        }
+                    </div>
+                </div>
+
+                        }
+                        else
+                        {
+                <div class="collapse" id="@item.NewsID" data-parent="#list-group-men">
+                    <div class="list-group">
+                        @foreach (var item3 in NewDetail)
+                        {
+
+                            if (item3.NewsID == 3)
+                            {
+                                <a href="" style="color: #5c8416;font-size:20px" class="list-group-item list-group-item-action">@item3.Title</a>
+
+                            }
+                            else
+                            {
+                                <a href="@Url.Action("CT", "News", new { id = item3.NewDetailID })" style="color: #5c8416;font-size:20px" class="list-group-item list-group-item-action">@item3.Title</a>
+
+                            }
+
+                        }
+                    </div>
+                </div>
+                            }
+                        }
+                    }
+    </div>
+
+</div>

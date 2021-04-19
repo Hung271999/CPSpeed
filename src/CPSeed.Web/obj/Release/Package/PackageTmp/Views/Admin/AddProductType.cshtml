@@ -1,0 +1,92 @@
+﻿@model CPSeed.Models.ProductType
+
+@{
+    ViewBag.Title = "AddProductType";
+    Layout = "~/Views/Shared/LayoutAdmin.cshtml";
+}
+
+@using (Html.BeginForm("AddProductType", "Admin", FormMethod.Post, new { @enctype = "multipart/form-data" }))
+{
+    @Html.AntiForgeryToken()
+
+    <div class="container tm-mt-big tm-mb-big">
+        <div class="row">
+            <div class="col-xl-9 col-lg-10 col-md-12 col-sm-12 mx-auto">
+                <div class="tm-bg-primary-dark tm-block tm-block-h-auto">
+                    <div class="row">
+                        <div class="col-12">
+                            <h2 class="tm-block-title d-inline-block">Thêm Danh Mục Sản Phẩm</h2>
+                        </div>
+                    </div>
+                    <div style="padding-left:20px" class="row tm-edit-product-row">
+                        <div class="col-xl-6 col-lg-6 col-md-12">
+                            <form action="" class="tm-edit-product-form">
+                                <div class="form-group mb-3">
+                                    <label for="name">
+                                        Tên danh mục
+                                    </label>
+                                    <input name="ProductTypeName"
+                                           type="text"
+                                           class="form-control validate"
+                                           required />
+                                    @ViewData["Loi2"]
+                                </div>                          
+                            </form>
+                        </div>
+                        <div class="col-xl-6 col-lg-6 col-md-12 mx-auto mb-4">
+                            <div style="padding-top:18px" class="custom-file mt-3 mb-3">
+                                <input type="text" name="pictute" id="picture" class="form-control" />
+                                <br />
+                                <input type="file" accept="image/*" id="fileUpload" name="fileUpload" style="display:none" ; />
+                                <input type="button"
+                                       id="btnUpload"
+                                       class="btn btn-success btn-primary btn-block mx-auto "
+                                       value="Chọn hình cho danh mục" />
+                                @ViewData["Loi4"]
+                                <img id="pictureUpload" width="348"/>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div style="padding-top:200px" class="col-12">
+                        <button type="submit" class="btn btn-primary btn-block text-uppercase">Thêm Danh Mục</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+}
+@section upload
+{
+    <script>
+        $(function () {
+            $('#btnUpload').click(function () {
+                $('#fileUpload').trigger('click');
+            });
+            $('#fileUpload').change(function () {
+                if (window.FormData !== undefined) {
+                    var fileUpload = $('#fileUpload').get(0);
+                    var files = fileUpload.files;
+                    var formData = new FormData();
+                    formData.append('file', files[0]);
+                    $.ajax(
+                        {
+                            type: 'POST',
+                            url: '/Admin/ProcessUpload',
+                            contentType: false,
+                            processData: false,
+                            data: formData,
+                            success: function (urlImage) {
+                                $('#pictureUpload').attr('src', urlImage);
+                                $('#picture').val(urlImage);
+                            },
+                            error: function (err) {
+                                alert('Có lỗi khi upload ' + err.statusText);
+                            }
+                        });
+                }
+            });
+        });
+    </script>
+}
+

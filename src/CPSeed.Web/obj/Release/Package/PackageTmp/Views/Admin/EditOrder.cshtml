@@ -1,0 +1,122 @@
+﻿@model CPSeed.Models.OrderDetail
+@using CPSeed.Models;
+@{
+    ViewBag.Title = "EditOder";
+    Layout = "~/Views/Shared/LayoutAdmin.cshtml";
+}
+
+@using (Html.BeginForm("EditOrder", "Admin", FormMethod.Post, new { @enctype = "multipart/form-data" }))
+{
+    @Html.AntiForgeryToken()
+    <div class="container tm-mt-big tm-mb-big">
+        <div class="row">
+            <div class="col-xl-9 col-lg-10 col-md-12 col-sm-12 mx-auto">
+                <div class="tm-bg-primary-dark tm-block tm-block-h-auto">
+                    <div class="row">
+                        <div class="col-12">
+                            <h2 class="tm-block-title d-inline-block">Edit Product</h2>
+                        </div>
+                    </div>
+                    <div style="padding-left:20px" class="row tm-edit-product-row">
+                        <div class="form-group mb-3 col-xs-12 col-sm-12">
+                            <label for="name">
+                                Product Name
+                            </label>
+                            
+                            @Html.DropDownList("ProductName", (IEnumerable<SelectListItem>)ViewBag.ProductName, new { @class = "custom-select tm-select-accounts" })
+                            @ViewData["Loi1"]
+                        </div>
+
+                        <div class="form-group mb-3 col-xs-12 col-sm-12">
+                            <label for="name">
+                                Quantity
+                            </label>
+                            <input name="Quantity"
+                                   type="text"
+                                   value="@Model.Quantity"
+                                   class="form-control validate"
+                                   required />
+                            @ViewData["Loi2"]
+                        </div>
+
+                        <div class="form-group mb-3 col-xs-12 col-sm-12">
+                            <label for="name">
+                                Sell Price
+                            </label>
+                            <input name="SellPrice"
+                                   type="text"
+                                   value="@ViewBag.SellPrice"
+                                   class="form-control validate"
+                                   required />
+                            @ViewData["Loi3"]
+                        </div>
+
+                        @{
+                            CPSeedContext data = new CPSeedContext();
+                            var order = data.Orders.Where(n => n.OrderID == Model.OrderID).Single();
+                            var product = data.Products.Where(n => n.ProductID == Model.ProductID).Single();
+                            ViewBag.order = order;
+                            ViewBag.product = product;
+                        }
+
+                        <div class="form-group mb-3 col-xs-12 col-sm-12">
+                            <label for="name">
+                                Status
+                            </label>
+                            @Html.DropDownList("Status", ((List<string>)ViewBag.Status).Select(m => new SelectListItem { Text = m, Value = m }), new { @class = "custom-select tm-select-accounts" })
+                            @ViewData["Loi4"]
+                        </div>
+
+                        <div class="form-group mb-3 col-xs-12 col-sm-12">
+                            <label for="name">
+                                Paid
+                            </label>
+                            @Html.DropDownList("Paid", ((List<string>)ViewBag.Paid).Select(m => new SelectListItem { Text = m, Value = m }) , new { @class = "custom-select tm-select-accounts" })
+                            @ViewData["Loi5"]
+                        </div>
+
+                        <div class="form-group mb-3 col-xs-12 col-sm-12">
+                            <label for="name">
+                                Email
+                            </label>
+                            <input name="Email"
+                                   type="text"
+                                   value="@ViewBag.order.Email"
+                                   class="form-control validate"
+                                   required />
+                            @ViewData["Loi6"]
+                        </div>
+
+                        <div class="form-group mb-3 col-xs-12 col-sm-12">
+                            <label for="name">
+                                Address
+                            </label>
+                            <input name="Address"
+                                   type="text"
+                                   value="@ViewBag.order.Address"
+                                   class="form-control validate"
+                                   required />
+                            @ViewData["Loi7"]
+                        </div>
+
+                        <div class="form-group mb-3 col-xs-12 col-sm-12">
+                            <label for="name">
+                                Phone
+                            </label>
+                            <input name="Phone"
+                                   type="text"
+                                   value="@ViewBag.order.Phone"
+                                   class="form-control validate"
+                                   required />
+                            @ViewData["Loi8"]
+                        </div>
+                                                
+                    </div>
+                    <div style="padding-top:30px; padding-left:35px" class="col-12">
+                        <button type="submit" class="btn btn-primary btn-block text-uppercase">Edit Order Now</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+}

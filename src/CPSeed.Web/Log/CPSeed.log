@@ -1389,3 +1389,35 @@
 2021-04-19 23:24:41,864 [CPSeed.Controllers.HomeController] [6] DEBUG CPSeed.Controllers.HomeController - LV is null or id not ==4 or status is not true
 2021-04-19 23:25:12,540 [CPSeed.Controllers.HomeController] [12] DEBUG CPSeed.Controllers.HomeController - LV is null or id not ==4 or status is not true
 2021-04-19 23:25:30,742 [CPSeed.Controllers.HomeController] [6] DEBUG CPSeed.Controllers.HomeController - LV is null or id not ==4 or status is not true
+2021-04-19 23:38:49,759 [CPSeed.Util.Common] [1] DEBUG CPSeed.Util.Common - Init log4net completed
+2021-04-19 23:38:49,767 [CPSeed.Util.Common] [1] DEBUG CPSeed.Util.Common - InitLog4Net completed
+2021-04-19 23:38:58,754 [CPSeed.Controllers.HomeController] [6] DEBUG CPSeed.Controllers.HomeController - LV is null or id not ==4 or status is not true
+2021-04-20 00:02:33,839 [CPSeed.Util.Common] [1] DEBUG CPSeed.Util.Common - Init log4net completed
+2021-04-20 00:02:33,852 [CPSeed.Util.Common] [1] DEBUG CPSeed.Util.Common - InitLog4Net completed
+2021-04-20 00:02:43,841 [CPSeed.Controllers.HomeController] [6] DEBUG CPSeed.Controllers.HomeController - LV is null or id not ==4 or status is not true
+2021-04-20 00:03:36,119 [CPSeed.Util.Common] [1] DEBUG CPSeed.Util.Common - Init log4net completed
+2021-04-20 00:03:36,127 [CPSeed.Util.Common] [1] DEBUG CPSeed.Util.Common - InitLog4Net completed
+2021-04-20 00:03:46,341 [CPSeed.Controllers.HomeController] [6] DEBUG CPSeed.Controllers.HomeController - LV is null or id not ==4 or status is not true
+2021-04-20 00:03:57,049 [CPSeed.Controllers.HomeController] [7] DEBUG CPSeed.Controllers.HomeController - LV is null or id not ==4 or status is not true
+2021-04-20 00:03:57,673 [CPSeed.Controllers.HomeController] [8] DEBUG CPSeed.Controllers.HomeController - LV is null or id not ==4 or status is not true
+2021-04-20 00:03:58,079 [CPSeed.Controllers.HomeController] [7] DEBUG CPSeed.Controllers.HomeController - LV is null or id not ==4 or status is not true
+2021-04-20 00:03:58,497 [CPSeed.Controllers.HomeController] [8] DEBUG CPSeed.Controllers.HomeController - LV is null or id not ==4 or status is not true
+2021-04-20 00:03:58,896 [CPSeed.Controllers.HomeController] [9] DEBUG CPSeed.Controllers.HomeController - LV is null or id not ==4 or status is not true
+2021-04-20 00:03:59,247 [CPSeed.Controllers.HomeController] [11] DEBUG CPSeed.Controllers.HomeController - LV is null or id not ==4 or status is not true
+2021-04-20 00:03:59,629 [CPSeed.Controllers.HomeController] [13] DEBUG CPSeed.Controllers.HomeController - LV is null or id not ==4 or status is not true
+2021-04-20 00:04:00,031 [CPSeed.Controllers.HomeController] [12] DEBUG CPSeed.Controllers.HomeController - LV is null or id not ==4 or status is not true
+2021-04-20 00:04:00,437 [CPSeed.Controllers.HomeController] [11] DEBUG CPSeed.Controllers.HomeController - LV is null or id not ==4 or status is not true
+2021-04-20 00:04:00,861 [CPSeed.Controllers.HomeController] [7] DEBUG CPSeed.Controllers.HomeController - LV is null or id not ==4 or status is not true
+2021-04-20 00:04:01,255 [CPSeed.Controllers.HomeController] [8] DEBUG CPSeed.Controllers.HomeController - LV is null or id not ==4 or status is not true
+2021-04-20 00:04:01,631 [CPSeed.Controllers.HomeController] [7] DEBUG CPSeed.Controllers.HomeController - LV is null or id not ==4 or status is not true
+2021-04-20 00:04:02,020 [CPSeed.Controllers.HomeController] [8] DEBUG CPSeed.Controllers.HomeController - LV is null or id not ==4 or status is not true
+2021-04-20 00:04:02,441 [CPSeed.Controllers.HomeController] [7] DEBUG CPSeed.Controllers.HomeController - LV is null or id not ==4 or status is not true
+2021-04-20 00:04:02,854 [CPSeed.Controllers.HomeController] [8] DEBUG CPSeed.Controllers.HomeController - LV is null or id not ==4 or status is not true
+2021-04-20 00:04:47,060 [CPSeed.Controllers.HomeController] [6] DEBUG CPSeed.Controllers.HomeController - LV is null or id not ==4 or status is not true
+2021-04-20 00:04:48,080 [CPSeed.Controllers.HomeController] [7] DEBUG CPSeed.Controllers.HomeController - LV is null or id not ==4 or status is not true
+2021-04-20 00:06:04,541 [CPSeed.Util.Common] [1] DEBUG CPSeed.Util.Common - Init log4net completed
+2021-04-20 00:06:04,551 [CPSeed.Util.Common] [1] DEBUG CPSeed.Util.Common - InitLog4Net completed
+2021-04-20 00:06:15,116 [CPSeed.Controllers.HomeController] [6] DEBUG CPSeed.Controllers.HomeController - LV is null or id not ==4 or status is not true
+2021-04-20 00:06:29,344 [CPSeed.Controllers.HomeController] [6] DEBUG CPSeed.Controllers.HomeController - LV is null or id not ==4 or status is not true
+2021-04-20 00:08:06,686 [CPSeed.Controllers.HomeController] [7] DEBUG CPSeed.Controllers.HomeController - LV is null or id not ==4 or status is not true
+2021-04-20 00:10:04,164 [CPSeed.Controllers.HomeController] [9] DEBUG CPSeed.Controllers.HomeController - LV is null or id not ==4 or status is not true

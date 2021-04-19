@@ -1,0 +1,9 @@
+﻿@using Microsoft.AspNet.Identity
+@if (Request.IsAuthenticated && User.IsInRole("Admin") is true)
+{
+    <a>vao roi</a>
+}
+else
+{
+    <a>Chua ada vo</a>
+}

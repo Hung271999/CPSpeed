@@ -1,0 +1,42 @@
+﻿@model IEnumerable<CPSeed.Models.Post>
+@using CPSeed.Util;
+@{ ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml"; }
+@Html.Action("Banner", "Home", new { image = "tuyeudung.jpg", title = "Tuyển dụng" })
+<div class="shop-box-inner">
+    <div class="container">
+        <div class="row">
+            <div class="col-xl-3 col-lg-3 col-sm-12 col-xs-12 sidebar-shop-left">
+                <div class="product-categori ">
+                    <div class="filter-sidebar-left menu-right">
+                        <div class="title-left">
+                            <h2 class="noo-sh-title" style="">Tuyển dụng</h2>
+                        </div>
+                        @Html.Action("categoryPost", "Pots")
+                    </div>
+                </div>
+            </div>
+            <div class="col-xl-9 col-lg-9 col-sm-12 col-xs-12 shop-content-right">
+                <h2 class="noo-sh-title">TUYỂN DỤNG</h2>
+                <p>CP Seed là doanh nghiệp khoa học công nghệ chuyên cung cấp giống cây trồng và các giải pháp phát triển nông nghiệp hàng đầu. Tập đoàn đang có nhu cầu tuyển dụng các vị trí công việc sau: </p>
+                <br />
+            </div>
+            @foreach (var item in Model)
+            {
+                var link = "/chi-tiet-tuyen-dung/" + Common.str(item.Title) + "-" + item.PostID;
+                <div class="col-sm-6 col-lg-3">
+                    <div class="hover-team" style="box-shadow: 0px 0px 25px rgb(0 0 0 / 25%);  ">
+                        <div class="our-team">
+                            <a href="@link"> <img src="~/images/Post/@item.image" alt=""></a>
+                        </div>
+                        <div class="team-description" style="text-align:center">
+                            <b style="display: inline-block; font-family: fml-bold; text-align: center; width: 100%; color: #005b36; transition: 0.2s; margin-top: 15px; line-height: 21px; font-size: 17px;">@item.Title</b>
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+</div>
+
+

@@ -1,0 +1,25 @@
+﻿@model IEnumerable<CPSeed.Models.News>
+
+    @{
+        Layout = null;
+    }
+
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td class="tm-product-name">@Html.Raw(item.Title)</td>
+                <td>
+                    <a href="@Url.Action("DeleteNews", "Admin" , new { id = item.NewsID })" class="tm-product-delete-link">
+                        <i class="far fa-trash-alt tm-product-delete-icon"></i>
+                    </a>
+                </td>
+                <td>
+                    <a href="@Url.Action("EditNews", "Admin" , new { id = item.NewsID })">
+                        Sửa
+                    </a>
+                </td>
+
+            </tr>
+        }
+    </tbody>

@@ -1,0 +1,71 @@
+﻿@model IEnumerable<CPSeed.Models.NewDetail>
+@using CPSeed.Util;
+<div class="box-add-products news">
+    <div class="categories-shop">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="title-all">
+                        <h1 style="font-size:40px;width: fit-content"data-aos="zoom-in" data-aos-duration="1000">@Resource.News</h1>
+                    </div>
+                    <hr class="productDive" />
+                </div>
+            </div>
+            <div class="row deMap">
+                @{
+                    int i = 0;
+                    foreach (var item in Model)
+                    {
+                        var link = "/chi-tiet-tin/" + Common.str(item.Title) + "-" + item.NewDetailID;
+                        i++;
+                        if (i == 1)
+                        {
+                            <div class="col-md-6 col-lg-4 col-xl-4">
+                                <div class="blog-box"data-aos="fade-right" data-aos-duration="1000">
+                                    <div class="blog-img">
+                                        <img class="img-fluid" src="~/images/News/@item.image" alt="">
+                                    </div>
+                                    <div class="blog-content">
+                                        <div class="title-blog">
+                                            <h3>@item.Title</h3>
+                                            <hr class="newsDive" />
+                                            <p style="font-size:18px">@item.Summary</p>
+                                            <br />
+                                            <a class="btn btn-outline-success" style="border: solid 1px" href="@link">@Resource.Seemore</a>
+                                        </div>
+                                        <div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        }
+                        else
+                        {
+                            <div class="col-md-6 col-lg-8 col-xl-8">
+                                <div class="blog-box"data-aos="fade-up" data-aos-duration="1000">
+                                    <div class="blog-img">
+                                        <img class="img-fluid" src="~/images/News/@item.image" alt="">
+                                    </div>
+                                    <div class="blog-content ">
+                                        <div class="title-blog big">
+                                            <div class="col-md-4 bigLeft">
+                                                <h3>@item.Title</h3>
+                                                <a class="btn btn-outline-success" style="margin-top:20px; border: solid 1px" href="@link">@Resource.Seemore</a>
+                                            </div>
+                                            <div class="col-md-8 bigRight">
+                                                <p style="font-size:18px">@item.Summary</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        }
+                    }
+
+                }
+
+            </div>
+        </div>
+    </div>
+</div>

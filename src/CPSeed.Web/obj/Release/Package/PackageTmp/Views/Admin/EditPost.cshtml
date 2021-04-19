@@ -1,0 +1,156 @@
+﻿@model CPSeed.Models.Post
+@using CPSeed.Models;
+@{
+    ViewBag.Title = "EditPost";
+    Layout = "~/Views/Shared/LayoutAdmin.cshtml";
+}
+
+@using (Html.BeginForm("EditPost", "Admin", FormMethod.Post, new { @enctype = "multipart/form-data" }))
+{
+    @Html.AntiForgeryToken()
+    <div class="container tm-mt-big tm-mb-big">
+        <div class="row">
+            <div class="col-xl-9 col-lg-10 col-md-12 col-sm-12 mx-auto">
+                <div class="tm-bg-primary-dark tm-block tm-block-h-auto">
+                    <div class="row">
+                        <div class="col-12">
+                            <h2 class="tm-block-title d-inline-block">Chỉnh Sửa Bài Viết</h2>
+                        </div>
+                    </div>
+                    <div style="padding-left:20px" class="row tm-edit-product-row">
+                        <div class="form-group mb-3 col-xs-12 col-sm-12">
+                            <label for="name">
+                                Mã bài viết
+                            </label>
+                            <input style="color:black"
+                                   name="PostID"
+                                   type="text"
+                                   value="@Model.PostID"
+                                   class="form-control validate"
+                                   readonly
+                                   required />
+                            @ViewData["Loi1"]
+                        </div>
+
+                        <div class="form-group mb-3 col-xs-12 col-sm-12">
+                            <label for="name">
+                                Tiêu đề
+                            </label>
+                            <textarea name="Title"
+                                      type="text"
+                                      class="form-control validate"
+                                      required>@Model.Title</textarea>
+                            @ViewData["Loi2"]
+                        </div>
+
+                        <div class="form-group mb-3 col-xs-12 col-sm-12">
+                            <label for="name">
+                                Tóm tắt
+                            </label>
+                            <textarea name="Summary"
+                                      type="text"
+                                      class="form-control validate"
+                                      required>@Model.Summary</textarea>
+                            @ViewData["Loi3"]
+                        </div>
+
+                        <div class="form-group mb-3 col-xs-12 col-sm-12">
+                            <label for="name">
+                                Nội dung
+                            </label>
+                            <textarea name="Content" id="description">@Model.contents</textarea>
+                            @ViewData["Loi4"]
+                        </div>
+
+                        <div style="padding-left:15px" class="form-group mb-3">
+                            <label for="name">
+                                Danh mục
+                            </label>
+                            <select id="UserId" name="CategoryPost" class="custom-select tm-select-accounts">
+                                @{
+                                    CPSeedContext data = new CPSeedContext();
+                                    var a = data.Categories.ToList();
+                                }
+                                @foreach (var item in a)
+                                {
+
+
+                                    if (item.CategoryID == Model.CategoryID)
+                                    {
+                                        <option value="@item.CategoryID" selected>@item.Title</option>
+                                    }
+
+
+
+                                    else
+                                    {
+                                        <option value="@item.CategoryID">@item.Title</option>
+
+                                    }
+
+                                }
+
+                            </select>
+                            @ViewData["Loi5"]
+                        </div>
+                        <select id="UserId" name="Priority" class="custom-select tm-select-accounts">
+                            <option value="1" selected>Ưu tiên</option>
+                            <option value="0">Thường</option>
+                        </select>
+
+                        <div class="form-group mb-3 col-xs-12 col-sm-12">
+                            <div style="padding-top:18px" class="custom-file mt-3 mb-3">
+                                <input type="text" value="@Model.image" name="picture" id="picture" class="form-control" readonly style="color:black" />
+                                <input type="file" accept="image/*" id="fileUpload" name="fileUpload" style="display:none" ; />
+                                <input type="button"
+                                       id="btnUpload"
+                                       class="btn btn-success btn-primary btn-block mx-auto "
+                                       value="UPLOAD POST IMAGE" />
+                                @ViewData["Loi6"]
+                                <img src="@Url.Content("~/images/Post/" + Model.image)" id="pictureUpload" width="358" />
+                            </div>
+                        </div>
+                    </div>
+                    <div style="padding-top:150px; padding-left:35px" class="col-12">
+                        <button type="submit" class="btn btn-primary btn-block text-uppercase">Edit Post Now</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+}
+@section upload
+{
+    <script>
+        $(function () {
+            $('#btnUpload').click(function () {
+                $('#fileUpload').trigger('click');
+            });
+            $('#fileUpload').change(function () {
+                if (window.FormData !== undefined) {
+                    var fileUpload = $('#fileUpload').get(0);
+                    var files = fileUpload.files;
+                    var formData = new FormData();
+                    formData.append('file', files[0]);
+                    $.ajax(
+                        {
+                            type: 'POST',
+                            url: '/Admin/ProcessUpload',
+                            contentType: false,
+                            processData: false,
+                            data: formData,
+                            success: function (urlImage) {
+                                $('#pictureUpload').attr('src', urlImage);
+                                $('#picture').val(urlImage);
+                            },
+                            error: function (err) {
+                                alert('Có lỗi khi upload ' + err.statusText);
+                            }
+                        });
+                }
+            });
+        });
+    </script>
+}
+
+

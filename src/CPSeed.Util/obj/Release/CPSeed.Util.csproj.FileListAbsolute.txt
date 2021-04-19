@@ -3,3 +3,10 @@ D:\CPSpeed\src\CPSeed.Util\obj\Release\CPSeed.Util.ResourceUtil.resources
 D:\CPSpeed\src\CPSeed.Util\obj\Release\CPSeed.Util.ResourceUtil.en.resources
 D:\CPSpeed\src\CPSeed.Util\obj\Release\CPSeed.Util.csproj.GenerateResource.cache
 D:\CPSpeed\src\CPSeed.Util\obj\Release\CPSeed.Util.csproj.CoreCompileInputs.cache
+D:\CPSpeed\src\CPSeed.Util\bin\Release\CPSeed.Util.dll
+D:\CPSpeed\src\CPSeed.Util\bin\Release\CPSeed.Util.pdb
+D:\CPSpeed\src\CPSeed.Util\bin\Release\en\CPSeed.Util.resources.dll
+D:\CPSpeed\src\CPSeed.Util\obj\Release\en\CPSeed.Util.resources.dll
+D:\CPSpeed\src\CPSeed.Util\obj\Release\CPSeed.Util.csproj.CopyComplete
+D:\CPSpeed\src\CPSeed.Util\obj\Release\CPSeed.Util.dll
+D:\CPSpeed\src\CPSeed.Util\obj\Release\CPSeed.Util.pdb
