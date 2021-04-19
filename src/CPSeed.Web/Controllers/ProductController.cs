@@ -11,87 +11,97 @@ namespace CPSeed.Controllers
     public class ProductController : Controller
     {
         // GET: Product
-        CPSeedContext data = new CPSeedContext();
-        private static log4net.ILog logger = log4net.LogManager.GetLogger(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        
 
         // trang chính product
         public ActionResult Index(int ? id )
         {
-            try
+            log4net.ILog logger = log4net.LogManager.GetLogger(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+            using (CPSeedContext data = new CPSeedContext())
             {
-
-                if (id == null)
+                try
                 {
-                    ViewBag.id = 0;
-                    ViewBag.Count = data.Products.Count();
+
+                    if (id == null)
+                    {
+                        ViewBag.id = 0;
+                        ViewBag.Count = data.Products.Count();
+                    }
+                    else
+                    {
+                        ViewBag.id = id;
+                        ProductType a = data.ProductTypes.Where(n => n.ProductTypeID == id).SingleOrDefault();
+                        ViewBag.name = a;
+                        ViewBag.Count = data.Products.Where(n => n.ProductTypeID == id).Count();
+                    }
+                    return View();
+
                 }
-                else
+                catch (Exception ex)
                 {
-                    ViewBag.id = id;
-                    ProductType a = data.ProductTypes.Where(n => n.ProductTypeID == id).SingleOrDefault();
-                    ViewBag.name = a;
-                    ViewBag.Count = data.Products.Where(n => n.ProductTypeID == id).Count();
+
+                    logger.Error("Index product mission" + ex);
+                    return View();
+
                 }
-                return View();
-
-            }
-            catch (Exception ex)
-            {
-
-                logger.Debug("Index product mission");
-                return View();
-
             }
            
         }
         // trang sản phẩm
         public PartialViewResult GetPaging(int? page, int status = 0, int id = 0)
         {
-            try
+            log4net.ILog logger = log4net.LogManager.GetLogger(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+            using (CPSeedContext data = new CPSeedContext())
             {
-
-                if (id == 0)
+                try
                 {
-                    int pagesize = 6;
-                    int pageNum = (page ?? 1);
-                    var product = data.Products.ToList();
-                    return PartialView("Product", product.ToPagedList(pageNum, pagesize));
+
+                    if (id == 0)
+                    {
+                        int pagesize = 6;
+                        int pageNum = (page ?? 1);
+                        var product = data.Products.ToList();
+                        return PartialView("Product", product.ToPagedList(pageNum, pagesize));
+                    }
+                    else
+                    {
+                        ViewBag.id = id;
+                        int a = id;
+                        int pagesize = 6;
+                        int pageNum = (page ?? 1);
+                        var product = data.Products.Where(n => n.ProductTypeID == a);
+                        return PartialView("Product", product.OrderBy(n => n.CreateDate).ToPagedList(pageNum, pagesize));
+                    }
+
                 }
-                else
+                catch (Exception ex)
                 {
-                    ViewBag.id = id;
-                    int a = id;
-                    int pagesize = 6;
-                    int pageNum = (page ?? 1);
-                    var product = data.Products.Where(n => n.ProductTypeID == a);
-                    return PartialView("Product", product.OrderBy(n => n.CreateDate).ToPagedList(pageNum, pagesize));
+
+                    logger.Error("GetPaging" + ex);
+                    return PartialView();
                 }
-
-            }
-            catch (Exception ex)
-            {
-
-                logger.Debug("GetPaging");
-                return PartialView();
             }
             
         }
         // menu loại sản phẩm
         public ActionResult productType( int ?id)
         {
-
-            try
+            log4net.ILog logger = log4net.LogManager.GetLogger(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+            using (CPSeedContext data = new CPSeedContext())
             {
-                var productType = data.ProductTypes.ToList();
-                ViewBag.Status = id;
-                return PartialView(productType);
+                try
+                {
+                    var productType = data.ProductTypes.ToList();
+                    ViewBag.Status = id;
+                    return PartialView(productType);
 
-            }
-            catch (Exception ex)
-            {
+                }
+                catch (Exception ex)
+                {
 
-                logger.Debug("productType");
-                return PartialView();
+                    logger.Error("productType" + ex);
+                    return PartialView();
+                }
             }
            
         }
@@ -99,64 +109,72 @@ namespace CPSeed.Controllers
         // chi tiết sản phẩm
         public ActionResult productDetail(string id)
         {
-            try
+            CPSeedContext data = new CPSeedContext();
+            log4net.ILog logger = log4net.LogManager.GetLogger(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+            
             {
-                var product = data.Products.Where(n => n.ProductID == id);
-                var image = data.Images.Where(n => n.ProductID == id);
-                ViewBag.count = image.Count();
-                ViewBag.images = image;
-                return View(product.Single());
+                try
+                {
+                    var product = data.Products.Where(n => n.ProductID == id);
+                    var image = data.Images.Where(n => n.ProductID == id);
+                    ViewBag.count = image.Count();
+                    ViewBag.images = image;
+                    return View(product.Single());
 
-            }
-            catch (Exception ex)
-            {
+                }
+                catch (Exception ex)
+                {
 
-                logger.Debug("productDetail");
-                return PartialView();
+                    logger.Error("productDetail" + ex);
+                    return PartialView();
+                }
             }
-           
         }
         // lọc sản phẩm theo giá
         public ActionResult select(int ?value, int? id, int? page)
         {
-             try
+            log4net.ILog logger = log4net.LogManager.GetLogger(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+            using (CPSeedContext data = new CPSeedContext())
             {
-                int pagesize = 6;
-                int pageNum = (page ?? 1);
-                ViewBag.value = value;
-                if (id != null)
+                try
                 {
-                    var product = data.Products.Where(n => n.ProductTypeID == id).ToList();
-                    if (value == 2)
+                    int pagesize = 6;
+                    int pageNum = (page ?? 1);
+                    ViewBag.value = value;
+                    if (id != null)
                     {
-                        return PartialView(product.OrderBy(n => n.SellPrice).ToPagedList(pageNum, pagesize));
+                        var product = data.Products.Where(n => n.ProductTypeID == id).ToList();
+                        if (value == 2)
+                        {
+                            return PartialView(product.OrderBy(n => n.SellPrice).ToPagedList(pageNum, pagesize));
+                        }
+                        else if (value == 3)
+                        {
+                            return PartialView(product.OrderByDescending(n => n.SellPrice).ToPagedList(pageNum, pagesize));
+                        }
                     }
-                    else if (value == 3)
+                    else
                     {
-                        return PartialView(product.OrderByDescending(n => n.SellPrice).ToPagedList(pageNum, pagesize));
+                        if (value == 2)
+                        {
+                            var product = data.Products.ToList();
+                            return PartialView(product.OrderBy(n => n.SellPrice).ToPagedList(pageNum, pagesize));
+                        }
+                        else if (value == 3)
+                        {
+                            var product = data.Products.ToList();
+                            return PartialView(product.OrderByDescending(n => n.SellPrice).ToPagedList(pageNum, pagesize));
+                        }
                     }
+                    return PartialView();
+
                 }
-                else
+                catch (Exception ex)
                 {
-                    if (value == 2)
-                    {
-                        var product = data.Products.ToList();
-                        return PartialView(product.OrderBy(n => n.SellPrice).ToPagedList(pageNum, pagesize));
-                    }
-                    else if (value == 3)
-                    {
-                        var product = data.Products.ToList();
-                        return PartialView(product.OrderByDescending(n => n.SellPrice).ToPagedList(pageNum, pagesize));
-                    }
+
+                    logger.Error("select contronller" + ex);
+                    return PartialView();
                 }
-                return PartialView();
-
-            }
-            catch (Exception ex)
-            {
-
-                logger.Debug("select contronller");
-                return PartialView();
             }
             
         }

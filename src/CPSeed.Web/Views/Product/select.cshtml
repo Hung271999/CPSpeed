@@ -53,7 +53,7 @@
         }
     </div>
     <div class="MenuTrang" style="text-align:center">
-        @Html.PagedListPager(Model, page => Url.Action("select", new { value = ViewBag.value, page}), PagedListRenderOptions.EnableUnobtrusiveAjaxReplacing(new AjaxOptions() { HttpMethod = "Get", UpdateTargetId = "grid-view" }));
+        @Html.PagedListPager(Model, page => Url.Action("select", new { value = ViewBag.value, page=page}), PagedListRenderOptions.EnableUnobtrusiveAjaxReplacing(new AjaxOptions() { HttpMethod = "Get", UpdateTargetId = "grid-view" }));
     </div>
 
 </div>

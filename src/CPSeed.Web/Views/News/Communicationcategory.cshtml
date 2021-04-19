@@ -7,28 +7,31 @@
             <a class="list-group-item list-group-item-action dad" href="#@item.NewsID" data-toggle="collapse" aria-expanded="true" aria-controls="@item.NewsID">
                 @item.Title
                 @{
-                    CPSeedContext data1 = new CPSeedContext();
-                    ViewBag.Count = data1.NewDetails.Where(n => n.NewsID == @item.NewsID).Count();
+                    using (CPSeedContext data1 = new CPSeedContext())
+                    {
+                        ViewBag.Count = data1.NewDetails.Where(n => n.NewsID == @item.NewsID).Count();
+                    }
                 }
                 <small class="text-muted">(@ViewBag.Count)</small>
 
             </a>
-            CPSeedContext data = new CPSeedContext();
-            List<NewDetail> NewDetail = data.NewDetails.Where(n => n.NewsID == item.NewsID).ToList();
-            if (ViewBag.Status == item.NewsID)
-            {
+                    using (CPSeedContext data = new CPSeedContext())
+                    {
+                        List<NewDetail> NewDetail = data.NewDetails.Where(n => n.NewsID == item.NewsID).ToList();
+                        if (ViewBag.Status == item.NewsID)
+                        {
                 <div class="collapse show" id="@item.NewsID" data-parent="#list-group-men">
                     <div class="list-group">
                         @foreach (var item3 in NewDetail)
                         {
-                            <a href="@Url.Action("CT", "News", new { id = item3.NewDetailID})" style="color: #5c8416; font-size:20px" class="list-group-item list-group-item-action">@item3.Title</a>
+                            <a href="@Url.Action("CT", "News", new { id = item3.NewDetailID })" style="color: #5c8416; font-size:20px" class="list-group-item list-group-item-action">@item3.Title</a>
                         }
                     </div>
                 </div>
 
-            }
-            else
-            {
+                        }
+                        else
+                        {
                 <div class="collapse" id="@item.NewsID" data-parent="#list-group-men">
                     <div class="list-group">
                         @foreach (var item3 in NewDetail)
@@ -41,15 +44,16 @@
                             }
                             else
                             {
-                                <a href="@Url.Action("CT", "News", new { id = item3.NewDetailID})" style="color: #5c8416;font-size:20px" class="list-group-item list-group-item-action">@item3.Title</a>
+                                <a href="@Url.Action("CT", "News", new { id = item3.NewDetailID })" style="color: #5c8416;font-size:20px" class="list-group-item list-group-item-action">@item3.Title</a>
 
                             }
 
                         }
                     </div>
                 </div>
-            }
-        }
+                            }
+                        }
+                    }
     </div>
 
 </div>

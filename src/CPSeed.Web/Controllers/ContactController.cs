@@ -9,8 +9,7 @@ namespace CPSeed.Controllers
 {
     public class ContactController : Controller
     {
-        CPSeedContext data = new CPSeedContext();
-        private static log4net.ILog logger = log4net.LogManager.GetLogger(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        
         // GET: Contact
         [HttpGet]
         public ActionResult Index()
@@ -22,6 +21,8 @@ namespace CPSeed.Controllers
         [ValidateInput(false)]
         public ActionResult Index(FormCollection Form, Contactus contact)
         {
+            log4net.ILog logger = log4net.LogManager.GetLogger(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+            CPSeedContext data = new CPSeedContext();
             try
             {
                 var Name = Form["name"];
@@ -54,7 +55,7 @@ namespace CPSeed.Controllers
             }
             catch (Exception ex)
             {
-                logger.Debug("Index");
+                logger.Error("Index"+ex);
                 return View();
             }
            
@@ -62,6 +63,8 @@ namespace CPSeed.Controllers
         // bản đồ
         public ActionResult Contact()
         {
+            log4net.ILog logger = log4net.LogManager.GetLogger(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+            CPSeedContext data = new CPSeedContext();
             try
             {
                 var contact = data.Contacts.ToList();
@@ -69,7 +72,7 @@ namespace CPSeed.Controllers
             }
             catch (Exception ex)
             {
-                logger.Debug("Contact");
+                logger.Error("Contact" + ex);
                 return View();
             }
            

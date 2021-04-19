@@ -2703,3 +2703,10 @@ C:\Users\Admin\Desktop\CPSpeed\src\CPSeed.Web\obj\Debug\Ja\CPSeed.resources.dll
 C:\Users\Admin\Desktop\CPSpeed\src\CPSeed.Web\obj\Debug\CPSeed.Web.csproj.CopyComplete
 C:\Users\Admin\Desktop\CPSpeed\src\CPSeed.Web\obj\Debug\CPSeed.dll
 C:\Users\Admin\Desktop\CPSpeed\src\CPSeed.Web\obj\Debug\CPSeed.pdb
+D:\CPSpeed\src\CPSeed.Web\bin\Microsoft.IdentityModel.Logging.dll
+D:\CPSpeed\src\CPSeed.Web\bin\Microsoft.IdentityModel.Tokens.dll
+D:\CPSpeed\src\CPSeed.Web\bin\System.IdentityModel.Tokens.Jwt.dll
+D:\CPSpeed\src\CPSeed.Web\bin\Twilio.dll
+D:\CPSpeed\src\CPSeed.Web\bin\Microsoft.IdentityModel.Tokens.xml
+D:\CPSpeed\src\CPSeed.Web\bin\System.IdentityModel.Tokens.Jwt.xml
+D:\CPSpeed\src\CPSeed.Web\bin\Twilio.xml

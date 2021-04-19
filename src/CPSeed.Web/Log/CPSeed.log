@@ -1382,3 +1382,10 @@
 2021-04-02 01:13:08,854 [CPSeed.Controllers.CartController] [7] DEBUG CPSeed.Controllers.CartController - Back to Home
 2021-04-02 01:29:56,109 [CPSeed.Util.Common] [1] DEBUG CPSeed.Util.Common - Init log4net completed
 2021-04-02 01:29:56,116 [CPSeed.Util.Common] [1] DEBUG CPSeed.Util.Common - InitLog4Net completed
+2021-04-19 23:23:20,282 [CPSeed.Util.Common] [1] DEBUG CPSeed.Util.Common - Init log4net completed
+2021-04-19 23:23:20,291 [CPSeed.Util.Common] [1] DEBUG CPSeed.Util.Common - InitLog4Net completed
+2021-04-19 23:24:32,910 [CPSeed.Util.Common] [1] DEBUG CPSeed.Util.Common - Init log4net completed
+2021-04-19 23:24:32,917 [CPSeed.Util.Common] [1] DEBUG CPSeed.Util.Common - InitLog4Net completed
+2021-04-19 23:24:41,864 [CPSeed.Controllers.HomeController] [6] DEBUG CPSeed.Controllers.HomeController - LV is null or id not ==4 or status is not true
+2021-04-19 23:25:12,540 [CPSeed.Controllers.HomeController] [12] DEBUG CPSeed.Controllers.HomeController - LV is null or id not ==4 or status is not true
+2021-04-19 23:25:30,742 [CPSeed.Controllers.HomeController] [6] DEBUG CPSeed.Controllers.HomeController - LV is null or id not ==4 or status is not true
