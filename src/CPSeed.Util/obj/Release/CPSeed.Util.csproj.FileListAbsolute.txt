@@ -10,3 +10,15 @@ D:\CPSpeed\src\CPSeed.Util\obj\Release\en\CPSeed.Util.resources.dll
 D:\CPSpeed\src\CPSeed.Util\obj\Release\CPSeed.Util.csproj.CopyComplete
 D:\CPSpeed\src\CPSeed.Util\obj\Release\CPSeed.Util.dll
 D:\CPSpeed\src\CPSeed.Util\obj\Release\CPSeed.Util.pdb
+D:\New folder\CPSpeed\src\CPSeed.Util\bin\Release\CPSeed.Util.dll
+D:\New folder\CPSpeed\src\CPSeed.Util\bin\Release\CPSeed.Util.pdb
+D:\New folder\CPSpeed\src\CPSeed.Util\bin\Release\en\CPSeed.Util.resources.dll
+D:\New folder\CPSpeed\src\CPSeed.Util\obj\Release\CPSeed.Util.csprojAssemblyReference.cache
+D:\New folder\CPSpeed\src\CPSeed.Util\obj\Release\CPSeed.Util.ResourceUtil.resources
+D:\New folder\CPSpeed\src\CPSeed.Util\obj\Release\CPSeed.Util.ResourceUtil.en.resources
+D:\New folder\CPSpeed\src\CPSeed.Util\obj\Release\CPSeed.Util.csproj.GenerateResource.cache
+D:\New folder\CPSpeed\src\CPSeed.Util\obj\Release\CPSeed.Util.csproj.CoreCompileInputs.cache
+D:\New folder\CPSpeed\src\CPSeed.Util\obj\Release\en\CPSeed.Util.resources.dll
+D:\New folder\CPSpeed\src\CPSeed.Util\obj\Release\CPSeed.Util.csproj.CopyComplete
+D:\New folder\CPSpeed\src\CPSeed.Util\obj\Release\CPSeed.Util.dll
+D:\New folder\CPSpeed\src\CPSeed.Util\obj\Release\CPSeed.Util.pdb
