@@ -18,7 +18,7 @@ namespace CPSeed.Controllers
             CPSeedContext data = new CPSeedContext();
             try
             {
-                var td = data.Posts.Where(n => n.CategoryID == 3).Take(4).ToList();
+                var td = data.Posts.Where(n => n.CategoryID == 3).Take(4).Where(n=>n.Priority==1).ToList();
                 return View(td);
             }
             catch (Exception ex) {
@@ -34,7 +34,7 @@ namespace CPSeed.Controllers
             CPSeedContext data = new CPSeedContext();
             try
             {
-                var categoryPost = data.Posts.Where(n => n.CategoryID == 3).ToList();
+                var categoryPost = data.Posts.Where(n => n.CategoryID == 3).Where(n=>n.Priority==1).ToList();
                 return PartialView(categoryPost);
             }
             catch (Exception ex)
@@ -60,6 +60,13 @@ namespace CPSeed.Controllers
             }
 
         }
-
+        public ActionResult recruitment()
+        {
+            return PartialView();
+        }
+        public ActionResult Onlinefiling()
+        {
+            return View();
+        }
     }
 }

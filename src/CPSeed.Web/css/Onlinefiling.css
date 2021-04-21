@@ -1,0 +1,22 @@
+﻿.main-download-ut {
+    height: 140px;
+    border: 2px dashed #dfdfd8;
+    cursor: pointer;
+}
+
+.txt-download-file-ut {
+    font-weight: bold;
+}
+
+.form-control-file {
+
+ position: absolute;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  outline: none;
+  opacity: 0;
+  cursor: pointer;
+}
+
