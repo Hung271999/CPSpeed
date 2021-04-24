@@ -62,7 +62,24 @@ namespace CPSeed.Controllers
         }
         public ActionResult recruitment()
         {
-            return PartialView();
+            CPSeedContext data = new CPSeedContext();
+            List<recruitments> recruitments = (from d in data.Recruitments
+                                               join c in data.Workplaces on d.WorkplaceID equals c.WorkplaceID
+                                               join s in data.Positions on d.PositionID equals s.PositionID
+                                               select new recruitments
+                                               {
+                                                   RecruitmentID = d.RecruitmentID,
+                                                   Title = d.Title,
+                                                   contents = d.contents,
+                                                   CreateDate = d.CreateDate,
+                                                   Quantity = d.Quantity,
+                                                   ExpirationDate = d.ExpirationDate,
+                                                   workplace = c.Title,
+                                                   position = s.Title
+                                               }).ToList();
+
+            return PartialView(recruitments);
+
         }
         public ActionResult Onlinefiling()
         {

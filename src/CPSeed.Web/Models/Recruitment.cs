@@ -14,13 +14,13 @@ namespace CPSeed.Models
         public int RecruitmentID { get; set; }
         [Column(TypeName = "ntext")]
         public string Title { get; set; }
-        public string Tag { get; set; }
+        public int PositionID { get; set; }
         [Column(TypeName = "ntext")]
         public string contents { get; set; }
 
         public DateTime? CreateDate { get; set; }
         public int Quantity { get; set; }
-        public string Workplace { get; set; }
+        public int WorkplaceID { get; set; }
         public DateTime? ExpirationDate { get; set; }
 
 

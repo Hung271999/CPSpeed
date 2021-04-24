@@ -36,6 +36,8 @@ namespace CPSeed.Models
         public virtual DbSet<Recruitment> Recruitments { get; set; }
 
         public virtual DbSet<OrderDetail> OrderDetails { get; set; }
+        public virtual DbSet<Position> Positions { get; set; }
+        public virtual DbSet<Workplace> Workplaces { get; set; }
 
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
