@@ -183,6 +183,7 @@ namespace CPSeed.Controllers
                             order.Paid = false;
                             order.CreateUser = firstName + lastName;
                             order.UpdateUser = firstName + lastName;
+                            order.UserId = User.Identity.GetUserId();
                             order.CreateDate = DateTime.Now;
                             order.ReceivedDate = DateTime.Now;
                             order.UpdateDate = DateTime.Now;

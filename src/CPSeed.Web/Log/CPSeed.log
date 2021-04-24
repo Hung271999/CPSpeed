@@ -1662,3 +1662,37 @@ Error Number:53,State:0,Class:20
 2021-04-24 17:56:14,300 [CPSeed.Util.Common] [1] DEBUG CPSeed.Util.Common - Init log4net completed
 2021-04-24 17:56:14,307 [CPSeed.Util.Common] [1] DEBUG CPSeed.Util.Common - InitLog4Net completed
 2021-04-24 17:56:23,818 [CPSeed.Controllers.HomeController] [6] DEBUG CPSeed.Controllers.HomeController - LV is null or id not ==4 or status is not true
+2021-04-24 17:57:44,692 [CPSeed.Util.Common] [1] DEBUG CPSeed.Util.Common - Init log4net completed
+2021-04-24 17:57:44,700 [CPSeed.Util.Common] [1] DEBUG CPSeed.Util.Common - InitLog4Net completed
+2021-04-24 17:57:56,869 [CPSeed.Controllers.HomeController] [6] DEBUG CPSeed.Controllers.HomeController - LV is null or id not ==4 or status is not true
+2021-04-24 17:59:27,911 [CPSeed.Controllers.HomeController] [9] DEBUG CPSeed.Controllers.HomeController - LV is null or id not ==4 or status is not true
+2021-04-24 17:59:37,609 [CPSeed.Controllers.HomeController] [6] DEBUG CPSeed.Controllers.HomeController - LV is null or id not ==4 or status is not true
+2021-04-24 17:59:39,302 [CPSeed.Controllers.HomeController] [9] DEBUG CPSeed.Controllers.HomeController - LV is null or id not ==4 or status is not true
+2021-04-24 18:01:00,714 [CPSeed.Util.Common] [1] DEBUG CPSeed.Util.Common - Init log4net completed
+2021-04-24 18:01:00,721 [CPSeed.Util.Common] [1] DEBUG CPSeed.Util.Common - InitLog4Net completed
+2021-04-24 18:01:10,198 [CPSeed.Controllers.HomeController] [5] DEBUG CPSeed.Controllers.HomeController - LV is null or id not ==4 or status is not true
+2021-04-24 18:01:22,710 [CPSeed.Controllers.HomeController] [6] DEBUG CPSeed.Controllers.HomeController - LV is null or id not ==4 or status is not true
+2021-04-24 18:02:06,475 [CPSeed.Controllers.CartController] [5] ERROR CPSeed.Controllers.CartController - sendMS Twilio.Exceptions.ApiException: The number  is unverified. Trial accounts cannot send messages to unverified numbers; verify  at twilio.com/user/account/phone-numbers/verified, or purchase a Twilio number to send messages to unverified numbers.
+   at Twilio.Clients.TwilioRestClient.ProcessResponse(Response response)
+   at Twilio.Clients.TwilioRestClient.Request(Request request)
+   at Twilio.Rest.Api.V2010.Account.MessageResource.Create(CreateMessageOptions options, ITwilioRestClient client)
+   at Twilio.Rest.Api.V2010.Account.MessageResource.Create(PhoneNumber to, String pathAccountSid, PhoneNumber from, String messagingServiceSid, String body, List`1 mediaUrl, Uri statusCallback, String applicationSid, Nullable`1 maxPrice, Nullable`1 provideFeedback, Nullable`1 attempt, Nullable`1 validityPeriod, Nullable`1 forceDelivery, ContentRetentionEnum contentRetention, AddressRetentionEnum addressRetention, Nullable`1 smartEncoded, List`1 persistentAction, ITwilioRestClient client)
+   at CPSeed.Controllers.CartController.sendMS(String phone, String total) in D:\New folder\CPSpeed\src\CPSeed.Web\Controllers\CartController.cs:line 73
+2021-04-24 18:02:14,548 [CPSeed.Controllers.HomeController] [7] DEBUG CPSeed.Controllers.HomeController - LV is null or id not ==4 or status is not true
+2021-04-24 18:02:37,863 [CPSeed.Controllers.CartController] [6] ERROR CPSeed.Controllers.CartController - sendMS Twilio.Exceptions.ApiException: The number  is unverified. Trial accounts cannot send messages to unverified numbers; verify  at twilio.com/user/account/phone-numbers/verified, or purchase a Twilio number to send messages to unverified numbers.
+   at Twilio.Clients.TwilioRestClient.ProcessResponse(Response response)
+   at Twilio.Clients.TwilioRestClient.Request(Request request)
+   at Twilio.Rest.Api.V2010.Account.MessageResource.Create(CreateMessageOptions options, ITwilioRestClient client)
+   at Twilio.Rest.Api.V2010.Account.MessageResource.Create(PhoneNumber to, String pathAccountSid, PhoneNumber from, String messagingServiceSid, String body, List`1 mediaUrl, Uri statusCallback, String applicationSid, Nullable`1 maxPrice, Nullable`1 provideFeedback, Nullable`1 attempt, Nullable`1 validityPeriod, Nullable`1 forceDelivery, ContentRetentionEnum contentRetention, AddressRetentionEnum addressRetention, Nullable`1 smartEncoded, List`1 persistentAction, ITwilioRestClient client)
+   at CPSeed.Controllers.CartController.sendMS(String phone, String total) in D:\New folder\CPSpeed\src\CPSeed.Web\Controllers\CartController.cs:line 73
+2021-04-24 18:02:38,940 [CPSeed.Controllers.HomeController] [11] DEBUG CPSeed.Controllers.HomeController - LV is null or id not ==4 or status is not true
+2021-04-24 20:10:11,488 [CPSeed.Util.Common] [1] DEBUG CPSeed.Util.Common - Init log4net completed
+2021-04-24 20:10:11,495 [CPSeed.Util.Common] [1] DEBUG CPSeed.Util.Common - InitLog4Net completed
+2021-04-24 20:13:04,692 [CPSeed.Util.Common] [1] DEBUG CPSeed.Util.Common - Init log4net completed
+2021-04-24 20:13:04,699 [CPSeed.Util.Common] [1] DEBUG CPSeed.Util.Common - InitLog4Net completed
+2021-04-24 20:13:17,057 [CPSeed.Controllers.HomeController] [5] DEBUG CPSeed.Controllers.HomeController - LV is null or id not ==4 or status is not true
+2021-04-24 20:13:17,057 [CPSeed.Controllers.HomeController] [6] DEBUG CPSeed.Controllers.HomeController - LV is null or id not ==4 or status is not true
+2021-04-24 20:13:34,527 [CPSeed.Controllers.HomeController] [6] DEBUG CPSeed.Controllers.HomeController - LV is null or id not ==4 or status is not true
+2021-04-24 20:19:57,512 [CPSeed.Util.Common] [1] DEBUG CPSeed.Util.Common - Init log4net completed
+2021-04-24 20:19:57,521 [CPSeed.Util.Common] [1] DEBUG CPSeed.Util.Common - InitLog4Net completed
+2021-04-24 20:23:12,346 [CPSeed.Controllers.AccountController] [8] DEBUG CPSeed.Controllers.AccountController - Begin Register...

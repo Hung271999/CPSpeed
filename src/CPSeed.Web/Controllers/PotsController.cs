@@ -18,7 +18,7 @@ namespace CPSeed.Controllers
             CPSeedContext data = new CPSeedContext();
             try
             {
-                var td = data.Posts.Where(n => n.CategoryID == 3).Take(4).Where(n=>n.Priority==1).ToList();
+                var td = data.Posts.Where(n => n.CategoryID == 3).Take(4).ToList();
                 return View(td);
             }
             catch (Exception ex) {
