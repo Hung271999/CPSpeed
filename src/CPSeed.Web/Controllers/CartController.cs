@@ -62,18 +62,28 @@ namespace CPSeed.Controllers
         }
         public void sendMS(string phone, string total)
         {
-            String a = "Bạn đã đặt mua sản phẩm tại CPSEED VN : Tổng tiền:"+total +"VNĐ";
-            String dt = "+84" + phone;
-            var accountSid = "AC28d984204be7093a51feece5068e9d6a";
-            var authToken = "7e648c20f85896d02c35095bdb20ed1b";
-            TwilioClient.Init(accountSid, authToken);
+            try
+            {
+                String a = "Bạn đã đặt mua sản phẩm tại CPSEED VN : Tổng tiền:" + total + "VNĐ";
+                String dt = "+84" + phone;
+                var accountSid = "AC28d984204be7093a51feece5068e9d6a";
+                var authToken = "7e648c20f85896d02c35095bdb20ed1b";
+                TwilioClient.Init(accountSid, authToken);
 
-            var message = MessageResource.Create(
-            body: a,
-            from: new Twilio.Types.PhoneNumber("+13344686649"),
-            to: new Twilio.Types.PhoneNumber(dt)
-        );
-            Console.WriteLine(message.Sid);
+                var message = MessageResource.Create(
+                body: a,
+                from: new Twilio.Types.PhoneNumber("+13344686649"),
+                to: new Twilio.Types.PhoneNumber(dt)
+                     );
+                Console.WriteLine(message.Sid);
+            }
+            catch (Exception e)
+            {
+                log4net.ILog logger = log4net.LogManager.GetLogger(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+                logger.Error("sendMS " + e);
+                //  Block of code to handle errors
+            }
+            
         }
         public List<Cart> Laygiohang()
         {
@@ -83,35 +93,26 @@ namespace CPSeed.Controllers
             }
             return this.Session["Cart"] as List<Cart>;
         }
-        public ActionResult ThemGiohang(String ProductID, string strURL)
-        {
-            List<Cart> lstGiohang = Laygiohang();
-            Cart sanpham = lstGiohang.Find(n => n.iProductID == ProductID);
-            if (sanpham == null)
-            {
-                sanpham = new Cart(ProductID);
-                lstGiohang.Add(sanpham);
-                return Redirect(strURL);
-            }
-            else
-            {
-                sanpham.quantity++;
-                return Redirect(strURL);
-            }
-        }
-
-
         public ActionResult GioHang()
         {
-            log4net.ILog logger = log4net.LogManager.GetLogger(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
-            List<Cart> lstGiohang = Laygiohang();
-            if (lstGiohang.Count == 0)
+            try
             {
-                return RedirectToAction("Index", "Home");
+                List<Cart> lstGiohang = Laygiohang();
+                if (lstGiohang.Count == 0)
+                {
+                    return RedirectToAction("Index", "Home");
+                }
+                ViewBag.Tongsoluong = lstGiohang.Sum(n => n.quantity);
+                ViewBag.Tongtien = lstGiohang.Sum(n => n.total);
+                return View(lstGiohang);
             }
-            ViewBag.Tongsoluong = lstGiohang.Sum(n => n.quantity);
-            ViewBag.Tongtien = lstGiohang.Sum(n => n.total);
-            return View(lstGiohang);
+            catch (Exception e)
+            {
+                log4net.ILog logger = log4net.LogManager.GetLogger(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+                logger.Error("GioHang " + e);
+                return View();
+            }
+            
         }
 
         public ActionResult TotalMoney()
@@ -128,82 +129,103 @@ namespace CPSeed.Controllers
         [HttpGet]
         public ActionResult DatHang()
         {
-            if (User.Identity.IsAuthenticated)
+            try
             {
-                if (Session["Cart"] == null)
+                if (User.Identity.IsAuthenticated)
                 {
-                    return RedirectToAction("index", "Home");
+                    if (Session["Cart"] == null)
+                    {
+                        return RedirectToAction("index", "Home");
+                    }
+                    else
+                    {
+                        List<Cart> lstGiohang = Laygiohang();
+                        ViewBag.Tongsoluong = lstGiohang.Sum(n => n.quantity);
+                        ViewBag.Tongtien = lstGiohang.Sum(n => n.total);
+                        return View(lstGiohang);
+                    }
                 }
                 else
                 {
-                    List<Cart> lstGiohang = Laygiohang();
-                    ViewBag.Tongsoluong = lstGiohang.Sum(n => n.quantity);
-                    ViewBag.Tongtien = lstGiohang.Sum(n => n.total);
-                    return View(lstGiohang);
+                    return RedirectToAction("Login", "Account");
                 }
+               
             }
-            else
+            catch (Exception e)
             {
-                return RedirectToAction("Login", "Account");
+                log4net.ILog logger = log4net.LogManager.GetLogger(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+                logger.Error("DatHang " + e);
+                return View();
             }
+            
         }
 
         [HttpPost]
         public ActionResult DatHang(FormCollection Form, Order order)
-        {    
+        {
 
-            var firstName = Form["firstName"];
-            var lastName = Form["lastName"];
-            var email = Form["email"].ToString();
-            var phone = Form["Phone"].ToString();
-            var address = Form["address"];
-            List<Cart> lstGiohang = Laygiohang();
-            using (CPSeedContext data = new CPSeedContext())
+            try
             {
-                using (System.Data.Entity.DbContextTransaction tran = data.Database.BeginTransaction())
+                var firstName = Form["firstName"];
+                var lastName = Form["lastName"];
+                var email = Form["email"].ToString();
+                var phone = Form["Phone"].ToString();
+                var address = Form["address"];
+                List<Cart> lstGiohang = Laygiohang();
+                using (CPSeedContext data = new CPSeedContext())
                 {
-                    try
+                    using (System.Data.Entity.DbContextTransaction tran = data.Database.BeginTransaction())
                     {
-                        order.Priority = lstGiohang.Sum(n => n.quantity);
-                        order.Status = false;
-                        order.Paid = false;
-                        order.CreateUser = firstName + lastName;
-                        order.UpdateUser = firstName + lastName;
-                        order.CreateDate = DateTime.Now;
-                        order.ReceivedDate = DateTime.Now;
-                        order.UpdateDate = DateTime.Now;
-                        order.Total = lstGiohang.Sum(n => (n.total * n.sSellPrice));
-                        order.Email = email;
-                        order.Phone = phone;
-                        order.Address = address;
-                        data.Orders.Add(order);
-                        data.SaveChanges();
-                        foreach (var item in lstGiohang)
+                        try
                         {
-                            OrderDetail orderDetail = new OrderDetail();
-                            orderDetail.OrderID = order.OrderID;
-                            orderDetail.ProductID = item.iProductID;
-                            orderDetail.Quantity = item.quantity;
-                            orderDetail.SellPrice = (decimal)item.sSellPrice;
-                            data.OrderDetails.Add(orderDetail);
+                            order.Priority = lstGiohang.Sum(n => n.quantity);
+                            order.Status = false;
+                            order.Paid = false;
+                            order.CreateUser = firstName + lastName;
+                            order.UpdateUser = firstName + lastName;
+                            order.CreateDate = DateTime.Now;
+                            order.ReceivedDate = DateTime.Now;
+                            order.UpdateDate = DateTime.Now;
+                            order.Total = lstGiohang.Sum(n => (n.total * n.sSellPrice));
+                            order.Email = email;
+                            order.Phone = phone;
+                            order.Address = address;
+                            data.Orders.Add(order);
                             data.SaveChanges();
+                            foreach (var item in lstGiohang)
+                            {
+                                OrderDetail orderDetail = new OrderDetail();
+                                orderDetail.OrderID = order.OrderID;
+                                orderDetail.ProductID = item.iProductID;
+                                orderDetail.Quantity = item.quantity;
+                                orderDetail.SellPrice = (decimal)item.sSellPrice;
+                                data.OrderDetails.Add(orderDetail);
+                                data.SaveChanges();
+                            }
+                            tran.Commit();
                         }
-                        tran.Commit();
+                        catch (Exception ex)
+                        {
+                            //Rollback transaction if exception occurs
+                            tran.Rollback();
+                        }
                     }
-                    catch (Exception ex)
-                    {
-                        //Rollback transaction if exception occurs
-                        tran.Rollback();
-                    }
+
                 }
-               
+                Session["Cart"] = null;
+                Session["Count"] = null;
+                string total = (lstGiohang.Sum(n => (n.total * n.sSellPrice))).ToString();
+                SentMails(email, firstName, total);
+                sendMS(phone, total);
+                return Content("<script language='javascript' type='text/javascript'>alert('Đặt hàng thành công ');window.location.href = '../';</script>");
             }
-            Session["Cart"] = null;
-            Session["Count"] = null;
-            string total = (lstGiohang.Sum(n => (n.total * n.sSellPrice))).ToString();
-            SentMails(email,firstName,total);
-            sendMS(phone, total);
-            return Content("<script language='javascript' type='text/javascript'>alert('Đặt hàng thành công ');window.location.href = '../';</script>");
+            catch (Exception e)
+            {
+                log4net.ILog logger = log4net.LogManager.GetLogger(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+                logger.Error("DatHang HttpPost " + e);
+                return View();
+            }
+           
         }
 
         [HttpPost]

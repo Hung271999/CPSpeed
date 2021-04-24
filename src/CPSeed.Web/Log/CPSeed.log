@@ -1632,3 +1632,33 @@ Error Number:53,State:0,Class:20
 2021-04-21 14:20:29,476 [CPSeed.Util.Common] [36] DEBUG CPSeed.Util.Common - Init log4net completed
 2021-04-21 14:20:29,479 [CPSeed.Util.Common] [36] DEBUG CPSeed.Util.Common - InitLog4Net completed
 2021-04-21 14:22:38,915 [CPSeed.Controllers.HomeController] [48] DEBUG CPSeed.Controllers.HomeController - LV is null or id not ==4 or status is not true
+2021-04-21 14:28:23,805 [CPSeed.Util.Common] [1] DEBUG CPSeed.Util.Common - Init log4net completed
+2021-04-21 14:28:23,813 [CPSeed.Util.Common] [1] DEBUG CPSeed.Util.Common - InitLog4Net completed
+2021-04-21 14:37:23,686 [CPSeed.Controllers.HomeController] [5] DEBUG CPSeed.Controllers.HomeController - LV is null or id not ==4 or status is not true
+2021-04-21 14:37:26,492 [CPSeed.Controllers.HomeController] [5] DEBUG CPSeed.Controllers.HomeController - LV is null or id not ==4 or status is not true
+2021-04-21 14:40:56,020 [CPSeed.Controllers.HomeController] [9] DEBUG CPSeed.Controllers.HomeController - LV is null or id not ==4 or status is not true
+2021-04-21 14:40:57,149 [CPSeed.Controllers.HomeController] [5] DEBUG CPSeed.Controllers.HomeController - LV is null or id not ==4 or status is not true
+2021-04-24 17:39:04,540 [CPSeed.Util.Common] [1] DEBUG CPSeed.Util.Common - Init log4net completed
+2021-04-24 17:39:04,552 [CPSeed.Util.Common] [1] DEBUG CPSeed.Util.Common - InitLog4Net completed
+2021-04-24 17:39:16,760 [CPSeed.Controllers.HomeController] [6] DEBUG CPSeed.Controllers.HomeController - LV is null or id not ==4 or status is not true
+2021-04-24 17:39:16,761 [CPSeed.Controllers.HomeController] [5] DEBUG CPSeed.Controllers.HomeController - LV is null or id not ==4 or status is not true
+2021-04-24 17:50:07,814 [CPSeed.Util.Common] [1] DEBUG CPSeed.Util.Common - Init log4net completed
+2021-04-24 17:50:07,822 [CPSeed.Util.Common] [1] DEBUG CPSeed.Util.Common - InitLog4Net completed
+2021-04-24 17:50:16,739 [CPSeed.Controllers.HomeController] [6] DEBUG CPSeed.Controllers.HomeController - LV is null or id not ==4 or status is not true
+2021-04-24 17:51:01,592 [CPSeed.Util.Common] [1] DEBUG CPSeed.Util.Common - Init log4net completed
+2021-04-24 17:51:01,599 [CPSeed.Util.Common] [1] DEBUG CPSeed.Util.Common - InitLog4Net completed
+2021-04-24 17:51:10,130 [CPSeed.Controllers.HomeController] [6] DEBUG CPSeed.Controllers.HomeController - LV is null or id not ==4 or status is not true
+2021-04-24 17:51:10,130 [CPSeed.Controllers.HomeController] [5] DEBUG CPSeed.Controllers.HomeController - LV is null or id not ==4 or status is not true
+2021-04-24 17:51:14,892 [CPSeed.Controllers.HomeController] [5] DEBUG CPSeed.Controllers.HomeController - LV is null or id not ==4 or status is not true
+2021-04-24 17:51:27,265 [CPSeed.Controllers.HomeController] [6] DEBUG CPSeed.Controllers.HomeController - LV is null or id not ==4 or status is not true
+2021-04-24 17:51:40,658 [CPSeed.Controllers.CartController] [6] ERROR CPSeed.Controllers.CartController - sendMS missionTwilio.Exceptions.ApiException: The 'To' number +8431313131 is not a valid phone number.
+   at Twilio.Clients.TwilioRestClient.ProcessResponse(Response response)
+   at Twilio.Clients.TwilioRestClient.Request(Request request)
+   at Twilio.Rest.Api.V2010.Account.MessageResource.Create(CreateMessageOptions options, ITwilioRestClient client)
+   at Twilio.Rest.Api.V2010.Account.MessageResource.Create(PhoneNumber to, String pathAccountSid, PhoneNumber from, String messagingServiceSid, String body, List`1 mediaUrl, Uri statusCallback, String applicationSid, Nullable`1 maxPrice, Nullable`1 provideFeedback, Nullable`1 attempt, Nullable`1 validityPeriod, Nullable`1 forceDelivery, ContentRetentionEnum contentRetention, AddressRetentionEnum addressRetention, Nullable`1 smartEncoded, List`1 persistentAction, ITwilioRestClient client)
+   at CPSeed.Controllers.CartController.sendMS(String phone, String total) in D:\New folder\CPSpeed\src\CPSeed.Web\Controllers\CartController.cs:line 73
+2021-04-24 17:51:42,062 [CPSeed.Controllers.HomeController] [5] DEBUG CPSeed.Controllers.HomeController - LV is null or id not ==4 or status is not true
+2021-04-24 17:52:21,695 [CPSeed.Controllers.HomeController] [5] DEBUG CPSeed.Controllers.HomeController - LV is null or id not ==4 or status is not true
+2021-04-24 17:56:14,300 [CPSeed.Util.Common] [1] DEBUG CPSeed.Util.Common - Init log4net completed
+2021-04-24 17:56:14,307 [CPSeed.Util.Common] [1] DEBUG CPSeed.Util.Common - InitLog4Net completed
+2021-04-24 17:56:23,818 [CPSeed.Controllers.HomeController] [6] DEBUG CPSeed.Controllers.HomeController - LV is null or id not ==4 or status is not true

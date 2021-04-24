@@ -275,7 +275,7 @@ namespace CPSeed.Controllers
             {
                 try
                 {
-                    var Pots = data.Posts.OrderByDescending(n => n.CreateDate).Where(n => n.Status == true).Where(n => n.Priority == 1).Where(n => n.CategoryID == id).ToList();
+                    var Pots = data.Posts.OrderByDescending(n => n.CreateDate).Where(n => n.Status == true).Where(n => n.CategoryID == id).ToList();
                     if (Pots.Count() == 0)
                     {
                         logger.Debug("Pots is null  or status is not true");

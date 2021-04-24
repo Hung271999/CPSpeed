@@ -34,7 +34,7 @@ namespace CPSeed.Controllers
             CPSeedContext data = new CPSeedContext();
             try
             {
-                var categoryPost = data.Posts.Where(n => n.CategoryID == 3).Where(n=>n.Priority==1).ToList();
+                var categoryPost = data.Posts.Where(n => n.CategoryID == 3).ToList();
                 return PartialView(categoryPost);
             }
             catch (Exception ex)
