@@ -1,0 +1,913 @@
+﻿
+@{
+    ViewBag.Title = "Dashboard";
+    Layout = "~/Views/Shared/LayoutAdmin.cshtml";
+}
+
+<div class="row">
+    <div class="col-lg-4 col-xl-3 col-xlg-2 ">
+        <div class="row">
+            <div class="col-md-12 m-b-10">
+                <!-- START WIDGET D3 widget_graphTileFlat-->
+                <div class="widget-8 card  bg-warning no-margin widget-loader-bar">
+                    <div class="container-xs-height full-height">
+                        <div class="row-xs-height">
+                            <div class="col-xs-height col-top">
+                                <div class="card-header  top-left top-right">
+                                    <div class="card-title">
+                                        <span class="font-montserrat fs-11 all-caps">Weekly Sales </span>
+                                    </div>
+                                    <div class="card-controls">
+                                        <ul>
+                                            <li>
+                                                <a data-toggle="refresh" class="card-refresh" href="#"><i class="card-icon card-icon-refresh"></i></a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row-xs-height ">
+                            <div class="col-xs-height col-top relative">
+                                <div class="row full-height">
+                                    <div class="col-sm-6">
+                                        <div class="p-l-20 full-height d-flex flex-column justify-content-between">
+                                            <h3 class="no-margin p-b-5">$14,000</h3>
+                                            <p class="small m-t-5 m-b-20">
+                                                <span class="label label-white hint-text font-montserrat m-r-5">60%</span><span class="fs-12">Higher</span>
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-6">
+                                    </div>
+                                </div>
+                                <div class="widget-8-chart line-chart" data-line-color="white" data-points="true" data-point-color="warning" data-stroke-width="2">
+                                    <svg><g class="nvd3 nv-wrap nv-lineChart" transform="translate(-10,10)"><g><rect width="168" height="103" style="opacity: 0;"></rect><g class="nv-x nv-axis"></g><g class="nv-y nv-axis"></g><g class="nv-linesWrap"><g class="nvd3 nv-wrap nv-line" transform="translate(0,0)"><defs><clipPath id="nv-edge-clip-20769"><rect width="168" height="103"></rect></clipPath></defs><g clip-path=""><g class="nv-groups"><g class="nv-group nv-series-0" style="stroke-opacity: 1; fill-opacity: 0.5; fill: rgb(0, 0, 0); stroke: rgb(0, 0, 0);"><path class="nv-line" d="M0,103L28.000000000000004,75.53333333333333L56.00000000000001,34.33333333333334L84,27.46666666666667L112.00000000000001,0L140,13.733333333333334L168,68.66666666666667"></path></g></g><g class="nv-scatterWrap" clip-path=""><g class="nvd3 nv-wrap nv-scatter nv-chart-20769" transform="translate(0,0)"><defs><clipPath id="nv-edge-clip-20769"><rect width="168" height="103"></rect></clipPath></defs><g clip-path=""><g class="nv-groups"><g class="nv-group nv-series-0" style="stroke-opacity: 1; fill-opacity: 0.5; stroke: rgb(0, 0, 0); fill: rgb(0, 0, 0);"><circle cx="0" cy="103" r="3" class="nv-point nv-point-0" style="stroke-width: 2px;"></circle><circle cx="28.000000000000004" cy="75.53333333333333" r="3" class="nv-point nv-point-1" style="stroke-width: 2px;"></circle><circle cx="56.00000000000001" cy="34.33333333333334" r="3" class="nv-point nv-point-2" style="stroke-width: 2px;"></circle><circle cx="84" cy="27.46666666666667" r="3" class="nv-point nv-point-3" style="stroke-width: 2px;"></circle><circle cx="112.00000000000001" cy="0" r="3" class="nv-point nv-point-4" style="stroke-width: 2px;"></circle><circle cx="140" cy="13.733333333333334" r="3" class="nv-point nv-point-5" style="stroke-width: 2px;"></circle><circle cx="168" cy="68.66666666666667" r="3" class="nv-point nv-point-6" style="stroke-width: 2px;"></circle></g></g><g class="nv-point-paths"></g></g></g></g></g></g></g><g class="nv-legendWrap"></g><g class="nv-interactive"></g></g></g></svg>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- END WIDGET -->
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-12 m-b-10">
+                <!-- START WIDGET widget_progressTileFlat-->
+                <div class="widget-9 card  bg-success no-margin widget-loader-bar">
+                    <div class="full-height d-flex flex-column">
+                        <div class="card-header ">
+                            <div class="card-title">
+                                <span class="font-montserrat fs-11 all-caps">Weekly Sales </span>
+                            </div>
+                            <div class="card-controls">
+                                <ul>
+                                    <li>
+                                        <a href="#" class="card-refresh" data-toggle="refresh"><i class="card-icon card-icon-refresh"></i></a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="p-l-20">
+                            <h3 class="no-margin p-b-5">$23,000</h3>
+                            <span class="d-flex align-items-center">
+                                <i class="pg-icon m-r-5">arrow_down</i>
+                                <span class="small hint-text">65% lower than last month</span>
+                            </span>
+                        </div>
+                        <div class="mt-auto">
+                            <div class="progress progress-small m-b-20">
+                                <!-- START BOOTSTRAP PROGRESS (http://getbootstrap.com/components/#progress) -->
+                                <div class="progress-bar progress-bar-white" style="width:45%"></div>
+                                <!-- END BOOTSTRAP PROGRESS -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- END WIDGET -->
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-12 md-m-b-10 sm-p-b-10">
+                <!-- START WIDGET widget_statTile-->
+                <div class="widget-10 card  bg-white no-margin widget-loader-bar">
+                    <div class="card-header  top-left top-right ">
+                        <div class="card-title text-black hint-text">
+                            <span class="font-montserrat fs-11 all-caps">Weekly Sales </span>
+                        </div>
+                        <div class="card-controls">
+                            <ul>
+                                <li>
+                                    <a data-toggle="refresh" class="card-refresh text-black" href="#"><i class="card-icon card-icon-refresh"></i></a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="card-body p-t-40">
+                        <div class="row">
+                            <div class="col-sm-12">
+                                <h4 class="no-margin p-b-5 text-danger semi-bold">APPL 2.032</h4>
+                                <div class="d-flex align-items-center pull-left small">
+                                    <span>WMHC</span>
+                                    <span class=" text-success"> <i class="pg-icon m-l-10">arrow_up</i> </span>
+                                    <span class="text-success font-montserrat"> 21% </span>
+                                </div>
+                                <div class="d-flex align-items-center pull-left m-l-20 small">
+                                    <span>HCRS</span>
+                                    <span class="text-danger"><i class="pg-icon m-l-10">arrow_down</i> </span>
+                                    <span class="text-danger font-montserrat"> 21% </span>
+                                </div>
+                                <div class="clearfix"></div>
+                            </div>
+                        </div>
+                        <div class="p-t-5 full-width">
+                            <a href="#" class="btn-circle-arrow b-grey"><i class="pg-icon">chevron_down</i></a>
+                            <span class="hint-text small">Show more</span>
+                        </div>
+                    </div>
+                </div>
+                <!-- END WIDGET -->
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-8 col-xl-9 col-xlg-6 m-b-10">
+        <div class="row">
+            <div class="col-md-12">
+                <!-- START WIDGET D3 widget_graphWidget-->
+                <div class="widget-12 card  widget-loader-circle no-margin">
+                    <div class="row">
+                        <div class="col-lg-8 ">
+                            <div class="card-header  pull-up top-right ">
+                                <div class="card-controls">
+                                    <ul>
+                                        <li class="hidden-xlg">
+                                            <div class="dropdown">
+                                                <a data-target="#" href="#" data-toggle="dropdown" aria-haspopup="true" role="button" aria-expanded="false">
+                                                    <i class="card-icon card-icon-settings"></i>
+                                                </a>
+                                                <ul class="dropdown-menu pull-right" role="menu">
+                                                    <li>
+                                                        <a href="#">AAPL</a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="#">YHOO</a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="#">GOOG</a>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <a data-toggle="refresh" class="card-refresh text-black" href="#"><i class="card-icon card-icon-refresh"></i></a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-sm-8">
+                                <div class="p-l-5">
+                                    <h2 class="pull-left m-t-5 m-b-5">Tesla Inc.</h2>
+                                    <h2 class="pull-right m-r-25 m-t-5 m-b-5 text-success">
+                                        <i class="pg-icon m-r-5">arrow_up</i>
+                                        <span class="">448.97</span>
+                                        <span class="text-success fs-12">+318.24</span>
+                                    </h2>
+                                    <div class="clearfix"></div>
+                                    <div class="full-width">
+                                        <ul class="list-inline m-t-10 p-b-10 m-b-0 b-b b-dashed b-grey">
+                                            <li>
+                                                <a href="#" class="font-montserrat fs-12 text-color">1D</a>
+                                            </li>
+                                            <li class="active">
+                                                <a href="#" class="font-montserrat fs-12   bg-contrast-low text-color">5D</a>
+                                            </li>
+                                            <li>
+                                                <a href="#" class="font-montserrat fs-12 text-color">1M</a>
+                                            </li>
+                                            <li>
+                                                <a href="#" class="font-montserrat fs-12 text-color">1Y</a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div class="nvd3-line line-chart text-center" data-x-grid="false">
+                                        <svg><g class="nvd3 nv-wrap nv-lineChart" transform="translate(30,30)"><g><rect width="522" height="257" style="opacity: 0;"></rect><g class="nv-x nv-axis" transform="translate(0,257)"><g class="nvd3 nv-wrap nv-axis"><g><g class="tick major" transform="translate(42.074553070977636,0)" style="opacity: 1;"><line y2="-257" x2="0"></line><text y="7" dy=".71em" x="0" style="text-anchor: middle;">Fri</text></g><g class="tick major" transform="translate(127.62532302790724,0)" style="opacity: 1;"><line y2="-257" x2="0"></line><text y="7" dy=".71em" x="0" style="text-anchor: middle;">Tue</text></g><g class="tick major" transform="translate(213.17609298483686,0)" style="opacity: 1;"><line y2="-257" x2="0"></line><text y="7" dy=".71em" x="0" style="text-anchor: middle;">Sun</text></g><g class="tick major" transform="translate(298.72686294176646,0)" style="opacity: 1;"><line y2="-257" x2="0"></line><text y="7" dy=".71em" x="0" style="text-anchor: middle;">Fri</text></g><g class="tick major" transform="translate(384.2776328986961,0)" style="opacity: 1;"><line y2="-257" x2="0"></line><text y="7" dy=".71em" x="0" style="text-anchor: middle;">Tue</text></g><g class="tick major" transform="translate(469.82840285562565,0)" style="opacity: 1;"><line y2="-257" x2="0"></line><text y="7" dy=".71em" x="0" style="text-anchor: middle;">Sun</text></g><path class="domain" d="M0,0V0H522V0"></path><text class="nv-axislabel" text-anchor="middle" y="36" x="261"></text></g><g class="nv-axisMaxMin" transform="translate(0,0)"><text dy=".71em" y="7" transform="rotate(0 0,0)" style="text-anchor: middle;">Sun</text></g><g class="nv-axisMaxMin" transform="translate(522,0)"><text dy=".71em" y="7" transform="rotate(0 0,0)" style="text-anchor: middle;">Wed</text></g></g></g><g class="nv-y nv-axis"><g class="nvd3 nv-wrap nv-axis"><g><g class="tick major" transform="translate(0,251.8864340599734)" opacity="0" style="opacity: 1;"><line x2="522" y2="0"></line><text x="-3" dy=".32em" opacity="0" style="text-anchor: end;" y="0">-20</text></g><g class="tick major" transform="translate(0,219.04903709785435)" style="opacity: 1;"><line x2="522" y2="0"></line><text x="-3" dy=".32em" opacity="1" style="text-anchor: end;" y="0">0</text></g><g class="tick major" transform="translate(0,186.2116401357353)" style="opacity: 1;"><line x2="522" y2="0"></line><text x="-3" dy=".32em" opacity="1" style="text-anchor: end;" y="0">20</text></g><g class="tick major" transform="translate(0,153.37424317361626)" style="opacity: 1;"><line x2="522" y2="0"></line><text x="-3" dy=".32em" opacity="1" style="text-anchor: end;" y="0">40</text></g><g class="tick major" transform="translate(0,120.53684621149719)" style="opacity: 1;"><line x2="522" y2="0"></line><text x="-3" dy=".32em" opacity="1" style="text-anchor: end;" y="0">60</text></g><g class="tick major" transform="translate(0,87.69944924937815)" style="opacity: 1;"><line x2="522" y2="0"></line><text x="-3" dy=".32em" opacity="1" style="text-anchor: end;" y="0">80</text></g><g class="tick major" transform="translate(0,54.862052287259104)" style="opacity: 1;"><line x2="522" y2="0"></line><text x="-3" dy=".32em" opacity="1" style="text-anchor: end;" y="0">100</text></g><g class="tick major" transform="translate(0,22.02465532514003)" style="opacity: 1;"><line x2="522" y2="0"></line><text x="-3" dy=".32em" opacity="1" style="text-anchor: end;" y="0">120</text></g><path class="domain" d="M0,0H0V257H0"></path><text class="nv-axislabel" transform="rotate(-90)" y="-63" x="-128.5" style="text-anchor: middle;"></text></g><g class="nv-axisMaxMin" transform="translate(0,257)"><text dy=".32em" y="0" x="-3" text-anchor="end" style="opacity: 1;"></text></g><g class="nv-axisMaxMin" transform="translate(0,0)"><text dy=".32em" y="0" x="-3" text-anchor="end" style="opacity: 1;"></text></g></g></g><g class="nv-linesWrap"><g class="nvd3 nv-wrap nv-line" transform="translate(0,0)"><defs><clipPath id="nv-edge-clip-81621"><rect width="522" height="257"></rect></clipPath></defs><g clip-path=""><g class="nv-groups"><g class="nv-group nv-series-0" style="stroke-opacity: 1; fill-opacity: 0.5; fill: rgb(29, 187, 153); stroke: rgb(29, 187, 153);"><path class="nv-line" d="M0,219.04903709785435L4.582783645052806,229.4555669667588L9.165567290105612,228.81945541388126L13.600519204672842,238.04407063320804L18.189462505162545,228.04112025717222L22.624414419729778,218.21505452632184L27.20719806478258,228.13026609663405L31.789981709835388,228.54533268285184L35.92927016343147,231.07562563708902L40.512053808484275,230.06247521976132L44.94084606761461,218.3228852488984L49.523629712667415,207.14849199622202L53.95858162723464,203.85970815341125L58.54136527228745,200.4282447446319L63.12414891734026,194.85637975102821L67.55910083190749,198.7109522802454L72.14804413239719,188.7787504992147L76.58299604696441,186.48953930414453L81.16577969201722,181.87184018130597L85.74856333707002,175.1402543355678L90.0356835211517,170.4538290725211L94.6184671662045,168.42740246656186L99.04725942533483,172.98790869137298L103.63004307038764,170.9519713638436L108.06499498495486,169.35084511129145L112.64777863000766,178.10978920575377L117.23056227506048,179.20745167052675L121.6655141896277,174.3609603237614L126.24829783468051,168.4751736438548L130.68940940468462,159.39825747575307L135.27219304973747,148.21466931027558L139.85497669479025,152.4576464564493L143.99426514838635,149.1979462734039L148.57704879343913,150.6100162009916L153.00584105256945,159.32541831038284L157.5886246976223,152.19260753614157L162.0235766121895,146.97429519426743L166.6063602572423,137.28878848858992L171.18914390229511,141.73996338625426L175.62409581686234,142.5346629971871L180.21303911735205,150.80014495527263L184.6479910319193,141.39364410550508L189.2307746769721,140.82548181755203L193.8135583220249,135.67239743031456L197.95284677562097,132.6863067638438L202.53563042067378,127.76159156848806L206.96442267980413,123.95129773316194L211.54720632485692,131.20310062629977L215.98215823942417,131.171279939192L220.56494188447695,137.20704254197292L225.14772552952977,129.203716252855L229.582677444097,123.51481026822668L234.17162074458668,114.12031123531236L238.60657265915393,104.50023525973586L243.18935630420674,99.95762757763973L247.77213994925953,90.99662036602138L251.91142840285562,90.74744204037876L256.4880523924715,81.62059251526432L260.92300430703875,69.40760826232861L265.50578795209157,57.17551158137334L269.94073986665876,61.02623138306902L274.5235235117116,67.46116315070196L279.10630715676444,59.67475810599353L283.5412590713316,45.322368869236215L288.12404271638445,31.246237394108164L292.5651542863886,48.957807044032165L297.1479379314414,52.030016774995886L301.73072157649415,71.54320738232761L306.01784176057583,76.26612842615211L310.5944657501918,81.00800013175802L315.02941766475897,66.07584989311823L319.6122013098118,48.90472320304977L324.047153224379,75.45398763213865L328.62993686943184,78.16285488022817L333.2127205144846,66.09563635667439L337.64767242905185,110.72954322977327L342.23045607410467,145.85335189869443L346.6715676441088,159.25381663261822L351.2543512891616,155.46323006481938L355.83713493421436,158.80444172619423L359.9764233878105,169.73872249949082L364.55304737742637,158.78004684150818L368.9879992919936,133.35745639059084L373.57078293704643,126.51672668847394L378.0057348516136,124.42971604157938L382.58851849666644,109.6167931824425L387.1713021417193,102.74021924391053L391.60625405628645,89.78134269353879L396.1890377013393,100.21783904672353L400.63014927134344,84.84524260221704L405.21293291639626,75.32009145631005L409.795716561449,80.6053193133701L413.93500501504514,70.2606925093963L418.511629004661,50.804254994294155L422.94658091922827,50.27597562468537L427.5293645642811,70.4109931195824L431.96431647884833,93.31323213081052L436.5471001239011,76.94687747446011L441.1298837689539,84.61330311524557L445.56483568352115,52.02900560237552L450.1476193285739,41.760507979518934L454.58873089857804,44.74418317862225L459.1715145436309,30.492293686622247L463.75429818868366,19.384638248824018L467.8935866422798,0L472.47021063189567,13.04943877083491L476.9051625464629,5.9871176796364125L481.48794619151573,8.630299804466858L485.922898106083,18.865883168982663L490.50568175113574,27.44223309459022L495.08846539618855,73.96077190521285L499.5234173107558,121.91656565308449L504.10620095580856,88.03838349640611L508.5473125258127,94.42482065095791L513.1300961708655,99.6781733901237L517.7128798159183,79.59355290775494L522,65.71785162492378"></path></g><g class="nv-group nv-series-1" style="stroke-opacity: 1; fill-opacity: 0.5; fill: rgb(243, 89, 88); stroke: rgb(243, 89, 88);"><path class="nv-line" d="M0,219.04903709785435L4.582783645052806,219.04903709785435L9.165567290105612,219.04903709785435L13.600519204672842,219.04903709785435L18.189462505162545,219.04903709785435L22.624414419729778,219.04903709785435L27.20719806478258,219.04903709785435L31.789981709835388,219.04903709785435L35.92927016343147,219.04903709785435L40.512053808484275,219.04903709785435L44.94084606761461,219.04903709785435L49.523629712667415,219.04903709785435L53.95858162723464,219.04903709785435L58.54136527228745,219.04903709785435L63.12414891734026,219.04903709785435L67.55910083190749,219.04903709785435L72.14804413239719,219.04903709785435L76.58299604696441,219.04903709785435L81.16577969201722,219.04903709785435L85.74856333707002,219.12979126263917L90.0356835211517,219.2256623877324L94.6184671662045,219.17316497257835L99.04725942533483,219.14959387312197L103.63004307038764,219.16105747147063L108.06499498495486,219.2336285525124L112.64777863000766,219.17192849369658L117.23056227506048,219.23728771589606L121.6655141896277,219.44917117849593L126.24829783468051,219.4024211533362L130.68940940468462,219.67063869353817L135.27219304973747,219.73752048235852L139.85497669479025,219.79434316191765L143.99426514838635,219.88422639971628L148.57704879343913,219.83983380776897L153.00584105256945,219.73215285751334L157.5886246976223,219.84518550895712L162.0235766121895,219.95323183464131L166.6063602572423,220.15712143911924L171.18914390229511,220.2800794372989L175.62409581686234,220.467531386298L180.21303911735205,220.33831372969271L184.6479910319193,220.6876304461032L189.2307746769721,220.8843111941697L193.8135583220249,221.3673532897924L197.95284677562097,221.08659096860544L202.53563042067378,221.1980700957141L206.96442267980413,221.59324339139343L211.54720632485692,220.9475993377465L215.98215823942417,220.48062400094176L220.56494188447695,220.42942267486933L225.14772552952977,220.50639185345182L229.582677444097,220.39124129914023L234.17162074458668,221.16279364622838L238.60657265915393,222.20712498408778L243.18935630420674,222.06642743756487L247.77213994925953,223.4997610786293L251.91142840285562,223.3988869091454L256.4880523924715,224.10838566530217L260.92300430703875,225.3718512490845L265.50578795209157,227.73767570594953L269.94073986665876,227.6356470895811L274.5235235117116,225.5074419046167L279.10630715676444,222.93953393232266L283.5412590713316,222.8391693775919L288.12404271638445,224.0983912082052L292.5651542863886,222.718059604471L297.1479379314414,224.07296350991913L301.73072157649415,222.07174481740694L306.01784176057583,221.75474699753636L310.5944657501918,222.2168375704905L315.02941766475897,224.10100337949342L319.6122013098118,226.01449482325785L324.047153224379,223.47412124272373L328.62993686943184,223.8074757132414L333.2127205144846,223.91927095963314L337.64767242905185,218.6951033112045L342.23045607410467,214.65128950320383L346.6715676441088,212.26865459529415L351.2543512891616,212.923045306958L355.83713493421436,211.21808453326545L359.9764233878105,210.52459118987406L364.55304737742637,212.3131254944439L368.9879992919936,214.3698821237578L373.57078293704643,214.43439487499978L378.0057348516136,214.37684578573084L382.58851849666644,217.97257680764716L387.1713021417193,219.54196490962664L391.60625405628645,220.95366493819074L396.1890377013393,219.4869961736776L400.63014927134344,221.46150045883638L405.21293291639626,223.62253477944193L409.795716561449,221.12899789384684L413.93500501504514,223.2420121542698L418.511629004661,227.11793298850893L422.94658091922827,228.9797897139844L427.5293645642811,224.60419684873506L431.96431647884833,219.81665766639662L436.5471001239011,222.0093589773597L441.1298837689539,220.6847208745407L445.56483568352115,224.54525720225487L450.1476193285739,225.31884984111156L454.58873089857804,226.00303666492678L459.1715145436309,228.3741032798019L463.75429818868366,229.38110491624195L467.8935866422798,230.3039362707566L472.47021063189567,230.5298626395846L476.9051625464629,232.71211130800074L481.48794619151573,231.80355284659294L485.922898106083,230.41803569533678L490.50568175113574,228.4746218616694L495.08846539618855,222.6304722741832L499.5234173107558,214.22069252656144L504.10620095580856,220.87653791870702L508.5473125258127,222.37789904013476L513.1300961708655,222.06557217516587L517.7128798159183,225.73683526275974L522,229.62547641471954"></path></g><g class="nv-group nv-series-2" style="stroke-opacity: 1; fill-opacity: 0.5; fill: rgb(55, 176, 233); stroke: rgb(55, 176, 233);"><path class="nv-line" d="M0,230.6528554839105L4.582783645052806,243.12436459291615L9.165567290105612,242.20661478978982L13.600519204672842,257L18.189462505162545,246.59018337801012L22.624414419729778,238.59061876419477L27.20719806478258,246.76878923194332L31.789981709835388,250.41568592431503L35.92927016343147,252.57687855832418L40.512053808484275,251.32910963408222L44.94084606761461,240.56887945089517L49.523629712667415,232.58600119713927L53.95858162723464,230.59352620370362L58.54136527228745,227.5022234998868L63.12414891734026,223.976457421264L67.55910083190749,225.84100365427844L72.14804413239719,216.51641844930134L76.58299604696441,214.50540305581725L81.16577969201722,206.39397802827156L85.74856333707002,203.03013144354367L90.0356835211517,200.33682932773846L94.6184671662045,202.60741032209384L99.04725942533483,205.82231569299603L103.63004307038764,203.27362869769416L108.06499498495486,199.48026284477137L112.64777863000766,205.92305186663054L117.23056227506048,205.38847033148042L121.6655141896277,202.91209089637277L126.24829783468051,200.1229967135726L130.68940940468462,192.09994759298144L135.27219304973747,185.56507458413188L139.85497669479025,190.3880506538222L143.99426514838635,186.06751942582008L148.57704879343913,189.51452897506294L153.00584105256945,193.79955780898962L157.5886246976223,187.07473345740107L162.0235766121895,186.18889848095705L166.6063602572423,178.41285075021503L171.18914390229511,180.36870103735365L175.62409581686234,178.72649499002293L180.21303911735205,182.34362383408808L184.6479910319193,174.4919300350022L189.2307746769721,174.38653095070845L193.8135583220249,167.790784246325L197.95284677562097,167.5068751001293L202.53563042067378,164.25475173009573L206.96442267980413,161.4271590245524L211.54720632485692,168.27691044577028L215.98215823942417,168.01361884247405L220.56494188447695,167.67379555780815L225.14772552952977,162.81865745609787L229.582677444097,157.62492406223473L234.17162074458668,149.96050499014655L238.60657265915393,145.20070038954765L243.18935630420674,142.3519258949964L247.77213994925953,138.26264969494787L251.91142840285562,142.398797262299L256.4880523924715,139.6064109224971L260.92300430703875,129.30410637235147L265.50578795209157,120.02484811943913L269.94073986665876,124.50478229101088L274.5235235117116,132.97335537106807L279.10630715676444,129.29862212204233L283.5412590713316,120.23828149686273L288.12404271638445,115.81282581881462L292.5651542863886,127.49737034279045L297.1479379314414,129.1808306343641L301.73072157649415,144.35066939764113L306.01784176057583,151.83922783102855L310.5944657501918,152.8754798371575L315.02941766475897,141.218265098923L319.6122013098118,137.03441864428308L324.047153224379,157.4221254582088L328.62993686943184,159.27552025861738L333.2127205144846,155.76255138210644L337.64767242905185,176.1857939628461L342.23045607410467,212.04514758846432L346.6715676441088,224.8806041326941L351.2543512891616,222.4770841437865L355.83713493421436,236.1390618345926L359.9764233878105,251.76204960588947L364.55304737742637,240.23981701427445L368.9879992919936,225.57955249453613L373.57078293704643,217.35476342687704L378.0057348516136,216.89665238979495L382.58851849666644,203.99829383028947L387.1713021417193,197.50576894921505L391.60625405628645,190.18713204638905L396.1890377013393,194.46812030912145L400.63014927134344,183.6645630649972L405.21293291639626,178.67163456406695L409.795716561449,185.95208049503643L413.93500501504514,179.42142151224675L418.511629004661,166.8126106306047L422.94658091922827,162.5859132898172L427.5293645642811,179.99625011494908L431.96431647884833,191.00137403321156L436.5471001239011,177.59509448598277L441.1298837689539,187.17183998861452L445.56483568352115,169.11380460463516L450.1476193285739,160.9958802346112L454.58873089857804,160.12821675666612L459.1715145436309,145.15897999677068L463.75429818868366,139.78794493456581L467.8935866422798,131.10578421632158L472.47021063189567,130.21029293021252L476.9051625464629,122.8055982025389L481.48794619151573,125.77967491817182L485.922898106083,130.16562928333784L490.50568175113574,135.74834520441095L495.08846539618855,149.74871387822228L499.5234173107558,167.13653280013438L504.10620095580856,142.71521589930188L508.5473125258127,143.18953253487058L513.1300961708655,140.99220051467688L517.7128798159183,129.5359374086525L522,118.73124871680275"></path></g></g><g class="nv-scatterWrap" clip-path=""><g class="nvd3 nv-wrap nv-scatter nv-chart-81621" transform="translate(0,0)"><defs><clipPath id="nv-edge-clip-81621"><rect width="522" height="257"></rect></clipPath></defs><g clip-path=""><g class="nv-groups"><g class="nv-group nv-series-0" style="stroke-opacity: 1; fill-opacity: 0.5; stroke: rgb(29, 187, 153); fill: rgb(29, 187, 153);"><circle cx="0" cy="219.04903709785435" r="2.256758334191025" class="nv-point nv-point-0"></circle><circle cx="4.582783645052806" cy="229.4555669667588" r="2.256758334191025" class="nv-point nv-point-1"></circle><circle cx="9.165567290105612" cy="228.81945541388126" r="2.256758334191025" class="nv-point nv-point-2"></circle><circle cx="13.600519204672842" cy="238.04407063320804" r="2.256758334191025" class="nv-point nv-point-3"></circle><circle cx="18.189462505162545" cy="228.04112025717222" r="2.256758334191025" class="nv-point nv-point-4"></circle><circle cx="22.624414419729778" cy="218.21505452632184" r="2.256758334191025" class="nv-point nv-point-5"></circle><circle cx="27.20719806478258" cy="228.13026609663405" r="2.256758334191025" class="nv-point nv-point-6"></circle><circle cx="31.789981709835388" cy="228.54533268285184" r="2.256758334191025" class="nv-point nv-point-7"></circle><circle cx="35.92927016343147" cy="231.07562563708902" r="2.256758334191025" class="nv-point nv-point-8"></circle><circle cx="40.512053808484275" cy="230.06247521976132" r="2.256758334191025" class="nv-point nv-point-9"></circle><circle cx="44.94084606761461" cy="218.3228852488984" r="2.256758334191025" class="nv-point nv-point-10"></circle><circle cx="49.523629712667415" cy="207.14849199622202" r="2.256758334191025" class="nv-point nv-point-11"></circle><circle cx="53.95858162723464" cy="203.85970815341125" r="2.256758334191025" class="nv-point nv-point-12"></circle><circle cx="58.54136527228745" cy="200.4282447446319" r="2.256758334191025" class="nv-point nv-point-13"></circle><circle cx="63.12414891734026" cy="194.85637975102821" r="2.256758334191025" class="nv-point nv-point-14"></circle><circle cx="67.55910083190749" cy="198.7109522802454" r="2.256758334191025" class="nv-point nv-point-15"></circle><circle cx="72.14804413239719" cy="188.7787504992147" r="2.256758334191025" class="nv-point nv-point-16"></circle><circle cx="76.58299604696441" cy="186.48953930414453" r="2.256758334191025" class="nv-point nv-point-17"></circle><circle cx="81.16577969201722" cy="181.87184018130597" r="2.256758334191025" class="nv-point nv-point-18"></circle><circle cx="85.74856333707002" cy="175.1402543355678" r="2.256758334191025" class="nv-point nv-point-19"></circle><circle cx="90.0356835211517" cy="170.4538290725211" r="2.256758334191025" class="nv-point nv-point-20"></circle><circle cx="94.6184671662045" cy="168.42740246656186" r="2.256758334191025" class="nv-point nv-point-21"></circle><circle cx="99.04725942533483" cy="172.98790869137298" r="2.256758334191025" class="nv-point nv-point-22"></circle><circle cx="103.63004307038764" cy="170.9519713638436" r="2.256758334191025" class="nv-point nv-point-23"></circle><circle cx="108.06499498495486" cy="169.35084511129145" r="2.256758334191025" class="nv-point nv-point-24"></circle><circle cx="112.64777863000766" cy="178.10978920575377" r="2.256758334191025" class="nv-point nv-point-25"></circle><circle cx="117.23056227506048" cy="179.20745167052675" r="2.256758334191025" class="nv-point nv-point-26"></circle><circle cx="121.6655141896277" cy="174.3609603237614" r="2.256758334191025" class="nv-point nv-point-27"></circle><circle cx="126.24829783468051" cy="168.4751736438548" r="2.256758334191025" class="nv-point nv-point-28"></circle><circle cx="130.68940940468462" cy="159.39825747575307" r="2.256758334191025" class="nv-point nv-point-29"></circle><circle cx="135.27219304973747" cy="148.21466931027558" r="2.256758334191025" class="nv-point nv-point-30"></circle><circle cx="139.85497669479025" cy="152.4576464564493" r="2.256758334191025" class="nv-point nv-point-31"></circle><circle cx="143.99426514838635" cy="149.1979462734039" r="2.256758334191025" class="nv-point nv-point-32"></circle><circle cx="148.57704879343913" cy="150.6100162009916" r="2.256758334191025" class="nv-point nv-point-33"></circle><circle cx="153.00584105256945" cy="159.32541831038284" r="2.256758334191025" class="nv-point nv-point-34"></circle><circle cx="157.5886246976223" cy="152.19260753614157" r="2.256758334191025" class="nv-point nv-point-35"></circle><circle cx="162.0235766121895" cy="146.97429519426743" r="2.256758334191025" class="nv-point nv-point-36"></circle><circle cx="166.6063602572423" cy="137.28878848858992" r="2.256758334191025" class="nv-point nv-point-37"></circle><circle cx="171.18914390229511" cy="141.73996338625426" r="2.256758334191025" class="nv-point nv-point-38"></circle><circle cx="175.62409581686234" cy="142.5346629971871" r="2.256758334191025" class="nv-point nv-point-39"></circle><circle cx="180.21303911735205" cy="150.80014495527263" r="2.256758334191025" class="nv-point nv-point-40"></circle><circle cx="184.6479910319193" cy="141.39364410550508" r="2.256758334191025" class="nv-point nv-point-41"></circle><circle cx="189.2307746769721" cy="140.82548181755203" r="2.256758334191025" class="nv-point nv-point-42"></circle><circle cx="193.8135583220249" cy="135.67239743031456" r="2.256758334191025" class="nv-point nv-point-43"></circle><circle cx="197.95284677562097" cy="132.6863067638438" r="2.256758334191025" class="nv-point nv-point-44"></circle><circle cx="202.53563042067378" cy="127.76159156848806" r="2.256758334191025" class="nv-point nv-point-45"></circle><circle cx="206.96442267980413" cy="123.95129773316194" r="2.256758334191025" class="nv-point nv-point-46"></circle><circle cx="211.54720632485692" cy="131.20310062629977" r="2.256758334191025" class="nv-point nv-point-47"></circle><circle cx="215.98215823942417" cy="131.171279939192" r="2.256758334191025" class="nv-point nv-point-48"></circle><circle cx="220.56494188447695" cy="137.20704254197292" r="2.256758334191025" class="nv-point nv-point-49"></circle><circle cx="225.14772552952977" cy="129.203716252855" r="2.256758334191025" class="nv-point nv-point-50"></circle><circle cx="229.582677444097" cy="123.51481026822668" r="2.256758334191025" class="nv-point nv-point-51"></circle><circle cx="234.17162074458668" cy="114.12031123531236" r="2.256758334191025" class="nv-point nv-point-52"></circle><circle cx="238.60657265915393" cy="104.50023525973586" r="2.256758334191025" class="nv-point nv-point-53"></circle><circle cx="243.18935630420674" cy="99.95762757763973" r="2.256758334191025" class="nv-point nv-point-54"></circle><circle cx="247.77213994925953" cy="90.99662036602138" r="2.256758334191025" class="nv-point nv-point-55"></circle><circle cx="251.91142840285562" cy="90.74744204037876" r="2.256758334191025" class="nv-point nv-point-56"></circle><circle cx="256.4880523924715" cy="81.62059251526432" r="2.256758334191025" class="nv-point nv-point-57"></circle><circle cx="260.92300430703875" cy="69.40760826232861" r="2.256758334191025" class="nv-point nv-point-58"></circle><circle cx="265.50578795209157" cy="57.17551158137334" r="2.256758334191025" class="nv-point nv-point-59"></circle><circle cx="269.94073986665876" cy="61.02623138306902" r="2.256758334191025" class="nv-point nv-point-60"></circle><circle cx="274.5235235117116" cy="67.46116315070196" r="2.256758334191025" class="nv-point nv-point-61"></circle><circle cx="279.10630715676444" cy="59.67475810599353" r="2.256758334191025" class="nv-point nv-point-62"></circle><circle cx="283.5412590713316" cy="45.322368869236215" r="2.256758334191025" class="nv-point nv-point-63"></circle><circle cx="288.12404271638445" cy="31.246237394108164" r="2.256758334191025" class="nv-point nv-point-64"></circle><circle cx="292.5651542863886" cy="48.957807044032165" r="2.256758334191025" class="nv-point nv-point-65"></circle><circle cx="297.1479379314414" cy="52.030016774995886" r="2.256758334191025" class="nv-point nv-point-66"></circle><circle cx="301.73072157649415" cy="71.54320738232761" r="2.256758334191025" class="nv-point nv-point-67"></circle><circle cx="306.01784176057583" cy="76.26612842615211" r="2.256758334191025" class="nv-point nv-point-68"></circle><circle cx="310.5944657501918" cy="81.00800013175802" r="2.256758334191025" class="nv-point nv-point-69"></circle><circle cx="315.02941766475897" cy="66.07584989311823" r="2.256758334191025" class="nv-point nv-point-70"></circle><circle cx="319.6122013098118" cy="48.90472320304977" r="2.256758334191025" class="nv-point nv-point-71"></circle><circle cx="324.047153224379" cy="75.45398763213865" r="2.256758334191025" class="nv-point nv-point-72"></circle><circle cx="328.62993686943184" cy="78.16285488022817" r="2.256758334191025" class="nv-point nv-point-73"></circle><circle cx="333.2127205144846" cy="66.09563635667439" r="2.256758334191025" class="nv-point nv-point-74"></circle><circle cx="337.64767242905185" cy="110.72954322977327" r="2.256758334191025" class="nv-point nv-point-75"></circle><circle cx="342.23045607410467" cy="145.85335189869443" r="2.256758334191025" class="nv-point nv-point-76"></circle><circle cx="346.6715676441088" cy="159.25381663261822" r="2.256758334191025" class="nv-point nv-point-77"></circle><circle cx="351.2543512891616" cy="155.46323006481938" r="2.256758334191025" class="nv-point nv-point-78"></circle><circle cx="355.83713493421436" cy="158.80444172619423" r="2.256758334191025" class="nv-point nv-point-79"></circle><circle cx="359.9764233878105" cy="169.73872249949082" r="2.256758334191025" class="nv-point nv-point-80"></circle><circle cx="364.55304737742637" cy="158.78004684150818" r="2.256758334191025" class="nv-point nv-point-81"></circle><circle cx="368.9879992919936" cy="133.35745639059084" r="2.256758334191025" class="nv-point nv-point-82"></circle><circle cx="373.57078293704643" cy="126.51672668847394" r="2.256758334191025" class="nv-point nv-point-83"></circle><circle cx="378.0057348516136" cy="124.42971604157938" r="2.256758334191025" class="nv-point nv-point-84"></circle><circle cx="382.58851849666644" cy="109.6167931824425" r="2.256758334191025" class="nv-point nv-point-85"></circle><circle cx="387.1713021417193" cy="102.74021924391053" r="2.256758334191025" class="nv-point nv-point-86"></circle><circle cx="391.60625405628645" cy="89.78134269353879" r="2.256758334191025" class="nv-point nv-point-87"></circle><circle cx="396.1890377013393" cy="100.21783904672353" r="2.256758334191025" class="nv-point nv-point-88"></circle><circle cx="400.63014927134344" cy="84.84524260221704" r="2.256758334191025" class="nv-point nv-point-89"></circle><circle cx="405.21293291639626" cy="75.32009145631005" r="2.256758334191025" class="nv-point nv-point-90"></circle><circle cx="409.795716561449" cy="80.6053193133701" r="2.256758334191025" class="nv-point nv-point-91"></circle><circle cx="413.93500501504514" cy="70.2606925093963" r="2.256758334191025" class="nv-point nv-point-92"></circle><circle cx="418.511629004661" cy="50.804254994294155" r="2.256758334191025" class="nv-point nv-point-93"></circle><circle cx="422.94658091922827" cy="50.27597562468537" r="2.256758334191025" class="nv-point nv-point-94"></circle><circle cx="427.5293645642811" cy="70.4109931195824" r="2.256758334191025" class="nv-point nv-point-95"></circle><circle cx="431.96431647884833" cy="93.31323213081052" r="2.256758334191025" class="nv-point nv-point-96"></circle><circle cx="436.5471001239011" cy="76.94687747446011" r="2.256758334191025" class="nv-point nv-point-97"></circle><circle cx="441.1298837689539" cy="84.61330311524557" r="2.256758334191025" class="nv-point nv-point-98"></circle><circle cx="445.56483568352115" cy="52.02900560237552" r="2.256758334191025" class="nv-point nv-point-99"></circle><circle cx="450.1476193285739" cy="41.760507979518934" r="2.256758334191025" class="nv-point nv-point-100"></circle><circle cx="454.58873089857804" cy="44.74418317862225" r="2.256758334191025" class="nv-point nv-point-101"></circle><circle cx="459.1715145436309" cy="30.492293686622247" r="2.256758334191025" class="nv-point nv-point-102"></circle><circle cx="463.75429818868366" cy="19.384638248824018" r="2.256758334191025" class="nv-point nv-point-103"></circle><circle cx="467.8935866422798" cy="0" r="2.256758334191025" class="nv-point nv-point-104"></circle><circle cx="472.47021063189567" cy="13.04943877083491" r="2.256758334191025" class="nv-point nv-point-105"></circle><circle cx="476.9051625464629" cy="5.9871176796364125" r="2.256758334191025" class="nv-point nv-point-106"></circle><circle cx="481.48794619151573" cy="8.630299804466858" r="2.256758334191025" class="nv-point nv-point-107"></circle><circle cx="485.922898106083" cy="18.865883168982663" r="2.256758334191025" class="nv-point nv-point-108"></circle><circle cx="490.50568175113574" cy="27.44223309459022" r="2.256758334191025" class="nv-point nv-point-109"></circle><circle cx="495.08846539618855" cy="73.96077190521285" r="2.256758334191025" class="nv-point nv-point-110"></circle><circle cx="499.5234173107558" cy="121.91656565308449" r="2.256758334191025" class="nv-point nv-point-111"></circle><circle cx="504.10620095580856" cy="88.03838349640611" r="2.256758334191025" class="nv-point nv-point-112"></circle><circle cx="508.5473125258127" cy="94.42482065095791" r="2.256758334191025" class="nv-point nv-point-113"></circle><circle cx="513.1300961708655" cy="99.6781733901237" r="2.256758334191025" class="nv-point nv-point-114"></circle><circle cx="517.7128798159183" cy="79.59355290775494" r="2.256758334191025" class="nv-point nv-point-115"></circle><circle cx="522" cy="65.71785162492378" r="2.256758334191025" class="nv-point nv-point-116"></circle></g><g class="nv-group nv-series-1" style="stroke-opacity: 1; fill-opacity: 0.5; stroke: rgb(243, 89, 88); fill: rgb(243, 89, 88);"><circle cx="0" cy="219.04903709785435" r="2.256758334191025" class="nv-point nv-point-0"></circle><circle cx="4.582783645052806" cy="219.04903709785435" r="2.256758334191025" class="nv-point nv-point-1"></circle><circle cx="9.165567290105612" cy="219.04903709785435" r="2.256758334191025" class="nv-point nv-point-2"></circle><circle cx="13.600519204672842" cy="219.04903709785435" r="2.256758334191025" class="nv-point nv-point-3"></circle><circle cx="18.189462505162545" cy="219.04903709785435" r="2.256758334191025" class="nv-point nv-point-4"></circle><circle cx="22.624414419729778" cy="219.04903709785435" r="2.256758334191025" class="nv-point nv-point-5"></circle><circle cx="27.20719806478258" cy="219.04903709785435" r="2.256758334191025" class="nv-point nv-point-6"></circle><circle cx="31.789981709835388" cy="219.04903709785435" r="2.256758334191025" class="nv-point nv-point-7"></circle><circle cx="35.92927016343147" cy="219.04903709785435" r="2.256758334191025" class="nv-point nv-point-8"></circle><circle cx="40.512053808484275" cy="219.04903709785435" r="2.256758334191025" class="nv-point nv-point-9"></circle><circle cx="44.94084606761461" cy="219.04903709785435" r="2.256758334191025" class="nv-point nv-point-10"></circle><circle cx="49.523629712667415" cy="219.04903709785435" r="2.256758334191025" class="nv-point nv-point-11"></circle><circle cx="53.95858162723464" cy="219.04903709785435" r="2.256758334191025" class="nv-point nv-point-12"></circle><circle cx="58.54136527228745" cy="219.04903709785435" r="2.256758334191025" class="nv-point nv-point-13"></circle><circle cx="63.12414891734026" cy="219.04903709785435" r="2.256758334191025" class="nv-point nv-point-14"></circle><circle cx="67.55910083190749" cy="219.04903709785435" r="2.256758334191025" class="nv-point nv-point-15"></circle><circle cx="72.14804413239719" cy="219.04903709785435" r="2.256758334191025" class="nv-point nv-point-16"></circle><circle cx="76.58299604696441" cy="219.04903709785435" r="2.256758334191025" class="nv-point nv-point-17"></circle><circle cx="81.16577969201722" cy="219.04903709785435" r="2.256758334191025" class="nv-point nv-point-18"></circle><circle cx="85.74856333707002" cy="219.12979126263917" r="2.256758334191025" class="nv-point nv-point-19"></circle><circle cx="90.0356835211517" cy="219.2256623877324" r="2.256758334191025" class="nv-point nv-point-20"></circle><circle cx="94.6184671662045" cy="219.17316497257835" r="2.256758334191025" class="nv-point nv-point-21"></circle><circle cx="99.04725942533483" cy="219.14959387312197" r="2.256758334191025" class="nv-point nv-point-22"></circle><circle cx="103.63004307038764" cy="219.16105747147063" r="2.256758334191025" class="nv-point nv-point-23"></circle><circle cx="108.06499498495486" cy="219.2336285525124" r="2.256758334191025" class="nv-point nv-point-24"></circle><circle cx="112.64777863000766" cy="219.17192849369658" r="2.256758334191025" class="nv-point nv-point-25"></circle><circle cx="117.23056227506048" cy="219.23728771589606" r="2.256758334191025" class="nv-point nv-point-26"></circle><circle cx="121.6655141896277" cy="219.44917117849593" r="2.256758334191025" class="nv-point nv-point-27"></circle><circle cx="126.24829783468051" cy="219.4024211533362" r="2.256758334191025" class="nv-point nv-point-28"></circle><circle cx="130.68940940468462" cy="219.67063869353817" r="2.256758334191025" class="nv-point nv-point-29"></circle><circle cx="135.27219304973747" cy="219.73752048235852" r="2.256758334191025" class="nv-point nv-point-30"></circle><circle cx="139.85497669479025" cy="219.79434316191765" r="2.256758334191025" class="nv-point nv-point-31"></circle><circle cx="143.99426514838635" cy="219.88422639971628" r="2.256758334191025" class="nv-point nv-point-32"></circle><circle cx="148.57704879343913" cy="219.83983380776897" r="2.256758334191025" class="nv-point nv-point-33"></circle><circle cx="153.00584105256945" cy="219.73215285751334" r="2.256758334191025" class="nv-point nv-point-34"></circle><circle cx="157.5886246976223" cy="219.84518550895712" r="2.256758334191025" class="nv-point nv-point-35"></circle><circle cx="162.0235766121895" cy="219.95323183464131" r="2.256758334191025" class="nv-point nv-point-36"></circle><circle cx="166.6063602572423" cy="220.15712143911924" r="2.256758334191025" class="nv-point nv-point-37"></circle><circle cx="171.18914390229511" cy="220.2800794372989" r="2.256758334191025" class="nv-point nv-point-38"></circle><circle cx="175.62409581686234" cy="220.467531386298" r="2.256758334191025" class="nv-point nv-point-39"></circle><circle cx="180.21303911735205" cy="220.33831372969271" r="2.256758334191025" class="nv-point nv-point-40"></circle><circle cx="184.6479910319193" cy="220.6876304461032" r="2.256758334191025" class="nv-point nv-point-41"></circle><circle cx="189.2307746769721" cy="220.8843111941697" r="2.256758334191025" class="nv-point nv-point-42"></circle><circle cx="193.8135583220249" cy="221.3673532897924" r="2.256758334191025" class="nv-point nv-point-43"></circle><circle cx="197.95284677562097" cy="221.08659096860544" r="2.256758334191025" class="nv-point nv-point-44"></circle><circle cx="202.53563042067378" cy="221.1980700957141" r="2.256758334191025" class="nv-point nv-point-45"></circle><circle cx="206.96442267980413" cy="221.59324339139343" r="2.256758334191025" class="nv-point nv-point-46"></circle><circle cx="211.54720632485692" cy="220.9475993377465" r="2.256758334191025" class="nv-point nv-point-47"></circle><circle cx="215.98215823942417" cy="220.48062400094176" r="2.256758334191025" class="nv-point nv-point-48"></circle><circle cx="220.56494188447695" cy="220.42942267486933" r="2.256758334191025" class="nv-point nv-point-49"></circle><circle cx="225.14772552952977" cy="220.50639185345182" r="2.256758334191025" class="nv-point nv-point-50"></circle><circle cx="229.582677444097" cy="220.39124129914023" r="2.256758334191025" class="nv-point nv-point-51"></circle><circle cx="234.17162074458668" cy="221.16279364622838" r="2.256758334191025" class="nv-point nv-point-52"></circle><circle cx="238.60657265915393" cy="222.20712498408778" r="2.256758334191025" class="nv-point nv-point-53"></circle><circle cx="243.18935630420674" cy="222.06642743756487" r="2.256758334191025" class="nv-point nv-point-54"></circle><circle cx="247.77213994925953" cy="223.4997610786293" r="2.256758334191025" class="nv-point nv-point-55"></circle><circle cx="251.91142840285562" cy="223.3988869091454" r="2.256758334191025" class="nv-point nv-point-56"></circle><circle cx="256.4880523924715" cy="224.10838566530217" r="2.256758334191025" class="nv-point nv-point-57"></circle><circle cx="260.92300430703875" cy="225.3718512490845" r="2.256758334191025" class="nv-point nv-point-58"></circle><circle cx="265.50578795209157" cy="227.73767570594953" r="2.256758334191025" class="nv-point nv-point-59"></circle><circle cx="269.94073986665876" cy="227.6356470895811" r="2.256758334191025" class="nv-point nv-point-60"></circle><circle cx="274.5235235117116" cy="225.5074419046167" r="2.256758334191025" class="nv-point nv-point-61"></circle><circle cx="279.10630715676444" cy="222.93953393232266" r="2.256758334191025" class="nv-point nv-point-62"></circle><circle cx="283.5412590713316" cy="222.8391693775919" r="2.256758334191025" class="nv-point nv-point-63"></circle><circle cx="288.12404271638445" cy="224.0983912082052" r="2.256758334191025" class="nv-point nv-point-64"></circle><circle cx="292.5651542863886" cy="222.718059604471" r="2.256758334191025" class="nv-point nv-point-65"></circle><circle cx="297.1479379314414" cy="224.07296350991913" r="2.256758334191025" class="nv-point nv-point-66"></circle><circle cx="301.73072157649415" cy="222.07174481740694" r="2.256758334191025" class="nv-point nv-point-67"></circle><circle cx="306.01784176057583" cy="221.75474699753636" r="2.256758334191025" class="nv-point nv-point-68"></circle><circle cx="310.5944657501918" cy="222.2168375704905" r="2.256758334191025" class="nv-point nv-point-69"></circle><circle cx="315.02941766475897" cy="224.10100337949342" r="2.256758334191025" class="nv-point nv-point-70"></circle><circle cx="319.6122013098118" cy="226.01449482325785" r="2.256758334191025" class="nv-point nv-point-71"></circle><circle cx="324.047153224379" cy="223.47412124272373" r="2.256758334191025" class="nv-point nv-point-72"></circle><circle cx="328.62993686943184" cy="223.8074757132414" r="2.256758334191025" class="nv-point nv-point-73"></circle><circle cx="333.2127205144846" cy="223.91927095963314" r="2.256758334191025" class="nv-point nv-point-74"></circle><circle cx="337.64767242905185" cy="218.6951033112045" r="2.256758334191025" class="nv-point nv-point-75"></circle><circle cx="342.23045607410467" cy="214.65128950320383" r="2.256758334191025" class="nv-point nv-point-76"></circle><circle cx="346.6715676441088" cy="212.26865459529415" r="2.256758334191025" class="nv-point nv-point-77"></circle><circle cx="351.2543512891616" cy="212.923045306958" r="2.256758334191025" class="nv-point nv-point-78"></circle><circle cx="355.83713493421436" cy="211.21808453326545" r="2.256758334191025" class="nv-point nv-point-79"></circle><circle cx="359.9764233878105" cy="210.52459118987406" r="2.256758334191025" class="nv-point nv-point-80"></circle><circle cx="364.55304737742637" cy="212.3131254944439" r="2.256758334191025" class="nv-point nv-point-81"></circle><circle cx="368.9879992919936" cy="214.3698821237578" r="2.256758334191025" class="nv-point nv-point-82"></circle><circle cx="373.57078293704643" cy="214.43439487499978" r="2.256758334191025" class="nv-point nv-point-83"></circle><circle cx="378.0057348516136" cy="214.37684578573084" r="2.256758334191025" class="nv-point nv-point-84"></circle><circle cx="382.58851849666644" cy="217.97257680764716" r="2.256758334191025" class="nv-point nv-point-85"></circle><circle cx="387.1713021417193" cy="219.54196490962664" r="2.256758334191025" class="nv-point nv-point-86"></circle><circle cx="391.60625405628645" cy="220.95366493819074" r="2.256758334191025" class="nv-point nv-point-87"></circle><circle cx="396.1890377013393" cy="219.4869961736776" r="2.256758334191025" class="nv-point nv-point-88"></circle><circle cx="400.63014927134344" cy="221.46150045883638" r="2.256758334191025" class="nv-point nv-point-89"></circle><circle cx="405.21293291639626" cy="223.62253477944193" r="2.256758334191025" class="nv-point nv-point-90"></circle><circle cx="409.795716561449" cy="221.12899789384684" r="2.256758334191025" class="nv-point nv-point-91"></circle><circle cx="413.93500501504514" cy="223.2420121542698" r="2.256758334191025" class="nv-point nv-point-92"></circle><circle cx="418.511629004661" cy="227.11793298850893" r="2.256758334191025" class="nv-point nv-point-93"></circle><circle cx="422.94658091922827" cy="228.9797897139844" r="2.256758334191025" class="nv-point nv-point-94"></circle><circle cx="427.5293645642811" cy="224.60419684873506" r="2.256758334191025" class="nv-point nv-point-95"></circle><circle cx="431.96431647884833" cy="219.81665766639662" r="2.256758334191025" class="nv-point nv-point-96"></circle><circle cx="436.5471001239011" cy="222.0093589773597" r="2.256758334191025" class="nv-point nv-point-97"></circle><circle cx="441.1298837689539" cy="220.6847208745407" r="2.256758334191025" class="nv-point nv-point-98"></circle><circle cx="445.56483568352115" cy="224.54525720225487" r="2.256758334191025" class="nv-point nv-point-99"></circle><circle cx="450.1476193285739" cy="225.31884984111156" r="2.256758334191025" class="nv-point nv-point-100"></circle><circle cx="454.58873089857804" cy="226.00303666492678" r="2.256758334191025" class="nv-point nv-point-101"></circle><circle cx="459.1715145436309" cy="228.3741032798019" r="2.256758334191025" class="nv-point nv-point-102"></circle><circle cx="463.75429818868366" cy="229.38110491624195" r="2.256758334191025" class="nv-point nv-point-103"></circle><circle cx="467.8935866422798" cy="230.3039362707566" r="2.256758334191025" class="nv-point nv-point-104"></circle><circle cx="472.47021063189567" cy="230.5298626395846" r="2.256758334191025" class="nv-point nv-point-105"></circle><circle cx="476.9051625464629" cy="232.71211130800074" r="2.256758334191025" class="nv-point nv-point-106"></circle><circle cx="481.48794619151573" cy="231.80355284659294" r="2.256758334191025" class="nv-point nv-point-107"></circle><circle cx="485.922898106083" cy="230.41803569533678" r="2.256758334191025" class="nv-point nv-point-108"></circle><circle cx="490.50568175113574" cy="228.4746218616694" r="2.256758334191025" class="nv-point nv-point-109"></circle><circle cx="495.08846539618855" cy="222.6304722741832" r="2.256758334191025" class="nv-point nv-point-110"></circle><circle cx="499.5234173107558" cy="214.22069252656144" r="2.256758334191025" class="nv-point nv-point-111"></circle><circle cx="504.10620095580856" cy="220.87653791870702" r="2.256758334191025" class="nv-point nv-point-112"></circle><circle cx="508.5473125258127" cy="222.37789904013476" r="2.256758334191025" class="nv-point nv-point-113"></circle><circle cx="513.1300961708655" cy="222.06557217516587" r="2.256758334191025" class="nv-point nv-point-114"></circle><circle cx="517.7128798159183" cy="225.73683526275974" r="2.256758334191025" class="nv-point nv-point-115"></circle><circle cx="522" cy="229.62547641471954" r="2.256758334191025" class="nv-point nv-point-116"></circle></g><g class="nv-group nv-series-2" style="stroke-opacity: 1; fill-opacity: 0.5; stroke: rgb(55, 176, 233); fill: rgb(55, 176, 233);"><circle cx="0" cy="230.6528554839105" r="2.256758334191025" class="nv-point nv-point-0"></circle><circle cx="4.582783645052806" cy="243.12436459291615" r="2.256758334191025" class="nv-point nv-point-1"></circle><circle cx="9.165567290105612" cy="242.20661478978982" r="2.256758334191025" class="nv-point nv-point-2"></circle><circle cx="13.600519204672842" cy="257" r="2.256758334191025" class="nv-point nv-point-3"></circle><circle cx="18.189462505162545" cy="246.59018337801012" r="2.256758334191025" class="nv-point nv-point-4"></circle><circle cx="22.624414419729778" cy="238.59061876419477" r="2.256758334191025" class="nv-point nv-point-5"></circle><circle cx="27.20719806478258" cy="246.76878923194332" r="2.256758334191025" class="nv-point nv-point-6"></circle><circle cx="31.789981709835388" cy="250.41568592431503" r="2.256758334191025" class="nv-point nv-point-7"></circle><circle cx="35.92927016343147" cy="252.57687855832418" r="2.256758334191025" class="nv-point nv-point-8"></circle><circle cx="40.512053808484275" cy="251.32910963408222" r="2.256758334191025" class="nv-point nv-point-9"></circle><circle cx="44.94084606761461" cy="240.56887945089517" r="2.256758334191025" class="nv-point nv-point-10"></circle><circle cx="49.523629712667415" cy="232.58600119713927" r="2.256758334191025" class="nv-point nv-point-11"></circle><circle cx="53.95858162723464" cy="230.59352620370362" r="2.256758334191025" class="nv-point nv-point-12"></circle><circle cx="58.54136527228745" cy="227.5022234998868" r="2.256758334191025" class="nv-point nv-point-13"></circle><circle cx="63.12414891734026" cy="223.976457421264" r="2.256758334191025" class="nv-point nv-point-14"></circle><circle cx="67.55910083190749" cy="225.84100365427844" r="2.256758334191025" class="nv-point nv-point-15"></circle><circle cx="72.14804413239719" cy="216.51641844930134" r="2.256758334191025" class="nv-point nv-point-16"></circle><circle cx="76.58299604696441" cy="214.50540305581725" r="2.256758334191025" class="nv-point nv-point-17"></circle><circle cx="81.16577969201722" cy="206.39397802827156" r="2.256758334191025" class="nv-point nv-point-18"></circle><circle cx="85.74856333707002" cy="203.03013144354367" r="2.256758334191025" class="nv-point nv-point-19"></circle><circle cx="90.0356835211517" cy="200.33682932773846" r="2.256758334191025" class="nv-point nv-point-20"></circle><circle cx="94.6184671662045" cy="202.60741032209384" r="2.256758334191025" class="nv-point nv-point-21"></circle><circle cx="99.04725942533483" cy="205.82231569299603" r="2.256758334191025" class="nv-point nv-point-22"></circle><circle cx="103.63004307038764" cy="203.27362869769416" r="2.256758334191025" class="nv-point nv-point-23"></circle><circle cx="108.06499498495486" cy="199.48026284477137" r="2.256758334191025" class="nv-point nv-point-24"></circle><circle cx="112.64777863000766" cy="205.92305186663054" r="2.256758334191025" class="nv-point nv-point-25"></circle><circle cx="117.23056227506048" cy="205.38847033148042" r="2.256758334191025" class="nv-point nv-point-26"></circle><circle cx="121.6655141896277" cy="202.91209089637277" r="2.256758334191025" class="nv-point nv-point-27"></circle><circle cx="126.24829783468051" cy="200.1229967135726" r="2.256758334191025" class="nv-point nv-point-28"></circle><circle cx="130.68940940468462" cy="192.09994759298144" r="2.256758334191025" class="nv-point nv-point-29"></circle><circle cx="135.27219304973747" cy="185.56507458413188" r="2.256758334191025" class="nv-point nv-point-30"></circle><circle cx="139.85497669479025" cy="190.3880506538222" r="2.256758334191025" class="nv-point nv-point-31"></circle><circle cx="143.99426514838635" cy="186.06751942582008" r="2.256758334191025" class="nv-point nv-point-32"></circle><circle cx="148.57704879343913" cy="189.51452897506294" r="2.256758334191025" class="nv-point nv-point-33"></circle><circle cx="153.00584105256945" cy="193.79955780898962" r="2.256758334191025" class="nv-point nv-point-34"></circle><circle cx="157.5886246976223" cy="187.07473345740107" r="2.256758334191025" class="nv-point nv-point-35"></circle><circle cx="162.0235766121895" cy="186.18889848095705" r="2.256758334191025" class="nv-point nv-point-36"></circle><circle cx="166.6063602572423" cy="178.41285075021503" r="2.256758334191025" class="nv-point nv-point-37"></circle><circle cx="171.18914390229511" cy="180.36870103735365" r="2.256758334191025" class="nv-point nv-point-38"></circle><circle cx="175.62409581686234" cy="178.72649499002293" r="2.256758334191025" class="nv-point nv-point-39"></circle><circle cx="180.21303911735205" cy="182.34362383408808" r="2.256758334191025" class="nv-point nv-point-40"></circle><circle cx="184.6479910319193" cy="174.4919300350022" r="2.256758334191025" class="nv-point nv-point-41"></circle><circle cx="189.2307746769721" cy="174.38653095070845" r="2.256758334191025" class="nv-point nv-point-42"></circle><circle cx="193.8135583220249" cy="167.790784246325" r="2.256758334191025" class="nv-point nv-point-43"></circle><circle cx="197.95284677562097" cy="167.5068751001293" r="2.256758334191025" class="nv-point nv-point-44"></circle><circle cx="202.53563042067378" cy="164.25475173009573" r="2.256758334191025" class="nv-point nv-point-45"></circle><circle cx="206.96442267980413" cy="161.4271590245524" r="2.256758334191025" class="nv-point nv-point-46"></circle><circle cx="211.54720632485692" cy="168.27691044577028" r="2.256758334191025" class="nv-point nv-point-47"></circle><circle cx="215.98215823942417" cy="168.01361884247405" r="2.256758334191025" class="nv-point nv-point-48"></circle><circle cx="220.56494188447695" cy="167.67379555780815" r="2.256758334191025" class="nv-point nv-point-49"></circle><circle cx="225.14772552952977" cy="162.81865745609787" r="2.256758334191025" class="nv-point nv-point-50"></circle><circle cx="229.582677444097" cy="157.62492406223473" r="2.256758334191025" class="nv-point nv-point-51"></circle><circle cx="234.17162074458668" cy="149.96050499014655" r="2.256758334191025" class="nv-point nv-point-52"></circle><circle cx="238.60657265915393" cy="145.20070038954765" r="2.256758334191025" class="nv-point nv-point-53"></circle><circle cx="243.18935630420674" cy="142.3519258949964" r="2.256758334191025" class="nv-point nv-point-54"></circle><circle cx="247.77213994925953" cy="138.26264969494787" r="2.256758334191025" class="nv-point nv-point-55"></circle><circle cx="251.91142840285562" cy="142.398797262299" r="2.256758334191025" class="nv-point nv-point-56"></circle><circle cx="256.4880523924715" cy="139.6064109224971" r="2.256758334191025" class="nv-point nv-point-57"></circle><circle cx="260.92300430703875" cy="129.30410637235147" r="2.256758334191025" class="nv-point nv-point-58"></circle><circle cx="265.50578795209157" cy="120.02484811943913" r="2.256758334191025" class="nv-point nv-point-59"></circle><circle cx="269.94073986665876" cy="124.50478229101088" r="2.256758334191025" class="nv-point nv-point-60"></circle><circle cx="274.5235235117116" cy="132.97335537106807" r="2.256758334191025" class="nv-point nv-point-61"></circle><circle cx="279.10630715676444" cy="129.29862212204233" r="2.256758334191025" class="nv-point nv-point-62"></circle><circle cx="283.5412590713316" cy="120.23828149686273" r="2.256758334191025" class="nv-point nv-point-63"></circle><circle cx="288.12404271638445" cy="115.81282581881462" r="2.256758334191025" class="nv-point nv-point-64"></circle><circle cx="292.5651542863886" cy="127.49737034279045" r="2.256758334191025" class="nv-point nv-point-65"></circle><circle cx="297.1479379314414" cy="129.1808306343641" r="2.256758334191025" class="nv-point nv-point-66"></circle><circle cx="301.73072157649415" cy="144.35066939764113" r="2.256758334191025" class="nv-point nv-point-67"></circle><circle cx="306.01784176057583" cy="151.83922783102855" r="2.256758334191025" class="nv-point nv-point-68"></circle><circle cx="310.5944657501918" cy="152.8754798371575" r="2.256758334191025" class="nv-point nv-point-69"></circle><circle cx="315.02941766475897" cy="141.218265098923" r="2.256758334191025" class="nv-point nv-point-70"></circle><circle cx="319.6122013098118" cy="137.03441864428308" r="2.256758334191025" class="nv-point nv-point-71"></circle><circle cx="324.047153224379" cy="157.4221254582088" r="2.256758334191025" class="nv-point nv-point-72"></circle><circle cx="328.62993686943184" cy="159.27552025861738" r="2.256758334191025" class="nv-point nv-point-73"></circle><circle cx="333.2127205144846" cy="155.76255138210644" r="2.256758334191025" class="nv-point nv-point-74"></circle><circle cx="337.64767242905185" cy="176.1857939628461" r="2.256758334191025" class="nv-point nv-point-75"></circle><circle cx="342.23045607410467" cy="212.04514758846432" r="2.256758334191025" class="nv-point nv-point-76"></circle><circle cx="346.6715676441088" cy="224.8806041326941" r="2.256758334191025" class="nv-point nv-point-77"></circle><circle cx="351.2543512891616" cy="222.4770841437865" r="2.256758334191025" class="nv-point nv-point-78"></circle><circle cx="355.83713493421436" cy="236.1390618345926" r="2.256758334191025" class="nv-point nv-point-79"></circle><circle cx="359.9764233878105" cy="251.76204960588947" r="2.256758334191025" class="nv-point nv-point-80"></circle><circle cx="364.55304737742637" cy="240.23981701427445" r="2.256758334191025" class="nv-point nv-point-81"></circle><circle cx="368.9879992919936" cy="225.57955249453613" r="2.256758334191025" class="nv-point nv-point-82"></circle><circle cx="373.57078293704643" cy="217.35476342687704" r="2.256758334191025" class="nv-point nv-point-83"></circle><circle cx="378.0057348516136" cy="216.89665238979495" r="2.256758334191025" class="nv-point nv-point-84"></circle><circle cx="382.58851849666644" cy="203.99829383028947" r="2.256758334191025" class="nv-point nv-point-85"></circle><circle cx="387.1713021417193" cy="197.50576894921505" r="2.256758334191025" class="nv-point nv-point-86"></circle><circle cx="391.60625405628645" cy="190.18713204638905" r="2.256758334191025" class="nv-point nv-point-87"></circle><circle cx="396.1890377013393" cy="194.46812030912145" r="2.256758334191025" class="nv-point nv-point-88"></circle><circle cx="400.63014927134344" cy="183.6645630649972" r="2.256758334191025" class="nv-point nv-point-89"></circle><circle cx="405.21293291639626" cy="178.67163456406695" r="2.256758334191025" class="nv-point nv-point-90"></circle><circle cx="409.795716561449" cy="185.95208049503643" r="2.256758334191025" class="nv-point nv-point-91"></circle><circle cx="413.93500501504514" cy="179.42142151224675" r="2.256758334191025" class="nv-point nv-point-92"></circle><circle cx="418.511629004661" cy="166.8126106306047" r="2.256758334191025" class="nv-point nv-point-93"></circle><circle cx="422.94658091922827" cy="162.5859132898172" r="2.256758334191025" class="nv-point nv-point-94"></circle><circle cx="427.5293645642811" cy="179.99625011494908" r="2.256758334191025" class="nv-point nv-point-95"></circle><circle cx="431.96431647884833" cy="191.00137403321156" r="2.256758334191025" class="nv-point nv-point-96"></circle><circle cx="436.5471001239011" cy="177.59509448598277" r="2.256758334191025" class="nv-point nv-point-97"></circle><circle cx="441.1298837689539" cy="187.17183998861452" r="2.256758334191025" class="nv-point nv-point-98"></circle><circle cx="445.56483568352115" cy="169.11380460463516" r="2.256758334191025" class="nv-point nv-point-99"></circle><circle cx="450.1476193285739" cy="160.9958802346112" r="2.256758334191025" class="nv-point nv-point-100"></circle><circle cx="454.58873089857804" cy="160.12821675666612" r="2.256758334191025" class="nv-point nv-point-101"></circle><circle cx="459.1715145436309" cy="145.15897999677068" r="2.256758334191025" class="nv-point nv-point-102"></circle><circle cx="463.75429818868366" cy="139.78794493456581" r="2.256758334191025" class="nv-point nv-point-103"></circle><circle cx="467.8935866422798" cy="131.10578421632158" r="2.256758334191025" class="nv-point nv-point-104"></circle><circle cx="472.47021063189567" cy="130.21029293021252" r="2.256758334191025" class="nv-point nv-point-105"></circle><circle cx="476.9051625464629" cy="122.8055982025389" r="2.256758334191025" class="nv-point nv-point-106"></circle><circle cx="481.48794619151573" cy="125.77967491817182" r="2.256758334191025" class="nv-point nv-point-107"></circle><circle cx="485.922898106083" cy="130.16562928333784" r="2.256758334191025" class="nv-point nv-point-108"></circle><circle cx="490.50568175113574" cy="135.74834520441095" r="2.256758334191025" class="nv-point nv-point-109"></circle><circle cx="495.08846539618855" cy="149.74871387822228" r="2.256758334191025" class="nv-point nv-point-110"></circle><circle cx="499.5234173107558" cy="167.13653280013438" r="2.256758334191025" class="nv-point nv-point-111"></circle><circle cx="504.10620095580856" cy="142.71521589930188" r="2.256758334191025" class="nv-point nv-point-112"></circle><circle cx="508.5473125258127" cy="143.18953253487058" r="2.256758334191025" class="nv-point nv-point-113"></circle><circle cx="513.1300961708655" cy="140.99220051467688" r="2.256758334191025" class="nv-point nv-point-114"></circle><circle cx="517.7128798159183" cy="129.5359374086525" r="2.256758334191025" class="nv-point nv-point-115"></circle><circle cx="522" cy="118.73124871680275" r="2.256758334191025" class="nv-point nv-point-116"></circle></g></g><g class="nv-point-paths"></g></g></g></g></g></g></g><g class="nv-legendWrap"></g><g class="nv-interactive"><g class=" nv-wrap nv-interactiveLineLayer"><g class="nv-interactiveGuideLine"></g></g></g></g></g></svg>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-4 p-l-15">
+                                <div class="widget-12-search">
+                                    <p class="pull-left">Stocks list</p>
+                                    <button aria-label="" class="btn btn-default btn-rounded btn-icon pull-right">
+                                        <i class="pg-icon">add</i>
+                                    </button>
+                                    <div class="clearfix"></div>
+                                    <input type="text" placeholder="Search list" class="form-control m-t-5">
+                                </div>
+                                <div class="company-stat-boxes">
+                                    <div data-index="0" class="company-stat-box m-t-15 active p-l-5 p-r-5 p-t-10 p-b-10 b-b b-grey">
+                                        <div class="pull-left">
+                                            <p class="company-name pull-left text-uppercase bold no-margin">
+                                                <span class="text-success fs-11"></span> AAPL
+                                            </p>
+                                            <small class="hint-text m-l-10">Apple Inc.</small>
+                                        </div>
+                                        <div class="pull-right">
+                                            <p class="small hint-text no-margin inline">325.73</p>
+                                            <span class="label label-success m-l-5 inline">+ 12.09</span>
+                                        </div>
+                                        <div class="clearfix"></div>
+                                    </div>
+                                    <div data-index="1" class="company-stat-box active p-l-5 p-r-5 p-t-15 p-b-10 b-b b-grey">
+                                        <div class="pull-left">
+                                            <p class="company-name pull-left text-uppercase bold no-margin">
+                                                <span class="text-success fs-11"></span> GOOG
+                                            </p>
+                                            <small class="hint-text m-l-10">Alphabet Inc.</small>
+                                        </div>
+                                        <div class="pull-right">
+                                            <p class="small hint-text no-margin inline">1407.73</p>
+                                            <span class="label label-important m-l-5 inline">- 1.09</span>
+                                        </div>
+                                        <div class="clearfix"></div>
+                                    </div>
+                                    <div data-index="2" class="company-stat-box active p-l-5 p-r-5 p-t-15 p-b-10 b-b b-grey">
+                                        <div class="pull-left">
+                                            <p class="company-name pull-left text-uppercase bold no-margin">
+                                                <span class="text-success fs-11"></span> YHOO
+                                            </p>
+                                            <small class="hint-text m-l-10">Yahoo Inc.</small>
+                                        </div>
+                                        <div class="pull-right">
+                                            <p class="small hint-text no-margin inline">37.73</p>
+                                            <span class="label label-success m-l-5 inline">+ 0.09</span>
+                                        </div>
+                                        <div class="clearfix"></div>
+                                    </div>
+                                    <div data-index="3" class="company-stat-box active p-l-5 p-r-5 p-t-15 p-b-10 b-b b-grey">
+                                        <div class="pull-left">
+                                            <p class="company-name pull-left text-uppercase bold no-margin">
+                                                <span class="text-success fs-11"></span> NKE
+                                            </p>
+                                            <small class="hint-text m-l-10">Nike Inc.</small>
+                                        </div>
+                                        <div class="pull-right">
+                                            <p class="small hint-text no-margin inline">100.02</p>
+                                            <span class="label label-important m-l-5 inline">- 0.04</span>
+                                        </div>
+                                        <div class="clearfix"></div>
+                                    </div>
+                                    <div data-index="4" class="company-stat-box active p-l-5 p-r-5 p-t-15 p-b-10">
+                                        <div class="pull-left">
+                                            <p class="company-name pull-left text-uppercase bold no-margin">
+                                                <span class="text-success fs-11"></span> TSLA
+                                            </p>
+                                            <small class="hint-text m-l-10">Tesla Inc.</small>
+                                        </div>
+                                        <div class="pull-right">
+                                            <p class="small hint-text no-margin inline">537.73</p>
+                                            <span class="label label-success m-l-5 inline">+ 0.09</span>
+                                        </div>
+                                        <div class="clearfix"></div>
+                                    </div>
+                                </div>
+                                <span class="pull-bottom hint-text small widget-12-footer">VIA YAHOO Finance (Stock market API)(800) MY-STOCKS (800-692-7753)</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- END WIDGET -->
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-6 hidden-lg visible-xlg col-xlg-4 m-b-10">
+        <!-- START WIDGET D3 widget_stackedBarWidget-->
+        <div class="widget-15 card no-margin  widget-loader-circle">
+            <div class="card-header top-right">
+                <div class="card-controls">
+                    <ul>
+                        <li>
+                            <a href="#" class="card-refresh" data-toggle="refresh"><i class="card-icon card-icon-refresh"></i></a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="card-body no-padding">
+                <ul class="nav nav-tabs nav-tabs-simple p-t-5">
+                    <li class="nav-item">
+                        <a href="#" data-toggle="tab" class="active">
+                            APPL<br>
+                            22.23<br>
+                            <span class="text-success">+60.223%</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" data-toggle="tab" class="">
+                            FB<br>
+                            45.97<br>
+                            <span class="text-danger">-06.56%</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" data-toggle="tab" class="">
+                            GOOG<br>
+                            22.23<br>
+                            <span class="text-success">+60.223%</span>
+                        </a>
+                    </li>
+                </ul>
+                <div class="tab-content p-l-10 p-r-10">
+                    <div class="tab-pane no-padding active" id="widget-15-tab-1">
+                        <div class="full-width">
+                            <div class="full-width">
+                                <div class="widget-15-chart rickshaw-chart rickshaw_graph"><svg width="400" height="200"><rect x="0" y="144.4297105822387" width="9.5" height="55.57028941776131" transform="matrix(1,0,0,1,0,0)" fill="rgba(66, 199, 244, 1)"></rect><rect x="10" y="134.3589421368559" width="9.5" height="65.64105786314411" transform="matrix(1,0,0,1,0,0)" fill="rgba(66, 199, 244, 1)"></rect><rect x="20" y="132.9245031657227" width="9.5" height="67.07549683427729" transform="matrix(1,0,0,1,0,0)" fill="rgba(66, 199, 244, 1)"></rect><rect x="30" y="142.7547084969589" width="9.5" height="57.24529150304111" transform="matrix(1,0,0,1,0,0)" fill="rgba(66, 199, 244, 1)"></rect><rect x="40" y="135.38466013345675" width="9.5" height="64.61533986654325" transform="matrix(1,0,0,1,0,0)" fill="rgba(66, 199, 244, 1)"></rect><rect x="50" y="135.46267325376894" width="9.5" height="64.53732674623106" transform="matrix(1,0,0,1,0,0)" fill="rgba(66, 199, 244, 1)"></rect><rect x="60" y="135.4993183586804" width="9.5" height="64.50068164131959" transform="matrix(1,0,0,1,0,0)" fill="rgba(66, 199, 244, 1)"></rect><rect x="70" y="134.51841167295385" width="9.5" height="65.48158832704615" transform="matrix(1,0,0,1,0,0)" fill="rgba(66, 199, 244, 1)"></rect><rect x="80" y="134.04774625716274" width="9.5" height="65.95225374283726" transform="matrix(1,0,0,1,0,0)" fill="rgba(66, 199, 244, 1)"></rect><rect x="90" y="135.73484082354855" width="9.5" height="64.26515917645143" transform="matrix(1,0,0,1,0,0)" fill="rgba(66, 199, 244, 1)"></rect><rect x="100" y="137.82963536656422" width="9.5" height="62.170364633435796" transform="matrix(1,0,0,1,0,0)" fill="rgba(66, 199, 244, 1)"></rect><rect x="110.00000000000001" y="143.28969858697053" width="9.5" height="56.71030141302948" transform="matrix(1,0,0,1,0,0)" fill="rgba(66, 199, 244, 1)"></rect><rect x="120" y="149.29509884857907" width="9.5" height="50.704901151420934" transform="matrix(1,0,0,1,0,0)" fill="rgba(66, 199, 244, 1)"></rect><rect x="130" y="149.8129548363635" width="9.5" height="50.1870451636365" transform="matrix(1,0,0,1,0,0)" fill="rgba(66, 199, 244, 1)"></rect><rect x="140" y="141.37835122813314" width="9.5" height="58.621648771866866" transform="matrix(1,0,0,1,0,0)" fill="rgba(66, 199, 244, 1)"></rect><rect x="150" y="148.45744858198947" width="9.5" height="51.54255141801052" transform="matrix(1,0,0,1,0,0)" fill="rgba(66, 199, 244, 1)"></rect><rect x="160" y="142.67139688150718" width="9.5" height="57.32860311849283" transform="matrix(1,0,0,1,0,0)" fill="rgba(66, 199, 244, 1)"></rect><rect x="170" y="139.10881417530953" width="9.5" height="60.89118582469045" transform="matrix(1,0,0,1,0,0)" fill="rgba(66, 199, 244, 1)"></rect><rect x="180" y="150.28126211416634" width="9.5" height="49.718737885833676" transform="matrix(1,0,0,1,0,0)" fill="rgba(66, 199, 244, 1)"></rect><rect x="190" y="147.31781413902542" width="9.5" height="52.682185860974585" transform="matrix(1,0,0,1,0,0)" fill="rgba(66, 199, 244, 1)"></rect><rect x="200" y="148.3669739666238" width="9.5" height="51.63302603337622" transform="matrix(1,0,0,1,0,0)" fill="rgba(66, 199, 244, 1)"></rect><rect x="210" y="149.01945531335969" width="9.5" height="50.98054468664033" transform="matrix(1,0,0,1,0,0)" fill="rgba(66, 199, 244, 1)"></rect><rect x="220.00000000000003" y="144.2164769494998" width="9.5" height="55.783523050500214" transform="matrix(1,0,0,1,0,0)" fill="rgba(66, 199, 244, 1)"></rect><rect x="230.00000000000003" y="150.604250773169" width="9.5" height="49.39574922683098" transform="matrix(1,0,0,1,0,0)" fill="rgba(66, 199, 244, 1)"></rect><rect x="240" y="150.24256195883072" width="9.5" height="49.75743804116929" transform="matrix(1,0,0,1,0,0)" fill="rgba(66, 199, 244, 1)"></rect><rect x="250" y="146.96116564097105" width="9.5" height="53.03883435902896" transform="matrix(1,0,0,1,0,0)" fill="rgba(66, 199, 244, 1)"></rect><rect x="260" y="138.98961974710565" width="9.5" height="61.01038025289436" transform="matrix(1,0,0,1,0,0)" fill="rgba(66, 199, 244, 1)"></rect><rect x="270" y="144.97336472665933" width="9.5" height="55.02663527334069" transform="matrix(1,0,0,1,0,0)" fill="rgba(66, 199, 244, 1)"></rect><rect x="280" y="148.96771435866455" width="9.5" height="51.03228564133544" transform="matrix(1,0,0,1,0,0)" fill="rgba(66, 199, 244, 1)"></rect><rect x="290" y="142.01170098299554" width="9.5" height="57.988299017004465" transform="matrix(1,0,0,1,0,0)" fill="rgba(66, 199, 244, 1)"></rect><rect x="300" y="150.46486631928602" width="9.5" height="49.53513368071399" transform="matrix(1,0,0,1,0,0)" fill="rgba(66, 199, 244, 1)"></rect><rect x="310" y="146.25741395205165" width="9.5" height="53.74258604794836" transform="matrix(1,0,0,1,0,0)" fill="rgba(66, 199, 244, 1)"></rect><rect x="320" y="148.52706948196268" width="9.5" height="51.472930518037316" transform="matrix(1,0,0,1,0,0)" fill="rgba(66, 199, 244, 1)"></rect><rect x="330" y="145.2486353446315" width="9.5" height="54.751364655368505" transform="matrix(1,0,0,1,0,0)" fill="rgba(66, 199, 244, 1)"></rect><rect x="340" y="140.97068220675604" width="9.5" height="59.02931779324396" transform="matrix(1,0,0,1,0,0)" fill="rgba(66, 199, 244, 1)"></rect><rect x="350" y="142.89514583786166" width="9.5" height="57.10485416213834" transform="matrix(1,0,0,1,0,0)" fill="rgba(66, 199, 244, 1)"></rect><rect x="360" y="138.2034444442598" width="9.5" height="61.79655555574023" transform="matrix(1,0,0,1,0,0)" fill="rgba(66, 199, 244, 1)"></rect><rect x="370" y="140.48924187593974" width="9.5" height="59.510758124060246" transform="matrix(1,0,0,1,0,0)" fill="rgba(66, 199, 244, 1)"></rect><rect x="380" y="134.43152481409024" width="9.5" height="65.56847518590976" transform="matrix(1,0,0,1,0,0)" fill="rgba(66, 199, 244, 1)"></rect><rect x="390" y="144.84287686327744" width="9.5" height="55.15712313672256" transform="matrix(1,0,0,1,0,0)" fill="rgba(66, 199, 244, 1)"></rect><rect x="0" y="80.4524319695602" width="9.5" height="63.97727861267849" transform="matrix(1,0,0,1,0,0)" fill="rgba(244, 244, 244, 1)"></rect><rect x="10" y="68.52078804557732" width="9.5" height="65.83815409127858" transform="matrix(1,0,0,1,0,0)" fill="rgba(244, 244, 244, 1)"></rect><rect x="20" y="66.66666666666669" width="9.5" height="66.25783649905605" transform="matrix(1,0,0,1,0,0)" fill="rgba(244, 244, 244, 1)"></rect><rect x="30" y="88.10574034980492" width="9.5" height="54.64896814715395" transform="matrix(1,0,0,1,0,0)" fill="rgba(244, 244, 244, 1)"></rect><rect x="40" y="73.51684814821056" width="9.5" height="61.86781198524621" transform="matrix(1,0,0,1,0,0)" fill="rgba(244, 244, 244, 1)"></rect><rect x="50" y="75.85559071805703" width="9.5" height="59.60708253571192" transform="matrix(1,0,0,1,0,0)" fill="rgba(244, 244, 244, 1)"></rect><rect x="60" y="73.35301526959901" width="9.5" height="62.1463030890814" transform="matrix(1,0,0,1,0,0)" fill="rgba(244, 244, 244, 1)"></rect><rect x="70" y="74.35020242179814" width="9.5" height="60.16820925115568" transform="matrix(1,0,0,1,0,0)" fill="rgba(244, 244, 244, 1)"></rect><rect x="80" y="78.06861248558683" width="9.5" height="55.97913377157593" transform="matrix(1,0,0,1,0,0)" fill="rgba(244, 244, 244, 1)"></rect><rect x="90" y="71.32620759166039" width="9.5" height="64.40863323188817" transform="matrix(1,0,0,1,0,0)" fill="rgba(244, 244, 244, 1)"></rect><rect x="100" y="73.53560283214678" width="9.5" height="64.29403253441744" transform="matrix(1,0,0,1,0,0)" fill="rgba(244, 244, 244, 1)"></rect><rect x="110.00000000000001" y="80.39259064880899" width="9.5" height="62.89710793816155" transform="matrix(1,0,0,1,0,0)" fill="rgba(244, 244, 244, 1)"></rect><rect x="120" y="95.01090367389415" width="9.5" height="54.28419517468491" transform="matrix(1,0,0,1,0,0)" fill="rgba(244, 244, 244, 1)"></rect><rect x="130" y="94.55149504291131" width="9.5" height="55.2614597934522" transform="matrix(1,0,0,1,0,0)" fill="rgba(244, 244, 244, 1)"></rect><rect x="140" y="86.21509530659715" width="9.5" height="55.163255921536006" transform="matrix(1,0,0,1,0,0)" fill="rgba(244, 244, 244, 1)"></rect><rect x="150" y="100.52268725658818" width="9.5" height="47.93476132540129" transform="matrix(1,0,0,1,0,0)" fill="rgba(244, 244, 244, 1)"></rect><rect x="160" y="89.04035192806555" width="9.5" height="53.631044953441645" transform="matrix(1,0,0,1,0,0)" fill="rgba(244, 244, 244, 1)"></rect><rect x="170" y="91.42923004639599" width="9.5" height="47.67958412891357" transform="matrix(1,0,0,1,0,0)" fill="rgba(244, 244, 244, 1)"></rect><rect x="180" y="93.19823746064193" width="9.5" height="57.08302465352438" transform="matrix(1,0,0,1,0,0)" fill="rgba(244, 244, 244, 1)"></rect><rect x="190" y="93.56561798696139" width="9.5" height="53.75219615206404" transform="matrix(1,0,0,1,0,0)" fill="rgba(244, 244, 244, 1)"></rect><rect x="200" y="90.64866946023398" width="9.5" height="57.71830450638981" transform="matrix(1,0,0,1,0,0)" fill="rgba(244, 244, 244, 1)"></rect><rect x="210" y="93.45981389311365" width="9.5" height="55.55964142024603" transform="matrix(1,0,0,1,0,0)" fill="rgba(244, 244, 244, 1)"></rect><rect x="220.00000000000003" y="97.42563183705906" width="9.5" height="46.79084511244073" transform="matrix(1,0,0,1,0,0)" fill="rgba(244, 244, 244, 1)"></rect><rect x="230.00000000000003" y="94.83508647774765" width="9.5" height="55.76916429542138" transform="matrix(1,0,0,1,0,0)" fill="rgba(244, 244, 244, 1)"></rect><rect x="240" y="103.05682458699079" width="9.5" height="47.18573737183993" transform="matrix(1,0,0,1,0,0)" fill="rgba(244, 244, 244, 1)"></rect><rect x="250" y="87.4305039886748" width="9.5" height="59.530661652296246" transform="matrix(1,0,0,1,0,0)" fill="rgba(244, 244, 244, 1)"></rect><rect x="260" y="83.23212202142403" width="9.5" height="55.757497725681624" transform="matrix(1,0,0,1,0,0)" fill="rgba(244, 244, 244, 1)"></rect><rect x="270" y="95.41392187140009" width="9.5" height="49.55944285525922" transform="matrix(1,0,0,1,0,0)" fill="rgba(244, 244, 244, 1)"></rect><rect x="280" y="93.00686396412468" width="9.5" height="55.9608503945399" transform="matrix(1,0,0,1,0,0)" fill="rgba(244, 244, 244, 1)"></rect><rect x="290" y="92.83106642585146" width="9.5" height="49.18063455714407" transform="matrix(1,0,0,1,0,0)" fill="rgba(244, 244, 244, 1)"></rect><rect x="300" y="98.42714142042917" width="9.5" height="52.037724898856844" transform="matrix(1,0,0,1,0,0)" fill="rgba(244, 244, 244, 1)"></rect><rect x="310" y="94.02109267383028" width="9.5" height="52.236321278221354" transform="matrix(1,0,0,1,0,0)" fill="rgba(244, 244, 244, 1)"></rect><rect x="320" y="95.94620210095157" width="9.5" height="52.58086738101112" transform="matrix(1,0,0,1,0,0)" fill="rgba(244, 244, 244, 1)"></rect><rect x="330" y="89.87769851806571" width="9.5" height="55.370936826565796" transform="matrix(1,0,0,1,0,0)" fill="rgba(244, 244, 244, 1)"></rect><rect x="340" y="80.24555414081446" width="9.5" height="60.72512806594156" transform="matrix(1,0,0,1,0,0)" fill="rgba(244, 244, 244, 1)"></rect><rect x="350" y="83.07484762034206" width="9.5" height="59.82029821751963" transform="matrix(1,0,0,1,0,0)" fill="rgba(244, 244, 244, 1)"></rect><rect x="360" y="78.18447677237515" width="9.5" height="60.018967671884624" transform="matrix(1,0,0,1,0,0)" fill="rgba(244, 244, 244, 1)"></rect><rect x="370" y="86.6660255762834" width="9.5" height="53.82321629965635" transform="matrix(1,0,0,1,0,0)" fill="rgba(244, 244, 244, 1)"></rect><rect x="380" y="81.32181624241571" width="9.5" height="53.10970857167453" transform="matrix(1,0,0,1,0,0)" fill="rgba(244, 244, 244, 1)"></rect><rect x="390" y="94.53356982791558" width="9.5" height="50.30930703536184" transform="matrix(1,0,0,1,0,0)" fill="rgba(244, 244, 244, 1)"></rect></svg><div class="detail"></div></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tab-pane no-padding" id="widget-15-tab-2">
+                    </div>
+                    <div class="tab-pane" id="widget-15-tab-3">
+                    </div>
+                </div>
+                <div class="p-t-20 p-l-20 p-r-20 p-b-20">
+                    <div class="row">
+                        <div class="col-md-9">
+                            <p class="fs-16">
+                                Apple’s Motivation - Innovation
+                                <br>distinguishes between A leader and a follower.
+                            </p>
+                            <p class="small hint-text">
+                                VIA Apple Store (Consumer and Education Individuals)
+                                <br>(800) MY-APPLE (800-692-7753)
+                            </p>
+                        </div>
+                        <div class="col-md-3 text-right">
+                            <p class="font-montserrat bold text-success m-r-20 fs-16 m-t-0">+0.94</p>
+                            <p class="font-montserrat bold text-danger m-r-20 fs-16">-0.63</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- END WIDGET -->
+    </div>
+</div>
+<div class="row m-b-10">
+    <div class="col-lg-8 sm-p-b-10 md-p-b-10">
+        <!-- START WIDGET widget_mapWidget-->
+        <div class="widget-13 card   no-margin widget-loader-circle">
+            <div class="card-header  pull-up top-right ">
+                <div class="card-controls">
+                    <ul>
+                        <li>
+                            <a href="#" class="card-refresh text-black" data-toggle="refresh"><i class="card-icon card-icon-refresh"></i></a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="container-sm-height no-overflow">
+                <div class="row row-sm-height">
+                    <div class="col-sm-5 col-lg-4 col-xlg-3 col-sm-height col-top no-padding">
+                        <div class="card-header  ">
+                            <div class="card-title">
+                                Geolocation
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            <ul class="nav nav-pills m-t-10 m-b-15" role="tablist">
+                                <li class="active">
+                                    <a href="#tab1" data-toggle="tab" role="tab" class="b-a b-grey text-color">
+                                        fb
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#tab2" data-toggle="tab" role="tab" class="b-a b-grey text-color">
+                                        gl
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#tab3" data-toggle="tab" role="tab" class="b-a b-grey text-color">
+                                        am
+                                    </a>
+                                </li>
+                            </ul>
+                            <div class="tab-content">
+                                <div class="tab-pane active" id="tab1">
+                                    <h3 class="m-t-5 m-b-20">Facebook</h3>
+                                    <p class="hint-text all-caps font-montserrat small no-margin ">Views</p>
+                                    <p class="all-caps font-montserrat  no-margin text-success ">14,256</p>
+                                    <br>
+                                    <p class="hint-text all-caps font-montserrat small no-margin ">Today</p>
+                                    <p class="all-caps font-montserrat  no-margin text-warning ">24</p>
+                                    <br>
+                                    <p class="hint-text all-caps font-montserrat small no-margin ">Week</p>
+                                    <p class="all-caps font-montserrat  no-margin text-success ">56</p>
+                                </div>
+                                <div class="tab-pane " id="tab2">
+                                    <h3 class="m-t-5 m-b-20">Google</h3>
+                                    <p class="hint-text all-caps font-montserrat small no-margin ">Views</p>
+                                    <p class="all-caps font-montserrat  no-margin text-success ">14,256</p>
+                                    <br>
+                                    <p class="hint-text all-caps font-montserrat small no-margin ">Today</p>
+                                    <p class="all-caps font-montserrat  no-margin text-warning ">24</p>
+                                    <br>
+                                    <p class="hint-text all-caps font-montserrat small no-margin ">Week</p>
+                                    <p class="all-caps font-montserrat  no-margin text-success ">56</p>
+                                </div>
+                                <div class="tab-pane" id="tab3">
+                                    <h3 class="m-t-5 m-b-20">Amazon</h3>
+                                    <p class="hint-text all-caps font-montserrat small no-margin ">Views</p>
+                                    <p class="all-caps font-montserrat  no-margin text-success ">14,256</p>
+                                    <br>
+                                    <p class="hint-text all-caps font-montserrat small no-margin ">Today</p>
+                                    <p class="all-caps font-montserrat  no-margin text-warning ">24</p>
+                                    <br>
+                                    <p class="hint-text all-caps font-montserrat small no-margin ">Week</p>
+                                    <p class="all-caps font-montserrat  no-margin text-success ">56</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="p-l-20 p-r-20 p-t-10 p-b-10 pull-bottom full-width hidden-xs">
+                            <p class="no-margin">
+                                <a href="#" class="btn-circle-arrow b-grey"><i class="pg-icon">chevron_down</i></a>
+                                <span class="hint-text">Super secret options</span>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="col-sm-7 col-lg-8 col-xlg-9 col-sm-height col-top no-padding relative">
+                        <div class="bg-complete widget-13-map mapplic-element" style="height: 465px;">
+                            <div class="mapplic-container" style="height: 100%;"><div class="mapplic-map mapplic-zoomable" style="left: -149.029px; top: -239.4px; width: 1918px; height: 1186px;"><div class="mapplic-layer" data-floor="states" style=""><img src="assets/img/maps/dashboard-map-dotted.png" class="mapplic-map-image"><a href="#" class="mapplic-pin pulse mapplic-active" data-location="usa" style="top: 45%; left: 22%;"></a><a href="#" class="mapplic-pin pulse" data-location="af" style="top: 60%; left: 55%;"></a><a href="#" class="mapplic-pin pulse" data-location="ru" style="top: 33.26%; left: 75%;"></a></div><div class="mapplic-tooltip" style="left: 22%; top: 45%; margin-top: -107.6px; margin-left: -72.269px; display: block;"><div class="mapplic-tooltip-triangle" style="left: 50%;"></div><a class="mapplic-tooltip-close" href="#"></a><img class="mapplic-thumbnail" style="display: none;"><h4 class="mapplic-tooltip-title">United Stats of America</h4><div class="mapplic-tooltip-content"><div class="mapplic-tooltip-description"><p>Northern America</p></div></div><a class="mapplic-popup-link" href="#" style="display: none;">More</a></div><div class="mapplic-tooltip mapplic-hovertip"><h4 class="mapplic-tooltip-title"></h4><div class="mapplic-tooltip-triangle"></div></div></div><div class="mapplic-minimap" style="opacity: 0; display: none;"><div class="mapplic-minimap-layer" data-floor="states" style=""><img class="mapplic-minimap-background"><div class="mapplic-minimap-overlay"></div><img class="mapplic-minimap-active" style="clip: rect(0px, 50px, 0px, 11px);"></div></div><a href="#" class="mapplic-button mapplic-clear-button" style="opacity: 1;"></a><div class="mapplic-zoom-buttons"><a href="#" class="mapplic-button mapplic-zoomin-button"></a><a href="#" class="mapplic-button mapplic-zoomout-button"></a></div></div><div class="mapplic-sidebar"><form class="mapplic-search-form"><input type="text" spellcheck="false" placeholder="Search" class="mapplic-search-input"><a href="#" class="mapplic-search-clear"></a></form><div class="mapplic-list-container"><ol class="mapplic-list"><li class="mapplic-list-location mapplic-list-shown" data-location="usa"><a href="#"><h4>United Stats of America</h4><span></span></a></li><li class="mapplic-list-location mapplic-list-shown" data-location="af"><a href="#"><h4>Africa</h4><span></span></a></li><li class="mapplic-list-location mapplic-list-shown" data-location="ru"><a href="#"><h4>Russia</h4><span></span></a></li></ol><p class="mapplic-not-found">Nothing found. Please try a different search.</p></div></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- END WIDGET -->
+    </div>
+    <div class="col-lg-4">
+        <!-- START WIDGET widget_realtimeWidget-->
+        <div class="widget-14 card   no-margin widget-loader-circle">
+            <div class="container-xs-height full-height">
+                <div class="row-xs-height">
+                    <div class="col-xs-height">
+                        <div class="card-header ">
+                            <div class="card-title">
+                                Server load
+                            </div>
+                            <div class="card-controls">
+                                <ul>
+                                    <li>
+                                        <a href="#" class="card-refresh text-black" data-toggle="refresh"><i class="card-icon card-icon-refresh"></i></a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row-xs-height">
+                    <div class="col-xs-height">
+                        <div class="p-l-20 p-r-20">
+                            <p>Server: www.revox.io</p>
+                            <div class="row">
+                                <div class="col-lg-3 col-md-12">
+                                    <h4 class="bold no-margin">5.2GB</h4>
+                                    <p class="small no-margin">Total usage</p>
+                                </div>
+                                <div class="col-lg-3 col-md-6">
+                                    <h5 class=" no-margin p-t-5">227.3KB</h5>
+                                    <p class="small no-margin">Currently</p>
+                                </div>
+                                <div class="col-lg-3 col-md-6">
+                                    <h5 class=" no-margin p-t-5">117.6MB</h5>
+                                    <p class="small no-margin">Average</p>
+                                </div>
+                                <div class="col-lg-3 visible-xlg">
+                                    <div class="widget-14-chart-legend bg-transparent text-black no-padding pull-right rickshaw_legend"><ul class="ui-sortable"><li class="line ui-sortable-handle"><a class="action">✔</a><div class="swatch" style="background-color: rgb(224, 224, 224);"></div><span class="label">Web Server</span></li><li class="line ui-sortable-handle"><a class="action">✔</a><div class="swatch" style="background-color: rgba(41, 205, 180, 0.5);"></div><span class="label">DB Server</span></li></ul></div>
+                                    <div class="clearfix"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row-xs-height">
+                    <div class="col-xs-height relative bg-contrast-lowest">
+                        <div class="widget-14-chart_y_axis"><svg class="rickshaw_graph y_axis" width="35" height="325.6" style="position: relative;"><g class="y_ticks plain"><g class="tick major" transform="translate(0,295)" style="opacity: 1;"><line x2="4" y2="0"></line><text x="7" y="0" dy=".32em" style="text-anchor: start;">0</text></g><g class="tick major" transform="translate(0,187.51269359634108)" style="opacity: 1;"><line x2="4" y2="0"></line><text x="7" y="0" dy=".32em" style="text-anchor: start;">10</text></g><g class="tick major" transform="translate(0,80.02538719268216)" style="opacity: 1;"><line x2="4" y2="0"></line><text x="7" y="0" dy=".32em" style="text-anchor: start;">20</text></g><path class="domain" d="M4,0H0V295H4"></path></g></svg></div>
+                        <div class="widget-14-chart rickshaw-chart top-left top-right bottom-left bottom-right rickshaw_graph"><svg width="399.2" height="295"><g><path d="M0,135.84563342501562Q7.0606802721088435,99.32084256349718,8.146938775510204,98.33333333333334C9.776326530612245,96.85206948808758,14.664489795918367,118.78250457612005,16.293877551020408,121.03299497255796S22.81142857142857,120.304689322903,24.440816326530612,120.83823729771248S30.958367346938775,128.40119055793235,32.587755102040816,126.36847472065278S39.10530612244898,101.89659987404139,40.73469387755102,100.51107892491689S47.25224489795919,112.51611408366698,48.881632653061224,112.5132652294078S55.39918367346939,99.61486513608637,57.028571428571425,100.48259038232521S63.54612244897959,121.19924951059235,65.17551020408163,121.19051769179629S71.6930612244898,100.06139969157746,73.32244897959184,100.39527219436451S79.83999999999999,121.04007757751211,81.46938775510203,124.52924271966668S87.9869387755102,134.75090106647403,89.61632653061224,135.28692361591027S96.1338775510204,130.99890372231476,97.76326530612245,129.889468214029S104.28081632653061,124.83096144033253,105.91020408163266,124.19256853305265S112.4277551020408,125.7205050769242,114.05714285714285,123.50553914123014S120.57469387755101,102.46232711559551,122.20408163265306,102.04290917611206S128.72163265306122,116.01598738675648,130.35102040816327,119.31135974639562S136.8685714285714,133.56161094779938,138.49795918367346,134.99663277250355S145.01551020408164,134.2905015470551,146.64489795918368,133.6615779934373S153.16244897959186,128.76666594725188,154.7918367346939,128.70739723632545S161.30938775510202,132.7385183669174,162.93877551020407,133.0688908841731S169.45632653061224,132.6553085547642,171.0857142857143,132.01112240888253S177.60326530612244,128.7970838384498,179.23265306122448,126.62702942535654S185.75020408163266,109.02579274061307,187.3795918367347,110.31057827794987S193.89714285714285,137.33268848881238,195.5265306122449,139.47488479872462S202.04408163265305,131.80608445694313,203.6734693877551,131.73254137707215S210.19102040816327,138.78813362302043,211.8204081632653,138.73945400001477S218.3379591836735,134.6526407928797,219.96734693877553,131.24574514701555S226.48489795918366,103.73767403060361,228.1142857142857,104.67049754137324S234.63183673469388,137.5632917483415,236.26122448979592,140.57398025471173S242.77877551020407,135.81070459080044,244.40816326530611,134.7773826050756S250.9257142857143,130.11786017514424,252.55510204081634,130.2407603974633S259.0726530612245,136.26576970362274,260.70204081632653,136.00638482826625S267.2195918367347,128.51100548812653,268.8489795918367,127.64691164389848S275.3665306122449,127.02392693466047,276.9959183673469,127.36544638598579S283.51346938775515,131.78837878630324,285.14285714285717,131.06210615715173S291.66040816326534,120.81074121367197,293.28979591836736,120.10272009447058S299.80734693877554,124.07343641795727,301.43673469387755,123.98189496513777S307.9542857142858,119.03272016792491,309.5836734693878,119.18730556627565S316.1012244897959,124.11989925986617,317.73061224489794,125.5277489486453S324.2481632653061,132.06689942768105,325.87755102040813,133.26580245406683S332.39510204081637,139.32659340676113,334.0244897959184,137.51677921250314S340.54204081632656,118.07957696947153,342.1714285714286,115.1676605114869S348.6889795918368,108.96189623772922,350.3183673469388,108.39761463265677S356.83591836734695,108.07600131196662,358.46530612244896,109.52484446076232S364.98285714285714,120.53916189654238,366.61224489795916,122.88604612061383S373.1297959183674,132.67797978746194,374.7591836734694,132.99368670147672S381.2767346938776,128.56498070263635,382.9061224489796,126.04311526076177S389.4236734693878,109.64139716017893,391.0530612244898,107.77503228273088Q392.1393197278912,106.53078903109885,399.2,107.37946648628133L399.2,192.33578678667635Q392.1393197278912,198.62148188858393,391.0530612244898,199.53414356598927C389.4236734693878,200.90313608209726,384.5355102040816,204.58385074180444,382.9061224489796,206.0257119477563S376.3885714285714,214.61010574319883,374.7591836734694,213.95275562550776S368.2416326530612,200.79314616856465,366.61224489795916,199.45221077084562S360.094693877551,200.64910421567043,358.46530612244896,200.54340164831765S351.94775510204084,197.63293143405903,350.3183673469388,198.39518509731772S343.8008163265306,207.2721520312739,342.1714285714286,208.16593828090444S335.6538775510204,207.24492351789942,334.0244897959184,207.33304759362318S327.50693877551015,208.25924387511571,325.87755102040813,209.04717903814196S319.35999999999996,215.27450425746494,317.73061224489794,215.2123992238857S311.2130612244898,209.39940678339173,309.5836734693878,208.42612870234967S303.06612244897957,205.695817869338,301.43673469387755,205.47961841346515S294.9191836734694,205.791572403973,293.28979591836736,206.26413414362113S286.7722448979592,210.40117116990166,285.14285714285717,210.20523580994654S278.62530612244893,205.2789211820021,276.9959183673469,204.3047805440701S270.47836734693874,199.06693650531707,268.8489795918367,200.46382943062648S262.33142857142855,217.8252536271334,260.70204081632653,218.27370979716423S254.18448979591838,206.3495230065506,252.55510204081634,204.9483911309348S246.03755102040816,203.56534120040268,244.40816326530611,204.262391041006S237.89061224489797,212.7323822530088,236.26122448979592,211.9188895369679S229.74367346938774,196.8892605448408,228.1142857142857,196.12746388059674S221.59673469387758,202.29024449050942,219.96734693877553,204.30092289452742S213.44979591836736,215.74279937008887,211.8204081632653,216.23424792077662S205.30285714285714,209.81216991251725,203.6734693877551,209.21540840140506S197.15591836734694,211.01062337591648,195.5265306122449,210.26663280965482S189.00897959183675,201.319025361301,187.3795918367347,201.7755027387886S180.86204081632653,213.85956874726315,179.23265306122448,214.8314065845309S172.71510204081633,211.608368098374,171.0857142857143,211.493881111466S164.5681632653061,213.46444221428044,162.93877551020407,213.68653671545104S156.42122448979595,213.96608625748908,154.7918367346939,213.71482612317197S148.27428571428572,211.72430650696683,146.64489795918368,211.17393537228008S140.1273469387755,209.76273877899476,138.49795918367346,208.2111147763045S131.9804081632653,196.98473657350314,130.35102040816327,195.65769534537753S123.8334693877551,193.13918223798612,122.20408163265306,194.94070249504853S115.6865306122449,213.20081216541192,114.05714285714285,213.67289791600157S107.5395918367347,199.7312086598317,105.91020408163266,199.66156000094506S99.3926530612245,211.914344222887,97.76326530612245,212.97641132713494S91.24571428571429,211.4563790844626,89.61632653061224,210.28223104342464S83.09877551020408,203.46127303569511,81.46938775510203,201.2349309167554S74.95183673469388,188.37834953683804,73.32244897959184,188.01880985402738S66.80489795918368,196.9064094499422,65.17551020408163,197.63953408864884S58.65795918367346,196.01816192945194,57.028571428571425,195.35005624109394S50.51102040816326,190.84383665714788,48.881632653061224,190.95847720506896S42.364081632653054,195.28151103155932,40.73469387755102,196.49646172030492S34.21714285714285,203.01079493517688,32.587755102040816,203.1079840925251S26.070204081632653,198.14774373203127,24.440816326530612,197.46835329378717S17.92326530612245,196.9440801043733,16.293877551020408,196.31407971008423S9.776326530612245,189.37641885950566,8.146938775510204,191.16834935089625Q7.0606802721088435,192.36296967848997,0,214.2333846239901Z" class="area" fill="rgba(224, 224, 224, 1)"></path></g><g><path d="M0,214.2333846239901Q7.0606802721088435,192.36296967848997,8.146938775510204,191.16834935089625C9.776326530612245,189.37641885950566,14.664489795918367,195.68407931579515,16.293877551020408,196.31407971008423S22.81142857142857,196.78896285554308,24.440816326530612,197.46835329378717S30.958367346938775,203.20517324987333,32.587755102040816,203.1079840925251S39.10530612244898,197.71141240905052,40.73469387755102,196.49646172030492S47.25224489795919,191.07311775299004,48.881632653061224,190.95847720506896S55.39918367346939,194.68195055273594,57.028571428571425,195.35005624109394S63.54612244897959,198.37265872735549,65.17551020408163,197.63953408864884S71.6930612244898,187.65927017121672,73.32244897959184,188.01880985402738S79.83999999999999,199.00858879781566,81.46938775510203,201.2349309167554S87.9869387755102,209.10808300238668,89.61632653061224,210.28223104342464S96.1338775510204,214.03847843138288,97.76326530612245,212.97641132713494S104.28081632653061,199.5919113420584,105.91020408163266,199.66156000094506S112.4277551020408,214.14498366659123,114.05714285714285,213.67289791600157S120.57469387755101,196.74222275211093,122.20408163265306,194.94070249504853S128.72163265306122,194.33065411725192,130.35102040816327,195.65769534537753S136.8685714285714,206.65949077361424,138.49795918367346,208.2111147763045S145.01551020408164,210.62356423759334,146.64489795918368,211.17393537228008S153.16244897959186,213.46356598885487,154.7918367346939,213.71482612317197S161.30938775510202,213.90863121662164,162.93877551020407,213.68653671545104S169.45632653061224,211.37939412455802,171.0857142857143,211.493881111466S177.60326530612244,215.80324442179864,179.23265306122448,214.8314065845309S185.75020408163266,202.2319801162762,187.3795918367347,201.7755027387886S193.89714285714285,209.52264224339316,195.5265306122449,210.26663280965482S202.04408163265305,208.61864689029287,203.6734693877551,209.21540840140506S210.19102040816327,216.72569647146437,211.8204081632653,216.23424792077662S218.3379591836735,206.3116012985454,219.96734693877553,204.30092289452742S226.48489795918366,195.36566721635268,228.1142857142857,196.12746388059674S234.63183673469388,211.10539682092698,236.26122448979592,211.9188895369679S242.77877551020407,204.9594408816093,244.40816326530611,204.262391041006S250.9257142857143,203.54725925531898,252.55510204081634,204.9483911309348S259.0726530612245,218.72216596719505,260.70204081632653,218.27370979716423S267.2195918367347,201.86072235593588,268.8489795918367,200.46382943062648S275.3665306122449,203.3306399061381,276.9959183673469,204.3047805440701S283.51346938775515,210.00930044999143,285.14285714285717,210.20523580994654S291.66040816326534,206.73669588326928,293.28979591836736,206.26413414362113S299.80734693877554,205.2634189575923,301.43673469387755,205.47961841346515S307.9542857142858,207.45285062130762,309.5836734693878,208.42612870234967S316.1012244897959,215.15029419030648,317.73061224489794,215.2123992238857S324.2481632653061,209.8351142011682,325.87755102040813,209.04717903814196S332.39510204081637,207.42117166934693,334.0244897959184,207.33304759362318S340.54204081632656,209.059724530535,342.1714285714286,208.16593828090444S348.6889795918368,199.1574387605764,350.3183673469388,198.39518509731772S356.83591836734695,200.43769908096488,358.46530612244896,200.54340164831765S364.98285714285714,198.1112753731266,366.61224489795916,199.45221077084562S373.1297959183674,213.2954055078167,374.7591836734694,213.95275562550776S381.2767346938776,207.46757315370814,382.9061224489796,206.0257119477563S389.4236734693878,200.90313608209726,391.0530612244898,199.53414356598927Q392.1393197278912,198.62148188858393,399.2,192.33578678667635L399.2,295Q392.1393197278912,295,391.0530612244898,295C389.4236734693878,295,384.5355102040816,295,382.9061224489796,295S376.3885714285714,295,374.7591836734694,295S368.2416326530612,295,366.61224489795916,295S360.094693877551,295,358.46530612244896,295S351.94775510204084,295,350.3183673469388,295S343.8008163265306,295,342.1714285714286,295S335.6538775510204,295,334.0244897959184,295S327.50693877551015,295,325.87755102040813,295S319.35999999999996,295,317.73061224489794,295S311.2130612244898,295,309.5836734693878,295S303.06612244897957,295,301.43673469387755,295S294.9191836734694,295,293.28979591836736,295S286.7722448979592,295,285.14285714285717,295S278.62530612244893,295,276.9959183673469,295S270.47836734693874,295,268.8489795918367,295S262.33142857142855,295,260.70204081632653,295S254.18448979591838,295,252.55510204081634,295S246.03755102040816,295,244.40816326530611,295S237.89061224489797,295,236.26122448979592,295S229.74367346938774,295,228.1142857142857,295S221.59673469387758,295,219.96734693877553,295S213.44979591836736,295,211.8204081632653,295S205.30285714285714,295,203.6734693877551,295S197.15591836734694,295,195.5265306122449,295S189.00897959183675,295,187.3795918367347,295S180.86204081632653,295,179.23265306122448,295S172.71510204081633,295,171.0857142857143,295S164.5681632653061,295,162.93877551020407,295S156.42122448979595,295,154.7918367346939,295S148.27428571428572,295,146.64489795918368,295S140.1273469387755,295,138.49795918367346,295S131.9804081632653,295,130.35102040816327,295S123.8334693877551,295,122.20408163265306,295S115.6865306122449,295,114.05714285714285,295S107.5395918367347,295,105.91020408163266,295S99.3926530612245,295,97.76326530612245,295S91.24571428571429,295,89.61632653061224,295S83.09877551020408,295,81.46938775510203,295S74.95183673469388,295,73.32244897959184,295S66.80489795918368,295,65.17551020408163,295S58.65795918367346,295,57.028571428571425,295S50.51102040816326,295,48.881632653061224,295S42.364081632653054,295,40.73469387755102,295S34.21714285714285,295,32.587755102040816,295S26.070204081632653,295,24.440816326530612,295S17.92326530612245,295,16.293877551020408,295S9.776326530612245,295,8.146938775510204,295Q7.0606802721088435,295,0,295Z" class="area" fill="rgba(41, 205, 180, 0.5)"></path></g><g class="y_grid"><g class="tick major" transform="translate(0,295)" data-y-value="0" style="opacity: 1;"><line x2="399.2" y2="0"></line><text x="402.2" y="0" dy=".32em" style="text-anchor: start;">0</text></g><g class="tick major" transform="translate(0,187.51269359634108)" data-y-value="10" style="opacity: 1;"><line x2="399.2" y2="0"></line><text x="402.2" y="0" dy=".32em" style="text-anchor: start;">10</text></g><g class="tick major" transform="translate(0,80.02538719268216)" data-y-value="20" style="opacity: 1;"><line x2="399.2" y2="0"></line><text x="402.2" y="0" dy=".32em" style="text-anchor: start;">20</text></g><path class="domain" d="M399.2,0H0V295H399.2"></path></g></svg><div class="detail"></div></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- END WIDGET -->
+    </div>
+</div>
+<div class="row">
+    <div class="col-lg-4 visible-lg hidden-xlg sm-p-b-10">
+        <!-- START WIDGET D3 widget_stackedBarWidgetBasic-->
+        <div class="widget-15-2 card no-margin  widget-loader-circle">
+            <div class="card-header  top-right">
+                <div class="card-controls">
+                    <ul>
+                        <li>
+                            <a href="#" class="card-refresh" data-toggle="refresh"><i class="card-icon card-icon-refresh"></i></a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <ul class="nav nav-tabs nav-tabs-simple">
+                <li>
+                    <a href="#widget-15-2-tab-1" class="active">
+                        APPL<br>
+                        22.23<br>
+                        <span class="text-success">+60.223%</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#widget-15-2-tab-2">
+                        FB<br>
+                        45.97<br>
+                        <span class="text-danger">-06.56%</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#widget-15-2-tab-3">
+                        GOOG<br>
+                        22.23<br>
+                        <span class="text-success">+60.223%</span>
+                    </a>
+                </li>
+            </ul>
+            <div class="tab-content p-l-10 p-r-10">
+                <div class="tab-pane no-padding active" id="widget-15-2-tab-1">
+                    <div class="full-width">
+                        <div class="widget-15-chart2 rickshaw-chart full-height rickshaw_graph"><svg width="379.725" height="200"><rect x="0" y="140.8334565354446" width="9.01846875" height="59.166543464555374" transform="matrix(1,0,0,1,0,0)" fill="rgba(66, 199, 244, 1)"></rect><rect x="9.493125000000001" y="142.79424062793456" width="9.01846875" height="57.20575937206544" transform="matrix(1,0,0,1,0,0)" fill="rgba(66, 199, 244, 1)"></rect><rect x="18.986250000000002" y="130.99870725912842" width="9.01846875" height="69.00129274087156" transform="matrix(1,0,0,1,0,0)" fill="rgba(66, 199, 244, 1)"></rect><rect x="28.479375" y="136.04163665168352" width="9.01846875" height="63.958363348316496" transform="matrix(1,0,0,1,0,0)" fill="rgba(66, 199, 244, 1)"></rect><rect x="37.972500000000004" y="131.52838891644876" width="9.01846875" height="68.47161108355122" transform="matrix(1,0,0,1,0,0)" fill="rgba(66, 199, 244, 1)"></rect><rect x="47.465625" y="140.40057181284388" width="9.01846875" height="59.59942818715612" transform="matrix(1,0,0,1,0,0)" fill="rgba(66, 199, 244, 1)"></rect><rect x="56.95875" y="134.902950382253" width="9.01846875" height="65.09704961774699" transform="matrix(1,0,0,1,0,0)" fill="rgba(66, 199, 244, 1)"></rect><rect x="66.45187500000002" y="135.74738669482537" width="9.01846875" height="64.25261330517465" transform="matrix(1,0,0,1,0,0)" fill="rgba(66, 199, 244, 1)"></rect><rect x="75.94500000000001" y="145.45655861931579" width="9.01846875" height="54.5434413806842" transform="matrix(1,0,0,1,0,0)" fill="rgba(66, 199, 244, 1)"></rect><rect x="85.43812500000001" y="143.44396989366587" width="9.01846875" height="56.55603010633414" transform="matrix(1,0,0,1,0,0)" fill="rgba(66, 199, 244, 1)"></rect><rect x="94.93125" y="137.4460337699186" width="9.01846875" height="62.55396623008138" transform="matrix(1,0,0,1,0,0)" fill="rgba(66, 199, 244, 1)"></rect><rect x="104.42437500000001" y="134.6309655019656" width="9.01846875" height="65.3690344980344" transform="matrix(1,0,0,1,0,0)" fill="rgba(66, 199, 244, 1)"></rect><rect x="113.9175" y="135.9245641215451" width="9.01846875" height="64.0754358784549" transform="matrix(1,0,0,1,0,0)" fill="rgba(66, 199, 244, 1)"></rect><rect x="123.41062500000001" y="135.3572212384808" width="9.01846875" height="64.64277876151921" transform="matrix(1,0,0,1,0,0)" fill="rgba(66, 199, 244, 1)"></rect><rect x="132.90375000000003" y="139.1191413508964" width="9.01846875" height="60.8808586491036" transform="matrix(1,0,0,1,0,0)" fill="rgba(66, 199, 244, 1)"></rect><rect x="142.39687500000002" y="148.23133551671242" width="9.01846875" height="51.768664483287594" transform="matrix(1,0,0,1,0,0)" fill="rgba(66, 199, 244, 1)"></rect><rect x="151.89000000000001" y="139.01077083536924" width="9.01846875" height="60.98922916463076" transform="matrix(1,0,0,1,0,0)" fill="rgba(66, 199, 244, 1)"></rect><rect x="161.383125" y="139.5212910801897" width="9.01846875" height="60.47870891981027" transform="matrix(1,0,0,1,0,0)" fill="rgba(66, 199, 244, 1)"></rect><rect x="170.87625000000003" y="140.14932533293688" width="9.01846875" height="59.85067466706312" transform="matrix(1,0,0,1,0,0)" fill="rgba(66, 199, 244, 1)"></rect><rect x="180.36937500000002" y="140.91072106817774" width="9.01846875" height="59.08927893182225" transform="matrix(1,0,0,1,0,0)" fill="rgba(66, 199, 244, 1)"></rect><rect x="189.8625" y="149.4202980815857" width="9.01846875" height="50.57970191841428" transform="matrix(1,0,0,1,0,0)" fill="rgba(66, 199, 244, 1)"></rect><rect x="199.35562500000003" y="151.73062510761605" width="9.01846875" height="48.26937489238394" transform="matrix(1,0,0,1,0,0)" fill="rgba(66, 199, 244, 1)"></rect><rect x="208.84875000000002" y="146.01421071204612" width="9.01846875" height="53.98578928795388" transform="matrix(1,0,0,1,0,0)" fill="rgba(66, 199, 244, 1)"></rect><rect x="218.34187500000004" y="142.88031430834084" width="9.01846875" height="57.11968569165915" transform="matrix(1,0,0,1,0,0)" fill="rgba(66, 199, 244, 1)"></rect><rect x="227.835" y="154.51254655799448" width="9.01846875" height="45.487453442005524" transform="matrix(1,0,0,1,0,0)" fill="rgba(66, 199, 244, 1)"></rect><rect x="237.328125" y="142.8510148066161" width="9.01846875" height="57.14898519338389" transform="matrix(1,0,0,1,0,0)" fill="rgba(66, 199, 244, 1)"></rect><rect x="246.82125000000002" y="141.3940181017795" width="9.01846875" height="58.605981898220506" transform="matrix(1,0,0,1,0,0)" fill="rgba(66, 199, 244, 1)"></rect><rect x="256.31437500000004" y="152.58004273088193" width="9.01846875" height="47.41995726911808" transform="matrix(1,0,0,1,0,0)" fill="rgba(66, 199, 244, 1)"></rect><rect x="265.80750000000006" y="145.0067762209979" width="9.01846875" height="54.99322377900212" transform="matrix(1,0,0,1,0,0)" fill="rgba(66, 199, 244, 1)"></rect><rect x="275.300625" y="150.38588426320172" width="9.01846875" height="49.61411573679829" transform="matrix(1,0,0,1,0,0)" fill="rgba(66, 199, 244, 1)"></rect><rect x="284.79375000000005" y="149.12490244769046" width="9.01846875" height="50.87509755230953" transform="matrix(1,0,0,1,0,0)" fill="rgba(66, 199, 244, 1)"></rect><rect x="294.286875" y="148.87844512185" width="9.01846875" height="51.12155487815001" transform="matrix(1,0,0,1,0,0)" fill="rgba(66, 199, 244, 1)"></rect><rect x="303.78000000000003" y="142.82619561893225" width="9.01846875" height="57.17380438106776" transform="matrix(1,0,0,1,0,0)" fill="rgba(66, 199, 244, 1)"></rect><rect x="313.27312500000005" y="144.63345363743719" width="9.01846875" height="55.366546362562815" transform="matrix(1,0,0,1,0,0)" fill="rgba(66, 199, 244, 1)"></rect><rect x="322.76625" y="149.0191501944189" width="9.01846875" height="50.98084980558111" transform="matrix(1,0,0,1,0,0)" fill="rgba(66, 199, 244, 1)"></rect><rect x="332.25937500000003" y="149.86441595043044" width="9.01846875" height="50.13558404956957" transform="matrix(1,0,0,1,0,0)" fill="rgba(66, 199, 244, 1)"></rect><rect x="341.75250000000005" y="144.83264558035825" width="9.01846875" height="55.16735441964177" transform="matrix(1,0,0,1,0,0)" fill="rgba(66, 199, 244, 1)"></rect><rect x="351.245625" y="141.4273086158837" width="9.01846875" height="58.57269138411628" transform="matrix(1,0,0,1,0,0)" fill="rgba(66, 199, 244, 1)"></rect><rect x="360.73875000000004" y="142.05285772153678" width="9.01846875" height="57.947142278463225" transform="matrix(1,0,0,1,0,0)" fill="rgba(66, 199, 244, 1)"></rect><rect x="370.231875" y="142.802282069817" width="9.01846875" height="57.197717930183" transform="matrix(1,0,0,1,0,0)" fill="rgba(66, 199, 244, 1)"></rect><rect x="0" y="79.58011089824237" width="9.01846875" height="61.25334563720223" transform="matrix(1,0,0,1,0,0)" fill="rgba(244, 244, 244, 1)"></rect><rect x="9.493125000000001" y="86.19493418171847" width="9.01846875" height="56.599306446216104" transform="matrix(1,0,0,1,0,0)" fill="rgba(244, 244, 244, 1)"></rect><rect x="18.986250000000002" y="68.4327019506778" width="9.01846875" height="62.566005308450634" transform="matrix(1,0,0,1,0,0)" fill="rgba(244, 244, 244, 1)"></rect><rect x="28.479375" y="73.6956848456974" width="9.01846875" height="62.34595180598612" transform="matrix(1,0,0,1,0,0)" fill="rgba(244, 244, 244, 1)"></rect><rect x="37.972500000000004" y="70.3532946384066" width="9.01846875" height="61.17509427804217" transform="matrix(1,0,0,1,0,0)" fill="rgba(244, 244, 244, 1)"></rect><rect x="47.465625" y="77.41043687412356" width="9.01846875" height="62.99013493872031" transform="matrix(1,0,0,1,0,0)" fill="rgba(244, 244, 244, 1)"></rect><rect x="56.95875" y="66.66666666666669" width="9.01846875" height="68.23628371558634" transform="matrix(1,0,0,1,0,0)" fill="rgba(244, 244, 244, 1)"></rect><rect x="66.45187500000002" y="77.06312732235219" width="9.01846875" height="58.68425937247317" transform="matrix(1,0,0,1,0,0)" fill="rgba(244, 244, 244, 1)"></rect><rect x="75.94500000000001" y="90.68881576123123" width="9.01846875" height="54.76774285808458" transform="matrix(1,0,0,1,0,0)" fill="rgba(244, 244, 244, 1)"></rect><rect x="85.43812500000001" y="75.86456538709942" width="9.01846875" height="67.57940450656642" transform="matrix(1,0,0,1,0,0)" fill="rgba(244, 244, 244, 1)"></rect><rect x="94.93125" y="82.75261720765079" width="9.01846875" height="54.69341656226783" transform="matrix(1,0,0,1,0,0)" fill="rgba(244, 244, 244, 1)"></rect><rect x="104.42437500000001" y="79.3659424021391" width="9.01846875" height="55.26502309982651" transform="matrix(1,0,0,1,0,0)" fill="rgba(244, 244, 244, 1)"></rect><rect x="113.9175" y="74.22937797513372" width="9.01846875" height="61.69518614641137" transform="matrix(1,0,0,1,0,0)" fill="rgba(244, 244, 244, 1)"></rect><rect x="123.41062500000001" y="82.85902321726954" width="9.01846875" height="52.49819802121125" transform="matrix(1,0,0,1,0,0)" fill="rgba(244, 244, 244, 1)"></rect><rect x="132.90375000000003" y="74.86385920521614" width="9.01846875" height="64.25528214568025" transform="matrix(1,0,0,1,0,0)" fill="rgba(244, 244, 244, 1)"></rect><rect x="142.39687500000002" y="96.38204208472546" width="9.01846875" height="51.84929343198695" transform="matrix(1,0,0,1,0,0)" fill="rgba(244, 244, 244, 1)"></rect><rect x="151.89000000000001" y="82.3124218199343" width="9.01846875" height="56.69834901543494" transform="matrix(1,0,0,1,0,0)" fill="rgba(244, 244, 244, 1)"></rect><rect x="161.383125" y="81.8890616405144" width="9.01846875" height="57.63222943967533" transform="matrix(1,0,0,1,0,0)" fill="rgba(244, 244, 244, 1)"></rect><rect x="170.87625000000003" y="79.26915056910192" width="9.01846875" height="60.88017476383495" transform="matrix(1,0,0,1,0,0)" fill="rgba(244, 244, 244, 1)"></rect><rect x="180.36937500000002" y="83.80478628760075" width="9.01846875" height="57.10593478057701" transform="matrix(1,0,0,1,0,0)" fill="rgba(244, 244, 244, 1)"></rect><rect x="189.8625" y="90.90340999803676" width="9.01846875" height="58.51688808354895" transform="matrix(1,0,0,1,0,0)" fill="rgba(244, 244, 244, 1)"></rect><rect x="199.35562500000003" y="96.40355339312873" width="9.01846875" height="55.32707171448732" transform="matrix(1,0,0,1,0,0)" fill="rgba(244, 244, 244, 1)"></rect><rect x="208.84875000000002" y="94.27970824390542" width="9.01846875" height="51.7345024681407" transform="matrix(1,0,0,1,0,0)" fill="rgba(244, 244, 244, 1)"></rect><rect x="218.34187500000004" y="93.08885295008392" width="9.01846875" height="49.79146135825694" transform="matrix(1,0,0,1,0,0)" fill="rgba(244, 244, 244, 1)"></rect><rect x="227.835" y="108.75739109244509" width="9.01846875" height="45.755155465549386" transform="matrix(1,0,0,1,0,0)" fill="rgba(244, 244, 244, 1)"></rect><rect x="237.328125" y="98.56684285986307" width="9.01846875" height="44.28417194675303" transform="matrix(1,0,0,1,0,0)" fill="rgba(244, 244, 244, 1)"></rect><rect x="246.82125000000002" y="93.25835817380693" width="9.01846875" height="48.13565992797258" transform="matrix(1,0,0,1,0,0)" fill="rgba(244, 244, 244, 1)"></rect><rect x="256.31437500000004" y="106.6108931964858" width="9.01846875" height="45.96914953439611" transform="matrix(1,0,0,1,0,0)" fill="rgba(244, 244, 244, 1)"></rect><rect x="265.80750000000006" y="97.23839218973924" width="9.01846875" height="47.768384031258634" transform="matrix(1,0,0,1,0,0)" fill="rgba(244, 244, 244, 1)"></rect><rect x="275.300625" y="97.28958160595451" width="9.01846875" height="53.096302657247186" transform="matrix(1,0,0,1,0,0)" fill="rgba(244, 244, 244, 1)"></rect><rect x="284.79375000000005" y="100.84781890740273" width="9.01846875" height="48.27708354028772" transform="matrix(1,0,0,1,0,0)" fill="rgba(244, 244, 244, 1)"></rect><rect x="294.286875" y="96.67218979336623" width="9.01846875" height="52.20625532848376" transform="matrix(1,0,0,1,0,0)" fill="rgba(244, 244, 244, 1)"></rect><rect x="303.78000000000003" y="90.63893589837843" width="9.01846875" height="52.18725972055381" transform="matrix(1,0,0,1,0,0)" fill="rgba(244, 244, 244, 1)"></rect><rect x="313.27312500000005" y="95.28313969703733" width="9.01846875" height="49.35031394039986" transform="matrix(1,0,0,1,0,0)" fill="rgba(244, 244, 244, 1)"></rect><rect x="322.76625" y="88.77878221296737" width="9.01846875" height="60.240367981451506" transform="matrix(1,0,0,1,0,0)" fill="rgba(244, 244, 244, 1)"></rect><rect x="332.25937500000003" y="90.69356557250094" width="9.01846875" height="59.17085037792948" transform="matrix(1,0,0,1,0,0)" fill="rgba(244, 244, 244, 1)"></rect><rect x="341.75250000000005" y="93.67230082431948" width="9.01846875" height="51.16034475603875" transform="matrix(1,0,0,1,0,0)" fill="rgba(244, 244, 244, 1)"></rect><rect x="351.245625" y="82.35387034148391" width="9.01846875" height="59.073438274399805" transform="matrix(1,0,0,1,0,0)" fill="rgba(244, 244, 244, 1)"></rect><rect x="360.73875000000004" y="88.67955856163563" width="9.01846875" height="53.37329915990116" transform="matrix(1,0,0,1,0,0)" fill="rgba(244, 244, 244, 1)"></rect><rect x="370.231875" y="86.10540501962404" width="9.01846875" height="56.69687705019295" transform="matrix(1,0,0,1,0,0)" fill="rgba(244, 244, 244, 1)"></rect></svg><div class="detail"></div></div>
+                    </div>
+                </div>
+                <div class="tab-pane no-padding" id="widget-15-2-tab-2">
+                </div>
+                <div class="tab-pane" id="widget-15-2-tab-3">
+                </div>
+            </div>
+            <div class="p-t-10 p-l-20 p-r-20 p-b-20">
+                <div class="row">
+                    <div class="col-md-9">
+                        <p class="fs-16">
+                            Apple’s Motivation - Innovation distinguishes between A leader and a follower.
+                        </p>
+                        <p class="small hint-text">
+                            VIA Apple Store (Consumer and Education Individuals)
+                            <br>(800) MY-APPLE (800-692-7753)
+                        </p>
+                    </div>
+                    <div class="col-md-3 text-right">
+                        <h5 class="font-montserrat bold text-success m-t-0">+0.94</h5>
+                        <h5 class="font-montserrat bold text-danger">-0.63</h5>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- END WIDGET -->
+    </div>
+    <div class="col-md-4 col-lg-3 col-xlg-3 m-b-10 visible-xlg">
+        <!-- START WIDGET D3 widget_graphOptionsWidget-->
+        <div class="widget-16 card   no-margin widget-loader-circle">
+            <div class="card-header ">
+                <div class="card-title">
+                    Page Options
+                </div>
+                <div class="card-controls">
+                    <ul>
+                        <li>
+                            <a href="#" class="card-refresh text-black" data-toggle="refresh"><i class="card-icon card-icon-refresh"></i></a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="widget-16-header p-r-20 p-l-20 p-t-10 d-flex">
+                <span class="icon-thumbnail bg-contrast-low pull-left text-color pg-icon">ws</span>
+                <div class="flex-1 full-width overflow-ellipsis">
+                    <p class="hint-text all-caps font-montserrat  small no-margin overflow-ellipsis ">
+                        Pages name
+                    </p>
+                    <h6 class="no-margin overflow-ellipsis ">Webarch Sales Analysis</h6>
+                </div>
+            </div>
+            <div class="p-l-20 p-r-45 p-t-25 p-b-25">
+                <ul class="list-inline no-margin">
+                    <li class="p-r-25">
+                        <p class="hint-text all-caps font-montserrat small no-margin ">Views</p>
+                        <p class="all-caps font-montserrat  no-margin text-success ">14,256</p>
+                    </li>
+                    <li class="p-r-25">
+                        <p class="hint-text all-caps font-montserrat small no-margin ">Today</p>
+                        <p class="all-caps font-montserrat  no-margin text-warning ">24</p>
+                    </li>
+                    <li class="p-r-25">
+                        <p class="hint-text all-caps font-montserrat small no-margin ">Week</p>
+                        <p class="all-caps font-montserrat  no-margin text-success ">56</p>
+                    </li>
+                </ul>
+            </div>
+            <div class="relative no-overflow">
+                <div class="widget-16-chart line-chart" data-line-color="success" data-points="true" data-point-color="white" data-stroke-width="2">
+                    <svg><g class="nvd3 nv-wrap nv-lineChart" transform="translate(-10,10)"><g><rect width="120" height="80" style="opacity: 0;"></rect><g class="nv-x nv-axis"></g><g class="nv-y nv-axis"></g><g class="nv-linesWrap"><g class="nvd3 nv-wrap nv-line" transform="translate(0,0)"><defs><clipPath id="nv-edge-clip-93534"><rect width="120" height="80"></rect></clipPath></defs><g clip-path=""><g class="nv-groups"><g class="nv-group nv-series-0" style="stroke-opacity: 1; fill-opacity: 0.5; fill: rgb(39, 206, 188); stroke: rgb(39, 206, 188);"><path class="nv-line" d="M0,80L20.000000000000004,58.66666666666667L40.00000000000001,26.66666666666667L60,21.333333333333336L80.00000000000001,0L100,10.666666666666657L120,53.333333333333336"></path></g></g><g class="nv-scatterWrap" clip-path=""><g class="nvd3 nv-wrap nv-scatter nv-chart-93534" transform="translate(0,0)"><defs><clipPath id="nv-edge-clip-93534"><rect width="120" height="80"></rect></clipPath></defs><g clip-path=""><g class="nv-groups"><g class="nv-group nv-series-0" style="stroke-opacity: 1; fill-opacity: 0.5; stroke: rgb(39, 206, 188); fill: rgb(39, 206, 188);"><circle cx="0" cy="80" r="4" class="nv-point nv-point-0"></circle><circle cx="20.000000000000004" cy="58.66666666666667" r="4" class="nv-point nv-point-1"></circle><circle cx="40.00000000000001" cy="26.66666666666667" r="4" class="nv-point nv-point-2"></circle><circle cx="60" cy="21.333333333333336" r="4" class="nv-point nv-point-3"></circle><circle cx="80.00000000000001" cy="0" r="4" class="nv-point nv-point-4"></circle><circle cx="100" cy="10.666666666666657" r="4" class="nv-point nv-point-5"></circle><circle cx="120" cy="53.333333333333336" r="4" class="nv-point nv-point-6"></circle></g></g><g class="nv-point-paths"></g></g></g></g></g></g></g><g class="nv-legendWrap"></g><g class="nv-interactive"><g class=" nv-wrap nv-interactiveLineLayer"><g class="nv-interactiveGuideLine"></g></g></g></g></g></svg>
+                </div>
+            </div>
+            <div class="b-b b-t b-grey p-l-20 p-r-20 p-b-15 p-t-15">
+                <div class="form-check switch switch-lg success full-width right d-flex m-b-0">
+                    <input type="checkbox" id="pagesSwitch1">
+                    <label for="pagesSwitch1" class="full-width">Post is Public</label>
+                </div>
+            </div>
+            <div class="b-b b-grey p-l-20 p-r-20 p-b-15 p-t-15">
+                <div class="form-check switch switch-lg success full-width right d-flex m-b-0">
+                    <input type="checkbox" id="pagesSwitch2" checked="">
+                    <label for="pagesSwitch2" class="full-width">Maintenance mode</label>
+                </div>
+                <div class="clearfix"></div>
+            </div>
+            <div class="p-l-20 p-r-20 p-t-10 p-b-10 ">
+                <p class="pull-left no-margin hint-text">Super secret options</p>
+                <a href="#" class="btn-circle-arrow b-grey pull-right"><i class="pg-icon">chevron_down</i></a>
+                <div class="clearfix"></div>
+            </div>
+        </div>
+        <!-- END WIDGET -->
+    </div>
+    <div class="col-xlg-3 visible-xlg ">
+        <div class="row">
+            <div class="col-xlg-12">
+                <!-- START WIDGET widget_socialPostTile-->
+                <div class="card   no-margin">
+                    <div class="padding-15">
+                        <div class="item-header clearfix">
+                            <div class="thumbnail-wrapper d32 circular">
+                                <img width="40" height="40" src="assets/img/profiles/3x.jpg" data-src="assets/img/profiles/3.jpg" data-src-retina="assets/img/profiles/3x.jpg" alt="">
+                            </div>
+                            <div class="inline m-l-10">
+                                <p class="no-margin">
+                                    <strong>Anne Simons</strong>
+                                </p>
+                                <p class="no-margin hint-text fs-12 d-flex">
+                                    Shared a link
+                                    <span class="location semi-bold d-flex"><i class="pg-icon">map</i> NY center</span>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <hr class="no-margin">
+                    <div class="padding-15">
+                        <p>Crafting Digital Products that merge Humans and Machines. Join the revolution.</p>
+                        <div class="hint-text fs-12">via themeforest</div>
+                    </div>
+                    <div class="relative">
+                        <ul class="buttons pull-top top-right list-inline p-r-10 p-t-10">
+                            <li>
+                                <a class="text-white" href="#">
+                                    <i class="pg-icon">expand</i>
+                                </a>
+                            </li>
+                            <li>
+                                <a class="text-white" href="#">
+                                    <i class="pg-icon">comment</i>
+                                </a>
+                            </li>
+                        </ul>
+                        <div class="widget-19-post no-overflow">
+                            <img src="assets/img/social-post-image.png" class="block center-margin relative" alt="Post">
+                        </div>
+                    </div>
+                    <div class="padding-15">
+                        <div class="hint-text pull-left fs-13">few seconds ago</div>
+                        <ul class="list-inline pull-right no-margin">
+                            <li>
+                                <a class="text-color hint-text fs-13 d-flex" href="#"><i class="pg-icon m-r-5">comment_alt</i> 5,345</a>
+                            </li>
+                            <li>
+                                <a class="text-color hint-text fs-13 d-flex" href="#"><i class="pg-icon m-r-5">heart</i> 23K</a>
+                            </li>
+                        </ul>
+                        <div class="clearfix"></div>
+                    </div>
+                </div>
+                <!-- END WIDGET -->
+            </div>
+        </div>
+    </div>
+    <div class="col-md-12 col-lg-8 col-xlg-6 md-m-t-10">
+        <!-- START WIDGET widget_weatherWidget-->
+        <div class="widget-17 card  no-border no-margin widget-loader-circle">
+            <div class="card-header ">
+                <div class="card-title">
+                    <i class="pg-icon">map</i> California, USA
+                    <span class="caret"></span>
+                </div>
+                <div class="card-controls">
+                    <ul>
+                        <li class="">
+                            <div class="dropdown">
+                                <a data-target="#" href="#" data-toggle="dropdown" aria-haspopup="true" role="button" aria-expanded="false">
+                                    <i class="card-icon card-icon-settings"></i>
+                                </a>
+                                <ul class="dropdown-menu pull-right" role="menu">
+                                    <li>
+                                        <a href="#">AAPL</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">YHOO</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">GOOG</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li>
+                            <a data-toggle="refresh" class="card-refresh text-black" href="#">
+                                <i class="card-icon card-icon-refresh"></i>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="card-body">
+                <div class="p-l-0">
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <div class="row m-t-10">
+                                <div class="col-lg-5">
+                                    <h4 class="no-margin">Monday</h4>
+                                    <p class="small hint-text">9th August 2020</p>
+                                </div>
+                                <div class="col-lg-7">
+                                    <div class="pull-left">
+                                        <p class="small hint-text no-margin">Currently</p>
+                                        <h4 class="text-danger bold no-margin">
+                                            32°
+                                            <span class="small">/ 30C</span>
+                                        </h4>
+                                    </div>
+                                    <div class="pull-right">
+                                        <canvas height="64" width="64" class="clear-day"></canvas>
+                                    </div>
+                                </div>
+                            </div>
+                            <h5>
+                                Feels like
+                                <span class="semi-bold">rainy</span>
+                            </h5>
+                            <p>Weather information</p>
+                            <div class="widget-17-weather">
+                                <div class="row">
+                                    <div class="col-6 p-r-10">
+                                        <div class="row">
+                                            <div class="col-lg-12">
+                                                <p class="pull-left">Wind</p>
+                                                <p class="pull-right bold">11km/h</p>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-lg-12">
+                                                <p class="pull-left">Sunrise</p>
+                                                <p class="pull-right bold">05:20</p>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-lg-12">
+                                                <p class="pull-left">Humidity</p>
+                                                <p class="pull-right bold">20%</p>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-lg-12">
+                                                <p class="pull-left">Precipitation</p>
+                                                <p class="pull-right bold">60%</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-6 p-l-10">
+                                        <div class="row">
+                                            <div class="col-lg-12">
+                                                <p class="pull-left">Sunset</p>
+                                                <p class="pull-right bold">21:05</p>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-lg-12">
+                                                <p class="pull-left">Visibility</p>
+                                                <p class="pull-right bold">21km</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row m-t-10 timeslot">
+                                <div class="col-2 p-t-10 text-center">
+                                    <p class="small">13:30</p>
+                                    <canvas height="25" width="25" class="partly-cloudy-day"></canvas>
+                                    <p class="text-success bold">30°C</p>
+                                </div>
+                                <div class="col-2 p-t-10 text-center">
+                                    <p class="small">14:00</p>
+                                    <canvas height="25" width="25" class="cloudy"></canvas>
+                                    <p class="text-success bold">24°C</p>
+                                </div>
+                                <div class="col-2 p-t-10 text-center">
+                                    <p class="small">14:30</p>
+                                    <canvas height="25" width="25" class="rain"></canvas>
+                                    <p class="text-success bold">30°C</p>
+                                </div>
+                                <div class="col-2 p-t-10 text-center">
+                                    <p class="small">15:00</p>
+                                    <canvas height="25" width="25" class="sleet"></canvas>
+                                    <p class="text-danger bold">30°C</p>
+                                </div>
+                                <div class="col-2 p-t-10 text-center">
+                                    <p class="small">15:30</p>
+                                    <canvas height="25" width="25" class="snow"></canvas>
+                                    <p class="text-danger bold">30°C</p>
+                                </div>
+                                <div class="col-2 p-t-10 text-center">
+                                    <p class="small">16:00</p>
+                                    <canvas height="25" width="25" class="wind"></canvas>
+                                    <p class="text-success bold">21°C</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-6 d-none d-sm-none d-md-block d-lg-block d-xl-block">
+                            <div class="row">
+                                <div class="forecast-day col-sm-6 text-center m-t-10 ">
+                                    <div class="bg-contrast-lowest p-b-10 p-t-10">
+                                        <h4 class="p-t-10 no-margin">Tuesday</h4>
+                                        <p class="small hint-text m-b-20">11th Augest 2020</p>
+                                        <canvas class="rain" width="64" height="64"></canvas>
+                                        <h5 class="text-success">27°</h5>
+                                        <p>
+                                            Feels like
+                                            <span class="bold">sunny</span>
+                                        </p>
+                                        <p class="small">
+                                            Wind
+                                            <span class="bold p-l-20">11km/h</span>
+                                        </p>
+                                        <div class="m-t-20 block">
+                                            <div class="padding-10">
+                                                <div class="row">
+                                                    <div class="col-lg-6 text-center">
+                                                        <p class="small">Noon</p>
+                                                        <canvas class="sleet" width="25" height="25"></canvas>
+                                                        <p class="text-danger bold">30°C</p>
+                                                    </div>
+                                                    <div class="col-lg-6 text-center">
+                                                        <p class="small">Night</p>
+                                                        <canvas class="wind" width="25" height="25"></canvas>
+                                                        <p class="text-success bold">29°C</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-sm-6 text-center m-t-10 ">
+                                    <div class="bg-contrast-lowest p-b-10 p-t-10">
+                                        <h4 class="p-t-10 no-margin">Wednesday</h4>
+                                        <p class="small hint-text m-b-20">11th Augest 2020</p>
+                                        <canvas class="rain" width="64" height="64"></canvas>
+                                        <h5 class="text-danger">32°</h5>
+                                        <p>
+                                            Feels like
+                                            <span class="bold">sunny</span>
+                                        </p>
+                                        <p class="small">
+                                            Wind
+                                            <span class="bold p-l-20">11km/h</span>
+                                        </p>
+                                        <div class="m-t-20 block">
+                                            <div class="padding-10">
+                                                <div class="row">
+                                                    <div class="col-lg-6 text-center">
+                                                        <p class="small">Noon</p>
+                                                        <canvas class="sleet" width="25" height="25"></canvas>
+                                                        <p class="text-danger bold">30°C</p>
+                                                    </div>
+                                                    <div class="col-lg-6 text-center">
+                                                        <p class="small">Night</p>
+                                                        <canvas class="wind" width="25" height="25"></canvas>
+                                                        <p class="text-danger bold">30°C</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- END WIDGET -->
+    </div>
+</div>

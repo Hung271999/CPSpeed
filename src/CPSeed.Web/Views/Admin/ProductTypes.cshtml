@@ -20,12 +20,12 @@
                 <td class="tm-product-name">@Html.DisplayFor(modelItem => item.ProductTypeName)</td>
                 <td>
                     <a href="@Url.Action("DeleteProductType", "Admin" , new { id = item.ProductTypeID })" class="tm-product-delete-link">
-                        <i class="far fa-trash-alt tm-product-delete-icon"></i>
+                        <img src="~/images/icons/trash.svg" width="15px" />
                     </a>
                 </td>
                 <td>
                     <a href="@Url.Action("EditProductType", "Admin" , new { id = item.ProductTypeID })">
-                        Sửa
+                        <img src="~/images/icons/pencil-square.svg" width="15px" />
                     </a>
                 </td>
 

@@ -17,15 +17,16 @@ namespace CPSeed.Controllers
     {
         CPSeedContext data = new CPSeedContext();
         [Authorize(Roles = "Admin")]
-        public ActionResult Index(int? page)
+        public ActionResult Index()
         {
-            int pagesize = 1;
-            int pageNum = (page ?? 1);
-            var a = data.Orders.ToList().OrderBy(n => n.CreateDate);
-            return View(a.ToPagedList(pageNum, pagesize));
+            return View(data.Orders.ToList().OrderByDescending(n => n.CreateDate));
         }
 
 
+        public ActionResult Dashboard()
+        {
+            return View();
+        }
         //------------------------------------------------------------------------------------------------------------
 
 
@@ -38,7 +39,7 @@ namespace CPSeed.Controllers
         [Authorize(Roles = "Admin")]
         public ActionResult Product()
         {
-            return View(data.Products.ToList());
+            return View(data.Products.ToList().OrderByDescending(n => n.CreateDate));
         }
 
 
@@ -339,7 +340,7 @@ namespace CPSeed.Controllers
         [Authorize(Roles = "Admin")]
         public ActionResult Post()
         {
-            return View(data.Posts.ToList());
+            return View(data.Posts.ToList().OrderByDescending(n => n.CreateDate));
         }
 
 
@@ -456,18 +457,14 @@ namespace CPSeed.Controllers
         {
             try
             {
-                var postid = collection["PostID"];
+
                 var title = collection["Title"];
                 var Priority = collection["Priority"];
                 var summary = collection["Summary"];
                 var contentss = collection["Content"];
                 var categoryid = collection["CategoryPost"];
                 var image = collection["picture"];
-                if (string.IsNullOrEmpty(postid))
-                {
-                    ViewData["Loi1"] = "Please enter PostID !";
-                }
-                else if (String.IsNullOrEmpty(title))
+                if (String.IsNullOrEmpty(title))
                 {
                     ViewData["Loi2"] = "Please enter Title !";
                 }
@@ -487,6 +484,10 @@ namespace CPSeed.Controllers
                 {
                     ViewData["Loi6"] = "Please choose image !";
                 }
+                else if (String.IsNullOrEmpty(Priority))
+                {
+                    ViewData["Loi7"] = "Please choose status !";
+                }
                 else
                 {
                     Post postroot = data.Posts.SingleOrDefault(n => n.PostID == id);
@@ -502,7 +503,7 @@ namespace CPSeed.Controllers
                         post.image = postroot.image;
                     }
 
-                    post.PostID = int.Parse(postid);
+                    post.PostID = postroot.PostID;
                     post.Title = title;
                     post.Summary = summary;
                     post.contents = contentss;
@@ -578,7 +579,7 @@ namespace CPSeed.Controllers
         [Authorize(Roles = "Admin")]
         public ActionResult ProductTypes()
         {
-            return View(data.ProductTypes.ToList());
+            return View(data.ProductTypes.ToList().OrderByDescending(n => n.CreateDate));
         }
 
 
@@ -753,7 +754,7 @@ namespace CPSeed.Controllers
         [Authorize(Roles = "Admin")]
         public ActionResult Slide()
         {
-            return View(data.Slides.ToList());
+            return View(data.Slides.ToList().OrderByDescending(n => n.CreateDate));
         }
 
 
@@ -932,7 +933,7 @@ namespace CPSeed.Controllers
 
         public ActionResult Category()
         {
-            return View(data.Categories.ToList());
+            return View(data.Categories.ToList().OrderByDescending(n => n.CreateDate));
         }
 
 
@@ -1310,7 +1311,7 @@ namespace CPSeed.Controllers
         [Authorize(Roles = "Admin")]
         public ActionResult NewsDetail()
         {
-            return View(data.NewDetails.ToList());
+            return View(data.NewDetails.ToList().OrderByDescending(n => n.CreateDate));
         }
 
 
@@ -1526,7 +1527,7 @@ namespace CPSeed.Controllers
         [Authorize(Roles = "Admin")]
         public ActionResult News()
         {
-            return View(data.News.ToList());
+            return View(data.News.ToList().OrderByDescending(n => n.CreateDate));
         }
 
 
@@ -1680,24 +1681,26 @@ namespace CPSeed.Controllers
         [HttpGet]
         public ActionResult EditOrder(int id)
         {
-            OrderDetail orderDetail = data.OrderDetails.SingleOrDefault(n => n.OrderDetailID == id);
-            if (orderDetail == null)
+            var a = data.OrderDetails.Where(n => n.OrderID == id);
+            //OrderDetail orderDetail = data.OrderDetails.SingleOrDefault(n => n.OrderID == id);
+            if (a == null)
             {
                 Response.StatusCode = 404;
                 return null;
             }
-            ViewBag.ProductName = new SelectList(data.Products.ToList().OrderBy(n => n.ProductName), "ProductID", "ProductName");
-            int sp = Decimal.ToInt32((decimal)orderDetail.SellPrice);
-            ViewBag.SellPrice = sp;
-            ViewBag.Status = new List<string>()
-            {
-                "True","False"
-            };
-            ViewBag.Paid = new List<string>()
-            {
-                "True","False"
-            };
-            return View(orderDetail);
+            ViewBag.OrderID = id;
+            //ViewBag.ProductName = new SelectList(data.Products.ToList().OrderBy(n => n.ProductName), "ProductID", "ProductName");
+            //int sp = Decimal.ToInt32((decimal)orderDetail.SellPrice);
+            //ViewBag.SellPrice = sp;
+            //ViewBag.Status = new List<string>()
+            //{
+            //    "True","False"
+            //};
+            //ViewBag.Paid = new List<string>()
+            //{
+            //    "True","False"
+            //};
+            return View(a);
         }
 
 
@@ -1707,38 +1710,15 @@ namespace CPSeed.Controllers
         [Authorize(Roles = "Admin")]
         [HttpPost]
         [ValidateInput(false)]
-        public ActionResult EditOrder(FormCollection collection, Order order, OrderDetail orderDetail, int id)
+        public ActionResult EditOrder(FormCollection collection, Order order, int id)
         {
-            var productName = collection["ProductName"];
-            var quantity = collection["Quantity"];
-            var sellPrice = collection["SellPrice"];
             var status = collection["Status"];
             var paid = collection["Paid"];
             var email = collection["Email"];
             var address = collection["Address"];
             var phone = collection["Phone"];
 
-            if (string.IsNullOrEmpty(productName))
-            {
-                ViewData["Loi1"] = "Please enter Product Name !";
-            }
-            else if (String.IsNullOrEmpty(quantity))
-            {
-                ViewData["Loi2"] = "Please enter Quantity !";
-            }
-            else if (string.IsNullOrEmpty(sellPrice))
-            {
-                ViewData["Loi3"] = "Please enter Sell Price !";
-            }
-            else if (String.IsNullOrEmpty(status))
-            {
-                ViewData["Loi4"] = "Please enter Status !";
-            }
-            else if (string.IsNullOrEmpty(paid))
-            {
-                ViewData["Loi5"] = "Please enter Paid !";
-            }
-            else if (String.IsNullOrEmpty(email))
+            if (String.IsNullOrEmpty(email))
             {
                 ViewData["Loi6"] = "Please enter Email !";
             }
@@ -1752,11 +1732,8 @@ namespace CPSeed.Controllers
             }
             else
             {
-                OrderDetail orderDetailRoot = data.OrderDetails.SingleOrDefault(n => n.OrderDetailID == id);
-                Order orderRoot = data.Orders.SingleOrDefault(n => n.OrderID == orderDetailRoot.OrderID);
+                Order orderRoot = data.Orders.SingleOrDefault(n => n.OrderID == id);
 
-                orderDetail.OrderDetailID = orderDetailRoot.OrderDetailID;
-                orderDetail.OrderID = orderDetailRoot.OrderID;
 
                 order.OrderID = orderRoot.OrderID;
                 order.CreateDate = orderRoot.CreateDate;
@@ -1767,10 +1744,6 @@ namespace CPSeed.Controllers
                 order.Priority = orderRoot.Priority;
                 order.Total = orderRoot.Total;
 
-
-                orderDetail.ProductID = productName;
-                orderDetail.Quantity = int.Parse(quantity);
-                orderDetail.SellPrice = int.Parse(sellPrice);
 
                 if (status == "True")
                 {
@@ -1794,9 +1767,8 @@ namespace CPSeed.Controllers
                 order.Phone = phone;
 
                 data.Orders.AddOrUpdate(order);
-                data.OrderDetails.AddOrUpdate(orderDetail);
                 data.SaveChanges();
-                return RedirectToAction("Order");
+                return RedirectToAction("Index");
             }
             return View();
         }
@@ -1808,7 +1780,7 @@ namespace CPSeed.Controllers
 
 
         [HttpGet]
-        public ActionResult DeleteOrder(int id)
+        public ActionResult DeleteOrder(int id, int total, Order order)
         {
             OrderDetail orderDetail = data.OrderDetails.SingleOrDefault(n => n.OrderDetailID == id);
             if (orderDetail == null)
@@ -1816,9 +1788,27 @@ namespace CPSeed.Controllers
                 Response.StatusCode = 404;
                 return null;
             }
+            Order orderRoot = data.Orders.SingleOrDefault(n => n.OrderID == orderDetail.OrderID);
+
+            order.OrderID = orderRoot.OrderID;
+            order.CreateDate = orderRoot.CreateDate;
+            order.UpdateDate = orderRoot.UpdateDate;
+            order.ReceivedDate = orderRoot.ReceivedDate;
+            order.CreateUser = orderRoot.CreateUser;
+            order.UpdateUser = orderRoot.UpdateUser;
+            order.Priority = orderRoot.Priority;
+            order.Status = orderRoot.Status;
+            order.Paid = orderRoot.Paid;
+            order.Email = orderRoot.Email;
+            order.Address = orderRoot.Address;
+            order.Phone = orderRoot.Phone;
+
+            order.Total = orderRoot.Total - total;
+
+            data.Orders.AddOrUpdate(order);
             data.OrderDetails.Remove(orderDetail);
             data.SaveChanges();
-            return RedirectToAction("Order", new { id = orderDetail.OrderID }); ;
+            return RedirectToAction("EditOrder", new { id = orderDetail.OrderID }); ;
         }
 
 
@@ -1828,7 +1818,7 @@ namespace CPSeed.Controllers
 
 
         [HttpPost, ActionName("DeleteOrder")]
-        public ActionResult DeleteAllOrder(int id)
+        public ActionResult DeleteAllOrder(int id, int total, Order order)
         {
             OrderDetail orderDetail = data.OrderDetails.SingleOrDefault(n => n.OrderDetailID == id);
             if (orderDetail == null)
@@ -1836,9 +1826,27 @@ namespace CPSeed.Controllers
                 Response.StatusCode = 404;
                 return null;
             }
+            Order orderRoot = data.Orders.SingleOrDefault(n => n.OrderID == orderDetail.OrderID);
+
+            order.OrderID = orderRoot.OrderID;
+            order.CreateDate = orderRoot.CreateDate;
+            order.UpdateDate = orderRoot.UpdateDate;
+            order.ReceivedDate = orderRoot.ReceivedDate;
+            order.CreateUser = orderRoot.CreateUser;
+            order.UpdateUser = orderRoot.UpdateUser;
+            order.Priority = orderRoot.Priority;
+            order.Status = orderRoot.Status;
+            order.Paid = orderRoot.Paid;
+            order.Email = orderRoot.Email;
+            order.Address = orderRoot.Address;
+            order.Phone = orderRoot.Phone;
+
+            order.Total = orderRoot.Total - total;
+
+            data.Orders.AddOrUpdate(order);
             data.OrderDetails.Remove(orderDetail);
             data.SaveChanges();
-            return RedirectToAction("Order");
+            return RedirectToAction("EditOrder", new { id = orderDetail.OrderID }); ;
         }
 
 
@@ -1900,8 +1908,8 @@ namespace CPSeed.Controllers
 
         public String ProcessUpload(HttpPostedFileBase file)
         {
-            file.SaveAs(Server.MapPath("~/images/Product/" + file.FileName));
-            return "/images/Product/" + file.FileName;
+            file.SaveAs(Server.MapPath("~/images/" + file.FileName));
+            return "/images/" + file.FileName;
         }
 
     }

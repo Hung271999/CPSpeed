@@ -6,10 +6,13 @@
 }
 <div class="container mt-5">
     <div class="row tm-content-row">
-        <div class="col-sm-12 col-md-12 col-lg-12 col-xl-8 tm-block-col">
+        <div class="col-sm-12 col-md-12 col-lg-9 col-xl-9 tm-block-col">
             <div class="tm-bg-primary-dark tm-block tm-block-products">
-                <h2 class="tm-block-title">Bài Viết</h2>
-                <div style="max-height: 525px;" class="tm-product-table-container">
+                <div class="row">
+                    <h2 class="col-sm-10 col-md-10 col-lg-10 col-xl-10 tm-block-title tm-block-title-win">Quản Lý Bài Viết</h2>
+                    <a href="AddPost" style="margin:10px 0 10px 0" class="col-lg-2 btn btn-primary">THÊM BÀI VIẾT</a>
+                </div>
+                <div class="tm-product-table-container">
                     <table class="table table-hover tm-table-small tm-product-table">
                         <thead>
                             <tr>
@@ -30,18 +33,18 @@
                                     ViewBag.category = category;
                                 }
                                 <tr>
-                                    <td ><p>@Html.Raw(item.Title)</p></td>
+                                    <td><p>@Html.Raw(item.Title)</p></td>
                                     <td>
                                         <p>@ViewBag.category.Title</p>
                                     </td>
                                     <td>
                                         <a href="@Url.Action("DeletePost", "Admin" , new { id = item.PostID })" class="tm-product-delete-link">
-                                            <i class="far fa-trash-alt tm-product-delete-icon"></i>
+                                            <img src="~/images/icons/trash.svg" width="15px" />
                                         </a>
                                     </td>
                                     <td>
                                         <a href="@Url.Action("EditPost", "Admin" , new { id = item.PostID })">
-                                            Sửa
+                                            <img src="~/images/icons/pencil-square.svg" width="15px" />
                                         </a>
                                     </td>
                                 </tr>
@@ -49,20 +52,18 @@
                         </tbody>
                     </table>
                 </div>
-                <a href="AddPost"
-                   class="btn btn-primary btn-block text-uppercase mb-3">Thêm Bài Viết</a>
             </div>
         </div>
-        <div class="col-sm-12 col-md-12 col-lg-4 col-xl-4 tm-block-col">
-            <div style="max-height: none;" class="tm-bg-primary-dark tm-block tm-block-product-categories">
-                <h2 class="tm-block-title">Danh Mục Bài Viết</h2>
-                <div style="max-height: 525px;" class="tm-product-table-container">
+        <div class="col-sm-12 col-md-12 col-lg-3 col-xl-3 tm-block-col">
+            <div class="tm-bg-primary-dark tm-block tm-block-product-categories">
+                <h2 class="tm-block-title" style="text-align: right">Danh Mục</h2>
+                <div class="tm-product-table-container">
                     <table class="table tm-table-small tm-product-table">
                         @Html.Action("Category", "Admin")
                     </table>
                 </div>
-                <a style="margin-bottom: 0rem!important;" href="AddCategory"
-                   class="btn btn-primary btn-block text-uppercase mb-3">Thêm Danh mục</a>
+                <a href="AddCategory"
+                   style="margin:10px 0 10px 0" class="btn btn-primary btn-block text-uppercase mb-3">Thêm danh mục</a>
 
             </div>
         </div>

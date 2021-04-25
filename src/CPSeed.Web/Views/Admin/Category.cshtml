@@ -4,22 +4,31 @@
     Layout = null;
 }
 
-<tbody>
+    
+
+
+<table class="table table-hover tm-table-small tm-product-table">
+    <thead>
+        <tr>
+            <th scope="col">Tên</th>
+            <th scope="col">&nbsp;</th>
+            <th scope="col">&nbsp;</th>
+        </tr>
+    </thead>
     @foreach (var item in Model)
     {
         <tr>
             <td class="tm-product-name">@Html.DisplayFor(modelItem => item.Title)</td>
             <td>
                 <a href="@Url.Action("DeleteCategory", "Admin" , new { id = item.CategoryID })" class="tm-product-delete-link">
-                    <i class="far fa-trash-alt tm-product-delete-icon"></i>
-                </a>
+                    <img src="~/images/icons/trash.svg" width="15px" />                </a>
             </td>
             <td>
                 <a href="@Url.Action("EditCategory", "Admin" , new { id = item.CategoryID })">
-                    Sửa
+                    <img src="~/images/icons/pencil-square.svg" width="15px" />
                 </a>
             </td>
 
         </tr>
     }
-</tbody>
+</table>

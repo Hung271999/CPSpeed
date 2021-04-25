@@ -1,5 +1,5 @@
 ﻿@model CPSeed.Models.Post
-
+@using CPSeed.Models;
 @{
     ViewBag.Title = "DeletePost";
     Layout = "~/Views/Shared/LayoutAdmin.cshtml";
@@ -11,84 +11,104 @@
 
     <div class="container tm-mt-big tm-mb-big">
         <div class="row">
-            <div class="col-xl-9 col-lg-10 col-md-12 col-sm-12 mx-auto">
+            <div class="col-xl-10 col-lg-10 col-md-10 col-sm-12 mx-auto">
                 <div class="tm-bg-primary-dark tm-block tm-block-h-auto">
                     <div class="row">
                         <div class="col-12">
-                            <h2 class="tm-block-title d-inline-block">Delete Post</h2>
+                            <h2 class="tm-block-title d-inline-block">Chỉnh sửa Tin Tức</h2>
                         </div>
                     </div>
                     <div class="row tm-edit-product-row">
-                        <div class="col-xl-6 col-lg-6 col-md-12">
+                        <div class="col-xl-8 col-lg-8 col-md-8">
                             <form action="" class="tm-edit-product-form">
                                 <div class="form-group mb-3">
                                     <label for="name">
-                                        Post ID
-                                    </label>
-                                    <input style="color:black"
-                                           type="text"
-                                           value="@Model.PostID"
-                                           class="form-control validate"
-                                           readonly
-                                           required />
-                                </div>
-                                <div class="form-group mb-3">
-                                    <label for="name">
-                                        Title
+                                        Tiêu Đề
                                     </label>
                                     <textarea name="Title"
-                                              type="text"
+                                              type="text"                                              
                                               class="form-control validate"
-                                              style="color:black"
-                                              readonly>@Model.Title</textarea>
+                                              readonly
+                                              required>@Model.Title</textarea>
+                                    @ViewData["Loi2"]
                                 </div>
 
                                 <div class="form-group mb-3">
                                     <label for="name">
-                                        Summary
+                                        Mô Tả
                                     </label>
                                     <textarea name="Summary"
                                               type="text"
                                               class="form-control validate"
-                                              style="color:black"
-                                              readonly>@Model.Summary</textarea>
+                                              readonly
+                                              required>@Model.Summary</textarea>
+                                    @ViewData["Loi3"]
                                 </div>
 
                                 <div class="form-group mb-3">
                                     <label for="name">
-                                        Content
+                                        Danh mục bài viết
                                     </label>
-                                    <textarea name="Content"
-                                              type="text"
-                                              class="form-control validate"
-                                              style="color:black"
-                                              readonly>@Model.contents</textarea>
+                                    @{
+                                        CPSeedContext data = new CPSeedContext();                                        
+                                        var a = data.Categories.Where(n => n.CategoryID == Model.CategoryID).SingleOrDefault();
+                                    }
+                                <textarea name="Category"
+                                          type="text"                                          
+                                          class="form-control validate"
+                                          readonly
+                                          required>@a.Title
+                                    </textarea>                                                                      
+
+                                    @ViewData["Loi5"]
                                 </div>
 
                                 <div class="form-group mb-3">
                                     <label for="name">
-                                        Category
-                                    </label>
-                                    <input style="color:black"
-                                           type="text"
-                                           value="@ViewBag.Category"
-                                           class="form-control validate"
-                                           readonly
-                                           required />
+                                        Tình trạng
+                                    </label>                                    
+                                    @if (Model.Priority == 1)
+                                    {
+                                    <textarea name="Priority"
+                                          type="text"                                          
+                                          class="form-control validate"
+                                          readonly
+                                          required>Ưu tiên
+                                    </textarea>
+                                    }
+                                    else
+                                    {
+                                    <textarea name="Priority"
+                                          type="text"
+                                          class="form-control validate"
+                                          readonly
+                                          required>Thường
+                                    </textarea>
+                                    }
+                                    
+                                    @ViewData["Loi7"]
                                 </div>
+
                             </form>
                         </div>
+                        <div class="col-xl-4 col-lg-4 col-md-4">
+                            <label for="name">
+                                Hình ảnh
+                            </label>
+                            <input type="text" value="@Model.image" name="picture" id="picture" class="form-control" readonly style="color:black" />
 
-                        <div class="col-xl-6 col-lg-6 col-md-12 mx-auto mb-4">
-                            <div style="padding-top:18px" class="custom-file mt-3 mb-3">
-                                <input type="text" value="@Model.image" name="picture" id="picture" class="form-control" readonly style="color:black" />
-                                <img src="@Url.Content("~/images/Post/" + Model.image)" id="pictureUpload" width="358" />
-                            </div>
+                            <img style="margin-left:-5px" src="@Url.Content("~/images/Post/" + Model.image)" id="pictureUpload" class="col-xl-12 col-lg-12 col-md-12" />
                         </div>
-                        
-                        <div class="col-12">
-                            <button type="submit" class="btn btn-primary btn-block text-uppercase">Delete Post</button>
-                        </div>
+                    </div>
+                    <div class="form-group mb-3 col-xs-12 col-sm-12">
+                        <label for="name">
+                            Nội Dung
+                        </label>
+                        <textarea name="Content" readonly id="description">@Model.contents</textarea>
+                        @ViewData["Loi4"]
+                    </div>
+                    <div class="col-12">
+                        <button type="submit" class="btn btn-primary btn-block text-uppercase">Xóa</button>
                     </div>
                 </div>
             </div>
