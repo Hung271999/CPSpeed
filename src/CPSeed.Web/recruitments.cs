@@ -11,6 +11,7 @@ namespace CPSeed
         public string Title { get; set; }
         public string position { get; set; }
         public string contents { get; set; }
+        public string Summary { get; set; }
 
         public DateTime? CreateDate { get; set; }
         public int Quantity { get; set; }

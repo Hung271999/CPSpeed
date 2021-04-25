@@ -72,6 +72,7 @@ namespace CPSeed.Controllers
                                                    Title = d.Title,
                                                    contents = d.contents,
                                                    CreateDate = d.CreateDate,
+                                                   Summary = d.Summary,
                                                    Quantity = d.Quantity,
                                                    ExpirationDate = d.ExpirationDate,
                                                    workplace = c.Title,
@@ -84,6 +85,25 @@ namespace CPSeed.Controllers
         public ActionResult Onlinefiling()
         {
             return View();
+        }
+        public ActionResult workplace()
+        {
+            CPSeedContext data = new CPSeedContext();
+            var wp = data.Workplaces.ToList();
+            return PartialView(wp);
+        }
+        public ActionResult position(int ?id)
+        {
+            ViewBag.Onlinefiling = id;
+            CPSeedContext data = new CPSeedContext();
+            var position = data.Positions.ToList();
+            return PartialView(position);
+        }
+        public ActionResult recruitmentDetail(int Id)
+        {
+            CPSeedContext data = new CPSeedContext();
+            var recruitmentDetail = data.Recruitments.Where(n=>n.RecruitmentID==Id).SingleOrDefault();
+            return View(recruitmentDetail);
         }
     }
 }

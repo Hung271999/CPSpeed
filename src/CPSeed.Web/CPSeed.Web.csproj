@@ -2205,6 +2205,7 @@
     <Content Include=".vs\CPSeed.Web\v16\.suo" />
     <Content Include=".vs\CPSeed.Web\v16\Server\sqlite3\db.lock" />
     <Content Include=".vs\CPSeed.Web\v16\Server\sqlite3\storage.ide" />
+    <Content Include="File\20200428-mau-thong-tin-ung-tuyen-vinaseed-637236642364231387 %282%29.docx" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.3.1.js" />
     <Content Include="Scripts\jquery-3.3.1.min.js" />
@@ -2339,6 +2340,9 @@
     <Content Include="Views\Admin\Accounts.cshtml" />
     <Content Include="Views\Pots\recruitment.cshtml" />
     <Content Include="Views\Pots\Onlinefiling.cshtml" />
+    <Content Include="Views\Pots\workplace.cshtml" />
+    <Content Include="Views\Pots\position.cshtml" />
+    <Content Include="Views\Pots\recruitmentDetail.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

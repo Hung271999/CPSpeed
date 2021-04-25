@@ -1802,3 +1802,71 @@ Error Number:53,State:0,Class:20
 2021-04-24 23:20:54,438 [CPSeed.Util.Common] [1] DEBUG CPSeed.Util.Common - InitLog4Net completed
 2021-04-24 23:39:24,444 [CPSeed.Util.Common] [1] DEBUG CPSeed.Util.Common - Init log4net completed
 2021-04-24 23:39:24,451 [CPSeed.Util.Common] [1] DEBUG CPSeed.Util.Common - InitLog4Net completed
+2021-04-25 11:23:42,121 [CPSeed.Util.Common] [1] DEBUG CPSeed.Util.Common - Init log4net completed
+2021-04-25 11:23:42,129 [CPSeed.Util.Common] [1] DEBUG CPSeed.Util.Common - InitLog4Net completed
+2021-04-25 11:40:15,555 [CPSeed.Util.Common] [1] DEBUG CPSeed.Util.Common - Init log4net completed
+2021-04-25 11:40:15,563 [CPSeed.Util.Common] [1] DEBUG CPSeed.Util.Common - InitLog4Net completed
+2021-04-25 11:44:22,695 [CPSeed.Util.Common] [1] DEBUG CPSeed.Util.Common - Init log4net completed
+2021-04-25 11:44:22,703 [CPSeed.Util.Common] [1] DEBUG CPSeed.Util.Common - InitLog4Net completed
+2021-04-25 11:45:34,812 [CPSeed.Util.Common] [1] DEBUG CPSeed.Util.Common - Init log4net completed
+2021-04-25 11:45:34,821 [CPSeed.Util.Common] [1] DEBUG CPSeed.Util.Common - InitLog4Net completed
+2021-04-25 11:46:59,096 [CPSeed.Util.Common] [1] DEBUG CPSeed.Util.Common - Init log4net completed
+2021-04-25 11:46:59,103 [CPSeed.Util.Common] [1] DEBUG CPSeed.Util.Common - InitLog4Net completed
+2021-04-25 11:52:43,483 [CPSeed.Util.Common] [1] DEBUG CPSeed.Util.Common - Init log4net completed
+2021-04-25 11:52:43,491 [CPSeed.Util.Common] [1] DEBUG CPSeed.Util.Common - InitLog4Net completed
+2021-04-25 11:57:26,920 [CPSeed.Util.Common] [1] DEBUG CPSeed.Util.Common - Init log4net completed
+2021-04-25 11:57:26,928 [CPSeed.Util.Common] [1] DEBUG CPSeed.Util.Common - InitLog4Net completed
+2021-04-25 12:00:14,980 [CPSeed.Util.Common] [1] DEBUG CPSeed.Util.Common - Init log4net completed
+2021-04-25 12:00:14,987 [CPSeed.Util.Common] [1] DEBUG CPSeed.Util.Common - InitLog4Net completed
+2021-04-25 12:01:38,039 [CPSeed.Util.Common] [1] DEBUG CPSeed.Util.Common - Init log4net completed
+2021-04-25 12:01:38,047 [CPSeed.Util.Common] [1] DEBUG CPSeed.Util.Common - InitLog4Net completed
+2021-04-25 12:02:37,196 [CPSeed.Util.Common] [1] DEBUG CPSeed.Util.Common - Init log4net completed
+2021-04-25 12:02:37,203 [CPSeed.Util.Common] [1] DEBUG CPSeed.Util.Common - InitLog4Net completed
+2021-04-25 12:03:30,641 [CPSeed.Util.Common] [1] DEBUG CPSeed.Util.Common - Init log4net completed
+2021-04-25 12:03:30,648 [CPSeed.Util.Common] [1] DEBUG CPSeed.Util.Common - InitLog4Net completed
+2021-04-25 12:10:21,480 [CPSeed.Util.Common] [36] DEBUG CPSeed.Util.Common - Init log4net completed
+2021-04-25 12:10:21,490 [CPSeed.Util.Common] [36] DEBUG CPSeed.Util.Common - InitLog4Net completed
+2021-04-25 12:13:18,980 [CPSeed.Util.Common] [1] DEBUG CPSeed.Util.Common - Init log4net completed
+2021-04-25 12:13:18,987 [CPSeed.Util.Common] [1] DEBUG CPSeed.Util.Common - InitLog4Net completed
+2021-04-25 12:13:49,333 [CPSeed.Util.Common] [1] DEBUG CPSeed.Util.Common - Init log4net completed
+2021-04-25 12:13:49,348 [CPSeed.Util.Common] [1] DEBUG CPSeed.Util.Common - InitLog4Net completed
+2021-04-25 13:34:55,354 [CPSeed.Util.Common] [1] DEBUG CPSeed.Util.Common - Init log4net completed
+2021-04-25 13:34:55,361 [CPSeed.Util.Common] [1] DEBUG CPSeed.Util.Common - InitLog4Net completed
+2021-04-25 13:59:26,447 [CPSeed.Util.Common] [24] DEBUG CPSeed.Util.Common - Init log4net completed
+2021-04-25 13:59:26,452 [CPSeed.Util.Common] [24] DEBUG CPSeed.Util.Common - InitLog4Net completed
+2021-04-25 14:44:08,070 [CPSeed.Util.Common] [1] DEBUG CPSeed.Util.Common - Init log4net completed
+2021-04-25 14:44:08,073 [CPSeed.Util.Common] [1] DEBUG CPSeed.Util.Common - InitLog4Net completed
+2021-04-25 15:35:34,188 [CPSeed.Util.Common] [26] DEBUG CPSeed.Util.Common - Init log4net completed
+2021-04-25 15:35:34,191 [CPSeed.Util.Common] [26] DEBUG CPSeed.Util.Common - InitLog4Net completed
+2021-04-25 16:16:13,240 [CPSeed.Util.Common] [1] DEBUG CPSeed.Util.Common - Init log4net completed
+2021-04-25 16:16:13,249 [CPSeed.Util.Common] [1] DEBUG CPSeed.Util.Common - InitLog4Net completed
+2021-04-25 16:18:33,333 [CPSeed.Controllers.ProductController] [6] ERROR CPSeed.Controllers.ProductController - productDetailSystem.InvalidOperationException: Sequence contains no elements
+   at System.Linq.Enumerable.Single[TSource](IEnumerable`1 source)
+   at System.Data.Entity.Core.Objects.ELinq.ObjectQueryProvider.<GetElementFunction>b__3[TResult](IEnumerable`1 sequence)
+   at System.Data.Entity.Core.Objects.ELinq.ObjectQueryProvider.ExecuteSingle[TResult](IEnumerable`1 query, Expression queryRoot)
+   at System.Data.Entity.Core.Objects.ELinq.ObjectQueryProvider.System.Linq.IQueryProvider.Execute[TResult](Expression expression)
+   at System.Data.Entity.Internal.Linq.DbQueryProvider.Execute[TResult](Expression expression)
+   at System.Linq.Queryable.Single[TSource](IQueryable`1 source)
+   at CPSeed.Controllers.ProductController.productDetail(String id) in D:\New folder\CPSpeed\src\CPSeed.Web\Controllers\ProductController.cs:line 122
+2021-04-25 16:18:53,160 [CPSeed.Util.Common] [1] DEBUG CPSeed.Util.Common - Init log4net completed
+2021-04-25 16:18:53,167 [CPSeed.Util.Common] [1] DEBUG CPSeed.Util.Common - InitLog4Net completed
+2021-04-25 16:19:01,801 [CPSeed.Controllers.ProductController] [6] ERROR CPSeed.Controllers.ProductController - productDetailSystem.InvalidOperationException: Sequence contains no elements
+   at System.Linq.Enumerable.Single[TSource](IEnumerable`1 source)
+   at System.Data.Entity.Core.Objects.ELinq.ObjectQueryProvider.<GetElementFunction>b__3[TResult](IEnumerable`1 sequence)
+   at System.Data.Entity.Core.Objects.ELinq.ObjectQueryProvider.ExecuteSingle[TResult](IEnumerable`1 query, Expression queryRoot)
+   at System.Data.Entity.Core.Objects.ELinq.ObjectQueryProvider.System.Linq.IQueryProvider.Execute[TResult](Expression expression)
+   at System.Data.Entity.Internal.Linq.DbQueryProvider.Execute[TResult](Expression expression)
+   at System.Linq.Queryable.Single[TSource](IQueryable`1 source)
+   at CPSeed.Controllers.ProductController.productDetail(String id) in D:\New folder\CPSpeed\src\CPSeed.Web\Controllers\ProductController.cs:line 122
+2021-04-25 16:19:13,358 [CPSeed.Util.Common] [1] DEBUG CPSeed.Util.Common - Init log4net completed
+2021-04-25 16:19:13,366 [CPSeed.Util.Common] [1] DEBUG CPSeed.Util.Common - InitLog4Net completed
+2021-04-25 16:22:10,003 [CPSeed.Util.Common] [1] DEBUG CPSeed.Util.Common - Init log4net completed
+2021-04-25 16:22:10,021 [CPSeed.Util.Common] [1] DEBUG CPSeed.Util.Common - InitLog4Net completed
+2021-04-25 16:25:14,024 [CPSeed.Util.Common] [1] DEBUG CPSeed.Util.Common - Init log4net completed
+2021-04-25 16:25:14,032 [CPSeed.Util.Common] [1] DEBUG CPSeed.Util.Common - InitLog4Net completed
+2021-04-25 16:25:32,523 [CPSeed.Util.Common] [1] DEBUG CPSeed.Util.Common - Init log4net completed
+2021-04-25 16:25:32,532 [CPSeed.Util.Common] [1] DEBUG CPSeed.Util.Common - InitLog4Net completed
+2021-04-25 16:26:15,642 [CPSeed.Util.Common] [1] DEBUG CPSeed.Util.Common - Init log4net completed
+2021-04-25 16:26:15,652 [CPSeed.Util.Common] [1] DEBUG CPSeed.Util.Common - InitLog4Net completed
+2021-04-25 16:28:45,057 [CPSeed.Util.Common] [1] DEBUG CPSeed.Util.Common - Init log4net completed
+2021-04-25 16:28:45,066 [CPSeed.Util.Common] [1] DEBUG CPSeed.Util.Common - InitLog4Net completed

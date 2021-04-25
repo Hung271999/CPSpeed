@@ -1,5 +1,6 @@
 ﻿@using CPSeed;
 @model List<recruitments>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 <br />
 <br />
 <br />
@@ -10,58 +11,17 @@
                 <div class="row">
                     <div class="col-12 col-md-8 col-lg-4 mb-md-3 mb-lg-0">
                         <div class="item-input-contact">
-                            <input type="text" id="keyword" placeholder="Tiêu đề tìm kiếm...">
+                            <input type="text" id="edit_search" placeholder="Tiêu đề tìm kiếm...">
                         </div>
                     </div>
                     <div class="col-12 col-md-4 col-lg-3 ">
-                        <div class="item-input-contact">
-                            <select name="" id="WorkLocation">
-                                <option value="0" selected="">Nơi làm việc</option>
-
-                                <option value="186">Trụ sở Tập đoàn</option>
-
-                                <option value="187">CN Hà Nam</option>
-
-                                <option value="203">CN Ba Vì</option>
-
-                                <option value="204">CN Thái Bình</option>
-
-                                <option value="205">CN Thanh Hóa</option>
-
-                                <option value="206">CN Vinh</option>
-
-                                <option value="207">CN Tây Nguyên</option>
-
-                                <option value="208">Khác</option>
-
-                            </select>
-                        </div>
+                        @Html.Action("workplace", "Pots")
                     </div>
-                    <div class="col-12 col-md-8 col-lg-3">
-                        <div class="item-input-contact">
-                            <select name="" id="Career">
-                                <option value="0" selected="">Tất cả</option>
 
-                                <option value="180">Cán bộ quản lý</option>
-
-                                <option value="181">Kinh doanh, Marketing</option>
-
-                                <option value="182">Kế toán, Kiểm toán</option>
-
-                                <option value="183">Nhân sự hành chính</option>
-
-                                <option value="184">Kỹ thuật sản xuất</option>
-
-                                <option value="199">Cơ khí, CBBQ</option>
-
-                                <option value="200">Khác</option>
-
-                            </select>
-                        </div>
-                    </div>
+                    @Html.Action("position", "Pots", new { id = 1 })
                     <div class="col-12 col-md-4 col-lg-2">
                         <div class="btn-search-tt">
-                            <a href="javascript:;" id="search">Tìm kiếm</a>
+                            <a href="javascript:;" id="search" onclick="find_my_div();"> Tìm kiếm</a>
                         </div>
                     </div>
                 </div>
@@ -70,34 +30,33 @@
     </div>
     <div class="col-12">
         <div class="list-item-media">
-            <div class="row" id="recruitment-list">
+            <div class="row">
 
                 @{
                     int i = 1;
-                    foreach(var item in Model)
+                    foreach (var item in Model)
                     {
 
+                        <div class="col-12 col-md-6 col-lg-4 mb-4">
+                            <div class="item-media" id="user_@i">
+                                <div class="top-bar-item">
+                                    <p class="number-stt">@i</p>
 
-                            <div class="col-12 col-md-6 col-lg-4 mb-4">
-                                <div class="item-media">
-                                    <div class="top-bar-item">
-                                        <p class="number-stt">@i</p>
-
-                                        <div class="label-category">
-                                            <p>@item.position</p>
-                                        </div>
-                                    </div>
-                                    <h3 class="title-item-media">
-                                        <a style="color: #005b36;" href=""></a>@item.Title
-                                    </h3>
-                                    <div class="list-content-media">
-                                        <p class="item-content-media">Số lượng: <span class="color-item-content">@item.Quantity</span></p>
-                                        <p class="item-content-media">Hạn nộp HS: <span class="color-item-content">@item.ExpirationDate</span></p>
-                                        <p class="item-content-media">Nơi làm việc: <span>@item.workplace</span></p>
+                                    <div class="label-category">
+                                        <p><a href="@Url.Action("recruitmentDetail","Pots", new { Id=item.RecruitmentID})">@item.position</a></p>
                                     </div>
                                 </div>
+                                <h3 class="title-item-media">
+                                    <a style="color: #005b36;" href=""></a>@item.Summary
+                                </h3>
+                                <div class="list-content-media">
+                                    <p class="item-content-media">Số lượng: <span class="color-item-content">@item.Quantity</span></p>
+                                    <p class="item-content-media">Hạn nộp HS: <span class="color-item-content">@item.ExpirationDate</span></p>
+                                    <p class="item-content-media">Nơi làm việc: <span>@item.workplace</span></p>
+                                </div>
                             </div>
-                            i++;
+                        </div>
+                        i++;
 
                     }
                 }
@@ -105,3 +64,69 @@
         </div>
     </div>
 </div>
+<script>
+    function gid(a_id) {
+        return document.getElementById(a_id);
+    }
+
+    function close_all() {
+
+        [].forEach.call(document.querySelectorAll('[id^=user_]'), function (div) {
+            div.style.display = 'none';
+        });
+
+    }
+    function find_my_div() {
+        close_all();
+        var keywords = gid('edit_search').value.trim().toLowerCase().split(/\s+/),
+            haystack = document.querySelectorAll('[id^="user_"]'),
+            textProp = 'textContent' in document.body ? 'textContent' : 'innerText',
+            userWords,
+            found = [].filter.call(haystack, function (user) {
+                userWords = user[textProp].toLowerCase();
+                return keywords.some(function (word) {
+                    return userWords.indexOf(word) > -1;
+                });
+            });
+        console.log(found);
+        [].forEach.call(found, function (user) {
+            user.style.display = 'block';
+        });
+
+    }
+    function myFunction() {
+        close_all();
+            var keywords = gid('WorkLocation').value.trim().toLowerCase().split(/\s+/),
+            haystack = document.querySelectorAll('[id^="user_"]'),
+            textProp = 'textContent' in document.body ? 'textContent' : 'innerText',
+            userWords,
+            found = [].filter.call(haystack, function (user) {
+                userWords = user[textProp].toLowerCase();
+                return keywords.some(function (word) {
+                    return userWords.indexOf(word) > -1;
+                });
+            });
+        console.log(found);
+        [].forEach.call(found, function (user) {
+            user.style.display = 'block';
+        });
+    }
+    function Function() {
+        close_all();
+        var keywords = gid('Career').value.trim().toLowerCase().split(/\s+/),
+            haystack = document.querySelectorAll('[id^="user_"]'),
+            textProp = 'textContent' in document.body ? 'textContent' : 'innerText',
+            userWords,
+            found = [].filter.call(haystack, function (user) {
+                userWords = user[textProp].toLowerCase();
+                return keywords.some(function (word) {
+                    return userWords.indexOf(word) > -1;
+                });
+            });
+        console.log(found);
+        [].forEach.call(found, function (user) {
+            user.style.display = 'block';
+        });
+    }
+
+</script>

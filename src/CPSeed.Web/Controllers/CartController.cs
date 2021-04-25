@@ -213,8 +213,8 @@ namespace CPSeed.Controllers
                     }
 
                 }
-                Session["Cart"] = null;
-                Session["Count"] = null;
+                Session.Remove("Cart");
+                Session.Remove("Count");
                 string total = (lstGiohang.Sum(n => (n.total * n.sSellPrice))).ToString();
                 SentMails(email, firstName, total);
                 sendMS(phone, total);
@@ -244,7 +244,7 @@ namespace CPSeed.Controllers
                 sanpham.quantity++;
             }
             var sl = lstGiohang.Sum(n => n.quantity);
-            Session["Count"] = sl;
+            Session["Count"] = lstGiohang.Sum(n => n.quantity);
             var counter = lstGiohang.Sum(x => x.quantity);
 
             return Json(new { counter, sl1 = sl }, JsonRequestBehavior.AllowGet);
@@ -269,7 +269,7 @@ namespace CPSeed.Controllers
             }
 
             var counter = lstGiohang.Sum(x => x.quantity);
-
+            Session["Count"] = lstGiohang.Sum(n => n.quantity);
             return Json(counter, JsonRequestBehavior.AllowGet);
         }
 
@@ -281,7 +281,7 @@ namespace CPSeed.Controllers
             {
                 lstGiohang.RemoveAll(x => x.iProductID == id);
             }
-
+            Session["Count"] = lstGiohang.Sum(n => n.quantity);
             return Redirect(strURL);
         }
 
@@ -296,8 +296,7 @@ namespace CPSeed.Controllers
             var counter = cartItem.quantity;
             var sl = lstGiohang.Sum(n => n.quantity);
             var total = lstGiohang.Sum(n => n.total);
-
-
+            Session["Count"] = lstGiohang.Sum(n => n.quantity);
             return Json(new { count = counter, totalMoney = total, sl1 = sl }, JsonRequestBehavior.AllowGet);
         }
 

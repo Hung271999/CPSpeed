@@ -14,6 +14,8 @@ namespace CPSeed.Models
         public int RecruitmentID { get; set; }
         [Column(TypeName = "ntext")]
         public string Title { get; set; }
+        [Column(TypeName = "ntext")]
+        public string Summary { get; set; }
         public int PositionID { get; set; }
         [Column(TypeName = "ntext")]
         public string contents { get; set; }
