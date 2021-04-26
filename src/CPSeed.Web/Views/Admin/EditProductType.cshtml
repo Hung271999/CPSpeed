@@ -7,62 +7,56 @@
 
 @using (Html.BeginForm("EditProductType", "Admin", FormMethod.Post, new { @enctype = "multipart/form-data" }))
 {
-    @Html.AntiForgeryToken()
+    @Html.AntiForgeryToken() 
+
 
     <div class="container tm-mt-big tm-mb-big">
         <div class="row">
-            <div class="col-xl-9 col-lg-10 col-md-12 col-sm-12 mx-auto">
+            <div class="col-xl-10 col-lg-10 col-md-10 col-sm-12 mx-auto">
                 <div class="tm-bg-primary-dark tm-block tm-block-h-auto">
                     <div class="row">
                         <div class="col-12">
-                            <h2 class="tm-block-title d-inline-block">Chỉnh Sửa Danh Mục Sản Phẩm</h2>
+                            <h2 class="tm-block-title d-inline-block">Sửa danh mục sản phẩm</h2>
                         </div>
                     </div>
-                    <div style="padding-left:20px" class="row tm-edit-product-row">
-                        <div class="col-xl-6 col-lg-6 col-md-12">
+                    <div class="row tm-edit-product-row">
+                        <div class="col-xl-6 col-lg-6 col-md-6">
                             <form action="" class="tm-edit-product-form">
+
                                 <div class="form-group mb-3">
                                     <label for="name">
-                                        Mã danh mục
+                                        Tên danh mục
                                     </label>
-                                    <input style="color:black"
-                                           name="ProductTypeID"
-                                           type="text"
-                                           value="@Model.ProductTypeID"
-                                           class="form-control validate"
-                                           readonly
-                                           required />
-                                    @ViewData["Loi1"]
-                                </div>
-                                <div class="form-group mb-3">
-                                    <label for="name">
-                                        Tên danh mục
-                                    </label>
-                                    <input name="ProductTypeName"
-                                           type="text"
+                                    <input placeholder=""
+                                           name="ProductTypeName"
                                            value="@Model.ProductTypeName"
+                                           type="text"
                                            class="form-control validate"
                                            required />
                                     @ViewData["Loi2"]
                                 </div>
+
+
+
                             </form>
                         </div>
-                        <div class="col-xl-6 col-lg-6 col-md-12 mx-auto mb-4">
-                            <div style="padding-top:18px" class="custom-file mt-3 mb-3">
-                                <input type="text" value="@Model.image" name="picture" id="picture" class="form-control"  readonly style="color:black"/>
-                                <input type="file" accept="image/*" id="fileUpload" name="fileUpload" style="display:none" ; />
-                                <input type="button"
-                                       id="btnUpload"
-                                       class="btn btn-success btn-primary btn-block mx-auto "
-                                       value="Chọn hình ảnh cho danh mục" />
-                                @ViewData["Loi4"]
-                                <img src="@Url.Content("~/images/producttype/" + Model.image)" id="pictureUpload" width="358" />
-                            </div>
+                        <div class="col-xl-6 col-lg-6 col-md-6">
+                            <label for="name">
+                                Hình ảnh
+                            </label>
+                            <input type="text" value="~/images/producttype/@Model.image" name="picture" id="picture" class="form-control" readonly style="color:black" />
+                            <input type="file" accept="image/*" id="fileUpload" name="fileUpload" style="display:none" ; />
+                            <input style="padding:10px; margin:10px 0 10px 0"
+                                   type="button"
+                                   id="btnUpload"
+                                   class="btn btn-primary btn-block mx-auto"
+                                   value="Chọn hình ảnh cho danh mục" />
+                            @ViewData["Loi6"]
+                            <img style="margin-left:-5px" src="@Url.Content("~/images/producttype/" + Model.image)" id="pictureUpload" class="col-xl-12 col-lg-12 col-md-12" />
                         </div>
                     </div>
-
-                    <div style="padding-top:200px" class="col-12">
-                        <button type="submit" class="btn btn-primary btn-block text-uppercase">Chỉnh Sửa</button>
+                    <div class="col-12">
+                        <button type="submit" class="btn btn-primary btn-block text-uppercase" style="margin-top:20px">Sửa</button>
                     </div>
                 </div>
             </div>

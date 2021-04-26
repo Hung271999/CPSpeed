@@ -43,19 +43,25 @@
                                    required />
                             @ViewData["Loi2"]
                         </div>
-                        <select id="UserId" name="Priority" class="custom-select tm-select-accounts">
-                            @if (Model.Status == true)
-                            {
-                                <option value="true" selected>Kích Hoạt</option>
-                                <option value="false">K Kích Hoạt</option>
-                            }
-                            else
-                            {
-                                <option value="true" >Kích Hoạt</option>
-                                <option value="false" selected>K Kích Hoạt</option>
-                            }
 
-                        </select>
+                        <div class="form-group mb-3 col-xs-12 col-sm-12">
+                            <label for="name">
+                                Trạng thái
+                            </label>
+                            <select id="UserId" name="Priority" class="custom-select tm-select-accounts">
+                                @if (Model.Status == true)
+                                {
+                                    <option value="true" selected>Kích Hoạt</option>
+                                    <option value="false">K Kích Hoạt</option>
+                                }
+                                else
+                                {
+                                    <option value="true">Kích Hoạt</option>
+                                    <option value="false" selected>K Kích Hoạt</option>
+                                }
+                            </select>
+                        </div>
+                        
 
                     </div>
                     <div style="padding-top:20px; padding-left:25px" class="col-12">

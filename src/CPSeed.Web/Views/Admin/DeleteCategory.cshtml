@@ -14,7 +14,7 @@
                 <div class="tm-bg-primary-dark tm-block tm-block-h-auto">
                     <div class="row">
                         <div class="col-12">
-                            <h2 class="tm-block-title d-inline-block">Delete Post</h2>
+                            <h2 class="tm-block-title d-inline-block">Xóa danh mục bài viết</h2>
                         </div>
                     </div>
                     <div class="row tm-edit-product-row">
@@ -22,26 +22,45 @@
                             <form action="" class="tm-edit-product-form">
                                 <div class="form-group mb-3">
                                     <label for="name">
-                                        Category ID
+                                        Tiêu đề
                                     </label>
                                     <input style="color:black"
                                            type="text"
-                                           value="@Model.CategoryID"
+                                           value="@Model.Title"
                                            class="form-control validate"
                                            readonly
                                            required />
                                 </div>
-                                <input style="color:black"
-                                       type="text"
-                                       value="@Model.Title"
-                                       class="form-control validate"
-                                       readonly
-                                       required />
+
+                                <div class="form-group mb-3">
+                                    <label for="name">
+                                        Tình trạng
+                                    </label>
+                                    @if (Model.Status == true)
+                                    {
+                                        <textarea name="Status"
+                                                  type="text"
+                                                  class="form-control validate"
+                                                  readonly
+                                                  required>Hiển thị
+                                    </textarea>
+                                    }
+                                    else
+                                    {
+                                        <textarea name="Status"
+                                                  type="text"
+                                                  class="form-control validate"
+                                                  readonly
+                                                  required>Không hiển thị
+                                    </textarea>
+                                    }
+
+                                </div>
                             </form>
                         </div>                        
 
                         <div style="padding-top:30px" class="col-12">
-                            <button type="submit" class="btn btn-primary btn-block text-uppercase">Delete Category</button>
+                            <button type="submit" class="btn btn-primary btn-block text-uppercase">Xóa</button>
                         </div>
                     </div>
                 </div>
