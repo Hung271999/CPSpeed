@@ -30,10 +30,12 @@
     @Scripts.Render("~/bundles/modernizr")
     <link href="~/css/win2.css" rel="stylesheet" />
     <link href="~/css/win3.css" rel="stylesheet" />
-    <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jquery.lazy/1.7.9/jquery.lazy.min.js"></script>
-    <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jquery.lazy/1.7.9/jquery.lazy.plugins.min.js"></script>
+    <link href="~/css/recruitment.css" rel="stylesheet" />
+    <link href="~/css/Onlinefiling.css" rel="stylesheet" />
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-MVWHZCR1MF"></script>
+    <script src="~/ckeditor/ckeditor.js"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
         function gtag() { dataLayer.push(arguments); }
@@ -43,6 +45,7 @@
     </script>
     <script>!function (s, u, b, i, z) { var o, t, r, y; s[i] || (s._sbzaccid = z, s[i] = function () { s[i].q.push(arguments) }, s[i].q = [], s[i]("setAccount", z), r = ["widget.subiz.net", "storage.googleapis" + (t = ".com"), "app.sbz.workers.dev", i + "a" + (o = function (k, t) { var n = t <= 6 ? 5 : o(k, t - 1) + o(k, t - 3); return k !== t ? n : n.toString(32) })(20, 20) + t, i + "b" + o(30, 30) + t, i + "c" + o(40, 40) + t], (y = function (k) { var t, n; s._subiz_init_2094850928430 || r[k] && (t = u.createElement(b), n = u.getElementsByTagName(b)[0], t.async = 1, t.src = "https://" + r[k] + "/sbz/app.js?accid=" + z, n.parentNode.insertBefore(t, n), setTimeout(y, 2e3, k + 1)) })(0)) }(window, document, "script", "subiz", "acqyfndvzizymqqymvai");</script>
 </head>
+
 <body>
     <!-- Start Main Top -->
     <header class="main-header">
@@ -54,7 +57,7 @@
                     <i class="fa fa-bars"></i>
                 </button>
 
-                <a class="navbar-brand" href="@Url.Action("Index","Home")" style="display:flex"><img src="~/images/logo-CPSEEDS.jpg" class="logo" alt="" style="border-radius:5px;width:50px"><h1 class="logoName" style="">C.P.SEEDS<br/>(VIETNAM)</h1></a>
+                <a class="navbar-brand" href="@Url.Action("Index","Home")" style="display:flex"><img src="~/images/logo.png" class="logo" alt="" style="border-radius:5px;width:50px"><h1 class="logoName" style="">C.P.SEEDS<br/>(VIETNAM)</h1></a>
 
                 <!-- Logo -->
                 <div class="navMenu">

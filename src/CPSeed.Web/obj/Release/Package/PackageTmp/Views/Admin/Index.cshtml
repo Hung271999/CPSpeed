@@ -1,4 +1,5 @@
 ﻿@model IEnumerable<CPSeed.Models.Order>
+@using CPSeed.Models;
 @{
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/LayoutAdmin.cshtml";
@@ -17,39 +18,52 @@
                             <th scope="col">Số Lượng</th>
                             <th scope="col">Tổng Tiền</th>
                             <th scope="col">Ngày Mua</th>
-                            <th scope="col">Tình Trạng</th>
+                            <th scope="col">Giao hàng</th>
+                            <th scope="col">Thanh toán</th>
                             <th scope="col">Người Đặt</th>
-                            <th scope="col">Địa chỉ</th>
-                            <th scope="col"></th>
+                            <th scope="col">&nbsp;</th>
+                            <th scope="col">&nbsp;</th>
                         </tr>
-                    </thead>
+                    </thead>    
                     <tbody>
                         @foreach (var item in Model)
                         {
                         <tr>
-                            <th scope="row"><b>#@item.OrderID</b></th>
-
+                            <td><b>#@item.OrderID</b></td>
                             <td><b>@item.Priority</b></td>
                             <td><b>@item.Total</b></td>
-                            <td>@String.Format("{0:d/M/yyyy}", item.CreateDate)</td>
+                            <td><b>@String.Format("{0:d/M/yyyy}", item.CreateDate)</b></td>
                             <td>
                                 @if (item.Status == true)
                                 {
-                                    <div class="tm-status-circle moving">
-                                    </div>
+                                    <img src="~/images/icons/1200px-Light_green_check.svg.png" width="15px" />
                                 }
                                 else
                                 {
-                                    <div class="tm-status-circle pending">
-                                    </div>
+                                    <img src="~/images/icons/1200px-Red_x.svg.png" width="15px" />
                                 }
                             </td>
 
-                            <td>@item.CreateUser</td>
-                            <td>@item.Address</td>
+                            <td>
+                                @if (item.Paid == true)
+                                {
+                                    <img src="~/images/icons/1200px-Light_green_check.svg.png" width="15px" />
+                                }
+                                else
+                                {
+                                    <img src="~/images/icons/1200px-Red_x.svg.png" width="15px" />
+                                }
+                            </td>
+
+                            <td><b>@item.CreateUser</b></td>
                             <td>
                                 <a href="@Url.Action("Order", "Admin" , new { id = item.OrderID })">
-                                    Xem
+                                    <img src="~/images/icons/eye.png" width="20px" />
+                                </a>
+                            </td>
+                            <td>
+                                <a href="@Url.Action("EditOrder", "Admin" , new { id = item.OrderID })">
+                                    <img src="~/images/icons/pencil-square.svg" width="20px" />
                                 </a>
                             </td>
                         </tr>
@@ -62,4 +76,5 @@
         </div>
     </div>
 </div>
+
 

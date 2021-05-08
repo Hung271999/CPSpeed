@@ -16,7 +16,7 @@ namespace CPSeed.Controllers
     public class AdminController : Controller
     {
         CPSeedContext data = new CPSeedContext();
-        //[Authorize(Roles = "Admin")]
+        [Authorize(Roles = "Admin")]
         public ActionResult Index()
         {
             return View(data.Orders.ToList().OrderByDescending(n => n.CreateDate));
@@ -777,12 +777,17 @@ namespace CPSeed.Controllers
         public ActionResult AddSlide(FormCollection collection, Slide slide, HttpPostedFileBase fileUpload)
         {
             var url = collection["Url"];
+            var content = collection["Content"];
             var status = collection["Priority"];
             var image = collection["picture"];
 
             if (String.IsNullOrEmpty(url))
             {
                 ViewData["Loi2"] = "Please enter Url !";
+            }
+            else if (String.IsNullOrEmpty(content))
+            {
+                ViewData["Loi3"] = "Please enter Content !";
             }
             else if (String.IsNullOrEmpty(image))
             {
@@ -794,7 +799,7 @@ namespace CPSeed.Controllers
                 var path = Path.Combine(Server.MapPath("~/images/banner"), fileName);
                 fileUpload.SaveAs(path);
                 slide.url = url;
-                slide.contents = "content";
+                slide.contents = content;
                 slide.image = fileName;
                 slide.CreateDate = DateTime.Now;
                 slide.UpdateDate = DateTime.Now;
@@ -838,12 +843,17 @@ namespace CPSeed.Controllers
         public ActionResult EditSlide(FormCollection collection, Slide slide, HttpPostedFileBase fileUpload, int id)
         {
             var url = collection["Url"];
+            var content = collection["Content"];
             var status = collection["Priority"];
             var image = collection["picture"];
 
             if (String.IsNullOrEmpty(url))
             {
                 ViewData["Loi2"] = "Please enter Url !";
+            }
+            else if (String.IsNullOrEmpty(content))
+            {
+                ViewData["Loi3"] = "Please enter Content !";
             }
             else if (String.IsNullOrEmpty(image))
             {
@@ -864,7 +874,7 @@ namespace CPSeed.Controllers
                     slide.image = slideroot.image;
                 }
                 slide.url = url;
-                slide.contents = "content";
+                slide.contents = content;
                 slide.CreateDate = slideroot.CreateDate;
                 slide.UpdateDate = DateTime.Now;
                 slide.PublicDate = slideroot.PublicDate;

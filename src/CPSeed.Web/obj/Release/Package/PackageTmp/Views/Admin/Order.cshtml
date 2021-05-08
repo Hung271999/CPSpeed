@@ -7,57 +7,88 @@
 <div class="container">
     <!-- row -->
     <div class="row tm-content-row">
-        <div class="col-12 tm-block-col">
-            <div class="tm-bg-primary-dark tm-block tm-block-taller tm-block-scroll">
-                <h2 class="tm-block-title">Chi Tiết Đơn Hàng</h2>
-                <table class="table">
-                    <thead>
-                        <tr>
-                            <th scope="col">Mã Đơn</th>
-                            <th scope="col">Sản Phẩm</th>
-                            <th scope="col">Số Lượng</th>
-                            <th scope="col">Tổng Tiền</th>
-                            <th scope="col">Ngày Mua</th>
-                            <th scope="col">Người Đặt</th>
-                            <th scope="col">Địa Chỉ</th>
-                            <th scope="col">&nbsp;</th>
-                            <th scope="col">&nbsp;</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        @foreach (var item in Model)
-                        {
-                        <tr>
-                            <th scope="row"><b>#@item.OrderID</b></th>
-                            @{
-                                CPSeedContext data = new CPSeedContext();
-                                var a = data.Products.Where(n => n.ProductID == item.ProductID).SingleOrDefault();
-                                var b = data.Orders.Where(n => n.OrderID == item.OrderID).SingleOrDefault();
-
+        <div class="col-sm-12 col-md-12 col-lg-12 col-xl-12 ">
+            <h2 class="tm-block-title">Chi Tiết Đơn Hàng</h2>
+            <div class="row">
+                <div class="col-sm-6 col-md-6 col-lg-6 col-xl-6">
+                    <div class="tm-bg-primary-dark tm-block tm-block-taller tm-block-scroll">
+                        <table class="table" style="padding-right:50px">
+                            <thead>
+                                <tr>
+                                    <th scope="col"><b>Sản Phẩm</b></th>
+                                    <th scope="col"><b>Số Lượng</b></th>
+                                    <th scope="col"><b>Tổng Tiền</b></th>
+                                </tr>
+                            </thead>
+                            @foreach (var item in Model)
+                            {
+                                <tbody>
+                                    <tr>                                        
+                                        @{
+                                            CPSeedContext data = new CPSeedContext();
+                                            var a = data.Products.Where(n => n.ProductID == item.ProductID).SingleOrDefault();
+                                            var b = data.Orders.Where(n => n.OrderID == item.OrderID).SingleOrDefault();
+                                            ViewBag.Order = b;
+                                            int sp = Decimal.ToInt32((decimal)item.SellPrice);
+                                            ViewBag.SellPrice = sp;
+                                        }
+                                        <td><b>@a.ProductName</b></td>
+                                        <td><b>@item.Quantity</b></td>
+                                        <td><b>@ViewBag.SellPrice đ</b></td>
+                                    </tr>
+                                </tbody>
                             }
-                            <td><b>@a.ProductName</b></td>
-                            <td><b>@item.Quantity</b></td>
-                            <td><b>@item.SellPrice</b></td>
-                            <td><b> @String.Format("{0:M/d/yyyy}", b.CreateDate)</b></td>
-                            <td><b>@b.CreateUser</b></td>
-                            <td><b>@b.Address</b></td>
-                            <td>
-                                <a href="@Url.Action("DeleteOrder", "Admin" , new { id = item.OrderDetailID })" class="tm-product-delete-link">
-                                    <i class="far fa-trash-alt tm-product-delete-icon"></i>
-                                </a>
-                            </td>
-                           @* <td>
-                                <a href="@Url.Action("EditOrder", "Admin" , new { id = item.OrderDetailID })">
-                                    <span style="color:white">Sửa</span>
-                                </a>
-                            </td>*@
-                        </tr>
-                        }
+                            <tfoot>
+                                <tr>
+                                    <th scope="col"><h5>TỔNG GIÁ</h5></th>                                    
+                                    <th scope="col">&nbsp;</th>
+                                    <th scope="col"><h5>@ViewBag.Order.Total VNĐ</h5></th>
+                                </tr>
+                            </tfoot>
+                        </table>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-md-6 col-lg-6 col-xl-6" style="padding-left:30px">
+                    <div class="table-border-style">
+                        <div class="table-responsive">
+                            <table class="table">
+                                <thead>
+                                    <tr>
+                                        <th scope="col"><b>THÔNG TIN LIÊN HỆ</b></th>
+                                        <th scope="col">&nbsp;</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td scope="row"><b>Họ tên</b></td>
+                                        <td>@ViewBag.Order.CreateUser</td>
+                                    </tr>
+                                    <tr>
+                                        <td scope="row"><b>Ngày đặt hàng</b></td>
+                                        <td>@String.Format("{0:d/M/yyyy}", ViewBag.Order.CreateDate)</td>
+                                    </tr>
+                                    <tr>
+                                        <td scope="row"><b>Địa chỉ</b></td>
+                                        <td>@ViewBag.Order.Address</td>
+                                    </tr>
+                                    <tr>
+                                        <td scope="row"><b>Số điện thoại</b></td>
+                                        <td>@ViewBag.Order.Phone</td>
+                                    </tr>
+                                    <tr>
+                                        <td scope="row"><b>Email</b></td>
+                                        <td>@ViewBag.Order.Email</td>
+                                    </tr>
+                                    
 
-
-                    </tbody>
-                </table>
+                                </tbody>
+                                
+                            </table>
+                        </div>
+                    </div>
+                </div>
             </div>
+
         </div>
     </div>
 </div>

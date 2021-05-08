@@ -30,6 +30,7 @@
     <link class="main-stylesheet" href="~/pages/css/themes/corporate.css" rel="stylesheet" type="text/css" />
     <!-- Please remove the file below for production: Contains demo classes -->
     <link class="main-stylesheet" href="~/assets/css/style.css" rel="stylesheet" type="text/css" />
+    <script src="~/ckeditor/ckeditor.js"></script>
 </head>
 <body class="fixed-header dashboard menu-pin menu-behind">
     <!-- BEGIN SIDEBPANEL-->
@@ -169,18 +170,19 @@
                 </li>
 
                 <li>
-                    <a href="@Url.Action("Contactus","Admin")" class="detailed">
-                        <span class="title">Liên hệ</span>
-                    </a>
-                    <span class="icon-thumbnail"><img src="~/assets/img/icon/contact.png" alt="order"></span>
-                </li>
-
-
-                <li>
                     <a href="@Url.Action("Index","Admin")" class="detailed">
                         <span class="title">Order</span>
                     </a>
                     <span class="icon-thumbnail"><img src="~/assets/img/icon/oder.png" alt="order"></span>
+                </li>
+                <li>
+                    @using (Html.BeginForm("LogOff", "Account", FormMethod.Post, new { id = "logoutForm", @class = "navbar-right" }))
+                    {
+                        @Html.AntiForgeryToken()
+                    <a href="javascript:document.getElementById('logoutForm').submit()" class="detailed" style="margin-left:30px">
+                        <span class="title">@Resource.LogOff</span>
+                    </a>
+                    }
                 </li>
 
             </ul>
@@ -201,7 +203,7 @@
             <!-- END MOBILE SIDEBAR TOGGLE -->
             <div class="">
                 <div class="brand inline   m-l-10">
-                    <img src="~/assets/img/logo.png" alt="logo" height="40px" width="auto">
+                  <a href="@Url.Action("Index","Home")"><img src="~/assets/img/logo.png" alt="logo" height="40px" width="auto"></a> 
                 </div>
                 <!-- START NOTIFICATION LIST -->
                 <!-- END NOTIFICATIONS LIST -->

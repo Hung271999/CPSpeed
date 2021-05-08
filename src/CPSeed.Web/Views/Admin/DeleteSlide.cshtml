@@ -8,69 +8,65 @@
 @using (Html.BeginForm("DeleteSlide", "Admin", FormMethod.Post, new { @enctype = "multipart/form-data" }))
 {
     @Html.AntiForgeryToken()
-
     <div class="container tm-mt-big tm-mb-big">
         <div class="row">
-            <div class="col-xl-10 col-lg-10 col-md-10 col-sm-12 mx-auto">
+            <div class="col-xl-9 col-lg-10 col-md-12 col-sm-12 mx-auto">
                 <div class="tm-bg-primary-dark tm-block tm-block-h-auto">
                     <div class="row">
                         <div class="col-12">
-                            <h2 class="tm-block-title d-inline-block">Thêm slide banner</h2>
+                            <h2 class="tm-block-title d-inline-block">Delete Slide</h2>
                         </div>
                     </div>
-                    <div class="row tm-edit-product-row">
-
-                        <div class="col-xl-8 col-lg-8 col-md-8">
-                            <label for="name">
-                                Hình ảnh
-                            </label>
-                            <input type="text" value="~/images/banner/@Model.image" name="picture" id="picture" class="form-control" readonly style="color:black" />
-                            <img style="margin-left:-5px" src="@Url.Content("~/images/banner/" + Model.image)" id="pictureUpload" class="col-xl-12 col-lg-12 col-md-12" />
-                        </div>
-
-                        <div class="col-xl-4 col-lg-4 col-md-4">
+                    <div style="padding-left:20px" class="row tm-edit-product-row">
+                        <div class="col-xl-6 col-lg-6 col-md-12">
                             <form action="" class="tm-edit-product-form">
                                 <div class="form-group mb-3">
                                     <label for="name">
-                                        Đính kèm link
+                                        Slide ID
                                     </label>
-                                    <input name="Url"
+                                    <input style="color:black"
+                                           name="SlideID"
+                                           type="text"
+                                           value="@Model.SlideID"
+                                           class="form-control validate"
+                                           readonly
+                                           required />
+
+                                </div>
+                                <div class="form-group mb-3">
+                                    <label for="name">
+                                        Url
+                                    </label>
+                                    <input style="color:black"
+                                           name="Url"
                                            type="text"
                                            value="@Model.url"
                                            class="form-control validate"
                                            readonly
                                            required />
-                                    @ViewData["Loi2"]
-                                </div>                             
+
+                                </div>
 
                                 <div class="form-group mb-3">
                                     <label for="name">
-                                        Trạng thái
+                                        Content
                                     </label>
-                                    @if (Model.Status == true)
-                                    {
-                                        <textarea name="Status"
-                                                  type="text"
-                                                  class="form-control validate"
-                                                  readonly
-                                                  required>Hiển thị</textarea>
-                                    }
-                                    else
-                                    {
-                                        <textarea name="Status"
-                                                  type="text"
-                                                  class="form-control validate"
-                                                  readonly
-                                                  required>Không hiển thị</textarea>
-                                    }
+                                    <textarea id="Content" name="description" readonly>@Model.contents</textarea>
+
                                 </div>
 
                             </form>
                         </div>
-
+                        <div class="col-xl-6 col-lg-6 col-md-12 mx-auto mb-4">
+                            <div style="padding-top:18px" class="custom-file mt-3 mb-3">
+                                <input type="text" value="@Model.image" name="picture" id="picture" class="form-control" readonly style="color:black" />
+                                <img src="@Url.Content("~/images/banner/" + Model.image)" id="pictureUpload" width="358" height="350" />
+                            </div>
+                        </div>
                     </div>
-                    <div class="col-12" style="margin-top:30px">
-                        <button type="submit" class="btn btn-primary btn-block text-uppercase">Xóa</button>
+
+                    <div style="padding-top:200px" class="col-12">
+                        <button type="submit" class="btn btn-primary btn-block text-uppercase">Delete Slide Now</button>
                     </div>
                 </div>
             </div>

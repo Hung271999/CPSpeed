@@ -11,16 +11,15 @@
     <div class="row tm-content-row">
         <div class="col-sm-12 col-md-12 col-lg-12 col-xl-12 tm-block-col">
             <div class="tm-bg-primary-dark tm-block tm-block-products">
-                <div class="row">
-                    <h2 class="col-sm-10 col-md-10 col-lg-10 col-xl-10 tm-block-title tm-block-title-win">Quản Lý Slide</h2>
-                    <a href="AddSlide" style="margin:10px 0 10px 0" class="col-lg-2 btn btn-primary">THÊM SLIDE</a>
-                </div>
+                <h2 class="tm-block-title">Banner</h2>
+                <a href="AddSlide"
+                   class="btn btn-primary btn-block text-uppercase mb-3">Thêm Banner</a>
                 <div style="max-height: 595px;" class="tm-product-table-container">
                     <table class="table table-hover tm-table-small tm-product-table">
                         <thead>
                             <tr>
-                                <th scope="col">Hình ảnh</th>
                                 <th scope="col">Link</th>
+                                <th scope="col">Hình</th>
                                 <th scope="col">Tình trạng</th>
                                 <th scope="col"></th>
                                 <th scope="col"></th>
@@ -32,9 +31,9 @@
                             @foreach (var item in Model)
                             {
                                 <tr>
-                                    <td><img src="@Url.Content("~/images/banner/" + item.image)" width="400" height="auto" /></td>
-
                                     <td><p>@Html.Raw(item.url)</p></td>
+
+                                    <td><img src="@Url.Content("~/images/banner/" + item.image)" width="300" /></td>
 
 
 
@@ -44,16 +43,16 @@
                                     }
                                     else
                                     {
-                                        <td>Không kích hoạt</td>
+                                        <td>K hoạt</td>
                                     }
                                     <td>
                                         <a href="@Url.Action("DeleteSlide", "Admin" , new { id = item.SlideID })" class="tm-product-delete-link">
-                                            <img src="~/images/icons/trash.svg" width="15px" />
+                                            <i class="far fa-trash-alt tm-product-delete-icon"></i>
                                         </a>
                                     </td>
                                     <td>
                                         <a href="@Url.Action("EditSlide", "Admin" , new { id = item.SlideID })">
-                                            <img src="~/images/icons/pencil-square.svg" width="15px" />
+                                            Sửa
                                         </a>
                                     </td>
                                 </tr>
@@ -62,7 +61,6 @@
                     </table>
                 </div>
                 <!-- table container -->
-                
             </div>
         </div>
     </div>

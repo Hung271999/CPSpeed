@@ -1,0 +1,11 @@
+﻿@model IEnumerable<CPSeed.Models.Workplace>
+<div class="item-input-contact">
+    <select name="" id="WorkLocation" onchange="myFunction();">
+
+        <option value="0" selected="">Nơi làm việc</option>
+        @foreach (var item in Model)
+        {
+            <option value="@item.Title">@item.Title</option>
+        }
+    </select>
+</div>

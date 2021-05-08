@@ -15,13 +15,13 @@
                 <div class="tm-bg-primary-dark tm-block tm-block-h-auto">
                     <div class="row">
                         <div class="col-12">
-                            <h2 class="tm-block-title d-inline-block">Thêm danh mục bài viết</h2>
+                            <h2 class="tm-block-title d-inline-block">Thêm Bài Viết</h2>
                         </div>
                     </div>
                     <div style="padding-left:20px" class="row tm-edit-product-row">
                         <div class="form-group mb-3 col-xs-12 col-sm-12">
                             <label for="name">
-                                Tiêu đề
+                               Tiêu đề
                             </label>
                             <input name="TitleCategory"
                                    type="text"
@@ -29,19 +29,11 @@
                                    required />
                             @ViewData["Loi2"]
                         </div>
-
-                        <div class="form-group mb-3 col-xs-12 col-sm-12">
-                            <label for="name">
-                                Trạng thái
-                            </label>
-                            <select id="UserId" name="Priority" class="custom-select tm-select-accounts">
-                                <option value="true" selected>Hiển thị</option>
-                                <option value="false">Không hiển thị</option>
-                            </select>
-                            @ViewData["Loi2"]
-                        </div>
+                         <select id="UserId" name="Priority" class="custom-select tm-select-accounts">
+                                    <option value="true" selected>Hiển hị</option>
+                                    <option value="false">Không hiển thị</option>
+                        </select>
                         
-
                     </div>
                     <div style="padding-top:20px; padding-left:25px" class="col-12">
                         <button type="submit" class="btn btn-primary btn-block text-uppercase">Thêm</button>

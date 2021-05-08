@@ -3,6 +3,7 @@
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
+<script src="~/ckeditor/ckeditor.js"></script>
 @using (Html.BeginForm("Index", "Contact"))
 {
     @Html.Action("Banner", "Home", new { image = "1.jpg", title = "Liên hệ" })
@@ -55,6 +56,7 @@
                                 </div>
                             </div>
                         </div>
+
                     </form>
                 </div>
             </div>
@@ -64,8 +66,7 @@
 
     <!-- End Cart -->
 }
-<script src="~/ckeditor/ckeditor.js"></script>
+@Html.Action("Contact", "Contact")
 <script>
     CKEDITOR.replace('message');
 </script>
-@Html.Action("Contact", "Contact")
